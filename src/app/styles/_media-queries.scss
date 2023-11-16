@@ -1,0 +1,36 @@
+@mixin mobile {
+  @media (max-width: 700px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: 701px) and (max-width: 1120px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: 1121px) {
+    @content;
+  }
+}
+
+@mixin dark-mode {
+  @media (prefers-color-scheme: dark) {
+    @content;
+  }
+}
+
+@mixin reduced-motion {
+  @media (prefers-reduced-motion) {
+    @content;
+  }
+}
+
+@mixin no-hover-for-touch {
+  /* Enable hover only on non-touch devices */
+  @media (hover: hover) and (pointer: fine) {
+    @content;
+  }
+}

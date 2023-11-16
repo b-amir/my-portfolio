@@ -1,5 +1,47 @@
-$primary-color: #64ff00;
+// color palette
+$pinkish-red: rgb(156, 15, 74);
+$primary-color: lighten($pinkish-red, 60%); // #f9e9e9
+$secondary-color: #ffffff;
+$accent-color: $pinkish-red;
+$background-color: #f0f8ff;
+$black-substitute: lighten(black, 5%); // #1a1a1a
+$text-color: $black-substitute;
+
+// sizes
+$base-font-size: 16px;
+$base-line-height: 1.5;
+$base-spacing: 1rem;
+$max-width: 1100px;
+
+// font family
+$base-fonts: Arial, sans-serif;
+$mono-fonts: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono", "Roboto Mono", "Oxygen Mono",
+  "Ubuntu Monospace", "Source Code Pro", "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
+
+// border radius
+$small-br: 0.125rem;
+$base-br: 0.25rem;
+$large-br: 0.5rem;
+
+// transition duration
+$slow-pace: 0.5s;
+$base-pace: 0.3s;
+$fast-pace: 0.1s;
 
 :export {
   primaryColor: $primary-color;
+  secondaryColor: $secondary-color;
+  accentColor: $accent-color;
+  backgroundColor: $background-color;
+  textColor: $text-color;
+  baseFontSize: $base-font-size;
+  baseLineHeight: $base-line-height;
+  baseSpacing: $base-spacing;
+  baseFonts: $base-fonts;
+  smallBorderRadius: $small-br;
+  baseBorderRadius: $base-br;
+  largeBorderRadius: $large-br;
+  slowPace: $slow-pace;
+  basePace: $base-pace;
+  fastPace: $fast-pace;
 }
