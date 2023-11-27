@@ -1,6 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import styles from "./styles/page.module.scss";
 import variables from "./styles/variables.module.scss";
+import Spline from "@splinetool/react-spline";
 
 export default function Home() {
   return (
@@ -38,7 +41,7 @@ export default function Home() {
           priority
         />
       </div>
-
+      <Spline scene="https://prod.spline.design/eXxdFyp27KoBXioI/scene.splinecode" />
       <div className={styles.grid}>
         <a
           href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
