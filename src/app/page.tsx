@@ -3,7 +3,7 @@ import styles from "./styles/page.module.scss";
 import variables from "./styles/variables.module.scss";
 import { HeroSection } from "./HeroSection";
 import { AboutSection } from "./AboutSection";
-import { QuickLinksSection } from "./QuickLinksSection";
+import { ContactGrid } from "./ContactGrid";
 import { AllProjectsSection } from "./AllProjectsSection";
 import { FeaturedProjectSection } from "./FeaturedProjectSection";
 
@@ -11,8 +11,8 @@ export default function Home() {
   return (
     <main className={styles.main}>
       <HeroSection />
-      <QuickLinksSection />
       <AboutSection />
+      {/* <ContactSection /> */}
       <FeaturedProjectSection />
       <AllProjectsSection />
     </main>
