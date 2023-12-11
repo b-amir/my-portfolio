@@ -29,7 +29,7 @@ export const AboutSection: React.FC = () => (
             courses.
           </p>
 
-          <a>
+          <a className={styles.buttonLink}>
             See my stack <IoArrowForward />
           </a>
         </div>

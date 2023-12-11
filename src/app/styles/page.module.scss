@@ -177,15 +177,40 @@
     padding-right: 6rem;
     width: 100%;
 }
+
+.footer {
+    @extend .section;
+    background-color: #e2e2e2;
+    padding-top: 6rem;
+    padding-bottom: 4rem;
+    background-color: #ffffff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg stroke='%23000000' stroke-width='0.4' stroke-opacity='0.1' %3E%3Ccircle fill='%23FFFFFF' cx='0' cy='0' r='1800'/%3E%3Ccircle fill='%23fbfbfb' cx='0' cy='0' r='1700'/%3E%3Ccircle fill='%23f8f8f8' cx='0' cy='0' r='1600'/%3E%3Ccircle fill='%23f4f4f4' cx='0' cy='0' r='1500'/%3E%3Ccircle fill='%23f1f0f0' cx='0' cy='0' r='1400'/%3E%3Ccircle fill='%23edecec' cx='0' cy='0' r='1300'/%3E%3Ccircle fill='%23eae9e9' cx='0' cy='0' r='1200'/%3E%3Ccircle fill='%23e6e5e5' cx='0' cy='0' r='1100'/%3E%3Ccircle fill='%23e3e1e1' cx='0' cy='0' r='1000'/%3E%3Ccircle fill='%23dfdede' cx='0' cy='0' r='900'/%3E%3Ccircle fill='%23dcdada' cx='0' cy='0' r='800'/%3E%3Ccircle fill='%23d8d6d6' cx='0' cy='0' r='700'/%3E%3Ccircle fill='%23d5d3d3' cx='0' cy='0' r='600'/%3E%3Ccircle fill='%23d1cfcf' cx='0' cy='0' r='500'/%3E%3Ccircle fill='%23cecbcb' cx='0' cy='0' r='400'/%3E%3Ccircle fill='%23cac7c7' cx='0' cy='0' r='300'/%3E%3Ccircle fill='%23c7c4c4' cx='0' cy='0' r='200'/%3E%3Ccircle fill='%23C3C0C0' cx='0' cy='0' r='100'/%3E%3C/g%3E%3C/svg%3E");
+    // background-attachment: fixed;
+    background-size: cover;
+}
 .contact {
     // @extend .section;
+    backdrop-filter: blur(4px);
 }
 .about {
     @extend .section;
     background-color: #ffffff;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg stroke='%23E8D6C9' stroke-width='0.7' stroke-opacity='0.35' %3E%3Ccircle fill='%23FFFFFF' cx='0' cy='0' r='1800'/%3E%3Ccircle fill='%23fefdfd' cx='0' cy='0' r='1700'/%3E%3Ccircle fill='%23fcfbfb' cx='0' cy='0' r='1600'/%3E%3Ccircle fill='%23fbf9f8' cx='0' cy='0' r='1500'/%3E%3Ccircle fill='%23faf7f6' cx='0' cy='0' r='1400'/%3E%3Ccircle fill='%23f8f6f4' cx='0' cy='0' r='1300'/%3E%3Ccircle fill='%23f7f4f2' cx='0' cy='0' r='1200'/%3E%3Ccircle fill='%23f6f2f0' cx='0' cy='0' r='1100'/%3E%3Ccircle fill='%23f4f0ed' cx='0' cy='0' r='1000'/%3E%3Ccircle fill='%23f3eeeb' cx='0' cy='0' r='900'/%3E%3Ccircle fill='%23f1ece9' cx='0' cy='0' r='800'/%3E%3Ccircle fill='%23f0eae7' cx='0' cy='0' r='700'/%3E%3Ccircle fill='%23efe8e5' cx='0' cy='0' r='600'/%3E%3Ccircle fill='%23ede6e3' cx='0' cy='0' r='500'/%3E%3Ccircle fill='%23ece5e0' cx='0' cy='0' r='400'/%3E%3Ccircle fill='%23ebe3de' cx='0' cy='0' r='300'/%3E%3Ccircle fill='%23e9e1dc' cx='0' cy='0' r='200'/%3E%3Ccircle fill='%23E8DFDA' cx='0' cy='0' r='100'/%3E%3C/g%3E%3C/svg%3E");
-    background-attachment: fixed;
+    // background-attachment: fixed;
     background-size: cover;
+    box-shadow: 1px 1px 7px 0px #0000001a;
+    z-index: 2;
+}
+
+.footNote {
+    font-size: 0.8rem;
+    font-weight: 400;
+    line-height: 1.2;
+    margin: 0;
+    color: #784b17;
+    font-style: italic;
+    text-align: center;
+    margin-top: 1rem;
 }
 
 .fry {
@@ -229,7 +254,7 @@
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-between;
-    align-items: normal;
+    align-items: center;
     align-content: normal;
     gap: 2rem;
 }
@@ -291,6 +316,8 @@
 .allProjects {
     @extend .section;
     min-height: 100dvh;
+    box-shadow: 1px 1px 7px 0px #0000001a;
+    z-index: 2;
 }
 .sectionHeader {
     padding-left: 15px;
@@ -345,6 +372,48 @@
         filter: blur(45px);
         transform: translateZ(0);
     }
+}
+.buttonKeepInTouch {
+    font-weight: 500;
+    display: flex;
+    font-size: large;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    background-color: #cf4d11;
+    border: 7px solid #f4cdbb;
+    border-radius: 21px;
+    z-index: 10;
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.footerText {
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    line-height: 1.5;
+}
+
+.madeWith {
+    width: 100%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    opacity: 0.5;
+    font-size: smaller;
+    box-shadow: 1px 1px 7px 0px #0000001a;
+    z-index: 2;
 }
 
 .logo {

@@ -6,6 +6,7 @@ import { AboutSection } from "./AboutSection";
 import { ContactGrid } from "./ContactGrid";
 import { AllProjectsSection } from "./AllProjectsSection";
 import { FeaturedProjectSection } from "./FeaturedProjectSection";
+import { FooterSection } from "./FooterSection";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
       {/* <ContactSection /> */}
       <FeaturedProjectSection />
       <AllProjectsSection />
+      <FooterSection />
     </main>
   );
 }
