@@ -13,11 +13,11 @@ export const FooterSection: React.FC = () => (
             Thanks for considering my work.
           </h3>
           <p>
-            I want to emphasize that every project carries a piece of me. I
-            treat each one as a unique product with its own identity —a
-            delightful challenge and an opportunity to learn something new. My
-            hope is that you discover as much joy in experiencing my work as I
-            did in bringing it to life. Cheers!
+            Let me emphasize that every project carries a piece of me. I treat
+            each one as a unique product with its own identity —a delightful
+            challenge and an opportunity to learn something new. My hope is that
+            you discover as much joy in experiencing my work as I did in
+            bringing it to life. Cheers!
           </p>
         </div>
         <button className={styles.buttonKeepInTouch}>

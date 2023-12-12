@@ -13,7 +13,7 @@ export const AboutSection: React.FC = () => (
       icon={<MdOutlinePerson className={styles.icon} />}
     />
 
-    <div className={styles.twoCols}>
+    <div className={styles.twoColsAbout}>
       <div className={styles.twoRows}>
         <div className={styles.aboutMeTextBlock}>
           <h2>Hi, I&apos;m Amir Bazgir</h2>

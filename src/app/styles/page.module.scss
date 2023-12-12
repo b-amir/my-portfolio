@@ -241,14 +241,46 @@
     font-family: var(--font-mono);
 }
 .emailCopyField {
+    display: flex;
     border: 1px dashed #a4a4a4;
     border-radius: 18px;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-    padding-right: 1rem;
-    padding-left: 1rem;
+    padding: 0.5rem;
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+    font-family: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono", "Roboto Mono", "Oxygen Mono",
+        "Ubuntu Monospace", "Source Code Pro", "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
+
+    align-items: center;
+    justify-content: space-between;
+
+    width: fit-content;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+        background-color: rgb(255, 255, 255);
+    }
+    p {
+        font-size: small !important;
+        color: lighten($black-substitute, 30%);
+        cursor: text;
+    }
 }
 
+.fieldButton {
+    border-radius: 50%;
+    background-color: #7b7b7b14;
+    width: 24px;
+    height: 24px;
+    color: $black-substitute;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    margin-left: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+        background-color: #7b7b7b42;
+    }
+}
 .twoCols {
     display: flex;
     flex-direction: row;
@@ -259,6 +291,10 @@
     gap: 2rem;
 }
 
+.twoColsAbout {
+    @extend .twoCols;
+    align-items: normal;
+}
 .twoRows {
     display: flex;
     flex-direction: column;
@@ -382,12 +418,31 @@
     gap: 0.5rem;
     padding: 1rem 2rem;
     background-color: #cf4d11;
-    border: 7px solid #f4cdbb;
+    border: 5px solid #f4cdbb;
     border-radius: 21px;
     z-index: 10;
     color: #fff;
-    transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease;
     cursor: pointer;
+
+    &:hover {
+        background-color: #f56a2a;
+        padding: calc(1rem + 5px) calc(2rem + 5px);
+        border: 0px solid #f4cdbb;
+        color: #fff;
+    }
+
+    &:active {
+        background-color: #cf4d11;
+        border: 7px solid #f4cdbb;
+        color: #fff;
+    }
+
+    &:focus {
+        background-color: #cf4d11;
+        border: 7px solid #f4cdbb;
+        color: #fff;
+    }
 }
 
 .footerText {
@@ -397,10 +452,10 @@
     justify-content: start;
     align-items: start;
     gap: 0.5rem;
-    padding: 1rem 2rem;
     margin-top: 2rem;
     margin-bottom: 2rem;
     line-height: 1.5;
+    backdrop-filter: blur(2px);
 }
 
 .madeWith {

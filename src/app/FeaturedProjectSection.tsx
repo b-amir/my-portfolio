@@ -1,6 +1,5 @@
 "use client";
 import { FaStarOfLife } from "react-icons/fa6";
-import "./FeaturedProjectSection.css";
 import styles from "./styles/page.module.scss";
 import { SectionHeader } from "./SectionHeader";
 

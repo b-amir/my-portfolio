@@ -1,5 +1,4 @@
 "use client";
-import "./AllProjectsSection.css";
 import { SectionHeader } from "./SectionHeader";
 import styles from "./styles/page.module.scss";
 import { BsFillGridFill } from "react-icons/bs";
