@@ -29,7 +29,7 @@ export const AboutSection: React.FC = () => (
             courses.
           </p>
 
-          <a className={styles.buttonLink}>
+          <a className={styles.seeMyStack}>
             See my stack <IoArrowForward />
           </a>
         </div>
@@ -41,12 +41,5 @@ export const AboutSection: React.FC = () => (
         className={styles.fry}
       />
     </div>
-  </div>
-);
-
-export const Tag: React.FC = ({ name, color, icon }) => (
-  <div className={styles.tag}>
-    <div className={styles.tagIcon}>{icon}</div>
-    <div className={styles.tagText}>{name}</div>
   </div>
 );
