@@ -29,6 +29,25 @@ $slow-pace: 0.5s;
 $base-pace: 0.3s;
 $fast-pace: 0.1s;
 
+// shadows
+
+$big-shadow:
+  1px 1px 4px 0px #0000001a inset,
+  0px 0.3px 0.2px hsl(var(--shadow-color) / 0.13),
+  0px 0.5px 0.4px -0.5px hsl(var(--shadow-color) / 0.12),
+  0px 0.9px 0.7px -1px hsl(var(--shadow-color) / 0.1),
+  0px 1.7px 1.4px -1.5px hsl(var(--shadow-color) / 0.09),
+  0px 3px 2.5px -2px hsl(var(--shadow-color) / 0.08),
+  -0.1px 5.1px 4.2px -2.5px hsl(var(--shadow-color) / 0.07),
+  -0.1px 8.1px 6.7px -3px hsl(var(--shadow-color) / 0.06),
+  -0.1px 12.4px 10.3px -3.5px hsl(var(--shadow-color) / 0.05),
+  -0.2px 18px 15px -4px hsl(var(--shadow-color) / 0.04),
+  -0.3px 25.2px 21px -4.4px hsl(var(--shadow-color) / 0.03);
+$small-shadow:
+  0px 0.3px 0.2px hsl(var(--shadow-color) / 0.16),
+  0px 0.4px 0.3px -2.2px hsl(var(--shadow-color) / 0.12),
+  0px 1.1px 0.9px -4.4px hsl(var(--shadow-color) / 0.07);
+
 :export {
   primaryColor: $primary-color;
   secondaryColor: $secondary-color;

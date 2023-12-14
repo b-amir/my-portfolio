@@ -21,7 +21,8 @@ import {
   SiSpringCreators,
   SiZod,
   SiTestinglibrary,
-  SiVitest
+  SiVitest,
+  SiPostgresql
 } from "react-icons/si";
 import { BsShieldLock } from "react-icons/bs";
 
@@ -110,6 +111,13 @@ export const FeaturedProjectSection: React.FC = () => (
             color="#398CCB"
             icon={<SiTrpc style={{ display: "flex", fontSize: "medium" }} />}
           />
+          <Tag
+            name="PostgreSQL"
+            color="#396691"
+            icon={
+              <SiPostgresql style={{ display: "flex", fontSize: "medium" }} />
+            }
+          />
         </div>
         <br />
         Deployment:
@@ -154,16 +162,21 @@ export const FeaturedProjectSection: React.FC = () => (
             }
           />
           <Tag
+            name="Redux (RTK)"
+            color="#7248B6"
+            icon={<SiRedux style={{ display: "flex", fontSize: "medium" }} />}
+          />
+          <Tag
+            name="Zod"
+            color="#1B2D47"
+            icon={<SiZod style={{ display: "flex", fontSize: "medium" }} />}
+          />
+          <Tag
             name="react-query"
             color="#FF4759"
             icon={
               <SiReactquery style={{ display: "flex", fontSize: "medium" }} />
             }
-          />
-          <Tag
-            name="Redux (RTK)"
-            color="#7248B6"
-            icon={<SiRedux style={{ display: "flex", fontSize: "medium" }} />}
           />
           <Tag
             name="AuthJS"
@@ -180,11 +193,6 @@ export const FeaturedProjectSection: React.FC = () => (
                 style={{ display: "flex", fontSize: "medium" }}
               />
             }
-          />
-          <Tag
-            name="Zod"
-            color="#1B2D47"
-            icon={<SiZod style={{ display: "flex", fontSize: "medium" }} />}
           />
         </div>
         <br />

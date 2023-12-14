@@ -78,10 +78,10 @@
         .heroSubtitle {
             font-size: 2.5rem;
             font-weight: 400;
-            line-height: 1.2;
             margin: 0;
             color: #784b17;
             font-style: italic;
+            padding: 1rem 0;
         }
 
         .heroButtons {
@@ -197,6 +197,8 @@
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg stroke='%23000000' stroke-width='0.4' stroke-opacity='0.1' %3E%3Ccircle fill='%23FFFFFF' cx='0' cy='0' r='1800'/%3E%3Ccircle fill='%23fbfbfb' cx='0' cy='0' r='1700'/%3E%3Ccircle fill='%23f8f8f8' cx='0' cy='0' r='1600'/%3E%3Ccircle fill='%23f4f4f4' cx='0' cy='0' r='1500'/%3E%3Ccircle fill='%23f1f0f0' cx='0' cy='0' r='1400'/%3E%3Ccircle fill='%23edecec' cx='0' cy='0' r='1300'/%3E%3Ccircle fill='%23eae9e9' cx='0' cy='0' r='1200'/%3E%3Ccircle fill='%23e6e5e5' cx='0' cy='0' r='1100'/%3E%3Ccircle fill='%23e3e1e1' cx='0' cy='0' r='1000'/%3E%3Ccircle fill='%23dfdede' cx='0' cy='0' r='900'/%3E%3Ccircle fill='%23dcdada' cx='0' cy='0' r='800'/%3E%3Ccircle fill='%23d8d6d6' cx='0' cy='0' r='700'/%3E%3Ccircle fill='%23d5d3d3' cx='0' cy='0' r='600'/%3E%3Ccircle fill='%23d1cfcf' cx='0' cy='0' r='500'/%3E%3Ccircle fill='%23cecbcb' cx='0' cy='0' r='400'/%3E%3Ccircle fill='%23cac7c7' cx='0' cy='0' r='300'/%3E%3Ccircle fill='%23c7c4c4' cx='0' cy='0' r='200'/%3E%3Ccircle fill='%23C3C0C0' cx='0' cy='0' r='100'/%3E%3C/g%3E%3C/svg%3E");
     // background-attachment: fixed;
     background-size: cover;
+    border-top: 1px solid rgba(0, 0, 0, 0.15);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 }
 .contact {
     // @extend .section;
@@ -454,6 +456,12 @@
     margin-bottom: 2rem;
     line-height: 1.5;
     backdrop-filter: blur(2px);
+
+    h2 {
+        font-family: var(--font-Transitional);
+        font-size: xx-large;
+        color: #303030;
+    }
 }
 
 .madeWith {
@@ -501,11 +509,19 @@
     margin: 1.2rem 0;
     font-weight: 500;
     text-shadow: 1px 1px 1px #00000031;
+    // transition:
+    //     box-shadow,
+    //     background 0.3s ease-in-out;
+    box-shadow: $big-shadow;
+
+    &:hover {
+        box-shadow: $small-shadow;
+    }
 }
 
 .githubSourceButton {
     @extend .demoButton;
-    background-color: #6e593c65;
+    background-color: #6e593c3b;
     border: 1px solid rgba(var(--callout-border-rgb), 0.3);
     color: #302d2de2;
     text-shadow: 1px 1px 1px #ffffff20;
@@ -530,6 +546,11 @@
     padding: 1.5rem 3rem;
     background: transparent;
     background: linear-gradient(45deg, rgba(2, 0, 36, 0) 90%, rgb(255 255 255 / 39%) 100%);
+    font-family: var(--font-body);
+
+    h2 {
+        font-family: var(--font-Transitional);
+    }
 }
 
 .stack {
@@ -632,12 +653,17 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    transition: all 0.1s ease-in-out;
+    transition:
+        box-shadow,
+        background 0.3s ease-in-out;
+
+    box-shadow: $big-shadow;
 
     &:hover {
-        background-color: rgba(20, 20, 20, 1) !important;
-        color: white !important;
-        border: 1px solid black !important;
+        background-color: #4d4a46 !important;
+        color: rgba(255, 255, 255, 0.82) !important;
+        border: 1px solid #4d4a46 !important;
+        box-shadow: $small-shadow;
         .tagText {
             color: white;
         }

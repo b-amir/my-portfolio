@@ -9,9 +9,7 @@ export const FooterSection: React.FC = () => (
     <div className={styles.footer}>
       <div className={styles.twoCols}>
         <div className={styles.footerText}>
-          <h3 style={{ fontFamily: "'Noto Serif', serif", fontSize: "larger" }}>
-            Thanks for considering my work.
-          </h3>
+          <h2>Thanks for considering my work.</h2>
           <p>
             Let me emphasize that every project carries a piece of me. I treat
             each one as a unique product with its own identity —a delightful
