@@ -28,8 +28,26 @@ $rounded: 50%;
 $slow-pace: 0.5s;
 $base-pace: 0.3s;
 $fast-pace: 0.1s;
+$whoop: all 0.3s cubic-bezier(0, 0.13, 0, -1.29);
 
 // shadows
+$small-shadow:
+  0px 0.3px 0.3px hsl(var(--shadow-color) / 0.29),
+  0px 0.7px 0.8px -0.6px hsl(var(--shadow-color) / 0.29),
+  0px 1.4px 1.6px -1.2px hsl(var(--shadow-color) / 0.29),
+  0px 2.8px 3.1px -1.9px hsl(var(--shadow-color) / 0.029),
+  0.1px 5.3px 6px -2.5px hsl(var(--shadow-color) / 0.015);
+
+// 0px 0.3px 0.2px hsl(var(--shadow-color) / 0.16),
+// 0px 0.4px 0.3px -2.2px hsl(var(--shadow-color) / 0.12),
+// 0px 1.1px 0.9px -4.4px hsl(var(--shadow-color) / 0.07);
+
+$base-shadow:
+  0px 0.3px 0.3px hsl(var(--shadow-color) / 0.29),
+  0px 0.7px 0.8px -0.6px hsl(var(--shadow-color) / 0.29),
+  0px 1.4px 1.6px -1.2px hsl(var(--shadow-color) / 0.29),
+  0px 2.8px 3.1px -1.9px hsl(var(--shadow-color) / 0.29),
+  0.1px 5.3px 6px -2.5px hsl(var(--shadow-color) / 0.15);
 
 $big-shadow:
   1px 1px 4px 0px #0000001a inset,
@@ -43,10 +61,6 @@ $big-shadow:
   -0.1px 12.4px 10.3px -3.5px hsl(var(--shadow-color) / 0.05),
   -0.2px 18px 15px -4px hsl(var(--shadow-color) / 0.04),
   -0.3px 25.2px 21px -4.4px hsl(var(--shadow-color) / 0.03);
-$small-shadow:
-  0px 0.3px 0.2px hsl(var(--shadow-color) / 0.16),
-  0px 0.4px 0.3px -2.2px hsl(var(--shadow-color) / 0.12),
-  0px 1.1px 0.9px -4.4px hsl(var(--shadow-color) / 0.07);
 
 :export {
   primaryColor: $primary-color;

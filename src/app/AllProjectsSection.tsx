@@ -1,35 +1,167 @@
 "use client";
 import { SectionHeader } from "./SectionHeader";
+import { Tag } from "./Tag";
 import styles from "./styles/page.module.scss";
 import { BsFillGridFill } from "react-icons/bs";
+import { IoIosArrowDown } from "react-icons/io";
+import { IoArrowForward as Arrow } from "react-icons/io5";
+import { HiOutlineExternalLink } from "react-icons/hi";
 
 export const AllProjectsSection: React.FC = () => (
-  <div className={styles.allProjects}>
+  <div className={styles.allProjectsSection}>
     <SectionHeader
       title="All Projects"
       icon={<BsFillGridFill className={styles.icon} />}
     />
 
-    <div>Here&apos;s my current stack of used technologies:</div>
+    <div className={styles.allProjectsGrid}>
+      <div className={styles.myStack}>
+        <h3>Here&apos;s a list of my current skills.</h3>
+        <p>click on a skill to see projects that use it.</p>
 
-    <div className="grid"></div>
-    <div className="projectCard"></div>
+        <div className={styles.tagsRow}>
+          <h3>Frontend:</h3>
+          <Tag
+            name="React"
+            color=""
+            icon={<BsFillGridFill className={styles.icon} />}
+          />
+        </div>
 
-    <div className="grid">
-      <div className="projectCard">
-        <img
-          src="https://wixplosives.github.io/codux-assets-storage/add-panel/image-placeholder.jpg"
-          alt=""
-        />
-        <div className="projectCard-details">
-          <h3>this.covered</h3>
-          <p>An online tool to create nice looking Linkedin cover images</p>
-          <h3></h3>
+        <div className={styles.tagsRow}>
+          <h3>Backend:</h3>
+          <Tag
+            name="Node"
+            color=""
+            icon={<BsFillGridFill className={styles.icon} />}
+          />
+          <Tag
+            name="Express"
+            color=""
+            icon={<BsFillGridFill className={styles.icon} />}
+          />
+          <Tag
+            name="MongoDB"
+            color=""
+            icon={<BsFillGridFill className={styles.icon} />}
+          />
         </div>
-        <div className="main-stack">
-          <span className="tag">text</span>
+
+        <div className={styles.tagsRow}>
+          <h3>Other:</h3>
+          <Tag
+            name="Git"
+            color=""
+            icon={<BsFillGridFill className={styles.icon} />}
+          />
+          <Tag
+            name="Docker"
+            color=""
+            icon={<BsFillGridFill className={styles.icon} />}
+          />
+          <Tag
+            name="Linux"
+            color=""
+            icon={<BsFillGridFill className={styles.icon} />}
+          />
         </div>
-        <p>expand details</p>
+      </div>
+      <div className={styles.projectsGrid}>
+        <div className={styles.projectCard}>
+          <div className={styles.projectCardImage}></div>
+          <div className={styles.projectCardTitle}>Notopia</div>
+          <div className={styles.projectCardTags}></div>
+          <div className={styles.projectCardDescription}>
+            Every developer has made a note taking app at some point. here's my
+            take.
+          </div>
+          <div className={styles.projectCardLinks}>
+            github <HiOutlineExternalLink />
+          </div>
+          <div className={styles.projectCardExpand}>
+            view details <Arrow />
+          </div>
+        </div>
+
+        <div className={styles.projectCard}>
+          <div className={styles.projectCardImage}></div>
+          <div className={styles.projectCardTitle}>Notopia</div>
+          <div className={styles.projectCardTags}></div>
+          <div className={styles.projectCardDescription}>
+            Every developer has made a note taking app at some point. here's my
+            take.
+          </div>
+          <div className={styles.projectCardLinks}>
+            github <HiOutlineExternalLink />
+          </div>
+          <div className={styles.projectCardExpand}>
+            view details <Arrow />
+          </div>
+        </div>
+
+        <div className={styles.projectCard}>
+          <div className={styles.projectCardImage}></div>
+          <div className={styles.projectCardTitle}>Notopia</div>
+          <div className={styles.projectCardTags}></div>
+          <div className={styles.projectCardDescription}>
+            Every developer has made a note taking app at some point. here's my
+            take.
+          </div>
+          <div className={styles.projectCardLinks}>
+            github <HiOutlineExternalLink />
+          </div>
+          <div className={styles.projectCardExpand}>
+            view details <Arrow />
+          </div>
+        </div>
+
+        <div className={styles.projectCard}>
+          <div className={styles.projectCardImage}></div>
+          <div className={styles.projectCardTitle}>Notopia</div>
+          <div className={styles.projectCardTags}></div>
+          <div className={styles.projectCardDescription}>
+            Every developer has made a note taking app at some point. here's my
+            take.
+          </div>
+          <div className={styles.projectCardLinks}>
+            github <HiOutlineExternalLink />
+          </div>
+          <div className={styles.projectCardExpand}>
+            view details <Arrow />
+          </div>
+        </div>
+
+        <div className={styles.projectCard}>
+          <div className={styles.projectCardImage}></div>
+          <div className={styles.projectCardTitle}>Notopia</div>
+          <div className={styles.projectCardTags}></div>
+          <div className={styles.projectCardDescription}>
+            Every developer has made a note taking app at some point. here's my
+            take.
+          </div>
+          <div className={styles.projectCardLinks}>
+            github <HiOutlineExternalLink />
+          </div>
+          <div className={styles.projectCardExpand}>
+            view details <Arrow />
+          </div>
+        </div>
+
+        <div className={styles.projectCard}>
+          <div className={styles.projectCardImage}></div>
+          <div className={styles.projectCardTitle}>Notopia</div>
+          <div className={styles.projectCardTags}></div>
+          <div className={styles.projectCardDescription}>
+            Every developer has made a note taking app at some point. here's my
+            take.
+          </div>
+          <div className={styles.projectCardLinks}>
+            github <HiOutlineExternalLink />
+          </div>
+          <div className={styles.projectCardExpand}>
+            view details <Arrow />
+          </div>
+        </div>
       </div>
     </div>
   </div>

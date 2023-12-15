@@ -64,7 +64,9 @@ export const FeaturedProjectSection: React.FC = () => (
             }}
           />
           Visit Live at
-          <span style={{ textDecoration: "underline" }}>cslit.cc</span>
+          <span style={{ textDecoration: "underline", marginLeft: "-3px" }}>
+            cslit.cc
+          </span>
         </button>
 
         <button className={styles.githubSourceButton}>

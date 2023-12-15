@@ -190,10 +190,9 @@
 
 .footer {
     @extend .section;
-    background-color: #e2e2e2;
     padding-top: 6rem;
     padding-bottom: 4rem;
-    background-color: #ffffff;
+    background-color: #edecec;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg stroke='%23000000' stroke-width='0.4' stroke-opacity='0.1' %3E%3Ccircle fill='%23FFFFFF' cx='0' cy='0' r='1800'/%3E%3Ccircle fill='%23fbfbfb' cx='0' cy='0' r='1700'/%3E%3Ccircle fill='%23f8f8f8' cx='0' cy='0' r='1600'/%3E%3Ccircle fill='%23f4f4f4' cx='0' cy='0' r='1500'/%3E%3Ccircle fill='%23f1f0f0' cx='0' cy='0' r='1400'/%3E%3Ccircle fill='%23edecec' cx='0' cy='0' r='1300'/%3E%3Ccircle fill='%23eae9e9' cx='0' cy='0' r='1200'/%3E%3Ccircle fill='%23e6e5e5' cx='0' cy='0' r='1100'/%3E%3Ccircle fill='%23e3e1e1' cx='0' cy='0' r='1000'/%3E%3Ccircle fill='%23dfdede' cx='0' cy='0' r='900'/%3E%3Ccircle fill='%23dcdada' cx='0' cy='0' r='800'/%3E%3Ccircle fill='%23d8d6d6' cx='0' cy='0' r='700'/%3E%3Ccircle fill='%23d5d3d3' cx='0' cy='0' r='600'/%3E%3Ccircle fill='%23d1cfcf' cx='0' cy='0' r='500'/%3E%3Ccircle fill='%23cecbcb' cx='0' cy='0' r='400'/%3E%3Ccircle fill='%23cac7c7' cx='0' cy='0' r='300'/%3E%3Ccircle fill='%23c7c4c4' cx='0' cy='0' r='200'/%3E%3Ccircle fill='%23C3C0C0' cx='0' cy='0' r='100'/%3E%3C/g%3E%3C/svg%3E");
     // background-attachment: fixed;
     background-size: cover;
@@ -361,11 +360,13 @@
     min-height: 120px;
 }
 
-.allProjects {
+.allProjectsSection {
     @extend .section;
     min-height: 100dvh;
     box-shadow: 1px 1px 7px 0px #0000001a;
     z-index: 2;
+    padding-bottom: 7rem;
+    // background: #f3f3f3;
 }
 .sectionHeader {
     padding-left: 15px;
@@ -434,12 +435,12 @@
     border-radius: 21px;
     z-index: 10;
     color: #fff;
-    transition: all 0.3s ease;
+    transition: $whoop;
     cursor: pointer;
 
     &:hover {
         background-color: #f56a2a;
-        padding: calc(1rem + 5px) calc(2rem + 5px);
+        padding: calc(1rem + 4px) calc(2rem + 4px);
         border: 0px solid #f4cdbb;
         color: #fff;
     }
@@ -460,7 +461,7 @@
     h2 {
         font-family: var(--font-Transitional);
         font-size: xx-large;
-        color: #303030;
+        color: $black-substitute;
     }
 }
 
@@ -513,6 +514,7 @@
     //     box-shadow,
     //     background 0.3s ease-in-out;
     box-shadow: $big-shadow;
+    transition: $whoop;
 
     &:hover {
         box-shadow: $small-shadow;
@@ -639,6 +641,14 @@
     gap: 0.5rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
+
+    h3 {
+        font-size: small !important;
+        color: #7b7b7b !important;
+        font-weight: 700 !important;
+        margin-right: 0.5rem !important;
+        margin-bottom: 0 !important;
+    }
 }
 .tag {
     background-color: rgb(255 255 255 / 34%);
@@ -653,11 +663,10 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    transition:
-        box-shadow,
-        background 0.3s ease-in-out;
+    transition: box-shadow 0.3s ease-in-out;
+    // background 0.3s ease-in-out;
 
-    box-shadow: $big-shadow;
+    box-shadow: $base-shadow;
 
     &:hover {
         background-color: #4d4a46 !important;
@@ -674,6 +683,126 @@
         font-weight: 500;
         font-size: smaller;
     }
+}
+
+.allProjectsGrid {
+    display: grid;
+    padding: 8px;
+    border-radius: 4px;
+    background-color: #e6ddeb;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1200 800'%3E%3Cdefs%3E%3CradialGradient id='a' cx='0' cy='800' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23ebdce1'/%3E%3Cstop offset='1' stop-color='%23ebdce1' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='b' cx='1200' cy='800' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23dedceb'/%3E%3Cstop offset='1' stop-color='%23dedceb' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='c' cx='600' cy='0' r='600' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23dbebdd'/%3E%3Cstop offset='1' stop-color='%23dbebdd' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='d' cx='600' cy='800' r='600' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23E6DDEB'/%3E%3Cstop offset='1' stop-color='%23E6DDEB' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='e' cx='0' cy='0' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23EBE5DB'/%3E%3Cstop offset='1' stop-color='%23EBE5DB' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='f' cx='1200' cy='0' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23DBE2EB'/%3E%3Cstop offset='1' stop-color='%23DBE2EB' stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect fill='url(%23a)' width='1200' height='800'/%3E%3Crect fill='url(%23b)' width='1200' height='800'/%3E%3Crect fill='url(%23c)' width='1200' height='800'/%3E%3Crect fill='url(%23d)' width='1200' height='800'/%3E%3Crect fill='url(%23e)' width='1200' height='800'/%3E%3Crect fill='url(%23f)' width='1200' height='800'/%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.myStack {
+    grid-area: 1/1/2/3;
+    padding: 2.5rem 3.5rem;
+    background: #ffffffb8;
+    backdrop-filter: blur(4px);
+    border-radius: 4px;
+    margin-bottom: 8px;
+    border: 1px solid #c0c0c0ad;
+    box-shadow: $small-shadow;
+    border: 1px solid rgba(var(--card-border-rgb), 0.15);
+
+    h3 {
+        font-size: large;
+        font-weight: 400;
+        font-family: var(--font-title);
+        margin-bottom: 0.5rem;
+        color: #707070;
+    }
+    p {
+        font-size: small;
+        line-height: 1.5;
+        color: #989898;
+    }
+}
+
+.projectCard {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1.6fr 0.5fr 0.3fr 2.6fr 0.5fr 0.5fr;
+    grid-auto-rows: 1fr;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "projectCardImage"
+        "projectCardTitle"
+        "projectCardTags"
+        "projectCardDescription"
+        "projectCardLinks"
+        "projectCardExpand";
+    // padding: 2rem 2.5rem;
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.858);
+    border: 1px solid #c0c0c0ad;
+    box-shadow: $small-shadow;
+    backdrop-filter: blur(4px);
+    overflow: clip;
+    cursor: pointer;
+    transition:
+        background 200ms,
+        box-shadow 300ms ease-in-out,
+        margin-top 300ms,
+        border 200ms;
+    &:hover {
+        background: white;
+        border: 1px solid #9e9e9e;
+        box-shadow: $base-shadow;
+        margin-top: -1px;
+        z-index: 10;
+
+        span {
+            transform: translateX(4px);
+        }
+    }
+}
+
+.projectCardImage {
+    grid-area: projectCardImage;
+    background-color: #f2f2f2;
+}
+
+.projectCardTitle {
+    grid-area: projectCardTitle;
+    font-family: var(--font-Transitional);
+    font-size: x-large;
+    font-weight: 700;
+    padding: 2rem 2.5rem;
+}
+
+.projectCardExpand {
+    @extend .buttonLink;
+    grid-area: projectCardExpand;
+    text-transform: uppercase;
+    color: #7b7b7b;
+    font-weight: 700;
+    font-size: small;
+    padding: 0.5rem 0rem 0.2rem;
+    background: #f2f2f2;
+}
+
+.projectCardLinks {
+    grid-area: projectCardLinks;
+    padding: 2rem 2.5rem;
+}
+
+.projectCardDescription {
+    grid-area: projectCardDescription;
+    padding: 0 2rem;
+}
+
+.projectCardTags {
+    grid-area: projectCardTags;
+    padding: 2rem 2.5rem;
+}
+
+.projectsGrid {
+    grid-area: 2 / 1 / 3 / 3;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
 }
 
 @include no-hover-for-touch {
