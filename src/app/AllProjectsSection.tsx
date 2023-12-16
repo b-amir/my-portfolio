@@ -6,6 +6,8 @@ import { BsFillGridFill } from "react-icons/bs";
 import { IoIosArrowDown } from "react-icons/io";
 import { IoArrowForward as Arrow } from "react-icons/io5";
 import { HiOutlineExternalLink } from "react-icons/hi";
+import Spline from "@splinetool/react-spline";
+import { MdWavingHand } from "react-icons/md";
 
 export const AllProjectsSection: React.FC = () => (
   <div className={styles.allProjectsSection}>
@@ -175,6 +177,16 @@ export const AllProjectsSection: React.FC = () => (
       </div>
     </div>
 
-    <div className={styles.transitionToWhite}></div>
+    <div className={styles.transitionToWhite}>
+      <div className={styles.smile}>
+        <Spline scene="https://prod.spline.design/SFtITqXREqMFyNh2/scene.splinecode" />
+      </div>
+      <p>That's all for now.</p>
+      <div style={{ minHeight: "65px" }}>
+        <button className={styles.buttonKeepInTouch}>
+          <MdWavingHand /> Let's keep in touch
+        </button>
+      </div>
+    </div>
   </div>
 );

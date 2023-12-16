@@ -30,9 +30,9 @@ export const HeroSection: React.FC = () => (
         </a>
       </div>
     </div>
-    <Spline
+    {/* <Spline
       scene="https://prod.spline.design/PhKOH5GV1SV9I88N/scene.splinecode"
       className={styles.face}
-    />
+    /> */}
   </div>
 );
