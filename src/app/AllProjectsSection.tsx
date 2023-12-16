@@ -15,55 +15,65 @@ export const AllProjectsSection: React.FC = () => (
     />
 
     <div className={styles.allProjectsGrid}>
-      <div className={styles.myStack}>
-        <h3>Here&apos;s a list of my current skills.</h3>
-        <p>click on a skill to see projects that use it.</p>
+      <div className={styles.allStacks}>
+        <div className={styles.myStack}>
+          <h3>Here&apos;s a list of my current skills.</h3>
+          <p>click on a skill to see projects that use it.</p>
 
-        <div className={styles.tagsRow}>
-          <h3>Frontend:</h3>
-          <Tag
-            name="React"
-            color=""
-            icon={<BsFillGridFill className={styles.icon} />}
-          />
+          <div className={styles.tagsRow}>
+            <h3>Frontend:</h3>
+            <Tag
+              name="React"
+              color=""
+              icon={<BsFillGridFill className={styles.icon} />}
+            />
+          </div>
+
+          <div className={styles.tagsRow}>
+            <h3>Backend:</h3>
+            <Tag
+              name="Node"
+              color=""
+              icon={<BsFillGridFill className={styles.icon} />}
+            />
+            <Tag
+              name="Express"
+              color=""
+              icon={<BsFillGridFill className={styles.icon} />}
+            />
+            <Tag
+              name="MongoDB"
+              color=""
+              icon={<BsFillGridFill className={styles.icon} />}
+            />
+          </div>
+
+          <div className={styles.tagsRow}>
+            <h3>Libs, etc:</h3>
+            <Tag
+              name="Git"
+              color=""
+              icon={<BsFillGridFill className={styles.icon} />}
+            />
+            <Tag
+              name="Docker"
+              color=""
+              icon={<BsFillGridFill className={styles.icon} />}
+            />
+            <Tag
+              name="Linux"
+              color=""
+              icon={<BsFillGridFill className={styles.icon} />}
+            />
+          </div>
         </div>
 
-        <div className={styles.tagsRow}>
-          <h3>Backend:</h3>
-          <Tag
-            name="Node"
-            color=""
-            icon={<BsFillGridFill className={styles.icon} />}
-          />
-          <Tag
-            name="Express"
-            color=""
-            icon={<BsFillGridFill className={styles.icon} />}
-          />
-          <Tag
-            name="MongoDB"
-            color=""
-            icon={<BsFillGridFill className={styles.icon} />}
-          />
-        </div>
-
-        <div className={styles.tagsRow}>
-          <h3>Other:</h3>
-          <Tag
-            name="Git"
-            color=""
-            icon={<BsFillGridFill className={styles.icon} />}
-          />
-          <Tag
-            name="Docker"
-            color=""
-            icon={<BsFillGridFill className={styles.icon} />}
-          />
-          <Tag
-            name="Linux"
-            color=""
-            icon={<BsFillGridFill className={styles.icon} />}
-          />
+        <div className={styles.otherStack}>
+          <h3>Other skills</h3>
+          <p>click on a skill to see projects that use it.</p>
+          <br />
+          <h3>Previous stack</h3>
+          <p>click on a skill to see projects that use it.</p>
         </div>
       </div>
       <div className={styles.projectsGrid}>
@@ -164,5 +174,7 @@ export const AllProjectsSection: React.FC = () => (
         </div>
       </div>
     </div>
+
+    <div className={styles.transitionToWhite}></div>
   </div>
 );
