@@ -29,18 +29,18 @@ export const FooterSection: React.FC = () => (
           <div className={styles.twoCols}>
             <div className={styles.twoRows}>
               <a className={styles.footerLink}>
-                LinkedIn <HiOutlineExternalLink />
+                <HiOutlineExternalLink /> LinkedIn
               </a>
               <a className={styles.footerLink}>
-                GitHub <HiOutlineExternalLink />
+                <HiOutlineExternalLink /> GitHub
               </a>
             </div>
             <div className={styles.twoRows}>
               <a className={styles.footerLink}>
-                E-mail <HiOutlineExternalLink />
+                <HiOutlineExternalLink /> E-mail
               </a>
               <a className={styles.footerLink}>
-                Phone <HiOutlineExternalLink />
+                <HiOutlineExternalLink /> Phone
               </a>
             </div>
           </div>

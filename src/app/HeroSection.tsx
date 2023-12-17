@@ -21,12 +21,15 @@ export const HeroSection: React.FC = () => (
       {/* Buttons */}
       <div className={styles.heroButtons}>
         {" "}
-        <a href="#resume" className={styles.buttonCta}>
+        <a href="#resume" className={styles.heroResume}>
           <IoDownloadOutline />
           Resume.pdf
         </a>
         <a href="#about" className={styles.buttonLink}>
-          More about me <IoArrowForward />
+          More about me{" "}
+          <span className={styles.icon}>
+            <IoArrowForward />
+          </span>
         </a>
       </div>
     </div>

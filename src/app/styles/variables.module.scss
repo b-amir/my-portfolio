@@ -1,8 +1,8 @@
 // color palette
-$pinkish-red: rgb(156, 15, 74);
-$primary-color: lighten($pinkish-red, 60%); // #f9e9e9
+$dark-orange: #cf4d11;
+$primary-color: lighten($dark-orange, 60%); // #f9e9e9
 $secondary-color: #ffffff;
-$accent-color: $pinkish-red;
+$accent-color: $dark-orange;
 $background-color: #f0f8ff;
 $black-substitute: lighten(black, 5%); // #1a1a1a
 $text-color: $black-substitute;

@@ -12,10 +12,10 @@ export function SectionHeader({
 }) {
   return (
     <div className={styles.sectionHeader} style={{ color }}>
-      <h1>
+      <h3>
         {icon}
         {title}
-      </h1>
+      </h3>
     </div>
   );
 }

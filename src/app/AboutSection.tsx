@@ -30,7 +30,10 @@ export const AboutSection: React.FC = () => (
           </p>
 
           <a className={styles.seeMyStack}>
-            See my stack <IoArrowForward />
+            See my stack{" "}
+            <span className={styles.icon}>
+              <IoArrowForward />
+            </span>
           </a>
         </div>
         <ContactGrid />
