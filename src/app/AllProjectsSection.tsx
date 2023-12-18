@@ -20,7 +20,7 @@ export const AllProjectsSection: React.FC = () => (
     <div className={styles.allProjectsGrid}>
       <div className={styles.allStacks}>
         <div className={styles.myStack}>
-          <h3>Here&apos;s a list of my current skills.</h3>
+          <h3>My current skills</h3>
           <p>click on a skill to see projects that use it.</p>
 
           <div className={styles.tagsRow}>
@@ -33,7 +33,7 @@ export const AllProjectsSection: React.FC = () => (
           </div>
 
           <div className={styles.tagsRow}>
-            <h3>Backend:</h3>
+            <h3>Backend, API:</h3>
             <Tag
               name="Node"
               color=""
@@ -51,6 +51,24 @@ export const AllProjectsSection: React.FC = () => (
             />
           </div>
 
+          <div className={styles.tagsRow}>
+            <h3>DevOps, Testing:</h3>
+            <Tag
+              name="Git"
+              color=""
+              icon={<BsFillGridFill className={styles.icon} />}
+            />
+            <Tag
+              name="Docker"
+              color=""
+              icon={<BsFillGridFill className={styles.icon} />}
+            />
+            <Tag
+              name="Linux"
+              color=""
+              icon={<BsFillGridFill className={styles.icon} />}
+            />
+          </div>
           <div className={styles.tagsRow}>
             <h3>Libs, etc:</h3>
             <Tag
@@ -73,10 +91,22 @@ export const AllProjectsSection: React.FC = () => (
 
         <div className={styles.otherStack}>
           <h3>Other skills</h3>
-          <p>click on a skill to see projects that use it.</p>
+          <p>
+            Long time <span className={styles.inlineTag}>Linux</span> user. I
+            know my way around graphical softwares like{" "}
+            <span className={styles.inlineTag}>Figma</span> &{" "}
+            <span className={styles.inlineTag}>PhotoShop</span>. Familiar with{" "}
+            <span className={styles.inlineTag}>Agile</span> &{" "}
+            <span className={styles.inlineTag}>Scrum</span> methodologies.
+          </p>
           <br />
           <h3>Previous stack</h3>
-          <p>click on a skill to see projects that use it.</p>
+          <p>
+            Started with WordPress, learned{" "}
+            <span className={styles.inlineTag}>PHP</span> and CSS, and
+            integrated <span className={styles.inlineTag}>Python</span> into
+            select project segments.
+          </p>
         </div>
       </div>
       <div className={styles.projectsGrid}>
@@ -96,7 +126,10 @@ export const AllProjectsSection: React.FC = () => (
             take.
           </div>
           <div className={styles.projectCardLinks}>
-            github <HiOutlineExternalLink />
+            <span>
+              {" "}
+              github <HiOutlineExternalLink />
+            </span>
           </div>
           <div className={styles.projectCardExpand}>
             view details <Arrow />
