@@ -8,6 +8,7 @@ import { IoArrowForward as Arrow } from "react-icons/io5";
 import { HiOutlineExternalLink } from "react-icons/hi";
 import Spline from "@splinetool/react-spline";
 import { MdWavingHand } from "react-icons/md";
+import Image from "next/image";
 
 export const AllProjectsSection: React.FC = () => (
   <div className={styles.allProjectsSection}>
@@ -80,8 +81,15 @@ export const AllProjectsSection: React.FC = () => (
       </div>
       <div className={styles.projectsGrid}>
         <div className={styles.projectCard}>
-          <div className={styles.projectCardImage}></div>
-          <div className={styles.projectCardTitle}>Notopia</div>
+          <div className={styles.projectCardImage}>
+            <Image
+              src="/cslit-logo.svg"
+              width={160}
+              height={80}
+              alt="this website"
+            />
+          </div>
+          <div className={styles.projectCardTitle}>CS-LIT</div>
           <div className={styles.projectCardTags}></div>
           <div className={styles.projectCardDescription}>
             Every developer has made a note taking app at some point. here's my
@@ -96,8 +104,15 @@ export const AllProjectsSection: React.FC = () => (
         </div>
 
         <div className={styles.projectCard}>
-          <div className={styles.projectCardImage}></div>
-          <div className={styles.projectCardTitle}>Notopia</div>
+          <div className={styles.projectCardImage}>
+            {" "}
+            <h1 className={styles.thiscoverdLogo}>
+              <span>this</span>
+              <span>.</span>
+              <span>covered</span>
+            </h1>
+          </div>
+          <div className={styles.projectCardTitle}>this.covered</div>
           <div className={styles.projectCardTags}></div>
           <div className={styles.projectCardDescription}>
             Every developer has made a note taking app at some point. here's my
@@ -112,8 +127,15 @@ export const AllProjectsSection: React.FC = () => (
         </div>
 
         <div className={styles.projectCard}>
-          <div className={styles.projectCardImage}></div>
-          <div className={styles.projectCardTitle}>Notopia</div>
+          <div className={styles.projectCardImage}>
+            <Image
+              src="/thing.svg"
+              width={240}
+              height={120}
+              alt="this website"
+            />
+          </div>
+          <div className={styles.projectCardTitle}>this website!</div>
           <div className={styles.projectCardTags}></div>
           <div className={styles.projectCardDescription}>
             Every developer has made a note taking app at some point. here's my
@@ -128,8 +150,15 @@ export const AllProjectsSection: React.FC = () => (
         </div>
 
         <div className={styles.projectCard}>
-          <div className={styles.projectCardImage}></div>
-          <div className={styles.projectCardTitle}>Notopia</div>
+          <div className={styles.projectCardImage}>
+            <Image
+              src="/futpal-logo.svg"
+              width={160}
+              height={80}
+              alt="this website"
+            />
+          </div>
+          <div className={styles.projectCardTitle}>Futpal</div>
           <div className={styles.projectCardTags}></div>
           <div className={styles.projectCardDescription}>
             Every developer has made a note taking app at some point. here's my
@@ -144,8 +173,16 @@ export const AllProjectsSection: React.FC = () => (
         </div>
 
         <div className={styles.projectCard}>
-          <div className={styles.projectCardImage}></div>
-          <div className={styles.projectCardTitle}>Notopia</div>
+          <div className={styles.projectCardImage}>
+            {" "}
+            <Image
+              src="/adeptivity-logo.svg"
+              width={220}
+              height={120}
+              alt="this website"
+            />
+          </div>
+          <div className={styles.projectCardTitle}>Adeptivity</div>
           <div className={styles.projectCardTags}></div>
           <div className={styles.projectCardDescription}>
             Every developer has made a note taking app at some point. here's my
@@ -160,7 +197,15 @@ export const AllProjectsSection: React.FC = () => (
         </div>
 
         <div className={styles.projectCard}>
-          <div className={styles.projectCardImage}></div>
+          <div className={styles.projectCardImage}>
+            {" "}
+            <Image
+              src="/notopia-logo.svg"
+              width={220}
+              height={120}
+              alt="this website"
+            />
+          </div>
           <div className={styles.projectCardTitle}>Notopia</div>
           <div className={styles.projectCardTags}></div>
           <div className={styles.projectCardDescription}>

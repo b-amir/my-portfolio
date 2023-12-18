@@ -789,7 +789,37 @@
     border-radius: 17px 17px 0 0;
     margin-bottom: -2px;
     border: 1px solid #9296b973;
-    box-shadow: 0 -2px 3px 0px #00000014 inset;
+    box-shadow:
+        0 -2px 3px 0px rgba(0, 0, 0, 0.0784313725) inset,
+        0px -3px 3px 0px rgb(0 0 0 / 4%);
+}
+
+.thiscoverdLogo {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+
+    cursor: pointer;
+    span:nth-child(1) {
+        color: #0a66c2;
+        font-style: italic;
+        font-weight: 900;
+        font-size: xx-large;
+    }
+
+    span:nth-child(2) {
+        color: #cc1016;
+        font-size: xx-large;
+    }
+
+    span:nth-child(3) {
+        color: #747474;
+        font-weight: normal;
+        border-radius: 8px;
+        font-size: xx-large;
+    }
 }
 .myStack {
     grid-area: 1/1/2/3;
@@ -877,16 +907,15 @@
         box-shadow: $base-shadow;
         margin-top: -4px;
         z-index: 10;
-
-        span {
-            transform: translateX(4px);
-        }
     }
 }
 
 .projectCardImage {
     grid-area: projectCardImage;
     background: #cacedc2b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .projectCardTitle {
