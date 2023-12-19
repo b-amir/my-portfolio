@@ -82,6 +82,8 @@
             color: #784b17;
             font-style: italic;
             padding: 1rem 0;
+            gap: 0.5rem;
+            display: inline-flex;
         }
 
         .heroButtons {
@@ -567,6 +569,59 @@
 
 .logo {
     position: relative;
+}
+
+.tooltipTrigger {
+    text-decoration: underline;
+    cursor: pointer;
+    text-decoration-style: dotted;
+    text-decoration-thickness: from-font;
+    text-underline-offset: 5px;
+    text-decoration-color: #432a0d4f;
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+.tooltipBubble {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem;
+    background-color: rgba(224, 224, 224, 0.557);
+    color: #22201e;
+    border-radius: 6px;
+    border: 1px solid rgba(134, 71, 0, 0.6);
+    font-size: small;
+    z-index: 10;
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    box-shadow: $base-shadow;
+    transition: all 0.3s ease-in-out;
+    pointer-events: none;
+    max-width: 400px;
+    min-width: 280px;
+    z-index: 25;
+    line-height: 1.4;
+
+    &::before {
+        content: "";
+        position: absolute;
+        z-index: 26;
+        top: -8px;
+        left: 9%;
+        transform: translateX(-50%);
+        border-style: solid;
+        filter: drop-shadow(0px -1px 0px #00000030);
+        border-width: 0 10px 10px 10px;
+        border-color: transparent transparent rgb(228 182 129) transparent;
+    }
+
+    @media screen and (max-width: 600px) {
+        max-width: 100%;
+        min-width: 80%;
+    }
 }
 
 .seeMyStack {

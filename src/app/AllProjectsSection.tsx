@@ -103,7 +103,8 @@ export const AllProjectsSection: React.FC = () => (
           <h3>Previous stack</h3>
           <p>
             Started with WordPress, learned{" "}
-            <span className={styles.inlineTag}>PHP</span> and CSS, and
+            <span className={styles.inlineTag}>PHP</span>,{" "}
+            <span className={styles.inlineTag}>MySQL</span> and CSS, and
             integrated <span className={styles.inlineTag}>Python</span> into
             select project segments.
           </p>
