@@ -588,16 +588,16 @@
     position: absolute;
     flex-direction: column;
     gap: 0.5rem;
-    padding: 1rem;
-    background-color: rgba(224, 224, 224, 0.557);
+    padding: 1.5rem 1.8rem;
+    background-color: rgba(224, 224, 224, 0.305);
     color: #22201e;
     border-radius: 6px;
     border: 1px solid rgba(134, 71, 0, 0.6);
     font-size: small;
     z-index: 10;
-    -webkit-backdrop-filter: blur(4px);
-    backdrop-filter: blur(4px);
-    box-shadow: $base-shadow;
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    box-shadow: $small-shadow;
     transition: all 0.3s ease-in-out;
     pointer-events: none;
     max-width: 400px;
@@ -615,7 +615,7 @@
         border-style: solid;
         filter: drop-shadow(0px -1px 0px #00000030);
         border-width: 0 10px 10px 10px;
-        border-color: transparent transparent rgb(228 182 129) transparent;
+        border-color: transparent transparent #e69e4b transparent;
     }
 
     @media screen and (max-width: 600px) {
@@ -985,6 +985,7 @@
     grid-area: projectCardImage;
     background: rgba(202, 206, 220, 0.168627451);
     display: flex;
+    min-height: 180px;
     align-items: center;
     padding: 2rem 2rem;
     justify-content: center;
@@ -1031,6 +1032,10 @@
 .projectCardDescription {
     grid-area: projectCardDescription;
     padding: 0 2rem;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    font-family: var(--font-body);
+    color: #3b3b3b;
 }
 
 .projectCardTags {

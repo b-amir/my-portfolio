@@ -1,0 +1,347 @@
+[
+  {
+    "name": "JavaScript",
+    "color": "#F7DF1E",
+    "icon": "javascript-icon"
+  },
+  {
+    "name": "TypeScript",
+    "color": "#3178C6",
+    "icon": "typescript-icon"
+  },
+  {
+    "name": "Next.js",
+    "color": "#000000",
+    "icon": "nextjs-icon"
+  },
+  {
+    "name": "React",
+    "color": "#61DAFB",
+    "icon": "react-icon"
+  },
+  {
+    "name": "Node.js",
+    "color": "#339933",
+    "icon": "nodejs-icon"
+  },
+  {
+    "name": "Express",
+    "color": "#000000",
+    "icon": "express-icon"
+  },
+  {
+    "name": "MongoDB",
+    "color": "#47A248",
+    "icon": "mongodb-icon"
+  },
+  {
+    "name": "GraphQL",
+    "color": "#E10098",
+    "icon": "graphql-icon"
+  },
+  {
+    "name": "Apollo",
+    "color": "#311C87",
+    "icon": "apollo-icon"
+  },
+  {
+    "name": "PostgreSQL",
+    "color": "#336791",
+    "icon": "postgresql-icon"
+  },
+  {
+    "name": "Git",
+    "color": "#F05032",
+    "icon": "git-icon"
+  },
+  {
+    "name": "GitHub",
+    "color": "#181717",
+    "icon": "github-icon"
+  },
+  {
+    "name": "HTML5",
+    "color": "#E34F26",
+    "icon": "html5-icon"
+  },
+  {
+    "name": "CSS3",
+    "color": "#1572B6",
+    "icon": "css3-icon"
+  },
+  {
+    "name": "Sass",
+    "color": "#CC6699",
+    "icon": "sass-icon"
+  },
+  {
+    "name": "Bootstrap",
+    "color": "#7952B3",
+    "icon": "bootstrap-icon"
+  },
+  {
+    "name": "Material UI",
+    "color": "#0081CB",
+    "icon": "materialui-icon"
+  },
+  {
+    "name": "Tailwind CSS",
+    "color": "#38B2AC",
+    "icon": "tailwindcss-icon"
+  },
+  {
+    "name": "Jest",
+    "color": "#C21325",
+    "icon": "jest-icon"
+  },
+  {
+    "name": "React Testing Library",
+    "color": "#E33332",
+    "icon": "reacttestinglibrary-icon"
+  },
+  {
+    "name": "Cypress",
+    "color": "#17202C",
+    "icon": "cypress-icon"
+  },
+  {
+    "name": "Visual Studio Code",
+    "color": "#007ACC",
+    "icon": "vscode-icon"
+  },
+  {
+    "name": "Figma",
+    "color": "#F24E1E",
+    "icon": "figma-icon"
+  },
+  {
+    "name": "Adobe Photoshop",
+    "color": "#31A8FF",
+    "icon": "photoshop-icon"
+  },
+  {
+    "name": "Adobe Illustrator",
+    "color": "#FF9A00",
+    "icon": "illustrator-icon"
+  },
+  {
+    "name": "Adobe InDesign",
+    "color": "#FF3366",
+    "icon": "indesign-icon"
+  },
+  {
+    "name": "Adobe After Effects",
+    "color": "#D291FF",
+    "icon": "aftereffects-icon"
+  },
+  {
+    "name": "Adobe Premiere Pro",
+    "color": "#EA77FF",
+    "icon": "premierepro-icon"
+  },
+  {
+    "name": "Adobe XD",
+    "color": "#FF61F6",
+    "icon": "xd-icon"
+  },
+  {
+    "name": "Adobe Lightroom",
+    "color": "#31A8FF",
+    "icon": "lightroom-icon"
+  },
+  {
+    "name": "Adobe Lightroom Classic",
+    "color": "#31A8FF",
+    "icon": "lightroomclassic-icon"
+  },
+  {
+    "name": "Adobe Audition",
+    "color": "#FF3333",
+    "icon": "audition-icon"
+  },
+  {
+    "name": "Adobe Media Encoder",
+    "color": "#FF3333",
+    "icon": "mediaencoder-icon"
+  },
+  {
+    "name": "Adobe Character Animator",
+    "color": "#FF3333",
+    "icon": "characteranimator-icon"
+  },
+  {
+    "name": "Adobe Dimension",
+    "color": "#FF3333",
+    "icon": "dimension-icon"
+  },
+  {
+    "name": "tRPC",
+    "color": "#000000",
+    "icon": "trpc-icon"
+  },
+  {
+    "name": "Vercel",
+    "color": "#000000",
+    "icon": "vercel-icon"
+  },
+  {
+    "name": "Heroku",
+    "color": "#430098",
+    "icon": "heroku-icon"
+  },
+  {
+    "name": "Netlify",
+    "color": "#00C7B7",
+    "icon": "netlify-icon"
+  },
+  {
+    "name": "Firebase",
+    "color": "#FFCA28",
+    "icon": "firebase-icon"
+  },
+  {
+    "name": "Google Cloud",
+    "color": "#4285F4",
+    "icon": "googlecloud-icon"
+  },
+  {
+    "name": "Amazon Web Services",
+    "color": "#232F3E",
+    "icon": "aws-icon"
+  },
+  {
+    "name": "DigitalOcean",
+    "color": "#0080FF",
+    "icon": "digitalocean-icon"
+  },
+  {
+    "name": "NPM",
+    "color": "#CB3837",
+    "icon": "npm-icon"
+  },
+  {
+    "name": "Yarn",
+    "color": "#2C8EBB",
+    "icon": "yarn-icon"
+  },
+  {
+    "name": "Webpack",
+    "color": "#8DD6F9",
+    "icon": "webpack-icon"
+  },
+  {
+    "name": "Babel",
+    "color": "#F9DC3E",
+    "icon": "babel-icon"
+  },
+  {
+    "name": "ESLint",
+    "color": "#4B32C3",
+    "icon": "eslint-icon"
+  },
+  {
+    "name": "Prettier",
+    "color": "#F7B93E",
+    "icon": "prettier-icon"
+  },
+  {
+    "name": "Postman",
+    "color": "#FF6C37",
+    "icon": "postman-icon"
+  },
+  {
+    "name": "Insomnia",
+    "color": "#5849BE",
+    "icon": "insomnia-icon"
+  },
+  {
+    "name": "Linux",
+    "color": "#FCC624",
+    "icon": "linux-icon"
+  },
+  {
+    "name": "zod",
+    "color": "#000000",
+    "icon": "zod-icon"
+  },
+  {
+    "name": "Prisma",
+    "color": "#2D3748",
+    "icon": "prisma-icon"
+  },
+  {
+    "name": "Docker",
+    "color": "#2496ED",
+    "icon": "docker-icon"
+  },
+  {
+    "name": "Nginx",
+    "color": "#269539",
+    "icon": "nginx-icon"
+  },
+  {
+    "name": "Linux",
+    "color": "#FCC624",
+    "icon": "linux-icon"
+  },
+  {
+    "name": "Ubuntu",
+    "color": "#E95420",
+    "icon": "ubuntu-icon"
+  },
+  {
+    "name": "Windows",
+    "color": "#0078D6",
+    "icon": "windows-icon"
+  },
+  {
+    "name": "MacOS",
+    "color": "#000000",
+    "icon": "macos-icon"
+  },
+  {
+    "name": "Adobe Creative Cloud",
+    "color": "#DA1F26",
+    "icon": "creativecloud-icon"
+  },
+  {
+    "name": "Adobe Acrobat",
+    "color": "#EC1C24",
+    "icon": "acrobat-icon"
+  },
+  {
+    "name": "Adobe Dreamweaver",
+    "color": "#FF61F6",
+    "icon": "dreamweaver-icon"
+  },
+  {
+    "name": "Adobe Premiere Rush",
+    "color": "#2BB7F6",
+    "icon": "premiererush-icon"
+  },
+  {
+    "name": "Adobe Premiere Elements",
+    "color": "#2BB7F6",
+    "icon": "premiereelements-icon"
+  },
+  {
+    "name": "Adobe Photoshop Elements",
+    "color": "#31A8FF",
+    "icon": "photoshopelements-icon"
+  },
+  {
+    "name": "Adobe Animate",
+    "color": "#FF61F6",
+    "icon": "animate-icon"
+  },
+  {
+    "name": "Adobe Lightroom CC",
+    "color": "#31A8FF",
+    "icon": "lightroomcc-icon"
+  },
+  {
+    "name": "Adobe Lightroom Mobile",
+    "color": "#31A8FF",
+    "icon": "lightroommobile-icon"
+  }
+]
