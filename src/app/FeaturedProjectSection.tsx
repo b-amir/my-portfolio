@@ -94,7 +94,7 @@ export const FeaturedProjectSection: React.FC = () => (
           />
           <Tag
             name="Tailwind"
-            color="#0EA5E9"
+            color="#38B2AC"
             icon={
               <SiTailwindcss style={{ display: "flex", fontSize: "medium" }} />
             }
@@ -189,7 +189,7 @@ export const FeaturedProjectSection: React.FC = () => (
           />
           <Tag
             name="react-spring"
-            color="#F9736F"
+            color="#88B04B"
             icon={
               <SiSpringCreators
                 style={{ display: "flex", fontSize: "medium" }}
