@@ -38,6 +38,7 @@ export const HeroSection: React.FC = () => (
           {" "}
           CodeChef!
         </Tooltip>
+        <small>*</small>
       </h2>
       {/* Buttons */}
       <div className={styles.heroButtons}>
