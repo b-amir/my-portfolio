@@ -13,21 +13,49 @@ export const AboutSection: React.FC = () => (
       icon={<MdOutlinePerson className={styles.icon} />}
     />
 
-    <div className={styles.twoColsAbout}>
-      <div className={styles.twoRows}>
+    <div className={styles.twoRows}>
+      <div className={styles.twoColsAbout}>
         <div className={styles.aboutMeTextBlock}>
-          <h2>Hi, I&apos;m Amir Bazgir</h2>
-          <p>
-            I&apos;m a full-stack web developer, and a student at the University
-            of Tehran. I&apos;m also a competitive programmer, and I love to
-            solve problems.
-          </p>
-          <p>
-            I&apos;m currently working on my own startup, CS-LIT, which is a
-            platform for learning computer science. I&apos;m also working on a
-            project for the university, which is a web application for managing
-            courses.
-          </p>
+          <h2>I&apos;m a web developer</h2>
+
+          <ul>
+            <li>
+              <p className={styles.aboutMeParagraph}>
+                <strong className={styles.aboutMeStrong}>
+                  I live and breath Frontend:
+                </strong>{" "}
+                this is my forte! I keep myself up-to-date with the bleeding
+                edge, constantly staying in the loop through a solid stream of
+                podcasts, Twitter communities, and YouTube channels. The vibrant
+                and ever-evolving frontend development scene is where I feel
+                most at home. Always eager to broaden my horizons and learn new
+                things.
+              </p>
+            </li>
+            <li>
+              <p className={styles.aboutMeParagraph}>
+                <strong className={styles.aboutMeStrong}>
+                  I&apos;m not a Backend dev,
+                </strong>{" "}
+                but I embrace the Fullstack. I dive into the backend as needed,
+                with hands-on projects (check some below), books, and tutorials
+                shaping my expertise. Comfortable communication with backend
+                developers ensures smooth project execution.
+              </p>
+            </li>
+            <li>
+              <p className={styles.aboutMeParagraph}>
+                <strong className={styles.aboutMeStrong}>
+                  I&apos;m not a Designer,
+                </strong>{" "}
+                but I'm well-versed in tools like Figma and Photoshop. During my
+                school days, I took on basic UI projects and delved into UX
+                tutorials out of passion to create immersive experiences.
+                Fascinated by everyday products, I've made it a point to study
+                and integrate design into all my projects.
+              </p>
+            </li>
+          </ul>
 
           <a className={styles.seeMyStack}>
             See my stack{" "}
@@ -36,13 +64,12 @@ export const AboutSection: React.FC = () => (
             </span>
           </a>
         </div>
-        <ContactGrid />
+        <Spline
+          scene="https://prod.spline.design/btTGbGyxfpf64yVO/scene.splinecode"
+          className={styles.fry}
+        />
       </div>
-
-      <Spline
-        scene="https://prod.spline.design/btTGbGyxfpf64yVO/scene.splinecode"
-        className={styles.fry}
-      />
+      <ContactGrid />
     </div>
   </div>
 );

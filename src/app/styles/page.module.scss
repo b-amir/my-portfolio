@@ -159,8 +159,11 @@
     padding: 0.8rem 1rem;
     display: flex;
     align-items: stretch;
-
+    span {
+        margin: auto;
+    }
     &:hover {
+        filter: brightness(1);
         span {
             transition: all 0.2s ease-in-out;
             transform: translateX(5px);
@@ -267,6 +270,43 @@
     background-size: cover;
     box-shadow: 1px 1px 7px 0px #0000001a;
     z-index: 2;
+    ul {
+        list-style: none;
+    }
+
+    li {
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+    }
+
+    li::before {
+        content: "•";
+        margin-right: 0.5rem;
+        color: #9a6e3c;
+    }
+}
+
+.aboutMeStrong {
+    font-family: var(--font-title);
+    /* text-decoration: underline; */
+    // -webkit-text-decoration-color: rgba(172, 172, 172, 0.5294117647);
+    /* text-decoration-color: rgba(194, 194, 194, 0.53); */
+    /* text-underline-offset: 5px; */
+    color: #000000;
+    font-weight: 400;
+    font-size: larger;
+    border-radius: 3px;
+    padding: 0px 6px;
+    background: rgb(240 195 99 / 37%);
+}
+
+.aboutMeParagraph {
+    font-size: large;
+    font-family: var(--font-body);
+    margin-top: 25px;
+    backdrop-filter: blur(4px);
+    max-width: 760px;
 }
 
 .footNote {
@@ -288,6 +328,7 @@
     align-items: center;
     align-content: center;
     gap: 1rem;
+    margin: auto;
 }
 .aboutMeTextBlock {
     display: flex;
@@ -301,7 +342,8 @@
     font-size: 1.2rem;
     line-height: 1.5;
     // font-family: var(--font-mono);
-    color: #432a0d;
+    color: #232323;
+    width: 100%;
 }
 .code {
     font-weight: 700;
@@ -361,6 +403,7 @@
 .twoColsAbout {
     @extend .twoCols;
     align-items: normal;
+    width: 100%;
 }
 .twoRows {
     display: flex;
@@ -627,20 +670,16 @@
 .seeMyStack {
     @extend .buttonLink;
     padding-left: 0;
-    color: $accent-color;
+    color: #737373;
     display: flex;
-    // align-items: center;
     gap: 0.5rem;
-    font-size: 0.9rem;
     font-weight: 500;
     margin-top: 1rem;
     margin-bottom: 1rem;
     transition: all 0.3s ease-in-out;
-    align-items: flex-start;
     cursor: pointer;
-    &:hover {
-        text-decoration: underline;
-    }
+    font-size: medium;
+    align-items: baseline;
 }
 
 .demoButton {
