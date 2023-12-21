@@ -9,7 +9,8 @@ export function ProjectCard({
   tags,
   description,
   githubLink,
-  demoLink
+  demoLink,
+  howManyMoreTags
 }: {
   image: React.ReactNode;
   title: React.ReactNode;
@@ -17,25 +18,42 @@ export function ProjectCard({
   description: React.ReactNode;
   githubLink: string;
   demoLink: string;
+  howManyMoreTags: number;
 }) {
   return (
     <div className={styles.projectCard}>
       <div className={styles.projectCardImage}>{image}</div>
       <div className={styles.projectCardTitle}>{title}</div>
       <div className={styles.projectCardTags}>
-        <div className={styles.tagsRow}>{tags}</div>
+        <div className={styles.tagsRow}>
+          {tags}{" "}
+          {howManyMoreTags > 0 && (
+            <div className={styles.howManyMoreTags}>
+              + {howManyMoreTags} more
+            </div>
+          )}
+        </div>
       </div>
       <div className={styles.projectCardDescription}>{description}</div>
-      <div className={styles.projectCardLinks}>
-        <a href={githubLink}>
-          github <HiOutlineExternalLink />
-        </a>
-        <a href={demoLink}>
-          demo <HiOutlineExternalLink />
-        </a>
-      </div>
-      <div className={styles.projectCardExpand}>
-        view details <Arrow />
+      <div className={styles.projectCardBottomRow}>
+        <div className={styles.projectCardLinks}>
+          {githubLink && (
+            <a href={githubLink} className={styles.projectCardGithubLink}>
+              github <HiOutlineExternalLink />
+            </a>
+          )}
+          {demoLink && (
+            <a href={demoLink} className={styles.projectCardDemoLink}>
+              demo <HiOutlineExternalLink />
+            </a>
+          )}
+        </div>
+        <div className={styles.projectCardViewDetails}>
+          view details{" "}
+          <span>
+            <Arrow />
+          </span>
+        </div>
       </div>
     </div>
   );

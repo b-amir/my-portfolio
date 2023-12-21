@@ -9,7 +9,8 @@ import {
   MdWavingHand,
   MdEditSquare,
   MdStyle,
-  MdOutlineImage
+  MdOutlineImage,
+  MdOutlineLoop
 } from "react-icons/md";
 import Image from "next/image";
 import { ProjectCard } from "./ProjectCard";
@@ -87,11 +88,13 @@ const iconMapping = {
   pwa: <SiPwa />,
   themeui: <MdStyle />,
   html2canvas: <MdOutlineImage />,
-  reacttestinglibrary: <SiTestinglibrary />
+  reacttestinglibrary: <SiTestinglibrary />,
+  cicd: <MdOutlineLoop />
 };
 
 export const AllProjectsSection: React.FC = () => {
   const getSkillIcon = (tagName: string) => iconMapping[tagName] || null;
+
   return (
     <div className={styles.allProjectsSection}>
       <SectionHeader
@@ -174,12 +177,15 @@ export const AllProjectsSection: React.FC = () => {
           <div className={styles.otherStack}>
             <h3>Other skills</h3>
             <p>
-              Long time <span className={styles.inlineTag}>Linux</span> user. I
-              know my way around graphical softwares like{" "}
+              - Long time <span className={styles.inlineTag}>Linux</span> user.{" "}
+              <br />- I know my way around graphical softwares like{" "}
               <span className={styles.inlineTag}>Figma</span> &{" "}
-              <span className={styles.inlineTag}>PhotoShop</span>. Familiar with{" "}
-              <span className={styles.inlineTag}>Agile</span> &{" "}
+              <span className={styles.inlineTag}>PhotoShop</span>. <br />-
+              Familiar with <span className={styles.inlineTag}>Agile</span> &{" "}
               <span className={styles.inlineTag}>Scrum</span> methodologies.
+              <br />- Decent understanding of{" "}
+              <span className={styles.inlineTag}>data structures</span> &{" "}
+              <span className={styles.inlineTag}>algorithms</span>.
             </p>
             <br />
             <h3>Previous stack</h3>
@@ -205,7 +211,7 @@ export const AllProjectsSection: React.FC = () => {
                 />
               }
               title={project.title}
-              tags={project.tags.map((tag) => (
+              tags={project.tagsShort.map((tag) => (
                 <Tag
                   key={tag}
                   name={skills.find((skill) => skill.id === tag)?.name}
@@ -213,6 +219,7 @@ export const AllProjectsSection: React.FC = () => {
                   icon={<div className={styles.icon}>{getSkillIcon(tag)}</div>}
                 />
               ))}
+              howManyMoreTags={project.tags.length - project.tagsShort.length}
               description={project.description}
               githubLink={project.githubLink}
               demoLink={project.demoLink}

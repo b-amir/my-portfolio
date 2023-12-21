@@ -182,6 +182,11 @@
   {
     "id": "githubpages",
     "name": "GitHub Pages",
-    "color": "#000"
+    "color": "#0B2F64"
+  },
+  {
+    "id": "cicd",
+    "name": "CI/CD",
+    "color": "#F4AA3E"
   }
 ]

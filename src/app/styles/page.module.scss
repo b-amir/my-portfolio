@@ -943,7 +943,7 @@
 .projectCard {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1.6fr 0.5fr 0.3fr 2.6fr 0.5fr 0.5fr;
+    grid-template-rows: 1.6fr 0.5fr 0.3fr 2.6fr 0.5fr;
     grid-auto-rows: 1fr;
     grid-auto-flow: row;
     grid-template-areas:
@@ -951,8 +951,7 @@
         "projectCardTitle"
         "projectCardTags"
         "projectCardDescription"
-        "projectCardLinks"
-        "projectCardExpand";
+        "projectCardBottomRow";
     // padding: 2rem 2.5rem;
     // border-radius: 6px;
     background: rgb(255 255 255 / 45%);
@@ -961,7 +960,6 @@
     backdrop-filter: blur(4px);
     overflow: clip;
     cursor: pointer;
-
     transition:
         background 200ms,
         box-shadow 300ms ease-in-out,
@@ -973,11 +971,23 @@
         background: white;
         border: 1px solid #9e9e9e;
         box-shadow: $big-shadow;
-        // margin-top: -4px;
         z-index: 10;
         transform: translateY(-4px);
-
         border-radius: 4px;
+
+        .projectCardBottomRow {
+            .projectCardViewDetails {
+                transition: all 0.2s ease-in-out;
+                &:hover {
+                    color: $black-substitute;
+                }
+                color: $accent-color;
+                span {
+                    transition: all 0.3s ease-in-out;
+                    margin-left: 5px;
+                }
+            }
+        }
     }
 }
 
@@ -1002,30 +1012,67 @@
     color: #40465a;
 }
 
-.projectCardExpand {
-    @extend .buttonLink;
-    grid-area: projectCardExpand;
+.projectCardBottomRow {
+    @extend .twoCols;
+    grid-area: projectCardBottomRow;
     text-transform: uppercase;
     color: #7b7b7b;
     font-weight: 700;
+    display: flex;
     font-size: small;
-    padding: 0.5rem 0rem 0.2rem;
-    // background: #f2f2f2;
+    align-items: baseline;
+    padding: 2rem 1.5rem 2.5rem;
 }
 
 .projectCardLinks {
-    grid-area: projectCardLinks;
-    padding: 2rem 2.5rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.projectCardLink {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    padding: 0.2rem 1.2rem;
+    transition: all 0.15s ease-in-out;
+    gap: 0.3rem;
+    background: #c4c4c436;
+    border: 1px solid transparent;
+    transition: all 0.15s ease-in-out;
+    &:hover {
+        color: $black-substitute;
+        border-color: #00000026;
+        background: #c4c4c446;
+    }
+}
+
+.projectCardGithubLink {
+    @extend .projectCardLink;
+}
+.projectCardDemoLink {
+    @extend .projectCardLink;
+}
+.projectCardViewDetails {
+    padding: 0.4rem 1rem;
+
     span {
-        background-color: #acacac4f;
-        padding: 3px 13px;
-        border-radius: 6px;
-        display: flex;
-        width: fit-content;
-        gap: 0.3rem;
-        justify-content: center;
-        align-items: center;
-        flex-direction: row;
+        display: inline-flex;
+    }
+}
+
+.howManyMoreTags {
+    font-size: x-small;
+    font-weight: 500;
+    border-radius: 4px;
+    padding: 0.4rem 1rem;
+    color: #383838;
+    background: #c4c4c436;
+    border: 1px solid transparent;
+    transition: all 0.15s ease-in-out;
+    &:hover {
+        border-color: #00000026;
+        background: #c4c4c446;
     }
 }
 
@@ -1040,7 +1087,7 @@
 
 .projectCardTags {
     grid-area: projectCardTags;
-    padding: 2rem 2.5rem;
+    padding: 1rem 2.5rem 1.4rem;
 }
 
 .projectsGrid {
