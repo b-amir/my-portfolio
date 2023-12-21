@@ -51,6 +51,7 @@ import {
 import { BsShieldLock } from "react-icons/bs";
 import { FaSass } from "react-icons/fa6";
 import { TbApi } from "react-icons/tb";
+import { howManyTags, howManyTagsShowing } from "./utils/tagsCount";
 
 const iconMapping = {
   typescript: <SiTypescript />,
@@ -219,7 +220,9 @@ export const AllProjectsSection: React.FC = () => {
                   icon={<div className={styles.icon}>{getSkillIcon(tag)}</div>}
                 />
               ))}
-              howManyMoreTags={project.tags.length - project.tagsShort.length}
+              howManyMoreTags={
+                howManyTags(project) - howManyTagsShowing(project)
+              }
               description={project.description}
               githubLink={project.githubLink}
               demoLink={project.demoLink}
@@ -232,10 +235,10 @@ export const AllProjectsSection: React.FC = () => {
         <div className={styles.smile}>
           <Spline scene="https://prod.spline.design/SFtITqXREqMFyNh2/scene.splinecode" />
         </div>
-        <p>That's all for now.</p>
+        <p>That&apos;s all for now.</p>
         <div style={{ minHeight: "65px" }}>
           <button className={styles.buttonKeepInTouch}>
-            <MdWavingHand /> Let's keep in touch
+            <MdWavingHand /> Let&apos;s keep in touch
           </button>
         </div>
       </div>

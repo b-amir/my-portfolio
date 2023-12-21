@@ -800,6 +800,13 @@
 
 .mainImage {
     grid-area: 1 / 1 / 2 / 2;
+    background-color: rgba(0, 0, 0, 0.042);
+    min-width: 420px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 7px;
 }
 
 .moreImages {

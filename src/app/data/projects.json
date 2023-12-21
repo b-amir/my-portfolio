@@ -4,23 +4,33 @@
     "title": "CS-LIT",
     "image": "/cslit-logo.svg",
     "tags": [
-      "nextjs",
-      "trpc",
-      "prisma",
-      "redux",
-      "typescript",
-      "postgresql",
-      "tailwind",
-      "reactspring",
-      "docker",
-      "reactquery",
-      "githubactions",
-      "vercel",
-      "authjs",
-      "vitest",
-      "cypress",
-      "reacttestinglibrary",
-      "zod"
+      {
+        "frontend": [
+          "nextjs",
+          "redux",
+          "typescript",
+          "tailwind"
+        ],
+        "Backend, API, DB": [
+          "trpc",
+          "prisma",
+          "postgresql"
+        ],
+        "DevOps, Testing": [
+          "vercel",
+          "vitest",
+          "cypress",
+          "reacttestinglibrary",
+          "docker",
+          "githubactions"
+        ],
+        "Libs, etc": [
+          "reactspring",
+          "reactquery",
+          "authjs",
+          "zod"
+        ]
+      }
     ],
     "tagsShort": [
       "nextjs",
@@ -37,14 +47,23 @@
     "title": "this.covered",
     "image": "/thiscovered-logo.svg",
     "tags": [
-      "react",
-      "api",
-      "vite",
-      "typescript",
-      "reactrouter",
-      "css",
-      "githubactions",
-      "githubpages"
+      {
+        "frontend": [
+          "react",
+          "api",
+          "typescript",
+          "reactrouter",
+          "css"
+        ],
+        "Backend, API, DB": [],
+        "DevOps, Testing": [
+          "githubactions",
+          "githubpages"
+        ],
+        "Libs, etc": [
+          "vite"
+        ]
+      }
     ],
     "tagsShort": [
       "react",
@@ -61,9 +80,17 @@
     "title": "this website!",
     "image": "/thing.svg",
     "tags": [
-      "nextjs",
-      "sass",
-      "spline"
+      {
+        "frontend": [
+          "nextjs",
+          "sass"
+        ],
+        "Backend, API, DB": [],
+        "DevOps, Testing": [],
+        "Libs, etc": [
+          "spline"
+        ]
+      }
     ],
     "tagsShort": [
       "nextjs",
@@ -80,10 +107,17 @@
     "title": "Futpal",
     "image": "/futpal-logo.svg",
     "tags": [
-      "react",
-      "pwa",
-      "api",
-      "css"
+      {
+        "frontend": [
+          "react",
+          "pwa",
+          "api",
+          "css"
+        ],
+        "Backend, API, DB": [],
+        "DevOps, Testing": [],
+        "Libs, etc": []
+      }
     ],
     "tagsShort": [
       "react",
@@ -100,12 +134,22 @@
     "title": "Adeptivity",
     "image": "/adeptivity-logo.svg",
     "tags": [
-      "nextjs",
-      "strapi",
-      "themeui",
-      "githubactions",
-      "netlify",
-      "postgresql"
+      {
+        "frontend": [
+          "nextjs",
+          "themeui"
+        ],
+        "Backend, API, DB": [
+          "postgresql"
+        ],
+        "DevOps, Testing": [
+          "githubactions",
+          "netlify"
+        ],
+        "Libs, etc": [
+          "strapi"
+        ]
+      }
     ],
     "tagsShort": [
       "nextjs",
@@ -122,10 +166,18 @@
     "title": "Notopia",
     "image": "/notopia-logo.svg",
     "tags": [
-      "react",
-      "electron",
-      "editorjs",
-      "css"
+      {
+        "frontend": [
+          "react",
+          "css"
+        ],
+        "Backend, API, DB": [],
+        "DevOps, Testing": [],
+        "Libs, etc": [
+          "electron",
+          "editorjs"
+        ]
+      }
     ],
     "tagsShort": [
       "react",

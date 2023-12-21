@@ -25,6 +25,7 @@ import {
   SiPostgresql
 } from "react-icons/si";
 import { BsShieldLock } from "react-icons/bs";
+import Image from "next/image";
 
 export const FeaturedProjectSection: React.FC = () => (
   <div className={styles.featuredProject}>
@@ -37,10 +38,7 @@ export const FeaturedProjectSection: React.FC = () => (
     <div className={styles.featuredGrid}>
       <div className={styles.images}>
         <div className={styles.mainImage}>
-          <img
-            src="https://wixplosives.github.io/codux-assets-storage/add-panel/image-placeholder.jpg"
-            alt=""
-          />
+          <Image src="/cslit-logo.svg" width={200} height={120} alt="cslit" />
         </div>
         <div className={styles.moreImages}></div>
       </div>
@@ -55,6 +53,8 @@ export const FeaturedProjectSection: React.FC = () => (
           functioning blog and a "members only" page for club members to access
           resources for the club.
         </p>
+
+        <br />
         <button className={styles.demoButton}>
           <FaCircle
             style={{
