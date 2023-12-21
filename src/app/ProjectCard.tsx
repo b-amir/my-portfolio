@@ -26,12 +26,14 @@ export function ProjectCard({
       <div className={styles.projectCardTitle}>{title}</div>
       <div className={styles.projectCardTags}>
         <div className={styles.tagsRow}>
-          {tags}{" "}
-          {howManyMoreTags > 0 && (
-            <div className={styles.howManyMoreTags}>
-              + {howManyMoreTags} more
-            </div>
-          )}
+          <div>
+            {tags}{" "}
+            {howManyMoreTags > 0 && (
+              <div className={styles.howManyMoreTags}>
+                + {howManyMoreTags} more
+              </div>
+            )}
+          </div>
         </div>
       </div>
       <div className={styles.projectCardDescription}>{description}</div>

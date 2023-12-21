@@ -52,6 +52,7 @@ import { BsShieldLock } from "react-icons/bs";
 import { FaSass } from "react-icons/fa6";
 import { TbApi } from "react-icons/tb";
 import { howManyTags, howManyTagsShowing } from "./utils/tagsCount";
+import { TagsRow } from "./TagsRow";
 
 const iconMapping = {
   typescript: <SiTypescript />,
@@ -92,10 +93,9 @@ const iconMapping = {
   reacttestinglibrary: <SiTestinglibrary />,
   cicd: <MdOutlineLoop />
 };
+export const getSkillIcon = (tagName: string) => iconMapping[tagName] || null;
 
 export const AllProjectsSection: React.FC = () => {
-  const getSkillIcon = (tagName: string) => iconMapping[tagName] || null;
-
   return (
     <div className={styles.allProjectsSection}>
       <SectionHeader
@@ -109,70 +109,54 @@ export const AllProjectsSection: React.FC = () => {
             <h3>My current skills</h3>
             <p>click on a skill to see projects that use it.</p>
 
-            <div className={styles.tagsRow}>
-              <h3>Frontend:</h3>
-              <Tag
-                name="React"
-                color=""
-                icon={<BsFillGridFill className={styles.icon} />}
-              />
-            </div>
-
-            <div className={styles.tagsRow}>
-              <h3>Backend, API:</h3>
-              <Tag
-                name="Node"
-                color=""
-                icon={<BsFillGridFill className={styles.icon} />}
-              />
-              <Tag
-                name="Express"
-                color=""
-                icon={<BsFillGridFill className={styles.icon} />}
-              />
-              <Tag
-                name="MongoDB"
-                color=""
-                icon={<BsFillGridFill className={styles.icon} />}
-              />
-            </div>
-
-            <div className={styles.tagsRow}>
-              <h3>DevOps, Testing:</h3>
-              <Tag
-                name="Git"
-                color=""
-                icon={<BsFillGridFill className={styles.icon} />}
-              />
-              <Tag
-                name="Docker"
-                color=""
-                icon={<BsFillGridFill className={styles.icon} />}
-              />
-              <Tag
-                name="Linux"
-                color=""
-                icon={<BsFillGridFill className={styles.icon} />}
-              />
-            </div>
-            <div className={styles.tagsRow}>
-              <h3>Libs, etc:</h3>
-              <Tag
-                name="Git"
-                color=""
-                icon={<BsFillGridFill className={styles.icon} />}
-              />
-              <Tag
-                name="Docker"
-                color=""
-                icon={<BsFillGridFill className={styles.icon} />}
-              />
-              <Tag
-                name="Linux"
-                color=""
-                icon={<BsFillGridFill className={styles.icon} />}
-              />
-            </div>
+            <TagsRow
+              title="Frontend:"
+              listOfTags={[
+                "react",
+                "nextjs",
+                "typescript",
+                "redux",
+                "css",
+                "tailwind",
+                "sass",
+                "themeui",
+                "pwa"
+              ]}
+            />
+            <TagsRow
+              title="Backend, API, DB:"
+              listOfTags={["trpc", "prisma", "nextjs", "postgresql"]}
+            />
+            <TagsRow
+              title="DevOps, Testing:"
+              listOfTags={[
+                "vitest",
+                "cypress",
+                "reacttestinglibrary",
+                "cicd",
+                "githubactions",
+                "docker",
+                "vercel",
+                "githubpages",
+                "netlify"
+              ]}
+            />
+            <TagsRow
+              title="Libs, etc:"
+              listOfTags={[
+                "reactquery",
+                "reactrouter",
+                "zod",
+                "authjs",
+                "strapi",
+                "reactspring",
+                "vite",
+                "spline",
+                "electron",
+                "editorjs",
+                "html2canvas"
+              ]}
+            />
           </div>
 
           <div className={styles.otherStack}>

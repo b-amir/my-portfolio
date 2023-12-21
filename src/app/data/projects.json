@@ -11,12 +11,12 @@
           "typescript",
           "tailwind"
         ],
-        "Backend, API, DB": [
+        "backend": [
           "trpc",
           "prisma",
           "postgresql"
         ],
-        "DevOps, Testing": [
+        "devops": [
           "vercel",
           "vitest",
           "cypress",
@@ -24,7 +24,7 @@
           "docker",
           "githubactions"
         ],
-        "Libs, etc": [
+        "libs": [
           "reactspring",
           "reactquery",
           "authjs",
@@ -55,12 +55,12 @@
           "reactrouter",
           "css"
         ],
-        "Backend, API, DB": [],
-        "DevOps, Testing": [
+        "backend": [],
+        "devops": [
           "githubactions",
           "githubpages"
         ],
-        "Libs, etc": [
+        "libs": [
           "vite"
         ]
       }
@@ -85,9 +85,9 @@
           "nextjs",
           "sass"
         ],
-        "Backend, API, DB": [],
-        "DevOps, Testing": [],
-        "Libs, etc": [
+        "backend": [],
+        "devops": [],
+        "libs": [
           "spline"
         ]
       }
@@ -114,9 +114,9 @@
           "api",
           "css"
         ],
-        "Backend, API, DB": [],
-        "DevOps, Testing": [],
-        "Libs, etc": []
+        "backend": [],
+        "devops": [],
+        "libs": []
       }
     ],
     "tagsShort": [
@@ -139,14 +139,14 @@
           "nextjs",
           "themeui"
         ],
-        "Backend, API, DB": [
+        "backend": [
           "postgresql"
         ],
-        "DevOps, Testing": [
+        "devops": [
           "githubactions",
           "netlify"
         ],
-        "Libs, etc": [
+        "libs": [
           "strapi"
         ]
       }
@@ -171,9 +171,9 @@
           "react",
           "css"
         ],
-        "Backend, API, DB": [],
-        "DevOps, Testing": [],
-        "Libs, etc": [
+        "backend": [],
+        "devops": [],
+        "libs": [
           "electron",
           "editorjs"
         ]

@@ -5,6 +5,8 @@ import { SectionHeader } from "./SectionHeader";
 import { HiOutlineExternalLink } from "react-icons/hi";
 import { FaCircle } from "react-icons/fa";
 import { IoLogoGithub } from "react-icons/io5";
+import projects from "./data/projects.json";
+
 import { Tag } from "./Tag";
 import { RiReactjsLine } from "react-icons/ri";
 import {
@@ -26,6 +28,7 @@ import {
 } from "react-icons/si";
 import { BsShieldLock } from "react-icons/bs";
 import Image from "next/image";
+import { TagsRow } from "./TagsRow";
 
 export const FeaturedProjectSection: React.FC = () => (
   <div className={styles.featuredProject}>
@@ -76,128 +79,16 @@ export const FeaturedProjectSection: React.FC = () => (
       </div>
       <div className={styles.stack}>
         <div className={styles.stackTitle}>Technical stack</div>
-        Frontend:
-        <div className={styles.tagsRow}>
-          <Tag
-            name="React"
-            color="#399fba"
-            icon={
-              <RiReactjsLine style={{ display: "flex", fontSize: "medium" }} />
-            }
-          />
-          <Tag
-            name="Next"
-            color="#000"
-            icon={
-              <SiNextdotjs style={{ display: "flex", fontSize: "medium" }} />
-            }
-          />
-          <Tag
-            name="Tailwind"
-            color="#38B2AC"
-            icon={
-              <SiTailwindcss style={{ display: "flex", fontSize: "medium" }} />
-            }
-          />
-        </div>
-        <br />
-        Backend, API &amp; Database:
-        <div className={styles.tagsRow}>
-          <Tag
-            name="Prisma"
-            color="#5A67D8"
-            icon={<SiPrisma style={{ display: "flex", fontSize: "medium" }} />}
-          />
-          <Tag
-            name="tRPC"
-            color="#398CCB"
-            icon={<SiTrpc style={{ display: "flex", fontSize: "medium" }} />}
-          />
-          <Tag
-            name="PostgreSQL"
-            color="#396691"
-            icon={
-              <SiPostgresql style={{ display: "flex", fontSize: "medium" }} />
-            }
-          />
-        </div>
-        <br />
-        Deployment:
-        <div className={styles.tagsRow}>
-          <Tag
-            name="Docker"
-            color="#2F87E3"
-            icon={<SiDocker style={{ display: "flex", fontSize: "medium" }} />}
-          />
-        </div>
-        <br />
-        Testing:
-        <div className={styles.tagsRow}>
-          <Tag
-            name="Vitest"
-            color="#769E22"
-            icon={<SiVitest style={{ display: "flex", fontSize: "medium" }} />}
-          />
-          <Tag
-            name="Cypress"
-            color="#57C592"
-            icon={<SiCypress style={{ display: "flex", fontSize: "medium" }} />}
-          />
-          <Tag
-            name="react-testing-library"
-            color="#CC2524"
-            icon={
-              <SiTestinglibrary
-                style={{ display: "flex", fontSize: "medium" }}
-              />
-            }
-          />
-        </div>
-        <br />
-        Libs, etc:
-        <div className={styles.tagsRow}>
-          <Tag
-            name="TypeScript"
-            color="#007ACC"
-            icon={
-              <SiTypescript style={{ display: "flex", fontSize: "medium" }} />
-            }
-          />
-          <Tag
-            name="Redux (RTK)"
-            color="#7248B6"
-            icon={<SiRedux style={{ display: "flex", fontSize: "medium" }} />}
-          />
-          <Tag
-            name="Zod"
-            color="#1B2D47"
-            icon={<SiZod style={{ display: "flex", fontSize: "medium" }} />}
-          />
-          <Tag
-            name="react-query"
-            color="#FF4759"
-            icon={
-              <SiReactquery style={{ display: "flex", fontSize: "medium" }} />
-            }
-          />
-          <Tag
-            name="AuthJS"
-            color="#FB7208"
-            icon={
-              <BsShieldLock style={{ display: "flex", fontSize: "medium" }} />
-            }
-          />
-          <Tag
-            name="react-spring"
-            color="#88B04B"
-            icon={
-              <SiSpringCreators
-                style={{ display: "flex", fontSize: "medium" }}
-              />
-            }
-          />
-        </div>
-        <br />
+        <TagsRow title="Frontend:" listOfTags={projects[0].tags[0].frontend} />
+        <TagsRow
+          title="Backend, API, DB:"
+          listOfTags={projects[0].tags[0].backend}
+        />
+        <TagsRow
+          title="DevOps, Testing:"
+          listOfTags={projects[0].tags[0].devops}
+        />
+        <TagsRow title="Libs, etc:" listOfTags={projects[0].tags[0].libs} />
       </div>
 
       <div className={styles.features}>
