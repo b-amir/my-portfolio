@@ -9,7 +9,8 @@
           "nextjs",
           "redux",
           "typescript",
-          "tailwind"
+          "tailwind",
+          "react"
         ],
         "backend": [
           "trpc",
@@ -22,7 +23,8 @@
           "cypress",
           "reacttestinglibrary",
           "docker",
-          "githubactions"
+          "githubactions",
+          "cicd"
         ],
         "libs": [
           "reactspring",
@@ -58,7 +60,8 @@
         "backend": [],
         "devops": [
           "githubactions",
-          "githubpages"
+          "githubpages",
+          "cicd"
         ],
         "libs": [
           "vite"
@@ -83,10 +86,14 @@
       {
         "frontend": [
           "nextjs",
-          "sass"
+          "sass",
+          "typescript",
+          "react"
         ],
         "backend": [],
-        "devops": [],
+        "devops": [
+          "cicd"
+        ],
         "libs": [
           "spline"
         ]
@@ -112,7 +119,8 @@
           "react",
           "pwa",
           "api",
-          "css"
+          "css",
+          "typescript"
         ],
         "backend": [],
         "devops": [],
@@ -137,14 +145,16 @@
       {
         "frontend": [
           "nextjs",
-          "themeui"
+          "themeui",
+          "react"
         ],
         "backend": [
           "postgresql"
         ],
         "devops": [
           "githubactions",
-          "netlify"
+          "netlify",
+          "cicd"
         ],
         "libs": [
           "strapi"

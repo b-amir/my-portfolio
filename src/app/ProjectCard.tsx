@@ -10,7 +10,8 @@ export function ProjectCard({
   description,
   githubLink,
   demoLink,
-  howManyMoreTags
+  howManyMoreTags,
+  selected = false
 }: {
   image: React.ReactNode;
   title: React.ReactNode;
@@ -19,9 +20,13 @@ export function ProjectCard({
   githubLink: string;
   demoLink: string;
   howManyMoreTags: number;
+  selected: boolean;
 }) {
   return (
-    <div className={styles.projectCard}>
+    <div
+      className={`${
+        selected ? styles.projectCardSelected : styles.projectCard
+      }`}>
       <div className={styles.projectCardImage}>{image}</div>
       <div className={styles.projectCardTitle}>{title}</div>
       <div className={styles.projectCardTags}>

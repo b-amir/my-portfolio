@@ -52,7 +52,9 @@ import { BsShieldLock } from "react-icons/bs";
 import { FaSass } from "react-icons/fa6";
 import { TbApi } from "react-icons/tb";
 import { howManyTags, howManyTagsShowing } from "./utils/tagsCount";
-import { TagsRow } from "./TagsRow";
+import { CurrentSkills } from "./CurrentSkills";
+import { OtherStack } from "./OtherStack";
+import { use, useEffect, useState } from "react";
 
 const iconMapping = {
   typescript: <SiTypescript />,
@@ -96,6 +98,30 @@ const iconMapping = {
 export const getSkillIcon = (tagName: string) => iconMapping[tagName] || null;
 
 export const AllProjectsSection: React.FC = () => {
+  const [selectedTags, setSelectedTags] = useState([]);
+  const [selectedProjects, setSelectedProjects] = useState([]);
+
+  const getProjectsByTags = (selectedTags: string[]) => {
+    if (selectedTags.length === 0) {
+      return [];
+    }
+
+    return projects.filter((project) =>
+      selectedTags.every((tag) =>
+        project.tags.some((tagCategory) =>
+          Object.values(tagCategory).flat().includes(tag)
+        )
+      )
+    );
+  };
+
+  useEffect(() => {
+    setSelectedProjects(getProjectsByTags(selectedTags));
+  }, [selectedTags]);
+
+  console.log("selectedTags", selectedTags);
+  console.log("selectedProjects", selectedProjects);
+
   return (
     <div className={styles.allProjectsSection}>
       <SectionHeader
@@ -105,83 +131,12 @@ export const AllProjectsSection: React.FC = () => {
 
       <div className={styles.allProjectsGrid}>
         <div className={styles.allStacks}>
-          <div className={styles.myStack}>
-            <h3>My current skills</h3>
-            <p>click on a skill to see projects that use it.</p>
-
-            <TagsRow
-              title="Frontend:"
-              listOfTags={[
-                "react",
-                "nextjs",
-                "typescript",
-                "redux",
-                "css",
-                "tailwind",
-                "sass",
-                "themeui",
-                "pwa"
-              ]}
-            />
-            <TagsRow
-              title="Backend, API, DB:"
-              listOfTags={["trpc", "prisma", "nextjs", "postgresql"]}
-            />
-            <TagsRow
-              title="DevOps, Testing:"
-              listOfTags={[
-                "vitest",
-                "cypress",
-                "reacttestinglibrary",
-                "cicd",
-                "githubactions",
-                "docker",
-                "vercel",
-                "githubpages",
-                "netlify"
-              ]}
-            />
-            <TagsRow
-              title="Libs, etc:"
-              listOfTags={[
-                "reactquery",
-                "reactrouter",
-                "zod",
-                "authjs",
-                "strapi",
-                "reactspring",
-                "vite",
-                "spline",
-                "electron",
-                "editorjs",
-                "html2canvas"
-              ]}
-            />
-          </div>
-
-          <div className={styles.otherStack}>
-            <h3>Other skills</h3>
-            <p>
-              - Long time <span className={styles.inlineTag}>Linux</span> user.{" "}
-              <br />- I know my way around graphical softwares like{" "}
-              <span className={styles.inlineTag}>Figma</span> &{" "}
-              <span className={styles.inlineTag}>PhotoShop</span>. <br />-
-              Familiar with <span className={styles.inlineTag}>Agile</span> &{" "}
-              <span className={styles.inlineTag}>Scrum</span> methodologies.
-              <br />- Decent understanding of{" "}
-              <span className={styles.inlineTag}>data structures</span> &{" "}
-              <span className={styles.inlineTag}>algorithms</span>.
-            </p>
-            <br />
-            <h3>Previous stack</h3>
-            <p>
-              Started with WordPress, learned{" "}
-              <span className={styles.inlineTag}>PHP</span>,{" "}
-              <span className={styles.inlineTag}>MySQL</span> and CSS, and
-              integrated <span className={styles.inlineTag}>Python</span> into
-              select project segments.
-            </p>
-          </div>
+          <CurrentSkills
+            selectedTags={selectedTags}
+            setSelectedTags={setSelectedTags}
+            selectedProjects={selectedProjects}
+          />
+          <OtherStack />
         </div>
         <div className={styles.projectsGrid}>
           {projects.map((project) => (
@@ -210,6 +165,7 @@ export const AllProjectsSection: React.FC = () => {
               description={project.description}
               githubLink={project.githubLink}
               demoLink={project.demoLink}
+              selected={selectedProjects.includes(project)}
             />
           ))}
         </div>
