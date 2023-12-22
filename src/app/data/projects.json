@@ -30,7 +30,8 @@
           "reactspring",
           "reactquery",
           "authjs",
-          "zod"
+          "zod",
+          "html2canvas"
         ]
       }
     ],
@@ -64,7 +65,8 @@
           "cicd"
         ],
         "libs": [
-          "vite"
+          "vite",
+          "html2canvas"
         ]
       }
     ],
@@ -146,7 +148,8 @@
         "frontend": [
           "nextjs",
           "themeui",
-          "react"
+          "react",
+          "javascript"
         ],
         "backend": [
           "postgresql"
@@ -179,7 +182,8 @@
       {
         "frontend": [
           "react",
-          "css"
+          "css",
+          "javascript"
         ],
         "backend": [],
         "devops": [],

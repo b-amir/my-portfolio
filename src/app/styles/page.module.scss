@@ -188,7 +188,7 @@
     border: 2px solid rgb(0 0 0 / 15%);
     border-radius: 21px;
     z-index: 10;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease-in-out;
     box-shadow: 0px 2px 1px 0px #0000001c;
 
     &:hover {
@@ -709,32 +709,44 @@
 
 .demoButton {
     @extend .buttonCta;
-    // padding: 1rem 1.6rem;
-    background-color: #4d4a46;
-    // border: 1px solid rgba(var(--callout-border-rgb), 0.3);
-    // border-radius: 6px;
-    color: #ffffffe2;
+    background-color: #2c2c2c;
+    color: rgba(255, 255, 255, 0.8862745098);
     font-size: 0.9rem;
     margin: 1.2rem 0;
     font-weight: 500;
-    text-shadow: 1px 1px 1px #00000031;
-    // transition:
-    //     box-shadow,
-    //     background 0.3s ease-in-out;
-    box-shadow: $big-shadow;
-    transition: $whoop;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1921568627);
+    box-shadow: none;
+    transition: all 0.3s ease-in-out;
+    border: 1px solid rgba(var(--callout-border-rgb), 0.3);
+    display: flex;
+    align-items: center;
+    border-radius: 7px;
+    box-shadow: none;
+    // width: -webkit-fill-available;
 
     &:hover {
-        box-shadow: $small-shadow;
+        box-shadow: none;
+        background-color: #5e5e5e;
     }
 }
 
 .githubSourceButton {
     @extend .demoButton;
-    background-color: #6e593c3b;
+
     border: 1px solid rgba(var(--callout-border-rgb), 0.3);
-    color: #302d2de2;
-    text-shadow: 1px 1px 1px #ffffff20;
+    color: rgba(48, 45, 45, 0.8862745098);
+    background-color: rgba(0, 0, 0, 0.042);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 7px;
+    box-shadow: none;
+    text-shadow: none;
+
+    &:hover {
+        box-shadow: none;
+        background-color: rgba(110, 89, 60, 0.231372549);
+    }
 }
 
 .featuredGrid {
@@ -972,6 +984,7 @@
     }
 }
 .currentSkills {
+    user-select: none;
     grid-area: 1/1/2/3;
     padding: 1rem 3rem;
     // background: #fff6e661;
@@ -1135,7 +1148,7 @@
     @extend .projectCard;
     box-shadow: $big-shadow;
     background: #ffffff;
-    border: 1px solid #f6f7f9;
+    border: 1px solid #535353;
     z-index: 10;
     transform: translateY(0px);
     filter: drop-shadow(0px 0px 6px #00000020);

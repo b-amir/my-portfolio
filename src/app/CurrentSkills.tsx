@@ -15,7 +15,7 @@ export function CurrentSkills({
         My current skills
         {selectedTags.length > 0 ? (
           <span className={styles.selectedProjectsCount}>
-            | {selectedProjects.length} selected
+            | {selectedProjects.length} projects matched
             <button onClick={() => setSelectedTags([])}>
               <TbClearAll />
               clear
@@ -36,6 +36,7 @@ export function CurrentSkills({
           "react",
           "nextjs",
           "typescript",
+          "javascript",
           "redux",
           "css",
           "tailwind",
