@@ -38,12 +38,15 @@ export const Tag: React.FC = ({
       className={`${selected ? styles.selectedTag : styles.tag}`}
       style={{
         // lighen the color for bg:
-        backgroundColor: interactive ? color + "10" : color + "50",
-        border: "1px solid " + color,
+        backgroundColor: interactive ? color + "50" : color + "50",
+        border: interactive
+          ? "1px solid " + color + "40"
+          : "1px solid " + color,
         color: color,
         cursor: interactive ? "pointer" : "default",
         padding: interactive ? "0.1rem 0.4rem" : "0.25rem 0.5rem",
-        gap: interactive ? "0.25rem" : "0.5rem"
+        gap: interactive ? "0.25rem" : "0.5rem",
+        boxShadow: interactive ? "0px 2px 4px 0px " + color + "40" : ""
       }}>
       <div className={styles.tagIcon}>{selected ? <IoCloseSharp /> : icon}</div>
       <div className={styles.tagText}>{name}</div>

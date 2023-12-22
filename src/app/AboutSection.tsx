@@ -4,7 +4,6 @@ import { SectionHeader } from "./SectionHeader";
 import styles from "./styles/page.module.scss";
 import { MdOutlinePerson } from "react-icons/md";
 import Spline from "@splinetool/react-spline";
-import { ContactGrid } from "./ContactGrid";
 
 export const AboutSection: React.FC = () => (
   <div className={styles.about}>
@@ -12,7 +11,6 @@ export const AboutSection: React.FC = () => (
       title="About Me"
       icon={<MdOutlinePerson className={styles.icon} />}
     />
-
     <div className={styles.twoRows}>
       <div className={styles.twoColsAbout}>
         <div className={styles.aboutMeTextBlock}>
@@ -60,20 +58,18 @@ export const AboutSection: React.FC = () => (
               </p>
             </li>
           </ul>
-
           <a className={styles.seeMyStack}>
             See my technical stack{" "}
             <span className={styles.icon}>
               <IoArrowForward />
             </span>
-          </a>
+          </a>{" "}
         </div>
         <Spline
           scene="https://prod.spline.design/btTGbGyxfpf64yVO/scene.splinecode"
           className={styles.fry}
         />
       </div>
-      <ContactGrid />
     </div>
   </div>
 );

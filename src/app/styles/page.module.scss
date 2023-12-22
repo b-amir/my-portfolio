@@ -39,10 +39,9 @@
 
 .hero {
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
     flex-wrap: nowrap;
-    justify-content: normal;
-    align-items: normal;
+    justify-content: space-around;
     align-content: normal;
     background: #e88009;
     width: 100vw;
@@ -50,6 +49,7 @@
     padding: 4rem;
     z-index: 2;
     font-family: var(--font-title);
+    justify-items: center;
 
     .heroTexts {
         // display: flex;
@@ -59,8 +59,8 @@
         // min-width: 25%;
         // gap: 0.8rem;
         display: flex;
-        flex-grow: 1;
-        flex-shrink: 0;
+        // flex-grow: 1;
+        // flex-shrink: 0;
         align-self: auto;
         order: 0;
 
@@ -114,18 +114,16 @@
 
 .donut {
     display: flex;
-    flex-grow: 1;
-    flex-shrink: 1;
+    /* flex-grow: 1; */
+    /* flex-shrink: 1; */
     flex-basis: 400px;
     align-self: auto;
     order: 0;
-    align-items: center;
     justify-items: end;
-    align-content: end;
-    justify-content: end;
     gap: 100px;
-    margin: 0px -100px 0px 0px;
+    /* margin: 0px -100px 0px 0px; */
     z-index: 5;
+    align-items: center;
 }
 
 .face {
@@ -264,8 +262,19 @@
     }
 }
 .contact {
-    // @extend .section;
+    @extend .section;
+    -webkit-backdrop-filter: blur(4px);
     backdrop-filter: blur(4px);
+    background: #dcaa71;
+    color: #130a00c9;
+    box-shadow: 0px -5px 16px 0px #0000000a;
+    z-index: 10;
+    border-top: 1px solid #ffffff75;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+        color: $black-substitute;
+    }
 }
 .about {
     @extend .section;
@@ -275,6 +284,7 @@
     background-size: cover;
     box-shadow: 1px 1px 7px 0px #0000001a;
     z-index: 2;
+    border-top: 1px solid rgb(255 255 255);
     ul {
         list-style: none;
     }
@@ -307,25 +317,35 @@
         padding: 0;
         margin: -10px 0;
     }
+
+    h2 {
+        font-weight: 400;
+        color: #838383;
+        font-size: larger;
+    }
 }
 
 .aboutMeStrong {
-    font-family: var(--font-title);
-    color: #3b3b3b;
-    font-weight: 500;
+    font-family: system-ui;
+    color: #5a5a5a;
+    font-stretch: semi-condensed;
+    font-weight: 400;
     font-size: large;
     border-radius: 4px;
     padding: 4px 5px 4px 22px;
-    background: rgb(146 146 146 / 8%);
+    background: rgba(146, 146, 146, 0.08);
     margin-top: 20px;
 }
 
 .aboutMeParagraph {
-    font-size: large;
+    font-size: 1.1rem;
     font-family: var(--font-body);
     margin: 8px 0 10px 20px;
+    -webkit-backdrop-filter: blur(4px);
     backdrop-filter: blur(4px);
-    max-width: 760px;
+    // max-width: 760px;
+    font-weight: 300;
+    line-height: 1.5;
 }
 
 .footNote {
@@ -342,12 +362,12 @@
 .fry {
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
     gap: 1rem;
-    margin: auto;
+    margin: 6rem auto;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: nowrap;
+    max-width: 35% !important;
 }
 .aboutMeTextBlock {
     display: flex;
@@ -357,7 +377,7 @@
     justify-content: start;
     align-items: start;
     align-content: start;
-    gap: 1rem;
+    gap: 2rem;
     font-size: 1.2rem;
     line-height: 1.5;
     // font-family: var(--font-mono);
@@ -365,7 +385,7 @@
     width: 100%;
     h2 {
         font-weight: 400;
-        color: #454545;
+        color: #838383;
         font-size: larger;
         margin-bottom: 14px;
     }
@@ -376,32 +396,31 @@
 }
 .emailCopyField {
     display: flex;
-    border: 1px dashed #a4a4a4;
+    border: 1px dashed #00000052;
     border-radius: 18px;
     padding: 0.5rem;
     padding-left: 0.8rem;
     padding-right: 0.8rem;
     font-family: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono", "Roboto Mono", "Oxygen Mono",
         "Ubuntu Monospace", "Source Code Pro", "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
-
     align-items: center;
     justify-content: space-between;
-
+    width: -moz-fit-content;
     width: fit-content;
     transition: all 0.3s ease-in-out;
     &:hover {
-        background-color: rgb(255, 255, 255);
+        background-color: #ffffff24;
     }
     p {
         font-size: small !important;
-        color: lighten($black-substitute, 30%);
+        color: lighten($black-substitute, 5%);
         cursor: text;
     }
 }
 
 .fieldButton {
     border-radius: 50%;
-    background-color: #7b7b7b14;
+    background-color: #00000014;
     width: 24px;
     height: 24px;
     color: $black-substitute;
@@ -427,6 +446,7 @@
 
 .twoColsAbout {
     @extend .twoCols;
+    flex-direction: row-reverse;
     align-items: normal;
     width: 100%;
 }
@@ -444,7 +464,7 @@
     grid-template-columns: repeat(4, minmax(25%, auto));
     max-width: 100vh;
     width: var(--max-width);
-    min-height: 250px;
+    // min-height: 250px;
     align-items: center;
 }
 
@@ -694,17 +714,24 @@
 
 .seeMyStack {
     @extend .buttonLink;
-    padding-left: 0;
+    /* padding-left: 0; */
     color: #737373;
+    width: 100%;
     display: flex;
     gap: 0.5rem;
-    font-weight: 500;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    /* font-weight: 500; */
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
     transition: all 0.3s ease-in-out;
     cursor: pointer;
     font-size: medium;
-    align-items: baseline;
+    justify-content: flex-start;
+    flex-direction: row;
+    flex-wrap: nowrap;
+
+    span {
+        margin: unset;
+    }
 }
 
 .demoButton {
@@ -1017,8 +1044,8 @@
 
         .tag {
             filter: brightness(0.5);
-            opacity: 0.5;
-            transition: all 0.3s ease-in-out;
+            opacity: 0.65;
+            transition: background 0.15s ease-in-out;
             &:hover {
                 filter: brightness(1);
                 opacity: 1;
@@ -1179,7 +1206,6 @@
 .projectCardBottomRow {
     @extend .twoCols;
     grid-area: projectCardBottomRow;
-    text-transform: uppercase;
     color: #7b7b7b;
     font-weight: 700;
     display: flex;
@@ -1191,6 +1217,7 @@
 .projectCardLinks {
     display: flex;
     gap: 1rem;
+    font-weight: 400;
 }
 
 .projectCardLink {
@@ -1204,6 +1231,7 @@
     background: #c4c4c436;
     border: 1px solid transparent;
     transition: all 0.15s ease-in-out;
+    box-shadow: 0px 0px 1px 0px #00000061;
     &:hover {
         color: $black-substitute;
         border-color: #00000026;
@@ -1219,6 +1247,7 @@
 }
 .projectCardViewDetails {
     padding: 0.4rem 1rem;
+    text-transform: uppercase;
 
     span {
         display: inline-flex;
@@ -1284,8 +1313,8 @@
 
 @include no-hover-for-touch {
     .card:hover {
-        background: rgba(var(--card-rgb), 0.1);
-        border: 1px solid rgba(var(--card-border-rgb), 0.15);
+        background: #e8d1b7b0;
+        box-shadow: 0px 0px 12px 0px #00000005;
 
         span {
             transform: translateX(4px);

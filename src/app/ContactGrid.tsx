@@ -11,9 +11,15 @@ import {
 } from "react-icons/io5";
 import { BiShow } from "react-icons/bi";
 import { FaCheck } from "react-icons/fa";
+import { SectionHeader } from "./SectionHeader";
+import { BsFillGridFill } from "react-icons/bs";
 
 export const ContactGrid: React.FC = () => (
   <div className={styles.contact}>
+    {/* <SectionHeader
+      title="Quick Links"
+      icon={<BsFillGridFill className={styles.icon} />}
+    /> */}
     <div className={styles.grid}>
       <a
         href="https://www.linkedin.com/in/amirbazgir/"

@@ -119,13 +119,13 @@ export const AllProjectsSection: React.FC = () => {
     setSelectedProjects(getProjectsByTags(selectedTags));
   }, [selectedTags]);
 
-  console.log("selectedTags", selectedTags);
-  console.log("selectedProjects", selectedProjects);
+  // console.log("selectedTags", selectedTags);
+  // console.log("selectedProjects", selectedProjects);
 
   return (
     <div className={styles.allProjectsSection}>
       <SectionHeader
-        title="All Projects"
+        title="All Skills & Projects"
         icon={<BsFillGridFill className={styles.icon} />}
       />
 
