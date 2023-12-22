@@ -13,7 +13,7 @@ export function CurrentSkills({
     <div className={styles.currentSkills}>
       <h3>
         My current skills
-        {selectedProjects.length > 0 ? (
+        {selectedTags.length > 0 ? (
           <span className={styles.selectedProjectsCount}>
             | {selectedProjects.length} selected
             <button onClick={() => setSelectedTags([])}>
