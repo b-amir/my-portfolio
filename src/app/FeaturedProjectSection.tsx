@@ -53,8 +53,8 @@ export const FeaturedProjectSection: React.FC = () => (
           Computer Science &amp; Literature Club at my school. The site was made
           using React and Gatsby, and is hosted on GitHub Pages. The site is
           still under construction, but its current features include a fully
-          functioning blog and a "members only" page for club members to access
-          resources for the club.
+          functioning blog and a &quot;members only&quot; page for club members
+          to access resources for the club.
         </p>
 
         <br />

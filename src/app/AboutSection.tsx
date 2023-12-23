@@ -50,11 +50,11 @@ export const AboutSection: React.FC = () => (
                 Not a Design expert,
               </strong>
               <p className={styles.aboutMeParagraph}>
-                but I'm well-versed in tools like Figma and Photoshop. During my
-                school days, I took on basic UI projects and delved into UX
-                tutorials out of passion to help me create immersive
-                experiences. Fascinated by everyday products, I've made it a
-                point to study and integrate design into all my projects.
+                but I&apos;m well-versed in tools like Figma and Photoshop.
+                During my school days, I took on basic UI projects and delved
+                into UX tutorials out of passion to help me create immersive
+                experiences. Fascinated by everyday products, I&apos;ve made it
+                a point to study and integrate design into all my projects.
               </p>
             </li>
           </ul>

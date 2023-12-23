@@ -38,18 +38,34 @@
 }
 
 .hero {
+    @extend .twoRows;
+    background: #e88009;
+    background: rgb(196, 110, 10);
+    background: linear-gradient(312deg, rgba(196, 110, 10, 1) 0%, rgba(232, 128, 9, 1) 100%);
+    background: linear-gradient(312deg, rgba(232, 104, 51, 1) 0%, rgba(232, 128, 9, 1) 100%);
+
     display: flex;
+    flex-direction: column;
+    align-items: center !important;
+    gap: 0;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    height: 100dvh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.heroMain {
+    display: flex;
+    width: 100vw;
+    height: 84dvh;
     flex-direction: row-reverse;
     flex-wrap: nowrap;
-    justify-content: space-around;
-    align-content: normal;
-    background: #e88009;
-    width: 100vw;
-    height: 100dvh;
-    padding: 4rem;
+    align-items: center;
     z-index: 2;
     font-family: var(--font-title);
     justify-items: center;
+    justify-content: space-evenly;
 
     .heroTexts {
         // display: flex;
@@ -114,16 +130,12 @@
 
 .donut {
     display: flex;
-    /* flex-grow: 1; */
-    /* flex-shrink: 1; */
-    flex-basis: 400px;
     align-self: auto;
     order: 0;
     justify-items: end;
-    gap: 100px;
-    /* margin: 0px -100px 0px 0px; */
     z-index: 5;
     align-items: center;
+    width: 30vw !important;
 }
 
 .face {
@@ -263,14 +275,18 @@
 }
 .contact {
     @extend .section;
-    -webkit-backdrop-filter: blur(4px);
-    backdrop-filter: blur(4px);
-    background: #dcaa71;
-    color: #130a00c9;
-    box-shadow: 0px -5px 16px 0px #0000000a;
+    -webkit-backdrop-filter: blur(7px);
+    backdrop-filter: blur(7px);
+    background: rgba(255, 255, 255, 0.3098039216);
+    color: rgba(19, 10, 0, 0.7882352941);
+    box-shadow: 0px -5px 20px 0px rgb(0 0 0 / 8%);
     z-index: 10;
-    border-top: 1px solid #ffffff75;
+    border-top: 1px solid rgba(255, 255, 255, 0.4588235294);
     transition: all 0.3s ease-in-out;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    // height: 16dvh;
 
     &:hover {
         color: $black-substitute;
@@ -363,7 +379,7 @@
     display: flex;
     flex-direction: row;
     gap: 1rem;
-    margin: 6rem auto;
+    margin: auto;
     justify-content: center;
     align-content: center;
     flex-wrap: nowrap;
@@ -446,7 +462,7 @@
 
 .twoColsAbout {
     @extend .twoCols;
-    flex-direction: row-reverse;
+    flex-direction: row;
     align-items: normal;
     width: 100%;
 }
@@ -462,10 +478,11 @@
 .grid {
     display: grid;
     grid-template-columns: repeat(4, minmax(25%, auto));
-    max-width: 100vh;
+    gap: 1rem;
+    // max-width: 100vh;
     width: var(--max-width);
-    // min-height: 250px;
     align-items: center;
+    justify-items: stretch;
 }
 
 .card {
@@ -1313,7 +1330,7 @@
 
 @include no-hover-for-touch {
     .card:hover {
-        background: #e8d1b7b0;
+        background: rgb(255 255 255 / 21%);
         box-shadow: 0px 0px 12px 0px #00000005;
 
         span {
