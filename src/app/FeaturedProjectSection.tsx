@@ -48,14 +48,7 @@ export const FeaturedProjectSection: React.FC = () => (
       <div className={styles.summary}>
         <div className={styles.summaryTitle}>Summary</div>
         <h2>CS-LIT</h2>
-        <p className={styles.summaryText}>
-          A fully working product you can visit right now. A website for the
-          Computer Science &amp; Literature Club at my school. The site was made
-          using React and Gatsby, and is hosted on GitHub Pages. The site is
-          still under construction, but its current features include a fully
-          functioning blog and a &quot;members only&quot; page for club members
-          to access resources for the club.
-        </p>
+        <p className={styles.summaryText}>{projects[0].description}</p>
 
         <br />
         <button className={styles.demoButton}>

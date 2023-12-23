@@ -55,6 +55,7 @@ import { howManyTags, howManyTagsShowing } from "./utils/tagsCount";
 import { CurrentSkills } from "./CurrentSkills";
 import { OtherStack } from "./OtherStack";
 import { use, useEffect, useState } from "react";
+import { Parallax, ParallaxProvider } from "react-scroll-parallax";
 
 const iconMapping = {
   typescript: <SiTypescript />,
@@ -123,65 +124,71 @@ export const AllProjectsSection: React.FC = () => {
   // console.log("selectedProjects", selectedProjects);
 
   return (
-    <div className={styles.allProjectsSection}>
-      <SectionHeader
-        title="All Skills & Projects"
-        icon={<BsFillGridFill className={styles.icon} />}
-      />
+    <ParallaxProvider>
+      <div className={styles.allProjectsSection}>
+        <SectionHeader
+          title="All Skills & Projects"
+          icon={<BsFillGridFill className={styles.icon} />}
+        />
 
-      <div className={styles.allProjectsGrid}>
-        <div className={styles.allStacks}>
-          <CurrentSkills
-            selectedTags={selectedTags}
-            setSelectedTags={setSelectedTags}
-            selectedProjects={selectedProjects}
-          />
-          <OtherStack />
-        </div>
-        <div className={styles.projectsGrid}>
-          {projects.map((project) => (
-            <ProjectCard
-              key={project.id}
-              image={
-                <Image
-                  src={project.image}
-                  width={200}
-                  height={120}
-                  alt={project.title}
-                />
-              }
-              title={project.title}
-              tags={project.tagsShort.map((tag) => (
-                <Tag
-                  key={tag}
-                  name={skills.find((skill) => skill.id === tag)?.name}
-                  color={skills.find((skill) => skill.id === tag)?.color}
-                  icon={<div className={styles.icon}>{getSkillIcon(tag)}</div>}
-                />
-              ))}
-              howManyMoreTags={
-                howManyTags(project) - howManyTagsShowing(project)
-              }
-              description={project.description}
-              githubLink={project.githubLink}
-              demoLink={project.demoLink}
-              selected={selectedProjects.includes(project)}
+        <div className={styles.allProjectsGrid}>
+          <div className={styles.allStacks}>
+            <CurrentSkills
+              selectedTags={selectedTags}
+              setSelectedTags={setSelectedTags}
+              selectedProjects={selectedProjects}
             />
-          ))}
+            <OtherStack />
+          </div>
+          <div className={styles.projectsGrid}>
+            {projects.map((project) => (
+              <ProjectCard
+                key={project.id}
+                image={
+                  <Image
+                    src={project.image}
+                    width={200}
+                    height={120}
+                    alt={project.title}
+                  />
+                }
+                title={project.title}
+                tags={project.tagsShort.map((tag) => (
+                  <Tag
+                    key={tag}
+                    name={skills.find((skill) => skill.id === tag)?.name}
+                    color={skills.find((skill) => skill.id === tag)?.color}
+                    icon={
+                      <div className={styles.icon}>{getSkillIcon(tag)}</div>
+                    }
+                  />
+                ))}
+                howManyMoreTags={
+                  howManyTags(project) - howManyTagsShowing(project)
+                }
+                description={project.description}
+                githubLink={project.githubLink}
+                demoLink={project.demoLink}
+                selected={selectedProjects.includes(project)}
+              />
+            ))}
+          </div>
         </div>
-      </div>
 
-      <div className={styles.transitionToWhite}>
-        <div className={styles.smile}>
-          <Spline scene="https://prod.spline.design/SFtITqXREqMFyNh2/scene.splinecode" />
-        </div>
-        <p>That&apos;s all for now.</p>
-        <div style={{ minHeight: "65px" }}>
-          <button className={styles.buttonKeepInTouch}>
-            <MdWavingHand /> Let&apos;s keep in touch
-          </button>
+        <div className={styles.transitionToWhite}>
+          <div className={styles.smile}>
+            <Parallax speed={-9}>
+              <Spline scene="https://prod.spline.design/SFtITqXREqMFyNh2/scene.splinecode" />
+            </Parallax>
+          </div>
+          <p>That&apos;s all for now.</p>
+          <div style={{ minHeight: "65px" }}>
+            <button className={styles.buttonKeepInTouch}>
+              <MdWavingHand /> Let&apos;s keep in touch
+            </button>
+          </div>
         </div>
       </div>
-    </div>
+    </ParallaxProvider>
   );
 };
