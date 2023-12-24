@@ -144,6 +144,7 @@ export const AllProjectsSection: React.FC = () => {
             {projects.map((project) => (
               <ProjectCard
                 key={project.id}
+                id={project.id}
                 image={
                   <Image
                     src={project.image}
@@ -177,9 +178,9 @@ export const AllProjectsSection: React.FC = () => {
 
         <div className={styles.transitionToWhite}>
           <div className={styles.smile}>
-            <Parallax speed={-9}>
-              <Spline scene="https://prod.spline.design/SFtITqXREqMFyNh2/scene.splinecode" />
-            </Parallax>
+            {/* <Parallax speed={-9}> */}
+            <Spline scene="https://prod.spline.design/SFtITqXREqMFyNh2/scene.splinecode" />
+            {/* </Parallax> */}
           </div>
           <p>That&apos;s all for now.</p>
           <div style={{ minHeight: "65px" }}>

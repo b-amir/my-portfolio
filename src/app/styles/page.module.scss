@@ -991,6 +991,19 @@
         }
     }
 }
+
+.backButton {
+    transition: all 0.3s ease-in-out;
+    &:hover {
+        color: #000000;
+
+        svg {
+            transition: all 0.3s ease-in-out;
+
+            transform: translateX(-6px);
+        }
+    }
+}
 .tagsRow {
     display: flex;
     flex-direction: column;
@@ -1194,6 +1207,23 @@
     }
 }
 
+.errorPage {
+    @extend .featuredProject;
+    height: 100dvh;
+}
+.errorMessage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+
+    h1 {
+        font-size: 2rem;
+        font-weight: 300;
+        color: #5b3a1357;
+    }
+}
 .projectCard {
     display: grid;
     grid-template-columns: 1fr;
@@ -1213,7 +1243,6 @@
     box-shadow: $small-shadow;
     backdrop-filter: blur(4px);
     overflow: clip;
-    cursor: pointer;
     transition:
         background 200ms,
         box-shadow 300ms ease-in-out,
@@ -1232,12 +1261,13 @@
         .projectCardBottomRow {
             .projectCardViewDetails {
                 transition: all 0.2s ease-in-out;
+                cursor: pointer;
+
                 &:hover {
-                    color: $black-substitute;
+                    color: $accent-color;
                 }
-                color: $accent-color;
+                color: $black-substitute;
                 span {
-                    transition: all 0.3s ease-in-out;
                     margin-left: 5px;
                 }
             }

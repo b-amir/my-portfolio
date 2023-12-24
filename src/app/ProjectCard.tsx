@@ -2,11 +2,13 @@
 import styles from "./styles/page.module.scss";
 import { IoArrowForward as Arrow } from "react-icons/io5";
 import { HiOutlineExternalLink } from "react-icons/hi";
+import Link from "next/link";
 
 export function ProjectCard({
   image,
   title,
   tags,
+  id,
   description,
   githubLink,
   demoLink,
@@ -16,6 +18,7 @@ export function ProjectCard({
   image: React.ReactNode;
   title: React.ReactNode;
   tags: React.ReactNode;
+  id: string;
   description: React.ReactNode;
   githubLink: string;
   demoLink: string;
@@ -34,9 +37,12 @@ export function ProjectCard({
           <div>
             {tags}{" "}
             {howManyMoreTags > 0 && (
-              <div className={styles.howManyMoreTags}>
+              <Link
+                href="/[projectId]"
+                as={`/${id}`}
+                className={styles.howManyMoreTags}>
                 + {howManyMoreTags} more
-              </div>
+              </Link>
             )}
           </div>
         </div>
@@ -59,12 +65,15 @@ export function ProjectCard({
             </a>
           )}
         </div>
-        <div className={styles.projectCardViewDetails}>
+        <Link
+          href="/[projectId]"
+          as={`/${id}`}
+          className={styles.projectCardViewDetails}>
           view details{" "}
           <span>
             <Arrow />
           </span>
-        </div>
+        </Link>
       </div>
     </div>
   );
