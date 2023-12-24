@@ -9,12 +9,14 @@ import {
   IoMailOutline
 } from "react-icons/io5";
 import { BiShow } from "react-icons/bi";
-import { clickToSelectText } from "./utils/clickToSelectText";
 
 export const ContactGrid: React.FC = () => {
   return (
     <div className={styles.contact}>
-
+      {/* <SectionHeader
+            title="Quick Links"
+            icon={<BsFillGridFill className={styles.icon} />}
+          /> */}
       <div className={styles.grid}>
         <a
           href="https://www.linkedin.com/in/amirbazgir/"
@@ -61,7 +63,9 @@ export const ContactGrid: React.FC = () => {
           <div
             className={styles.emailCopyField}
             onClick={(e) => e.preventDefault()}>
-            <p id="emailCopyField" onClick={clickToSelectText("emailCopyField")}>
+            <p
+              id="emailCopyField"
+              onClick={clickToSelectText("emailCopyField")}>
               iAmirBazgir@gmail.com
             </p>
             <div
@@ -97,7 +101,9 @@ export const ContactGrid: React.FC = () => {
           <div
             className={styles.emailCopyField}
             onClick={(e) => e.preventDefault()}>
-            <p id="showNumberField" onClick={clickToSelectText("showNumberField")}>
+            <p
+              id="showNumberField"
+              onClick={clickToSelectText("showNumberField")}>
               +9891********
             </p>
             <div
@@ -121,3 +127,14 @@ export const ContactGrid: React.FC = () => {
     </div>
   );
 
+  function clickToSelectText(elementId: string) {
+    return (e) => {
+      const elementToSelect = document.getElementById(elementId);
+      const range = document.createRange();
+      range.selectNodeContents(elementToSelect);
+      const selection = window.getSelection();
+      selection?.removeAllRanges();
+      selection?.addRange(range);
+    };
+  }
+};

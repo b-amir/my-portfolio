@@ -41,16 +41,20 @@ export function ProjectCard({
           </div>
         </div>
       </div>
-      <div className={styles.projectCardDescription}>{description}</div>
+      <div className={styles.projectCardDescription}>
+        {description.map((p) => (
+          <p>{p}</p>
+        ))}
+      </div>
       <div className={styles.projectCardBottomRow}>
         <div className={styles.projectCardLinks}>
           {githubLink && (
-            <a href={githubLink} className={styles.projectCardGithubLink}>
+            <a href={githubLink} className={styles.githubSourceButton}>
               GitHub <HiOutlineExternalLink />
             </a>
           )}
           {demoLink && (
-            <a href={demoLink} className={styles.projectCardDemoLink}>
+            <a href={demoLink} className={styles.demoButton}>
               Demo <HiOutlineExternalLink />
             </a>
           )}

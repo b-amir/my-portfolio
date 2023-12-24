@@ -40,46 +40,43 @@
 .hero {
     @extend .twoRows;
 
-    background-color: #dcdde7;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg stroke='%23000000' stroke-width='0.4' stroke-opacity='0.1' %3E%3Ccircle fill='%23FFFFFF' cx='0' cy='0' r='1800'/%3E%3Ccircle fill='%23fbfbfb' cx='0' cy='0' r='1700'/%3E%3Ccircle fill='%23f8f8f8' cx='0' cy='0' r='1600'/%3E%3Ccircle fill='%23f4f4f4' cx='0' cy='0' r='1500'/%3E%3Ccircle fill='%23f1f0f0' cx='0' cy='0' r='1400'/%3E%3Ccircle fill='%23edecec' cx='0' cy='0' r='1300'/%3E%3Ccircle fill='%23eae9e9' cx='0' cy='0' r='1200'/%3E%3Ccircle fill='%23e6e5e5' cx='0' cy='0' r='1100'/%3E%3Ccircle fill='%23e3e1e1' cx='0' cy='0' r='1000'/%3E%3Ccircle fill='%23dfdede' cx='0' cy='0' r='900'/%3E%3Ccircle fill='%23dcdada' cx='0' cy='0' r='800'/%3E%3Ccircle fill='%23d8d6d6' cx='0' cy='0' r='700'/%3E%3Ccircle fill='%23d5d3d3' cx='0' cy='0' r='600'/%3E%3Ccircle fill='%23d1cfcf' cx='0' cy='0' r='500'/%3E%3Ccircle fill='%23cecbcb' cx='0' cy='0' r='400'/%3E%3Ccircle fill='%23cac7c7' cx='0' cy='0' r='300'/%3E%3Ccircle fill='%23c7c4c4' cx='0' cy='0' r='200'/%3E%3Ccircle fill='%23C3C0C0' cx='0' cy='0' r='100'/%3E%3C/g%3E%3C/svg%3E");
     background-attachment: fixed;
     background-size: cover;
-
     background-image: radial-gradient(
             100% 25.5% at 50% 100%,
-            rgba(26, 121, 255, 0.29) 0%,
-            rgba(186, 62, 255, 0.22) 21.25%,
-            rgba(228, 0, 210, 0.14) 42.5%,
+            #ead4cfd1 0%,
+            #f2e9e9bd 21.25%,
+            #f3e1e15c 42.5%,
             rgba(255, 0, 0, 0) 85%
         ),
         radial-gradient(
             64% 78% at 50% 86%,
-            rgba(255, 55, 0, 0.58) 0%,
-            rgba(255, 47, 0, 0.43) 25%,
-            rgba(255, 38, 0, 0.29) 50%,
+            #df242485 0%,
+            #ff00006b 25%,
+            rgba(255, 38, 0, 0.2901960784) 50%,
             rgba(255, 0, 0, 0) 100%
         ),
         linear-gradient(
             226deg,
             rgba(255, 135, 0, 0.29) 0%,
             rgba(252, 118, 0, 0.22) 25%,
-            rgba(250, 98, 0, 0.14) 50%,
+            #fa620024 50%,
             rgba(255, 0, 0, 0) 100%
         ),
-        linear-gradient(119deg, #a3c3ff 13%, rgba(255, 10, 10, 0) 82%),
+        linear-gradient(119deg, #ffc8a7 13%, rgba(231, 126, 48, 0) 82%),
         radial-gradient(
             49% 50% at 50% 100%,
-            rgba(252, 79, 79, 0.71) 14%,
-            rgba(250, 68, 78, 0.63) 23.56%,
-            rgba(247, 56, 78, 0.55) 33.11%,
-            rgba(243, 45, 80, 0.47) 42.67%,
-            rgba(231, 48, 86, 0.39) 52.22%,
-            rgba(220, 51, 90, 0.32) 61.78%,
-            rgba(209, 53, 93, 0.24) 71.33%,
+            #ff0800 14%,
+            #fa444ea1 23.56%,
+            #f7384e8c 33.11%,
+            #f32d5078 42.67%,
+            rgba(231, 48, 86, 0.3882352941) 52.22%,
+            rgba(220, 51, 90, 0.3215686275) 61.78%,
+            #d1355d3d 71.33%,
             rgba(198, 54, 94, 0.16) 80.89%,
-            rgba(177, 56, 94, 0) 100%
+            #b166386b 100%
         ),
-        linear-gradient(0deg, #e9d8fd 0%, #fddafe 25%, #fee4f4 50%, #fff5f5 100%);
+        linear-gradient(0deg, #ff3432 0%, #fddafe 25%, #f79462 50%, #c5937a2b 100%);
 
     display: flex;
     flex-direction: column;
@@ -292,21 +289,21 @@
 }
 .heroResume {
     @extend .buttonCta;
-    background-color: rgb(69 69 69 / 15%);
-
+    background-color: rgba(69, 69, 69, 0.15);
     font-weight: 500;
     display: flex;
     justify-content: center;
     align-items: center;
+    color: #050505cc;
     gap: 0.5rem;
     padding: 0.8rem 2.5rem;
     border: 2px solid rgba(0, 0, 0, 0.15);
     border-radius: 21px;
     z-index: 10;
-    filter: drop-shadow(0px 3px 9px #ed5d5980);
+    filter: drop-shadow(0px 3px 9px rgba(237, 93, 89, 0.5019607843));
     transition: all 0.3s ease-in-out;
     box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.1098039216);
-    text-shadow: 1px 1px 2px #ffffff2e;
+    text-shadow: 1px 1px 2px rgb(255 134 109 / 50%);
 
     &:hover {
         background-color: rgb(9 9 9 / 18%);
@@ -317,7 +314,8 @@
 .contact {
     @extend .section;
     backdrop-filter: blur(10px);
-    background: rgba(255, 255, 255, 0.3098039216);
+    // background: rgba(255, 255, 255, 0.3098039216);
+    background: rgb(182 182 182 / 38%);
     color: rgba(19, 10, 0, 0.7882352941);
     box-shadow: 0px -5px 15px 0px rgba(0, 0, 0, 0.08);
     z-index: 10;
@@ -842,7 +840,7 @@
     }
 }
 
-.demoButton {
+.demoButtonLarge {
     @extend .buttonCta;
     background-color: #2c2c2c;
     color: rgba(255, 255, 255, 0.8862745098);
@@ -865,8 +863,8 @@
     }
 }
 
-.githubSourceButton {
-    @extend .demoButton;
+.githubSourceButtonLarge {
+    @extend .demoButtonLarge;
 
     border: 1px solid rgba(var(--callout-border-rgb), 0.3);
     color: rgba(48, 45, 45, 0.8862745098);
@@ -1319,7 +1317,7 @@
     display: flex;
     font-size: small;
     align-items: baseline;
-    padding: 2rem 1.5rem 2.5rem;
+    padding: 2rem 2rem 2.5rem;
 }
 
 .projectCardLinks {
@@ -1347,10 +1345,10 @@
     }
 }
 
-.projectCardGithubLink {
+.githubSourceButton {
     @extend .projectCardLink;
 }
-.projectCardDemoLink {
+.demoButton {
     @extend .projectCardLink;
 }
 .projectCardViewDetails {
@@ -1379,11 +1377,21 @@
 
 .projectCardDescription {
     grid-area: projectCardDescription;
-    padding: 0 2rem;
+    padding: 1rem 2.5rem;
     font-size: 0.95rem;
     line-height: 1.6;
     font-family: var(--font-body);
     color: #3b3b3b;
+
+    p {
+        padding: 0.5rem 0;
+        border-bottom: 1px dashed rgb(0 0 0 / 7%);
+        font-size: 0.9rem;
+        color: #000000ad;
+        &:last-child {
+            border-bottom: none;
+        }
+    }
 }
 
 .projectCardTags {

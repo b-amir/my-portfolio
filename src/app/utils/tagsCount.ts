@@ -9,7 +9,7 @@ export interface Project {
     "Libs, etc": string[];
   }[];
   tagsShort: string[];
-  description: string;
+  description: string[];
   descriptionShort: string;
   githubLink: string;
   demoLink: string;
