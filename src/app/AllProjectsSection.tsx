@@ -132,7 +132,7 @@ export const AllProjectsSection: React.FC = () => {
         />
 
         <div className={styles.allProjectsGrid}>
-          <div className={styles.allStacks}>
+          <div className={styles.allStacks} id="my-stack">
             <CurrentSkills
               selectedTags={selectedTags}
               setSelectedTags={setSelectedTags}

@@ -7,6 +7,7 @@ import { DemoButton } from "../DemoButton";
 import { GithubSourceButton } from "../GithubSourceButton";
 import { Project } from "../utils/tagsCount";
 import { BackButton } from "./BackButton";
+import { FooterSection } from "../FooterSection";
 
 function Page({ params }: { params: { projectId: string } }) {
   const currentProject = projects.find(
@@ -47,60 +48,63 @@ function Page({ params }: { params: { projectId: string } }) {
   const categoriesToDisplay = findNonEmptyCategories(currentProject);
 
   return (
-    <div className={styles.featuredProject}>
-      <BackButton />
+    <>
+      <div className={styles.featuredProject}>
+        <BackButton />
 
-      <div className={styles.featuredGrid}>
-        <div className={styles.images}>
-          <div className={styles.mainImage}>
-            <Image
-              src={currentProject?.image}
-              width={200}
-              height={120}
-              alt="cslit"
-            />
+        <div className={styles.featuredGrid}>
+          <div className={styles.images}>
+            <div className={styles.mainImage}>
+              <Image
+                src={currentProject?.image}
+                width={200}
+                height={120}
+                alt="cslit"
+              />
+            </div>
+            <div className={styles.moreImages}></div>
           </div>
-          <div className={styles.moreImages}></div>
-        </div>
-        <div className={styles.summary}>
-          <div className={styles.summaryTitle}>Summary</div>
-          <h2>{currentProject?.title}</h2>
+          <div className={styles.summary}>
+            <div className={styles.summaryTitle}>Summary</div>
+            <h2>{currentProject?.title}</h2>
 
-          {currentProject?.description.map((paragraph: string) => (
-            <p className={styles.summaryText} key={paragraph}>
-              {paragraph}
-            </p>
-          ))}
-
-          <br />
-          {hasDemoLink && <DemoButton link={currentProject?.demoLink} />}
-          {hasGithubLink && (
-            <GithubSourceButton link={currentProject?.githubLink} />
-          )}
-        </div>
-        <div className={styles.stack}>
-          <div className={styles.stackTitle}>Technical stack</div>
-          {categoriesToDisplay.length > 0
-            ? categoriesToDisplay.map((category) => (
-                <TagsRow
-                  key={category.id}
-                  title={category.title}
-                  listOfTags={currentProject?.tags[0][category.id]}
-                />
-              ))
-            : null}
-        </div>
-
-        <div className={styles.features}>
-          <div className={styles.featuresTitle}>Features</div>
-          <ul className={styles.featureList}>
-            {currentProject?.features.map((feature) => (
-              <li key={feature}>{feature}</li>
+            {currentProject?.description.map((paragraph: string) => (
+              <p className={styles.summaryText} key={paragraph}>
+                {paragraph}
+              </p>
             ))}
-          </ul>
+
+            <br />
+            {hasDemoLink && <DemoButton link={currentProject?.demoLink} />}
+            {hasGithubLink && (
+              <GithubSourceButton link={currentProject?.githubLink} />
+            )}
+          </div>
+          <div className={styles.stack}>
+            <div className={styles.stackTitle}>Technical stack</div>
+            {categoriesToDisplay.length > 0
+              ? categoriesToDisplay.map((category) => (
+                  <TagsRow
+                    key={category.id}
+                    title={category.title}
+                    listOfTags={currentProject?.tags[0][category.id]}
+                  />
+                ))
+              : null}
+          </div>
+
+          <div className={styles.features}>
+            <div className={styles.featuresTitle}>Features</div>
+            <ul className={styles.featureList}>
+              {currentProject?.features.map((feature) => (
+                <li key={feature}>{feature}</li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
+      <FooterSection />
+    </>
   );
 }
 

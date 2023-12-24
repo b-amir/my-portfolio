@@ -5,11 +5,12 @@ import { BsFillGridFill } from "react-icons/bs";
 import { MdWavingHand } from "react-icons/md";
 import { HiOutlineExternalLink } from "react-icons/hi";
 import { IoArrowForward, IoDownloadOutline } from "react-icons/io5";
+import Link from "next/link";
 
 export const FooterSection: React.FC = () => (
   <>
     <div className={styles.footer}>
-      <div className={styles.twoCols}>
+      <div className={styles.footerCols}>
         <div className={styles.footerText}>
           <h2>Thanks for considering my work.</h2>
           <p>
@@ -28,20 +29,32 @@ export const FooterSection: React.FC = () => (
           </a>
           <div className={styles.twoCols}>
             <div className={styles.twoRows}>
-              <a className={styles.footerLink}>
+              <Link
+                target="_blank"
+                href="https://www.linkedin.com/in/amirbazgir/"
+                className={styles.footerLink}>
                 <HiOutlineExternalLink /> LinkedIn
-              </a>
-              <a className={styles.footerLink}>
+              </Link>
+              <Link
+                target="_blank"
+                href="https://github.com/b-amir"
+                className={styles.footerLink}>
                 <HiOutlineExternalLink /> GitHub
-              </a>
+              </Link>
             </div>
             <div className={styles.twoRows}>
-              <a className={styles.footerLink}>
+              <Link
+                target="_blank"
+                href="mailto:iamirbazgir@gmail.com"
+                className={styles.footerLink}>
                 <HiOutlineExternalLink /> E-mail
-              </a>
-              <a className={styles.footerLink}>
+              </Link>
+              <Link
+                target="_blank"
+                href="tel:+989119273700"
+                className={styles.footerLink}>
                 <HiOutlineExternalLink /> Phone
-              </a>
+              </Link>
             </div>
           </div>
         </div>

@@ -11,7 +11,7 @@ export const AboutSection: React.FC = () => {
   return (
     <ParallaxProvider>
       {" "}
-      <div className={styles.about}>
+      <div className={styles.about} id="about">
         <Parallax speed={10}>
           <SectionHeader
             title="About Me"
@@ -68,21 +68,22 @@ export const AboutSection: React.FC = () => {
                     </p>
                   </li>
                 </ul>
-                <a className={styles.seeMyStack}>
+                <button
+                  className={styles.seeMyStack}
+                  onClick={() => {
+                    document?.getElementById("my-stack")?.scrollIntoView({
+                      behavior: "smooth",
+                      block: "start",
+                      inline: "nearest"
+                    });
+                  }}>
                   See my technical stack{" "}
                   <span className={styles.icon}>
                     <IoArrowForward />
                   </span>
-                </a>{" "}
+                </button>{" "}
               </div>
-              {/* <HiOutlineSquare3Stack3D /> */}
               <Fa42Group className={styles.aboutIcon} />
-
-              {/* <Spline scene="https://prod.spline.design/eXxdFyp27KoBXioI/scene.splinecode" /> */}
-              {/* <Spline
-          scene="https://prod.spline.design/btTGbGyxfpf64yVO/scene.splinecode"
-          className={styles.fry}
-        /> */}
             </div>
           </div>
         </Parallax>

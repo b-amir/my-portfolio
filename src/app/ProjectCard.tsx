@@ -38,6 +38,7 @@ export function ProjectCard({
             {tags}{" "}
             {howManyMoreTags > 0 && (
               <Link
+                prefetch={true}
                 href="/[projectId]"
                 as={`/${id}`}
                 className={styles.howManyMoreTags}>
@@ -66,6 +67,7 @@ export function ProjectCard({
           )}
         </div>
         <Link
+          prefetch={true}
           href="/[projectId]"
           as={`/${id}`}
           className={styles.projectCardViewDetails}>

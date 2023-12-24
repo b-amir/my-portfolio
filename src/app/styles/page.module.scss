@@ -258,6 +258,10 @@
     }
 }
 
+.footerCols {
+    @extend .twoCols;
+}
+
 .footerLink {
     // @extend .buttonLink;
     cursor: pointer;
@@ -388,10 +392,10 @@
 }
 
 .aboutIcon {
-    height: 630px;
-    position: sticky;
+    height: 600px;
+    position: absolute;
     right: 0;
-    width: 630px;
+    width: 600px;
     margin: auto;
     flex-shrink: 0;
     -webkit-user-select: none;
@@ -648,6 +652,7 @@
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1200 800'%3E%3Cdefs%3E%3CradialGradient id='a' cx='0' cy='800' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23ffeed6'/%3E%3Cstop offset='1' stop-color='%23ffeed6' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='b' cx='1200' cy='800' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23fff9ef'/%3E%3Cstop offset='1' stop-color='%23fff9ef' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='c' cx='600' cy='0' r='600' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23ffeed6'/%3E%3Cstop offset='1' stop-color='%23ffeed6' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='d' cx='600' cy='800' r='600' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23FFF9EF'/%3E%3Cstop offset='1' stop-color='%23FFF9EF' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='e' cx='0' cy='0' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23FFE1BC'/%3E%3Cstop offset='1' stop-color='%23FFE1BC' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='f' cx='1200' cy='0' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23FFF9EF'/%3E%3Cstop offset='1' stop-color='%23FFF9EF' stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect fill='url(%23a)' width='1200' height='800'/%3E%3Crect fill='url(%23b)' width='1200' height='800'/%3E%3Crect fill='url(%23c)' width='1200' height='800'/%3E%3Crect fill='url(%23d)' width='1200' height='800'/%3E%3Crect fill='url(%23e)' width='1200' height='800'/%3E%3Crect fill='url(%23f)' width='1200' height='800'/%3E%3C/svg%3E");
     background-attachment: fixed;
     background-size: cover;
+    padding-bottom: 8rem;
     // background-color: #ffffff;
     // background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1200 800'%3E%3Cdefs%3E%3CradialGradient id='a' cx='0' cy='800' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23fff3e3'/%3E%3Cstop offset='1' stop-color='%23fff3e3' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='b' cx='1200' cy='800' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23ffffff'/%3E%3Cstop offset='1' stop-color='%23ffffff' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='c' cx='600' cy='0' r='600' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23fff3e3'/%3E%3Cstop offset='1' stop-color='%23fff3e3' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='d' cx='600' cy='800' r='600' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23FFFFFF'/%3E%3Cstop offset='1' stop-color='%23FFFFFF' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='e' cx='0' cy='0' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23FFE6C7'/%3E%3Cstop offset='1' stop-color='%23FFE6C7' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='f' cx='1200' cy='0' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23FFFFFF'/%3E%3Cstop offset='1' stop-color='%23FFFFFF' stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect fill='url(%23a)' width='1200' height='800'/%3E%3Crect fill='url(%23b)' width='1200' height='800'/%3E%3Crect fill='url(%23c)' width='1200' height='800'/%3E%3Crect fill='url(%23d)' width='1200' height='800'/%3E%3Crect fill='url(%23e)' width='1200' height='800'/%3E%3Crect fill='url(%23f)' width='1200' height='800'/%3E%3C/svg%3E");
     // background-attachment: fixed;
@@ -928,10 +933,13 @@
 }
 
 .summaryText {
-    font-size: 1.1rem;
-    line-height: 1.5;
-    color: #432a0d;
-    padding-top: 1rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px dashed rgb(0 0 0 / 7%);
+    font-size: 1rem;
+    color: #000000ad;
+    &:last-child {
+        border-bottom: none;
+    }
 }
 
 .stackTitle {
@@ -1077,15 +1085,8 @@
 .allProjectsGrid {
     display: grid;
     padding: 6rem 0 0;
-    // border-radius: 4px;
-    // background-color: #e6ddeb;
-    // background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1200 800'%3E%3Cdefs%3E%3CradialGradient id='a' cx='0' cy='800' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23ebdce1'/%3E%3Cstop offset='1' stop-color='%23ebdce1' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='b' cx='1200' cy='800' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23dedceb'/%3E%3Cstop offset='1' stop-color='%23dedceb' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='c' cx='600' cy='0' r='600' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23dbebdd'/%3E%3Cstop offset='1' stop-color='%23dbebdd' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='d' cx='600' cy='800' r='600' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23E6DDEB'/%3E%3Cstop offset='1' stop-color='%23E6DDEB' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='e' cx='0' cy='0' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23EBE5DB'/%3E%3Cstop offset='1' stop-color='%23EBE5DB' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='f' cx='1200' cy='0' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23DBE2EB'/%3E%3Cstop offset='1' stop-color='%23DBE2EB' stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect fill='url(%23a)' width='1200' height='800'/%3E%3Crect fill='url(%23b)' width='1200' height='800'/%3E%3Crect fill='url(%23c)' width='1200' height='800'/%3E%3Crect fill='url(%23d)' width='1200' height='800'/%3E%3Crect fill='url(%23e)' width='1200' height='800'/%3E%3Crect fill='url(%23f)' width='1200' height='800'/%3E%3C/svg%3E");
-    // background-attachment: fixed;
-    // background-size: cover;
-    grid-template-columns: 1fr 1fr 1fr;
-    // border: 1px solid #d1d1d1;
-    overflow: hidden;
-    // gap: 8px;
+    grid-template-columns: repeat(3, 1fr);
+    // overflow: hidden;
 }
 
 .allStacks {
@@ -1102,33 +1103,6 @@
         0px -3px 3px 0px rgb(0 0 0 / 4%);
 }
 
-.thiscoverdLogo {
-    display: flex;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
-    user-select: none;
-
-    cursor: pointer;
-    span:nth-child(1) {
-        color: #0a66c2;
-        font-style: italic;
-        font-weight: 900;
-        font-size: xx-large;
-    }
-
-    span:nth-child(2) {
-        color: #cc1016;
-        font-size: xx-large;
-    }
-
-    span:nth-child(3) {
-        color: #747474;
-        font-weight: normal;
-        border-radius: 8px;
-        font-size: xx-large;
-    }
-}
 .currentSkills {
     user-select: none;
     grid-area: 1/1/2/3;
@@ -1475,6 +1449,9 @@
 }
 
 @include mobile {
+    .section {
+        padding: 0rem;
+    }
     .content {
         padding: 4rem;
     }
@@ -1484,6 +1461,15 @@
         margin-bottom: 120px;
         max-width: 320px;
         text-align: center;
+    }
+    .heroMain {
+        width: 100vw;
+        flex-direction: column-reverse;
+    }
+
+    .projectsGrid {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(6, 1fr);
     }
 
     .card {
@@ -1541,11 +1527,51 @@
             z-index: 1;
         }
     }
+    .footerCols {
+        flex-direction: column;
+        padding: 1rem 2rem 3rem;
+
+        .footerLinks {
+            width: 100%;
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+    }
 }
 
 @include tablet {
+    .section {
+        padding: 0.5rem;
+    }
     .grid {
         grid-template-columns: repeat(2, 50%);
+    }
+
+    .projectsGrid {
+        grid-template-columns: 1fr;
+    }
+    .heroMain {
+        width: 100vw;
+        flex-direction: column-reverse;
+    }
+    .footerCols {
+        flex-direction: column;
+        padding: 1rem 2rem 3rem;
+
+        .footerLinks {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            gap: 2rem;
+            align-items: baseline;
+
+            .twoCols {
+                .twoRows {
+                    flex-direction: row;
+                }
+            }
+        }
     }
 }
 
