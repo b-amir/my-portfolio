@@ -1,5 +1,4 @@
 "use client";
-import globalStyles from "@/_styles/page.module.scss";
 import styles from "./index.module.scss";
 import { LuPhoneCall } from "react-icons/lu";
 import {
@@ -30,7 +29,7 @@ export const ContactGrid: React.FC = () => {
       )}
       {isMobile && !showContactLinksForMobile && (
         <div
-          className={globalStyles.mobileContactMenuTrigger}
+          className={styles.mobileContactMenuTrigger}
           onClick={() => setShowContactLinksForMobile(true)}>
           <span>
             <GrContactInfo />
@@ -61,9 +60,9 @@ export const ContactGrid: React.FC = () => {
 };
 function ContactMain({ setShowContactLinksForMobile, clickToSelectText }) {
   return (
-    <div className={globalStyles.contact}>
+    <div className={styles.contact}>
       <div
-        className={globalStyles.contactMobileHeader}
+        className={styles.contactMobileHeader}
         onClick={() => setShowContactLinksForMobile(false)}>
         <span>
           <span>
@@ -74,10 +73,10 @@ function ContactMain({ setShowContactLinksForMobile, clickToSelectText }) {
         <IoCloseSharp />
       </div>
 
-      <div className={globalStyles.grid}>
+      <div className={styles.grid}>
         <a
           href="https://www.linkedin.com/in/amirbazgir/"
-          className={globalStyles.contactCard}
+          className={styles.contactCard}
           target="_blank"
           rel="noopener noreferrer">
           <h2>
@@ -92,7 +91,7 @@ function ContactMain({ setShowContactLinksForMobile, clickToSelectText }) {
 
         <a
           href="https://github.com/b-amir"
-          className={globalStyles.contactCard}
+          className={styles.contactCard}
           target="_blank"
           rel="noopener noreferrer">
           <h2>
@@ -107,7 +106,7 @@ function ContactMain({ setShowContactLinksForMobile, clickToSelectText }) {
 
         <a
           href="mailto:iamirbazgir@gmail.com"
-          className={globalStyles.contactCard}
+          className={styles.contactCard}
           target="_blank"
           rel="noopener noreferrer">
           <h2>
@@ -118,7 +117,7 @@ function ContactMain({ setShowContactLinksForMobile, clickToSelectText }) {
             </span>
           </h2>
           <div
-            className={globalStyles.emailCopyField}
+            className={styles.emailCopyField}
             onClick={(e) => e.preventDefault()}>
             <p
               id="emailCopyField"
@@ -126,7 +125,7 @@ function ContactMain({ setShowContactLinksForMobile, clickToSelectText }) {
               iAmirBazgir@gmail.com
             </p>
             <div
-              className={globalStyles.fieldButton}
+              className={styles.fieldButton}
               onClick={(e) => {
                 // copy to clipboard:
                 navigator.clipboard.writeText("iamirbazgir@gmail.com");
@@ -145,7 +144,7 @@ function ContactMain({ setShowContactLinksForMobile, clickToSelectText }) {
 
         <a
           href="tel:+989119273700"
-          className={globalStyles.contactCard}
+          className={styles.contactCard}
           target="_blank"
           rel="noopener noreferrer">
           <h2>
@@ -156,7 +155,7 @@ function ContactMain({ setShowContactLinksForMobile, clickToSelectText }) {
             </span>
           </h2>
           <div
-            className={globalStyles.emailCopyField}
+            className={styles.emailCopyField}
             onClick={(e) => e.preventDefault()}>
             <p
               id="showNumberField"
@@ -164,7 +163,7 @@ function ContactMain({ setShowContactLinksForMobile, clickToSelectText }) {
               +9891********
             </p>
             <div
-              className={globalStyles.fieldButton}
+              className={styles.fieldButton}
               onClick={(e) => {
                 // show the number:
                 const showNumberField =

@@ -1,4 +1,5 @@
 @import "@/_styles/variables.module.scss";
+@import "@/_styles/media-queries";
 
 .hero {
   @extend .twoRows;
@@ -154,4 +155,298 @@
   width: 500px !important;
   height: 400px !important;
   max-width: 35% !important;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(25%, auto));
+  gap: 1rem;
+  // max-width: 100vh;
+  max-width: var(--max-width);
+  align-items: center;
+  justify-items: stretch;
+  margin: auto;
+}
+
+.contact {
+  @extend .section;
+  backdrop-filter: blur(20px);
+  background: rgb(182 182 182 / 38%);
+  color: rgba(19, 10, 0, 0.7882352941);
+  box-shadow: 0px -5px 15px 0px rgba(0, 0, 0, 0.08);
+  z-index: 10;
+  border-top: 1px solid rgb(255 255 255 / 39%);
+  transition: all 0.3s ease-in-out;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  .contactMobileHeader {
+    display: none;
+  }
+
+  &:hover {
+    color: $black-substitute;
+  }
+}
+.emailCopyField {
+  display: flex;
+  border: 1px dashed #00000052;
+  border-radius: 18px;
+  padding: 0.5rem;
+  padding-left: 0.8rem;
+  padding-right: 0.8rem;
+  font-family: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono", "Roboto Mono", "Oxygen Mono",
+    "Ubuntu Monospace", "Source Code Pro", "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
+  align-items: center;
+  justify-content: space-between;
+  width: -moz-fit-content;
+  width: fit-content;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-color: #ffffff24;
+  }
+
+  p {
+    font-size: small !important;
+    color: lighten($black-substitute, 5%);
+    cursor: text;
+  }
+}
+.fieldButton {
+  border-radius: 50%;
+  background-color: #00000014;
+  width: 24px;
+  height: 24px;
+  color: $black-substitute;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  margin-left: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-color: #7b7b7b42;
+  }
+}
+.contactCard {
+  padding: 1rem 1.2rem;
+  border-radius: var(--border-radius);
+  background: rgba(var(--card-rgb), 0);
+  border: 1px solid rgba(var(--card-border-rgb), 0);
+  transition:
+    background 200ms,
+    border 200ms;
+
+  span {
+    display: inline-block;
+    transition: transform 200ms;
+    display: flex;
+    align-items: center;
+  }
+
+  h2 {
+    all: unset;
+    font-size: x-large;
+    font-weight: 600;
+    margin-bottom: 0.7rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 10px;
+    align-content: center;
+
+    span {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  p {
+    margin: 0;
+    opacity: 0.6;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    max-width: 30ch;
+  }
+
+  min-height: 120px;
+}
+
+@include mobile {
+  .section {
+    padding: 0rem;
+  }
+  .heroMain {
+    padding: 0;
+    height: 100%;
+    flex-direction: column;
+  }
+  .heroTexts {
+    position: absolute !important;
+    top: 6rem !important;
+    left: 2rem !important;
+    .heroTitle {
+      font-size: 2.5rem !important;
+    }
+    .heroSubtitle {
+      font-size: 1.5rem !important;
+    }
+    .heroButtons {
+      gap: 1.2rem !important;
+      flex-direction: column !important;
+      align-items: flex-start !important;
+    }
+  }
+  .fry {
+    position: absolute !important;
+    bottom: 3rem !important;
+    // right: 0 !important;
+    top: unset !important;
+    width: unset !important;
+    height: unset !important;
+    max-width: unset !important;
+    padding: 0 !important;
+    transform: scale(0.75) !important;
+  }
+  .contact {
+    position: fixed;
+    height: 100dvh;
+
+    .contactMobileHeader {
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2.5rem 3.5rem;
+      height: 6rem;
+      font-size: larger;
+      font-weight: 500;
+      span {
+        display: flex;
+        flex-direction: row;
+        span {
+          display: flex;
+
+          margin: auto 0.5rem;
+        }
+      }
+    }
+  }
+
+  .contactCard {
+    padding: 1rem 2.5rem;
+
+    h2 {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  .mobileContactMenuTrigger {
+    cursor: pointer;
+    user-select: none;
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    width: 100dvw;
+    padding: 2rem;
+    background: rgba(182, 182, 182, 0.38);
+    color: rgba(19, 10, 0, 0.7882352941);
+    box-shadow: 0px -5px 15px 0px rgba(0, 0, 0, 0.08);
+    z-index: 10;
+    border-top: 1px solid rgba(255, 255, 255, 0.39);
+    transition: all 0.3s ease-in-out;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-weight: 500;
+    align-items: baseline;
+
+    span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 0.5rem;
+    }
+  }
+  .grid {
+    grid-template-columns: 1fr;
+    margin: unset;
+    // margin-bottom: 120px;
+    // max-width: 320px;
+    // text-align: center;
+
+    padding: 1rem;
+  }
+  .heroMain {
+    width: 100vw;
+    flex-direction: column;
+  }
+}
+
+@include tablet {
+  .section {
+    padding: 0rem;
+  }
+  .heroMain {
+    padding: 0;
+    height: 100%;
+    width: 100vw;
+    flex-direction: column;
+  }
+  .heroTexts {
+    position: absolute !important;
+    top: 6rem !important;
+    left: 2rem !important;
+    .heroTitle {
+      font-size: 3.5rem !important;
+    }
+    .heroSubtitle {
+      font-size: 1.8rem !important;
+    }
+    .heroButtons {
+      gap: 1.2rem !important;
+      flex-direction: column !important;
+      align-items: flex-start !important;
+    }
+  }
+  .fry {
+    position: absolute !important;
+    top: 6rem !important;
+    right: 0 !important;
+    top: unset !important;
+    width: unset !important;
+    height: unset !important;
+    max-width: unset !important;
+    padding: 0 !important;
+  }
+
+  .grid {
+    margin: unset;
+    grid-template-columns: repeat(2, 40%);
+    justify-items: start;
+    padding: 1rem;
+  }
+}
+
+@include no-hover-for-touch {
+  .contactCard:hover {
+    background: rgb(255 255 255 / 21%);
+    box-shadow: 0px 0px 12px 0px #00000005;
+
+    span {
+      transform: translateX(4px);
+    }
+  }
+}
+
+@include reduced-motion {
+  .contactCard:hover span {
+    transform: none;
+  }
 }
