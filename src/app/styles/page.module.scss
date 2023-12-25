@@ -93,7 +93,7 @@
     display: flex;
     width: 100vw;
     height: 84dvh;
-    flex-direction: row-reverse;
+    flex-direction: row;
     flex-wrap: nowrap;
     align-items: center;
     z-index: 2;
@@ -102,15 +102,7 @@
     justify-content: center;
 
     .heroTexts {
-        // display: flex;
-        // flex-direction: column;
-        // justify-content: center;
-        // align-items: start;
-        // min-width: 25%;
-        // gap: 0.8rem;
         display: flex;
-        // flex-grow: 1;
-        // flex-shrink: 0;
         align-self: auto;
         order: 0;
 
@@ -317,7 +309,7 @@
 }
 .contact {
     @extend .section;
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(20px);
     // background: rgba(255, 255, 255, 0.3098039216);
     background: rgb(182 182 182 / 38%);
     color: rgba(19, 10, 0, 0.7882352941);
@@ -328,6 +320,10 @@
     position: absolute;
     bottom: 0;
     left: 0;
+
+    .contactMobileHeader {
+        display: none;
+    }
 
     &:hover {
         color: $black-substitute;
@@ -562,7 +558,7 @@
     grid-template-columns: repeat(4, minmax(25%, auto));
     gap: 1rem;
     // max-width: 100vh;
-    width: var(--max-width);
+    // width: var(--max-width);
     align-items: center;
     justify-items: stretch;
 }
@@ -783,8 +779,8 @@
     border: 1px solid rgba(134, 71, 0, 0.6);
     font-size: small;
     z-index: 10;
-    -webkit-backdrop-filter: blur(5px);
-    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
     box-shadow: $small-shadow;
     transition: all 0.3s ease-in-out;
     pointer-events: none;
@@ -1456,15 +1452,104 @@
         padding: 4rem;
     }
 
+    .heroMain {
+        padding: 0;
+        height: 100%;
+    }
+
+    .heroTexts {
+        position: absolute !important;
+        top: 6rem !important;
+        left: 2rem !important;
+        .heroTitle {
+            font-size: 2.5rem !important;
+        }
+        .heroSubtitle {
+            font-size: 1.8rem !important;
+        }
+        .heroButtons {
+            gap: 2rem !important;
+            flex-direction: column !important;
+            align-items: flex-start !important;
+        }
+    }
+    .fry {
+        position: absolute !important;
+        bottom: 3rem !important;
+        // right: 0 !important;
+        top: unset !important;
+        width: unset !important;
+        height: unset !important;
+        max-width: unset !important;
+        padding: 0 !important;
+        transform: scale(0.75) !important;
+    }
+
+    .contact {
+        position: fixed;
+        height: 100dvh;
+
+        .contactMobileHeader {
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 2.5rem 3.5rem;
+            height: 6rem;
+            font-size: larger;
+            font-weight: 500;
+            span {
+                display: flex;
+                flex-direction: row;
+                span {
+                    display: flex;
+
+                    margin: auto 0.5rem;
+                }
+            }
+        }
+    }
+
+    .mobileContactMenuTrigger {
+        cursor: pointer;
+        user-select: none;
+        -webkit-backdrop-filter: blur(20px);
+        backdrop-filter: blur(20px);
+        width: 100dvw;
+        padding: 2rem;
+        background: rgba(182, 182, 182, 0.38);
+        color: rgba(19, 10, 0, 0.7882352941);
+        box-shadow: 0px -5px 15px 0px rgba(0, 0, 0, 0.08);
+        z-index: 10;
+        border-top: 1px solid rgba(255, 255, 255, 0.39);
+        transition: all 0.3s ease-in-out;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        font-weight: 500;
+        align-items: baseline;
+
+        span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 0.5rem;
+        }
+    }
     .grid {
         grid-template-columns: 1fr;
-        margin-bottom: 120px;
-        max-width: 320px;
-        text-align: center;
+        // margin-bottom: 120px;
+        // max-width: 320px;
+        // text-align: center;
+
+        padding: 1rem;
     }
     .heroMain {
         width: 100vw;
-        flex-direction: column-reverse;
+        flex-direction: column;
     }
 
     .projectsGrid {
@@ -1527,6 +1612,40 @@
             z-index: 1;
         }
     }
+    .heroMain {
+        flex-direction: column;
+    }
+    .featuredGrid {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+    }
+    .summary {
+        grid-area: 2/4/3/2;
+    }
+    .stack {
+        grid-area: 3/2/4/4;
+        border-left: none;
+    }
+    .features {
+        grid-area: 4/4/4/1;
+        border-left: none;
+    }
+    .allStacks {
+        grid-template-rows: 2fr 1fr;
+    }
+    .currentSkills {
+        grid-area: 1/1/2/4;
+    }
+    .otherStack {
+        grid-area: 2/1/2/4;
+    }
+    .transitionToWhite {
+        width: unset !important;
+        margin: unset !important;
+    }
+    .smile {
+        transform: scale(0.7);
+    }
     .footerCols {
         flex-direction: column;
         padding: 1rem 2rem 3rem;
@@ -1542,10 +1661,44 @@
 
 @include tablet {
     .section {
-        padding: 0.5rem;
+        padding: 0rem;
     }
+    .heroMain {
+        padding: 0;
+        height: 100%;
+    }
+
+    .heroTexts {
+        position: absolute !important;
+        top: 6rem !important;
+        left: 2rem !important;
+        .heroTitle {
+            font-size: 3.5rem !important;
+        }
+        .heroSubtitle {
+            font-size: 1.8rem !important;
+        }
+        .heroButtons {
+            gap: 2rem !important;
+            flex-direction: column !important;
+            align-items: flex-start !important;
+        }
+    }
+    .fry {
+        position: absolute !important;
+        top: 6rem !important;
+        right: 0 !important;
+        top: unset !important;
+        width: unset !important;
+        height: unset !important;
+        max-width: unset !important;
+        padding: 0 !important;
+    }
+
     .grid {
-        grid-template-columns: repeat(2, 50%);
+        grid-template-columns: repeat(2, 40%);
+        justify-items: start;
+        padding: 1rem;
     }
 
     .projectsGrid {
@@ -1553,7 +1706,35 @@
     }
     .heroMain {
         width: 100vw;
-        flex-direction: column-reverse;
+        flex-direction: column;
+    }
+    .featuredGrid {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+    }
+    .summary {
+        grid-area: 2/4/3/2;
+    }
+    .stack {
+        grid-area: 3/2/4/4;
+        border-left: none;
+    }
+    .features {
+        grid-area: 4/4/4/1;
+        border-left: none;
+    }
+    .allStacks {
+        grid-template-rows: 2fr 1fr;
+    }
+    .currentSkills {
+        grid-area: 1/1/2/4;
+    }
+    .otherStack {
+        grid-area: 2/1/2/4;
+    }
+    .transitionToWhite {
+        width: unset !important;
+        margin: unset !important;
     }
     .footerCols {
         flex-direction: column;

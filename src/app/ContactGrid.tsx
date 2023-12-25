@@ -9,14 +9,70 @@ import {
   IoMailOutline
 } from "react-icons/io5";
 import { BiShow } from "react-icons/bi";
+import { IoCloseSharp } from "react-icons/io5";
+import { useState } from "react";
+import { GrContactInfo } from "react-icons/gr";
 
 export const ContactGrid: React.FC = () => {
+  const [showContactLinksForMobile, setShowContactLinksForMobile] =
+    useState(false);
+
+  const isMobile = window.innerWidth < 600;
+
+  return (
+    <>
+      {!isMobile && (
+        <ContactMain
+          setShowContactLinksForMobile={setShowContactLinksForMobile}
+          clickToSelectText={clickToSelectText}
+        />
+      )}
+      {isMobile && !showContactLinksForMobile && (
+        <div
+          className={styles.mobileContactMenuTrigger}
+          onClick={() => setShowContactLinksForMobile(true)}>
+          <span>
+            <GrContactInfo />
+          </span>
+          Contact Links
+        </div>
+      )}
+
+      {isMobile && showContactLinksForMobile && (
+        <ContactMain
+          setShowContactLinksForMobile={setShowContactLinksForMobile}
+          clickToSelectText={clickToSelectText}
+        />
+      )}
+    </>
+  );
+
+  function clickToSelectText(elementId: string) {
+    return (e) => {
+      const elementToSelect = document.getElementById(elementId);
+      const range = document.createRange();
+      range.selectNodeContents(elementToSelect);
+      const selection = window.getSelection();
+      selection?.removeAllRanges();
+      selection?.addRange(range);
+    };
+  }
+};
+function ContactMain({ setShowContactLinksForMobile, clickToSelectText }) {
   return (
     <div className={styles.contact}>
-      {/* <SectionHeader
-            title="Quick Links"
-            icon={<BsFillGridFill className={styles.icon} />}
-          /> */}
+      <div
+        className={styles.contactMobileHeader}
+        onClick={() => setShowContactLinksForMobile(false)}>
+        <span>
+          <span>
+            <GrContactInfo />
+          </span>
+          Contact Links
+        </span>
+        <IoCloseSharp />
+      </div>
+
       <div className={styles.grid}>
         <a
           href="https://www.linkedin.com/in/amirbazgir/"
@@ -126,15 +182,4 @@ export const ContactGrid: React.FC = () => {
       </div>
     </div>
   );
-
-  function clickToSelectText(elementId: string) {
-    return (e) => {
-      const elementToSelect = document.getElementById(elementId);
-      const range = document.createRange();
-      range.selectNodeContents(elementToSelect);
-      const selection = window.getSelection();
-      selection?.removeAllRanges();
-      selection?.addRange(range);
-    };
-  }
-};
+}
