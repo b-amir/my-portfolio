@@ -1,8 +1,9 @@
 "use client";
 import { IoArrowForward, IoDownloadOutline } from "react-icons/io5";
-import styles from "./styles/page.module.scss";
+import globalStyles from "@/_styles/page.module.scss";
+import styles from "./index.module.scss";
 import Spline from "@splinetool/react-spline";
-import { Tooltip } from "./Tooltip";
+import { Tooltip } from "@/_components/Tooltip";
 import { ContactGrid } from "./ContactGrid";
 import { Parallax, ParallaxProvider } from "react-scroll-parallax";
 
@@ -64,9 +65,9 @@ export const HeroSection: React.FC = () => {
                     inline: "nearest"
                   });
                 }}
-                className={styles.buttonLink}>
+                className={globalStyles.buttonLink}>
                 More about me{" "}
-                <span className={styles.icon}>
+                <span className={globalStyles.icon}>
                   <IoArrowForward />
                 </span>
               </div>

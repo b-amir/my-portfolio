@@ -1,7 +1,8 @@
 "use client";
 import { useState } from "react";
-import styles from "./styles/page.module.scss";
-import { TagsRow } from "./TagsRow";
+import styles from "./index.module.scss";
+
+import { TagsRow } from "@/_components/Tag/TagsRow";
 import { TbClearAll } from "react-icons/tb";
 
 export function CurrentSkills({
@@ -15,7 +16,9 @@ export function CurrentSkills({
         My current skills
         {selectedTags.length > 0 ? (
           <span className={styles.selectedProjectsCount}>
-            | {selectedProjects.length} projects matched
+            | {selectedProjects.length}
+            {selectedProjects.length < 2 ? " project " : " projects "}
+            matched
             <button onClick={() => setSelectedTags([])}>
               <TbClearAll />
               clear

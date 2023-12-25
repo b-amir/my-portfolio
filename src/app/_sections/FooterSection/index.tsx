@@ -1,6 +1,7 @@
 "use client";
-import { SectionHeader } from "./SectionHeader";
-import styles from "./styles/page.module.scss";
+import { SectionHeader } from "@/_components/SectionHeader";
+import globalStyles from "@/_styles/page.module.scss";
+import styles from "./index.module.scss";
 import { BsFillGridFill } from "react-icons/bs";
 import { MdWavingHand } from "react-icons/md";
 import { HiOutlineExternalLink } from "react-icons/hi";

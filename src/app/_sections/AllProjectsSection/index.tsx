@@ -1,7 +1,8 @@
 "use client";
-import { SectionHeader } from "./SectionHeader";
-import { Tag } from "./Tag";
-import styles from "./styles/page.module.scss";
+import { SectionHeader } from "@/_components/SectionHeader";
+import { Tag } from "@/_components/Tag";
+import globalStyles from "@/_styles/page.module.scss";
+import styles from "./index.module.scss";
 import { BsFillGridFill } from "react-icons/bs";
 import { IoIosArrowDown } from "react-icons/io";
 import Spline from "@splinetool/react-spline";
@@ -14,8 +15,8 @@ import {
 } from "react-icons/md";
 import Image from "next/image";
 import { ProjectCard } from "./ProjectCard";
-import projects from "./data/projects.json";
-import skills from "./data/skillTags.json";
+import projects from "@/_data/projects.json";
+import skills from "@/_data/skillTags.json";
 import { RiReactjsLine } from "react-icons/ri";
 
 import {
@@ -51,7 +52,7 @@ import {
 import { BsShieldLock } from "react-icons/bs";
 import { FaSass } from "react-icons/fa6";
 import { TbApi } from "react-icons/tb";
-import { howManyTags, howManyTagsShowing } from "./utils/tagsCount";
+import { howManyTags, howManyTagsShowing } from "../../_utils/tagsCount";
 import { CurrentSkills } from "./CurrentSkills";
 import { OtherStack } from "./OtherStack";
 import { use, useEffect, useState } from "react";
@@ -128,7 +129,7 @@ export const AllProjectsSection: React.FC = () => {
       <div className={styles.allProjectsSection}>
         <SectionHeader
           title="All Skills & Projects"
-          icon={<BsFillGridFill className={styles.icon} />}
+          icon={<BsFillGridFill className={globalStyles.icon} />}
         />
 
         <div className={styles.allProjectsGrid}>
@@ -160,7 +161,9 @@ export const AllProjectsSection: React.FC = () => {
                     name={skills.find((skill) => skill.id === tag)?.name}
                     color={skills.find((skill) => skill.id === tag)?.color}
                     icon={
-                      <div className={styles.icon}>{getSkillIcon(tag)}</div>
+                      <div className={globalStyles.icon}>
+                        {getSkillIcon(tag)}
+                      </div>
                     }
                   />
                 ))}
@@ -176,7 +179,7 @@ export const AllProjectsSection: React.FC = () => {
           </div>
         </div>
 
-        <div className={styles.transitionToWhite}>
+        <div className={styles.keepInTouchSection}>
           <div className={styles.smile}>
             {/* <Parallax speed={-9}> */}
             <Spline scene="https://prod.spline.design/SFtITqXREqMFyNh2/scene.splinecode" />

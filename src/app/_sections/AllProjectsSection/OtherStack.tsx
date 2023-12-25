@@ -1,5 +1,5 @@
 "use client";
-import styles from "./styles/page.module.scss";
+import styles from "./index.module.scss";
 
 export function OtherStack() {
   return (

@@ -1,15 +1,15 @@
 import Image from "next/image";
-import styles from "./styles/page.module.scss";
-import variables from "./styles/variables.module.scss";
-import { HeroSection } from "./HeroSection";
-import { AboutSection } from "./AboutSection";
-import { AllProjectsSection } from "./AllProjectsSection";
-import { FeaturedProjectSection } from "./FeaturedProjectSection";
-import { FooterSection } from "./FooterSection";
+import globalStyles from "@/_styles/page.module.scss";
+import variables from "@/_styles/variables.module.scss";
+import { HeroSection } from "@/_sections/HeroSection";
+import { AboutSection } from "@/_sections/AboutSection";
+import { AllProjectsSection } from "@/_sections/AllProjectsSection";
+import { FeaturedProjectSection } from "@/_sections/FeaturedProjectSection";
+import { FooterSection } from "@/_sections/FooterSection";
 
 export default function Home() {
   return (
-    <main className={styles.main}>
+    <main className={globalStyles.main}>
       <HeroSection />
       <AboutSection />
       <FeaturedProjectSection />

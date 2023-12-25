@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "./styles/page.module.scss";
+import styles from "./index.module.scss";
 
 interface TooltipProps {
   children: React.ReactNode;

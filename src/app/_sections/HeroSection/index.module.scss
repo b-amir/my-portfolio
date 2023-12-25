@@ -1,0 +1,157 @@
+@import "@/_styles/variables.module.scss";
+
+.hero {
+  @extend .twoRows;
+
+  background-attachment: fixed;
+  background-size: cover;
+  background-image: radial-gradient(
+      100% 25.5% at 50% 100%,
+      #ead4cfd1 0%,
+      #f2e9e9bd 21.25%,
+      #f3e1e15c 42.5%,
+      rgba(255, 0, 0, 0) 85%
+    ),
+    radial-gradient(
+      64% 78% at 50% 86%,
+      #df242485 0%,
+      #ff00006b 25%,
+      rgba(255, 38, 0, 0.2901960784) 50%,
+      rgba(255, 0, 0, 0) 100%
+    ),
+    linear-gradient(
+      226deg,
+      rgba(255, 135, 0, 0.29) 0%,
+      rgba(252, 118, 0, 0.22) 25%,
+      #fa620024 50%,
+      rgba(255, 0, 0, 0) 100%
+    ),
+    linear-gradient(119deg, #ffc8a7 13%, rgba(231, 126, 48, 0) 82%),
+    radial-gradient(
+      49% 50% at 50% 100%,
+      #ff0800 14%,
+      #fa444ea1 23.56%,
+      #f7384e8c 33.11%,
+      #f32d5078 42.67%,
+      rgba(231, 48, 86, 0.3882352941) 52.22%,
+      rgba(220, 51, 90, 0.3215686275) 61.78%,
+      #d1355d3d 71.33%,
+      rgba(198, 54, 94, 0.16) 80.89%,
+      #b166386b 100%
+    ),
+    linear-gradient(0deg, #ff3432 0%, #fddafe 25%, #f79462 50%, #c5937a2b 100%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center !important;
+  gap: 0;
+  flex-wrap: nowrap;
+  justify-content: space-evenly;
+  height: 100dvh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.heroMain {
+  display: flex;
+  width: 100vw;
+  height: 84dvh;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  z-index: 2;
+  font-family: var(--font-title);
+  justify-items: center;
+  justify-content: center;
+
+  .heroTexts {
+    display: flex;
+    align-self: auto;
+    order: 0;
+
+    .heroTitle {
+      display: flex;
+      flex-direction: row;
+      justify-content: start;
+      font-size: 3.5rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin: 0;
+      color: #000000c2;
+    }
+
+    .heroSubtitle {
+      font-size: 2.5rem;
+      font-weight: 400;
+      margin: 0;
+      color: #0000007a;
+      font-style: italic;
+      padding: 1rem 0;
+      gap: 0.5rem;
+      display: inline-flex;
+      small {
+        opacity: 0.4;
+        font-size: smaller;
+        user-select: none;
+      }
+    }
+
+    .heroButtons {
+      display: flex;
+      flex-direction: row;
+      justify-content: start;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 1rem;
+      font-size: medium;
+      color: #2d2d2d;
+    }
+
+    font-style: normal;
+    text-align: start;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 10;
+  }
+
+  justify-items: center;
+}
+
+.heroResume {
+  @extend .buttonCta;
+  background-color: rgba(69, 69, 69, 0.15);
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #050505cc;
+  gap: 0.5rem;
+  padding: 0.8rem 2.5rem;
+  border: 2px solid rgba(0, 0, 0, 0.15);
+  border-radius: 21px;
+  z-index: 10;
+  filter: drop-shadow(0px 3px 9px rgba(237, 93, 89, 0.5019607843));
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.1098039216);
+  text-shadow: 1px 1px 2px rgb(255 134 109 / 50%);
+
+  &:hover {
+    background-color: rgb(9 9 9 / 18%);
+    color: #00000099;
+    box-shadow: 0px 0px 0px 0px #0000001c;
+  }
+}
+
+.fry {
+  display: flex;
+  flex-direction: row;
+  position: sticky;
+  gap: 1rem;
+  top: 10rem;
+  padding-right: 0.2rem;
+  justify-content: center;
+  flex-wrap: nowrap;
+  width: 500px !important;
+  height: 400px !important;
+  max-width: 35% !important;
+}

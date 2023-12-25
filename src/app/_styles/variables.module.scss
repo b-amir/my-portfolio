@@ -62,6 +62,88 @@ $big-shadow:
   -0.2px 18px 15px -4px hsl(var(--shadow-color) / 0.04),
   -0.3px 25.2px 21px -4.4px hsl(var(--shadow-color) / 0.03);
 
+.section {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  padding: 1rem;
+  padding-left: 6rem;
+  padding-right: 6rem;
+  width: 100%;
+}
+
+.twoRows {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-content: normal;
+  gap: 1.5rem;
+}
+
+.twoCols {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: normal;
+  gap: 1.5rem;
+}
+
+.button {
+  all: unset;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  font-weight: 500;
+  &:hover {
+    filter: brightness(1.5);
+  }
+}
+
+.buttonCta {
+  @extend .button;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 2.5rem;
+  border: 2px solid rgb(0 0 0 / 15%);
+  border-radius: 21px;
+  z-index: 10;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 2px 1px 0px #0000001c;
+  &:hover {
+    filter: brightness(0.8);
+  }
+}
+
+.buttonLink {
+  @extend .button;
+  font-weight: 500;
+  z-index: 10;
+  padding: 0.8rem 1rem;
+  display: flex;
+  align-items: stretch;
+  span {
+    margin: auto;
+  }
+  &:hover {
+    filter: brightness(1);
+    span {
+      transition: all 0.2s ease-in-out;
+      transform: translateX(5px);
+    }
+  }
+}
+
 :export {
   primaryColor: $primary-color;
   secondaryColor: $secondary-color;

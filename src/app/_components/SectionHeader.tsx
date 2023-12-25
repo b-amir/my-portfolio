@@ -1,5 +1,5 @@
 "use client";
-import styles from "./styles/page.module.scss";
+import globalStyles from "@/_styles/page.module.scss";
 
 export function SectionHeader({
   title,
@@ -11,7 +11,7 @@ export function SectionHeader({
   icon: JSX.Element;
 }) {
   return (
-    <div className={styles.sectionHeader} style={{ color }}>
+    <div className={globalStyles.sectionHeader} style={{ color }}>
       <h3>
         {icon}
         {title}

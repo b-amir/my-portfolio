@@ -1,5 +1,6 @@
 "use client";
-import styles from "./styles/page.module.scss";
+import globalStyles from "@/_styles/page.module.scss";
+import styles from "./index.module.scss";
 import { IoArrowForward as Arrow } from "react-icons/io5";
 import { HiOutlineExternalLink } from "react-icons/hi";
 import Link from "next/link";
@@ -33,7 +34,7 @@ export function ProjectCard({
       <div className={styles.projectCardImage}>{image}</div>
       <div className={styles.projectCardTitle}>{title}</div>
       <div className={styles.projectCardTags}>
-        <div className={styles.tagsRow}>
+        <div className={globalStyles.tagsRow}>
           <div>
             {tags}{" "}
             {howManyMoreTags > 0 && (
@@ -56,12 +57,12 @@ export function ProjectCard({
       <div className={styles.projectCardBottomRow}>
         <div className={styles.projectCardLinks}>
           {githubLink && (
-            <a href={githubLink} className={styles.githubSourceButton}>
+            <a href={githubLink} className={globalStyles.githubSourceButton}>
               GitHub <HiOutlineExternalLink />
             </a>
           )}
           {demoLink && (
-            <a href={demoLink} className={styles.demoButton}>
+            <a href={demoLink} className={globalStyles.demoButton}>
               Demo <HiOutlineExternalLink />
             </a>
           )}

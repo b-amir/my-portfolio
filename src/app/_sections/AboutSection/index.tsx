@@ -1,21 +1,20 @@
 "use client";
 import { IoArrowForward } from "react-icons/io5";
-import { SectionHeader } from "./SectionHeader";
-import styles from "./styles/page.module.scss";
+import { SectionHeader } from "@/_components/SectionHeader";
+import globalStyles from "@/_styles/page.module.scss";
+import styles from "./index.module.scss";
 import { MdOutlinePerson } from "react-icons/md";
-
-import { LuBoxes } from "react-icons/lu";
 import { Fa42Group } from "react-icons/fa6";
 import { Parallax, ParallaxProvider } from "react-scroll-parallax";
+
 export const AboutSection: React.FC = () => {
   return (
     <ParallaxProvider>
-      {" "}
       <div className={styles.about} id="about">
         <Parallax speed={10}>
           <SectionHeader
             title="About Me"
-            icon={<MdOutlinePerson className={styles.icon} />}
+            icon={<MdOutlinePerson className={globalStyles.icon} />}
           />
           <div className={styles.twoRows}>
             <div className={styles.twoColsAbout}>
@@ -78,7 +77,7 @@ export const AboutSection: React.FC = () => {
                     });
                   }}>
                   See my technical stack{" "}
-                  <span className={styles.icon}>
+                  <span className={globalStyles.icon}>
                     <IoArrowForward />
                   </span>
                 </button>{" "}

@@ -1,13 +1,13 @@
 "use client";
 import Image from "next/image";
-import styles from "../styles/page.module.scss";
-import projects from "../data/projects.json";
-import { TagsRow } from "../TagsRow";
-import { DemoButton } from "../DemoButton";
-import { GithubSourceButton } from "../GithubSourceButton";
-import { Project } from "../utils/tagsCount";
+import globalStyles from "@/_styles/page.module.scss";
+import projects from "@/_data/projects.json";
+import { TagsRow } from "@/_components/Tag/TagsRow";
+import { DemoButton } from "@/_components/DemoButton";
+import { GithubSourceButton } from "@/_components/GithubSourceButton";
+import { Project } from "@/_utils/tagsCount";
 import { BackButton } from "./BackButton";
-import { FooterSection } from "../FooterSection";
+import { FooterSection } from "@/_sections/FooterSection";
 
 function Page({ params }: { params: { projectId: string } }) {
   const currentProject = projects.find(

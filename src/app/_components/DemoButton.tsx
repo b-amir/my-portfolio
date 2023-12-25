@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import styles from "./styles/page.module.scss";
+import globalStyles from "@/_styles/page.module.scss";
 import { FaCircle } from "react-icons/fa";
 
 export function DemoButton({
@@ -16,7 +16,9 @@ export function DemoButton({
     <Link
       href={link || "#"}
       className={`${
-        size === "large" ? styles.demoButtonLarge : styles.demoButton
+        size === "large"
+          ? globalStyles.demoButtonLarge
+          : globalStyles.demoButton
       }`}>
       <FaCircle
         style={{

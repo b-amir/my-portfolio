@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import styles from "./styles/page.module.scss";
+import globalStyles from "@/_styles/page.module.scss";
 import { IoLogoGithub } from "react-icons/io5";
 
 export function GithubSourceButton({
@@ -15,8 +15,8 @@ export function GithubSourceButton({
       href={link || "#"}
       className={`${
         size === "large"
-          ? styles.githubSourceButtonLarge
-          : styles.githubSourceButton
+          ? globalStyles.githubSourceButtonLarge
+          : globalStyles.githubSourceButton
       }`}>
       <IoLogoGithub />
       View Source on GitHub

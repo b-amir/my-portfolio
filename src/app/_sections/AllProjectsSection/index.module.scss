@@ -1,0 +1,372 @@
+@import "@/_styles/variables.module.scss";
+
+.allProjectsSection {
+  @extend .section;
+  min-height: 100dvh;
+  box-shadow: 0 -6px 6px 0px #7e6ea514;
+  z-index: 2;
+  background-color: #e6ddeb;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1200 800'%3E%3Cdefs%3E%3CradialGradient id='a' cx='0' cy='800' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23ebdce1'/%3E%3Cstop offset='1' stop-color='%23ebdce1' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='b' cx='1200' cy='800' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23dedceb'/%3E%3Cstop offset='1' stop-color='%23dedceb' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='c' cx='600' cy='0' r='600' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23dbebdd'/%3E%3Cstop offset='1' stop-color='%23dbebdd' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='d' cx='600' cy='800' r='600' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23E6DDEB'/%3E%3Cstop offset='1' stop-color='%23E6DDEB' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='e' cx='0' cy='0' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23EBE5DB'/%3E%3Cstop offset='1' stop-color='%23EBE5DB' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='f' cx='1200' cy='0' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23DBE2EB'/%3E%3Cstop offset='1' stop-color='%23DBE2EB' stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect fill='url(%23a)' width='1200' height='800'/%3E%3Crect fill='url(%23b)' width='1200' height='800'/%3E%3Crect fill='url(%23c)' width='1200' height='800'/%3E%3Crect fill='url(%23d)' width='1200' height='800'/%3E%3Crect fill='url(%23e)' width='1200' height='800'/%3E%3Crect fill='url(%23f)' width='1200' height='800'/%3E%3C/svg%3E");
+  background-attachment: fixed;
+  background-size: cover;
+  padding-bottom: 0;
+}
+
+.selectedProjectsCount {
+  margin-left: 6px;
+  font-weight: 400;
+  color: #676767c2;
+  display: flex;
+
+  button {
+    margin-left: 6px;
+    font-weight: 400;
+    color: #7a7a7a;
+    background: rgb(181 181 181 / 37%);
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: x-small;
+    font-family: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono", "Roboto Mono", "Oxygen Mono";
+    padding: 0.15rem 0.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    gap: 0.2rem;
+    transition: all 0.15s ease-in-out;
+
+    &:hover {
+      color: $black-substitute;
+      background: #ffffffbd;
+    }
+  }
+}
+
+.allProjectsGrid {
+  display: grid;
+  padding: 6rem 0 0;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.allStacks {
+  grid-area: 1/1/2/4;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 2rem 0rem;
+  display: grid;
+  background: rgba(141, 148, 171, 0.2392156863);
+  border-radius: 17px 17px 0 0;
+  margin-bottom: -2px;
+  border: 1px solid #9296b973;
+  box-shadow:
+    0 -2px 3px 0px rgba(0, 0, 0, 0.0784313725) inset,
+    0px -3px 3px 0px rgb(0 0 0 / 4%);
+}
+
+.projectsGrid {
+  grid-area: 2/1/3/4;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.keepInTouchSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100vw;
+  height: 750px;
+  background: rgb(255, 255, 255);
+  margin-left: -6rem;
+  background: linear-gradient(0deg, rgb(255, 255, 255) 0%, rgba(228, 222, 212, 0) 100%);
+
+  p {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #95999f;
+    font-family: var(--font-body);
+    padding: 2rem;
+  }
+}
+
+.smile {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.buttonKeepInTouch {
+  font-weight: 500;
+  display: flex;
+  font-size: large;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background-color: $accent-color;
+  border: 5px solid lighten($accent-color, 23%);
+  border-radius: 21px;
+  z-index: 10;
+  color: #fff;
+  transition: $whoop;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $accent-color;
+    padding: calc(1rem + 4px) calc(2rem + 4px);
+    border: 0px solid #f4cdbb;
+    color: #fff;
+  }
+}
+
+.currentSkills {
+  user-select: none;
+  grid-area: 1/1/2/3;
+  padding: 1rem 3rem;
+  backdrop-filter: blur(4px);
+
+  h3 {
+    font-size: large;
+    font-weight: 500;
+    font-family: var(--font-title);
+    margin-bottom: 0.8rem;
+    color: #444b5b;
+    display: flex;
+  }
+
+  p {
+    font-size: small;
+    line-height: 1.8;
+    color: #727272;
+    padding: 0rem 0 0.8rem;
+  }
+
+  .tagsRow {
+    transition: all 0.3s ease-in-out;
+
+    .tag {
+      filter: brightness(0.5);
+      opacity: 0.65;
+      transition: background 0.15s ease-in-out;
+      &:hover {
+        filter: brightness(1);
+        opacity: 1;
+      }
+    }
+
+    .selectedTag {
+      transition: all 0.3s ease-in-out;
+      filter: brightness(1);
+      opacity: 1;
+    }
+  }
+}
+
+.otherStack {
+  grid-area: 1/3/2/4;
+  padding: 1rem 3rem;
+  backdrop-filter: blur(4px);
+  border-left: 1px solid #00000024;
+
+  h3 {
+    font-size: large;
+    font-weight: 500;
+    font-family: var(--font-title);
+    margin-bottom: 0.8rem;
+    color: #444b5b;
+  }
+
+  p {
+    font-size: small;
+    line-height: 1.8;
+    color: #727272;
+    padding: 0rem 0 0.8rem;
+  }
+}
+
+.inlineTag {
+  background-color: #bcbdcc;
+  border-radius: 6px;
+  padding: 0px 5px;
+  font-weight: bold;
+  color: #494949;
+  font-size: smaller;
+}
+
+.projectCard {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1.6fr 0.5fr 0.3fr 2.6fr 0.5fr;
+  grid-auto-rows: 1fr;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "projectCardImage"
+    "projectCardTitle"
+    "projectCardTags"
+    "projectCardDescription"
+    "projectCardBottomRow";
+  background: rgb(255 255 255 / 45%);
+  border: 1px solid #9296b973;
+  box-shadow: $small-shadow;
+  backdrop-filter: blur(4px);
+  overflow: clip;
+  transition:
+    background 200ms,
+    box-shadow 300ms ease-in-out,
+    transform 300ms,
+    border-radius 200ms,
+    border 200ms;
+
+  &:hover {
+    background: white;
+    border: 1px solid #9e9e9e;
+    box-shadow: $big-shadow;
+    z-index: 10;
+    transform: translateY(-4px);
+    border-radius: 4px;
+
+    .projectCardBottomRow {
+      .projectCardViewDetails {
+        transition: all 0.2s ease-in-out;
+        cursor: pointer;
+        color: $black-substitute;
+
+        &:hover {
+          color: $accent-color;
+        }
+
+        span {
+          margin-left: 5px;
+        }
+      }
+    }
+  }
+}
+
+.projectCardSelected {
+  @extend .projectCard;
+  box-shadow: $big-shadow;
+  background: #ffffff;
+  border: 1px solid #535353;
+  z-index: 10;
+  transform: translateY(0px);
+  filter: drop-shadow(0px 0px 6px #00000020);
+  border-radius: 0;
+}
+
+.projectCardImage {
+  grid-area: projectCardImage;
+  background: rgba(202, 206, 220, 0.168627451);
+  display: flex;
+  min-height: 180px;
+  align-items: center;
+  padding: 2rem 2rem;
+  justify-content: center;
+  box-shadow: 0 -2px 3px 0px #0000000a inset;
+  border-bottom: 1px solid #0000001a;
+}
+
+.projectCardTitle {
+  grid-area: projectCardTitle;
+  font-family: var(--font-title);
+  font-size: x-large;
+  font-weight: 700;
+  padding: 3rem 3rem 1rem;
+  color: #40465a;
+}
+
+.projectCardBottomRow {
+  @extend .twoCols;
+  grid-area: projectCardBottomRow;
+  color: #7b7b7b;
+  font-weight: 700;
+  display: flex;
+  font-size: small;
+  align-items: baseline;
+  padding: 2rem 2rem 2.5rem;
+}
+
+.projectCardLinks {
+  display: flex;
+  gap: 1rem;
+  font-weight: 400;
+}
+
+.projectCardLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  padding: 0.2rem 1.2rem;
+  transition: all 0.15s ease-in-out;
+  gap: 0.3rem;
+  background: #c4c4c436;
+  border: 1px solid transparent;
+  transition: all 0.15s ease-in-out;
+  box-shadow: 0px 0px 1px 0px #00000061;
+
+  &:hover {
+    color: $black-substitute;
+    border-color: #00000026;
+    background: #c4c4c446;
+  }
+}
+
+.githubSourceButton {
+  @extend .projectCardLink;
+}
+
+.demoButton {
+  @extend .projectCardLink;
+}
+
+.projectCardViewDetails {
+  padding: 0.4rem 1rem;
+  text-transform: uppercase;
+
+  span {
+    display: inline-flex;
+  }
+}
+
+.howManyMoreTags {
+  font-size: x-small;
+  font-weight: 500;
+  border-radius: 4px;
+  padding: 0.4rem 1rem;
+  color: #383838;
+  background: #c4c4c436;
+  border: 1px solid transparent;
+  transition: all 0.15s ease-in-out;
+
+  &:hover {
+    border-color: #00000026;
+    background: #c4c4c446;
+  }
+}
+
+.projectCardDescription {
+  grid-area: projectCardDescription;
+  padding: 1rem 2.5rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  font-family: var(--font-body);
+  color: #3b3b3b;
+
+  p {
+    padding: 0.5rem 0;
+    border-bottom: 1px dashed rgb(0 0 0 / 7%);
+    font-size: 0.9rem;
+    color: #000000ad;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+.projectCardTags {
+  grid-area: projectCardTags;
+  padding: 1rem 2.5rem 1.4rem;
+}

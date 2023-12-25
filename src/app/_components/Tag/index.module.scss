@@ -1,0 +1,42 @@
+@import "@/_styles/variables.module.scss";
+
+.tag {
+  background-color: rgb(255 255 255 / 34%);
+  color: rgb(0 0 0);
+  border: 1px solid #303030;
+  border-radius: 4px;
+  padding: 0.3rem 0.5rem;
+  width: fit-content;
+  display: flex;
+  gap: 0.3rem;
+  font-size: small;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease-in-out;
+  box-shadow: $base-shadow;
+
+  &:hover {
+    background-color: #4d4a46 !important;
+    color: rgba(255, 255, 255, 0.82) !important;
+    border: 1px solid #4d4a46 !important;
+    box-shadow: $small-shadow;
+
+    .tagText {
+      color: white;
+    }
+  }
+
+  .tagText {
+    color: black;
+    font-weight: 500;
+    font-size: smaller;
+  }
+}
+
+.selectedTag {
+  @extend .tag;
+  filter: brightness(1) !important;
+  background-color: #fff !important;
+  opacity: 1 !important;
+}

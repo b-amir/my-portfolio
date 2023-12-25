@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import styles from "./styles/page.module.scss";
+import styles from "./index.module.scss";
+
 import { IoCloseSharp } from "react-icons/io5";
 
 export const Tag: React.FC = ({
@@ -46,7 +47,10 @@ export const Tag: React.FC = ({
         cursor: interactive ? "pointer" : "default",
         padding: interactive ? "0.1rem 0.4rem" : "0.25rem 0.5rem",
         gap: interactive ? "0.25rem" : "0.5rem",
-        boxShadow: interactive ? "0px 2px 2px 0px " + color + "30" : ""
+        boxShadow: interactive ? "0px 2px 2px 0px " + color + "30" : "",
+        filter: interactive ? "brightness(0.5)" : "",
+        opacity: interactive ? 0.65 : 1,
+        transition: "filter 0.3s ease-in-out"
       }}>
       <div className={styles.tagIcon}>{selected ? <IoCloseSharp /> : icon}</div>
       <div className={styles.tagText}>{name}</div>
