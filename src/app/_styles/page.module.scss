@@ -173,6 +173,8 @@
 
     h2 {
         font-family: var(--font-title);
+        line-height: 1.8;
+        font-weight: 700;
     }
 }
 .stack {
@@ -196,7 +198,9 @@
     padding: 0.5rem 0;
     border-bottom: 1px dashed rgb(0 0 0 / 7%);
     font-size: 1rem;
-    color: #000000ad;
+    color: #000000f0;
+    line-height: 1.7;
+
     &:last-child {
         border-bottom: none;
     }
@@ -248,7 +252,7 @@
         padding-left: 1.3em;
         padding-bottom: 0.5rem;
         font-size: 1rem;
-        color: rgba(0, 0, 0, 0.6784313725);
+        color: #000000f0;
 
         &:before {
             content: "•";

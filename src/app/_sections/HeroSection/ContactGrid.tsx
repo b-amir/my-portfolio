@@ -129,7 +129,6 @@ function ContactMain({ setShowContactLinksForMobile, clickToSelectText }) {
               onClick={(e) => {
                 // copy to clipboard:
                 navigator.clipboard.writeText("iamirbazgir@gmail.com");
-                // change #emailCopyField to "copied!" for 1 second:
                 const emailCopyField =
                   document.getElementById("emailCopyField");
                 emailCopyField.innerHTML = "Copied!";

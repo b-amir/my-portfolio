@@ -38,7 +38,10 @@ export const AboutSection: React.FC = () => {
                       channels. The vibrant and ever-evolving frontend
                       development scene is where I feel most at home. Always
                       eager to broaden my horizons by learning new things, and
-                      hardly ever frustrated by CSS 😀.
+                      <span className={globalStyles.generalHighlight}>
+                        {" "}
+                        hardly ever frustrated by CSS 😀.
+                      </span>
                     </p>
                   </li>
                   <li>

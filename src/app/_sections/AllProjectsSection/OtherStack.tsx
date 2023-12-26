@@ -19,11 +19,12 @@ export function OtherStack() {
       <br />
       <h3>Previous stack</h3>
       <p>
-        Started with WordPress, learned{" "}
+        Started with WordPress back in 2011, learned{" "}
         <span className={styles.inlineTag}>PHP</span>,{" "}
-        <span className={styles.inlineTag}>MySQL</span> and CSS, and integrated{" "}
-        <span className={styles.inlineTag}>Python</span> into select project
-        segments.
+        <span className={styles.inlineTag}>MySQL</span> and CSS the following
+        year, and integrated <span className={styles.inlineTag}>Python</span>{" "}
+        into select project segments in 2016. Subsequently, I focused on
+        Frontend.
       </p>
     </div>
   );

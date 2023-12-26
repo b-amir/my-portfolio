@@ -15,8 +15,8 @@ export function TagsRow({
 }) {
   return (
     <div className={globalStyles.tagsRow}>
-      <h3>{title}</h3>
-      <div>
+      <h3 className={globalStyles.tagsRowTitle}>{title}</h3>
+      <div className={globalStyles.tagsRowTags}>
         {listOfTags.map((tag) => (
           <Tag
             selectedTags={selectedTags}
