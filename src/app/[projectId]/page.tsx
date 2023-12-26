@@ -8,6 +8,7 @@ import { GithubSourceButton } from "@/_components/GithubSourceButton";
 import { Project } from "@/_utils/tagsCount";
 import { BackButton } from "./BackButton";
 import { FooterSection } from "@/_sections/FooterSection";
+import { AppProgressBar as ProgressBar } from "next-nprogress-bar";
 
 function Page({ params }: { params: { projectId: string } }) {
   const currentProject = projects.find(
@@ -16,11 +17,17 @@ function Page({ params }: { params: { projectId: string } }) {
 
   if (!currentProject) {
     return (
-      <div className={styles.errorPage}>
+      <div className={globalStyles.errorPage}>
         <BackButton />
-        <div className={styles.errorMessage}>
+        <div className={globalStyles.errorMessage}>
           <h1>Project not found</h1>
         </div>
+        <ProgressBar
+          height="6px"
+          color="#f15c55"
+          options={{ showSpinner: true }}
+          shallowRouting
+        />
       </div>
     );
   }
@@ -49,12 +56,12 @@ function Page({ params }: { params: { projectId: string } }) {
 
   return (
     <>
-      <div className={styles.featuredProject}>
+      <div className={globalStyles.featuredProject}>
         <BackButton />
 
-        <div className={styles.featuredGrid}>
-          <div className={styles.images}>
-            <div className={styles.mainImage}>
+        <div className={globalStyles.featuredGrid}>
+          <div className={globalStyles.images}>
+            <div className={globalStyles.mainImage}>
               <Image
                 src={currentProject?.image}
                 width={200}
@@ -62,14 +69,14 @@ function Page({ params }: { params: { projectId: string } }) {
                 alt="cslit"
               />
             </div>
-            <div className={styles.moreImages}></div>
+            <div className={globalStyles.moreImages}></div>
           </div>
-          <div className={styles.summary}>
-            <div className={styles.summaryTitle}>Summary</div>
+          <div className={globalStyles.summary}>
+            <div className={globalStyles.summaryTitle}>Summary</div>
             <h2>{currentProject?.title}</h2>
 
             {currentProject?.description.map((paragraph: string) => (
-              <p className={styles.summaryText} key={paragraph}>
+              <p className={globalStyles.summaryText} key={paragraph}>
                 {paragraph}
               </p>
             ))}
@@ -80,8 +87,8 @@ function Page({ params }: { params: { projectId: string } }) {
               <GithubSourceButton link={currentProject?.githubLink} />
             )}
           </div>
-          <div className={styles.stack}>
-            <div className={styles.stackTitle}>Technical stack</div>
+          <div className={globalStyles.stack}>
+            <div className={globalStyles.stackTitle}>Technical stack</div>
             {categoriesToDisplay.length > 0
               ? categoriesToDisplay.map((category) => (
                   <TagsRow
@@ -93,9 +100,9 @@ function Page({ params }: { params: { projectId: string } }) {
               : null}
           </div>
 
-          <div className={styles.features}>
-            <div className={styles.featuresTitle}>Features</div>
-            <ul className={styles.featureList}>
+          <div className={globalStyles.features}>
+            <div className={globalStyles.featuresTitle}>Features</div>
+            <ul className={globalStyles.featureList}>
               {currentProject?.features.map((feature) => (
                 <li key={feature}>{feature}</li>
               ))}

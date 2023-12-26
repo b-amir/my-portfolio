@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export function BackButton() {
   return (
-    <Link prefetch={true} href="/" className={styles.backButton}>
+    <Link prefetch={true} href="/" className={globalStyles.backButton}>
       <SectionHeader
         title="Back to home"
         color="#432b0ee3"
