@@ -134,6 +134,7 @@
     margin-bottom: 0.8rem;
     color: #444b5b;
     display: flex;
+    width: 100%;
   }
 
   p {
@@ -145,6 +146,7 @@
 
   .tagsRow {
     transition: all 0.3s ease-in-out;
+
     div {
       gap: 1.1rem !important;
     }
@@ -303,19 +305,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 4px;
-  padding: 0.2rem 1.2rem;
   transition: all 0.15s ease-in-out;
   gap: 0.3rem;
-  background: #c4c4c436;
-  border: 1px solid transparent;
   transition: all 0.15s ease-in-out;
-  box-shadow: 0px 0px 1px 0px #00000061;
 
   &:hover {
     color: $black-substitute;
-    border-color: #00000026;
-    background: #c4c4c446;
   }
 }
 
@@ -389,6 +384,11 @@
   }
   .currentSkills {
     grid-area: 1/1/2/4;
+
+    h3 {
+      border-bottom: 1px solid #8080806e;
+      padding-bottom: 0.4rem;
+    }
   }
   .allProjectsGrid {
     padding: 0;
@@ -418,6 +418,11 @@
   }
   .currentSkills {
     grid-area: 1/1/2/4;
+
+    h3 {
+      border-bottom: 1px solid #8080806e;
+      padding-bottom: 0.4rem;
+    }
   }
   .allProjectsGrid {
     padding: 0;

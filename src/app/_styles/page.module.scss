@@ -246,6 +246,10 @@
     li {
         position: relative;
         padding-left: 1.3em;
+        padding-bottom: 0.5rem;
+        font-size: 1rem;
+        color: rgba(0, 0, 0, 0.6784313725);
+
         &:before {
             content: "•";
             color: #7b7b7bb7;

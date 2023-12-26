@@ -57,12 +57,12 @@ export function ProjectCard({
       <div className={styles.projectCardBottomRow}>
         <div className={styles.projectCardLinks}>
           {githubLink && (
-            <a href={githubLink} className={globalStyles.githubSourceButton}>
+            <a href={githubLink} className={styles.githubSourceButton}>
               GitHub <HiOutlineExternalLink />
             </a>
           )}
           {demoLink && (
-            <a href={demoLink} className={globalStyles.demoButton}>
+            <a href={demoLink} className={styles.demoButton}>
               Demo <HiOutlineExternalLink />
             </a>
           )}

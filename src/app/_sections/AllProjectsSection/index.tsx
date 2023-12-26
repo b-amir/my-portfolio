@@ -187,7 +187,9 @@ export const AllProjectsSection: React.FC = () => {
           </div>
           <p>That&apos;s all for now.</p>
           <div style={{ minHeight: "65px" }}>
-            <button className={styles.buttonKeepInTouch}>
+            <button
+              className={styles.buttonKeepInTouch}
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
               <MdWavingHand /> Let&apos;s keep in touch
             </button>
           </div>

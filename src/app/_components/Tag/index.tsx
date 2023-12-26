@@ -45,7 +45,7 @@ export const Tag: React.FC = ({
           : "1px solid " + color,
         color: color,
         cursor: interactive ? "pointer" : "default",
-        padding: interactive ? "0.1rem 0.4rem" : "0.25rem 0.5rem",
+        padding: interactive ? "0.25rem 0.5rem" : "0.25rem 0.5rem",
         gap: interactive ? "0.25rem" : "0.5rem",
         boxShadow: interactive ? "0px 2px 2px 0px " + color + "30" : "",
         filter: interactive ? "brightness(0.5)" : "",
