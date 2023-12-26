@@ -7,7 +7,7 @@ export function OtherStack() {
       <h3>Other skills</h3>
       <p>
         - Long time <span className={styles.inlineTag}>Linux</span> user. <br />
-        - I know my way around graphical softwares like{" "}
+        - I know my way around design tools like{" "}
         <span className={styles.inlineTag}>Figma</span> &{" "}
         <span className={styles.inlineTag}>PhotoShop</span>. <br />- Familiar
         with <span className={styles.inlineTag}>Agile</span> &{" "}

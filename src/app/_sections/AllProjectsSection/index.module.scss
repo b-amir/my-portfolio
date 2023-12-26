@@ -145,10 +145,15 @@
 
   .tagsRow {
     transition: all 0.3s ease-in-out;
+    div {
+      gap: 1.1rem !important;
+    }
 
     .tag {
       filter: brightness(0.5);
       opacity: 0.65;
+      margin-right: 0.5rem;
+      margin-bottom: 1.1rem;
       transition: background 0.15s ease-in-out;
       &:hover {
         filter: brightness(1);

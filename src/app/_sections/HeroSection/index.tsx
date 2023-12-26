@@ -82,7 +82,11 @@ export const HeroSection: React.FC = () => {
             // rotate={[180, 0]}
             // easing="easeInQuad"
           >
-            <Spline scene="https://prod.spline.design/btTGbGyxfpf64yVO/scene.splinecode" />{" "}
+            {isSmallScreen ? (
+              <Spline scene="https://prod.spline.design/AmgucmBUcWHIoyof/scene.splinecode" />
+            ) : (
+              <Spline scene="https://prod.spline.design/btTGbGyxfpf64yVO/scene.splinecode" />
+            )}
           </Parallax>
         </div>
 

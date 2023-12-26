@@ -50,7 +50,8 @@ export const Tag: React.FC = ({
         boxShadow: interactive ? "0px 2px 2px 0px " + color + "30" : "",
         filter: interactive ? "brightness(0.5)" : "",
         opacity: interactive ? 0.65 : 1,
-        transition: "filter 0.3s ease-in-out"
+        transition: "filter 0.3s ease-in-out",
+        margin: interactive ? "0rem 0.3rem 0.4rem 0rem" : "unset"
       }}>
       <div className={styles.tagIcon}>{selected ? <IoCloseSharp /> : icon}</div>
       <div className={styles.tagText}>{name}</div>

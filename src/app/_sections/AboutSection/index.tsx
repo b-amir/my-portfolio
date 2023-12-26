@@ -37,7 +37,7 @@ export const AboutSection: React.FC = () => {
                       solid stream of podcasts, Twitter communities, and YouTube
                       channels. The vibrant and ever-evolving frontend
                       development scene is where I feel most at home. Always
-                      eager to broaden my horizons and learn new things and
+                      eager to broaden my horizons by learning new things, and
                       hardly ever frustrated by CSS 😀.
                     </p>
                   </li>
