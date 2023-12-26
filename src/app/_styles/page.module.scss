@@ -85,6 +85,13 @@
         align-items: center;
     }
 }
+.generalHighlight {
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-decoration-color: #b6b6b6;
+    text-underline-offset: 5px;
+    text-decoration-thickness: 1.2px;
+}
 .backButton {
     user-select: none;
     transition: all 0.3s ease-in-out;
@@ -289,6 +296,10 @@
         padding: 0rem;
     }
 
+    .sectionHeader {
+        padding-left: 30px;
+    }
+
     .description {
         font-size: 0.8rem;
 
@@ -340,6 +351,14 @@
     .stack {
         grid-area: 3/2/4/4;
         border-left: none;
+    }
+
+    .featureList {
+        li {
+            padding-left: 0.7rem;
+            padding-bottom: 0.7rem;
+            font-size: 0.9rem;
+        }
     }
     .features {
         grid-area: 4/4/4/1;

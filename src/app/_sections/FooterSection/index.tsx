@@ -15,9 +15,15 @@ export const FooterSection: React.FC = () => (
         <div className={styles.footerText}>
           <h2>Thanks for considering my work.</h2>
           <p>
-            Let me emphasize that every project carries a piece of me. I treat
-            each one as a unique product with its own identity —a delightful
-            challenge and an opportunity to learn something new.
+            Let me emphasize that every project carries a piece of me.{" "}
+            <span className={globalStyles.generalHighlight}>
+              I treat each one as a unique product with its own identity
+            </span>{" "}
+            —a delightful challenge and an{" "}
+            <span className={globalStyles.generalHighlight}>
+              opportunity to learn something new
+            </span>
+            .
             <br />
             My hope is that you discover as much joy in experiencing my work as
             I did in bringing it to life. Cheers!

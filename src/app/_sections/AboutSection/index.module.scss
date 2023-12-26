@@ -103,7 +103,8 @@
   -webkit-backdrop-filter: blur(4px);
   backdrop-filter: blur(4px);
   font-weight: 300;
-  line-height: 1.6;}
+  line-height: 1.6;
+}
 
 .seeMyStack {
   @extend .buttonLink;
@@ -156,6 +157,15 @@
     line-height: 1.1;
     padding-bottom: 1.1rem !important;
   }
+  .aboutMeTextBlock {
+    h2 {
+      margin-left: 1.2rem;
+    }
+  }
+  .aboutMeParagraph {
+    font-weight: 400;
+  }
+
   .buttonSection {
     display: flex;
     justify-content: center;

@@ -32,16 +32,20 @@ export const AboutSection: React.FC = () => {
                       I live and breath Frontend:
                     </strong>
                     <p className={styles.aboutMeParagraph}>
-                      This is my forte! I keep myself up-to-date with the
-                      bleeding edge, constantly staying in the loop through a
-                      solid stream of podcasts, Twitter communities, and YouTube
-                      channels. The vibrant and ever-evolving frontend
-                      development scene is where I feel most at home. Always
-                      eager to broaden my horizons by learning new things, and
+                      This is my forte! I{" "}
                       <span className={globalStyles.generalHighlight}>
-                        {" "}
-                        hardly ever frustrated by CSS 😀.
+                        keep myself up-to-date
+                      </span>{" "}
+                      with the bleeding edge, constantly staying in the loop
+                      through a solid stream of podcasts, Twitter communities,
+                      and YouTube channels. The vibrant and ever-evolving
+                      frontend development scene is where I feel most at home.
+                      Always eager to broaden my horizons by learning new
+                      things, and{" "}
+                      <span className={globalStyles.generalHighlight}>
+                        hardly ever frustrated by CSS 😀
                       </span>
+                      .
                     </p>
                   </li>
                   <li>
@@ -49,11 +53,15 @@ export const AboutSection: React.FC = () => {
                       Not a 10× Backend dev,
                     </strong>
                     <p className={styles.aboutMeParagraph}>
-                      but I embrace the Fullstack, as it is the future. I dive
-                      into the backend as needed, refining my skills through
-                      hands-on projects (check some below), extensive reading,
-                      and tutorials. Comfortable communicating with backend
-                      developers for a smooth project execution.
+                      but{" "}
+                      <span className={globalStyles.generalHighlight}>
+                        I embrace the Fullstack
+                      </span>
+                      , as it is the future. I dive into the backend as needed,
+                      refining my skills through hands-on projects (check some
+                      below), extensive reading, and tutorials. Comfortable
+                      communicating with backend developers for a smooth project
+                      execution.
                     </p>
                   </li>
                   <li>
@@ -61,8 +69,11 @@ export const AboutSection: React.FC = () => {
                       Not a Design expert,
                     </strong>
                     <p className={styles.aboutMeParagraph}>
-                      but I&apos;m well-versed in tools like Figma and
-                      Photoshop. During my school days, I took on basic UI
+                      but I&apos;m{" "}
+                      <span className={globalStyles.generalHighlight}>
+                        well-versed in tools like Figma
+                      </span>{" "}
+                      and Photoshop. During my school days, I took on basic UI
                       projects and delved into UX tutorials out of passion to
                       help me create immersive experiences. Fascinated by
                       everyday products, I&apos;ve made it a point to study and
