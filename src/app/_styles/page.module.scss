@@ -321,7 +321,7 @@
 
     .featuredGrid {
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-rows: auto;
     }
     .summary {
         grid-area: 2/4/3/2;
@@ -342,7 +342,7 @@
     }
     .featuredGrid {
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-rows: auto;
     }
     .summary {
         grid-area: 2/4/3/2;

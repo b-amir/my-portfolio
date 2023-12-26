@@ -378,6 +378,9 @@
 }
 
 @include mobile {
+  .selectedProjectsCount {
+    display: none;
+  }
   .section {
     padding: 0rem;
   }
@@ -386,6 +389,9 @@
   }
   .currentSkills {
     grid-area: 1/1/2/4;
+  }
+  .allProjectsGrid {
+    padding: 0;
   }
   .otherStack {
     grid-area: 2/1/2/4;
@@ -412,6 +418,9 @@
   }
   .currentSkills {
     grid-area: 1/1/2/4;
+  }
+  .allProjectsGrid {
+    padding: 0;
   }
   .otherStack {
     grid-area: 2/1/2/4;

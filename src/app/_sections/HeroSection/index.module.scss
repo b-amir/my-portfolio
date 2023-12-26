@@ -3,7 +3,7 @@
 
 .hero {
   @extend .twoRows;
-
+  position: relative;
   background-attachment: fixed;
   background-size: cover;
   background-image: radial-gradient(
@@ -302,7 +302,6 @@
     }
   }
   .fry {
-    // display: none !important;
     position: absolute !important;
     bottom: 3rem !important;
     // right: 0 !important;

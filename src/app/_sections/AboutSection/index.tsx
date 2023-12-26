@@ -67,26 +67,28 @@ export const AboutSection: React.FC = () => {
                     </p>
                   </li>
                 </ul>
-                <button
-                  className={styles.seeMyStack}
-                  onClick={() => {
-                    document?.getElementById("my-stack")?.scrollIntoView({
-                      behavior: "smooth",
-                      block: "start",
-                      inline: "nearest"
-                    });
-                  }}>
-                  See my technical stack{" "}
-                  <span className={globalStyles.icon}>
-                    <IoArrowForward />
-                  </span>
-                </button>{" "}
+                <div className={styles.buttonSection}>
+                  <button
+                    className={styles.seeMyStack}
+                    onClick={() => {
+                      document?.getElementById("my-stack")?.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start",
+                        inline: "nearest"
+                      });
+                    }}>
+                    See my technical stack{" "}
+                    <span className={globalStyles.icon}>
+                      <IoArrowForward />
+                    </span>
+                  </button>
+                </div>
               </div>
               <Fa42Group className={styles.aboutIcon} />
             </div>
           </div>
         </Parallax>
-      </div>{" "}
+      </div>
     </ParallaxProvider>
   );
 };
