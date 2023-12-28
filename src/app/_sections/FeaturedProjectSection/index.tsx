@@ -7,6 +7,7 @@ import { DemoButton } from "@/_components/DemoButton";
 import { FaStarOfLife } from "react-icons/fa6";
 import { SectionHeader } from "@/_components/SectionHeader";
 import { GithubSourceButton } from "@/_components/GithubSourceButton";
+import { Parallax, ParallaxProvider } from "react-scroll-parallax";
 
 export const FeaturedProjectSection: React.FC = () => {
   return (
@@ -22,7 +23,31 @@ export const FeaturedProjectSection: React.FC = () => {
           <div className={globalStyles.mainImage}>
             <Image src="/cslit-logo.svg" width={200} height={120} alt="cslit" />
           </div>
-          <div className={globalStyles.moreImages}></div>
+          <div className={globalStyles.moreImages}>
+            {projects[0]?.screenshots.mobile?.map((screenshot, index) => (
+              <div className={globalStyles.mobileScreenshot} key={index}>
+                <Image
+                  className={globalStyles.imageClickable}
+                  src={screenshot}
+                  width={112}
+                  height={240}
+                  alt="cslit"
+                />
+              </div>
+            ))}
+
+            {projects[0]?.screenshots.desktop?.map((screenshot, index) => (
+              <div className={globalStyles.desktopScreenshot} key={index}>
+                <Image
+                  className={globalStyles.imageClickable}
+                  src={screenshot}
+                  width={365}
+                  height={240}
+                  alt="cslit"
+                />
+              </div>
+            ))}
+          </div>
         </div>
         <div className={globalStyles.summary}>
           <div className={globalStyles.summaryTitle}>Summary</div>

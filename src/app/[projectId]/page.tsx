@@ -69,7 +69,31 @@ function Page({ params }: { params: { projectId: string } }) {
                 alt="cslit"
               />
             </div>
-            <div className={globalStyles.moreImages}></div>
+            <div className={globalStyles.moreImages}>
+              {currentProject?.screenshots.mobile?.map((screenshot, index) => (
+                <div className={globalStyles.mobileScreenshot} key={index}>
+                  <Image
+                    className={globalStyles.imageClickable}
+                    src={screenshot}
+                    width={112}
+                    height={240}
+                    alt="cslit"
+                  />
+                </div>
+              ))}
+
+              {currentProject?.screenshots.desktop?.map((screenshot, index) => (
+                <div className={globalStyles.desktopScreenshot} key={index}>
+                  <Image
+                    className={globalStyles.imageClickable}
+                    src={screenshot}
+                    width={365}
+                    height={240}
+                    alt="cslit"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
           <div className={globalStyles.summary}>
             <div className={globalStyles.summaryTitle}>Summary</div>

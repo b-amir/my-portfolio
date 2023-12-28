@@ -167,10 +167,59 @@
     grid-auto-flow: row;
 }
 .images {
-    grid-area: 1 / 1 / 2 / 4;
+    display: flex;
+    grid-area: 1/1/2/4;
     padding: 1.5rem 3rem;
-    border-bottom: 1px solid #0000001a;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1019607843);
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
 }
+.imageBase {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 7px;
+    background-color: rgba(0, 0, 0, 0.042);
+    padding: 1rem;
+}
+.imageClickable {
+    @extend .imageBase;
+    padding: 0;
+    border: 1px solid rgb(0 0 0 / 36%);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+        border: 5px solid rgb(0 0 0 / 45%);
+        background-color: rgb(0 0 0 / 45%);
+        box-shadow: 0px 0px 0px 0px #0000001c;
+        filter: brightness(0.8);
+    }
+}
+.mainImage {
+    @extend .imageBase;
+    grid-area: 1 / 1 / 2 / 2;
+    min-width: 420px;
+    height: 100%;
+}
+.moreImages {
+    display: flex;
+    grid-area: 1/2/2/4;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: 100%;
+    gap: 1rem;
+}
+.mobileScreenshot {
+    @extend .imageBase;
+}
+.desktopScreenshot {
+    @extend .imageBase;
+}
+
 .summary {
     grid-area: 2 / 1 / 4 / 2;
     padding: 1.5rem 3rem;
@@ -219,19 +268,6 @@
     font-weight: 700;
     font-size: small;
     padding: 0.5rem 0rem 1.5rem;
-}
-.mainImage {
-    grid-area: 1 / 1 / 2 / 2;
-    background-color: rgba(0, 0, 0, 0.042);
-    min-width: 420px;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 7px;
-}
-.moreImages {
-    grid-area: 1 / 2 / 2 / 4;
 }
 .features {
     grid-area: 2 / 3 / 4 / 4;
@@ -345,6 +381,12 @@
         grid-template-columns: 1fr;
         grid-template-rows: auto;
     }
+    .images {
+        overflow-x: scroll;
+    }
+    .mainImage {
+        min-width: 260px;
+    }
     .summary {
         grid-area: 2/4/3/2;
     }
@@ -376,6 +418,9 @@
     .featuredGrid {
         grid-template-columns: 1fr;
         grid-template-rows: auto;
+    }
+    .images {
+        overflow-x: scroll;
     }
     .summary {
         grid-area: 2/4/3/2;

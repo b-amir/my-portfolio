@@ -11,7 +11,7 @@ export const AboutSection: React.FC = () => {
   return (
     <ParallaxProvider>
       <div className={styles.about} id="about">
-        <Parallax speed={10}>
+        <Parallax speed={25}>
           <SectionHeader
             title="About Me"
             icon={<MdOutlinePerson className={globalStyles.icon} />}
@@ -91,7 +91,7 @@ export const AboutSection: React.FC = () => {
                         inline: "nearest"
                       });
                     }}>
-                    See my technical stack{" "}
+                    My technical stack & projects{" "}
                     <span className={globalStyles.icon}>
                       <IoArrowForward />
                     </span>
