@@ -8,6 +8,7 @@ import { FaStarOfLife } from "react-icons/fa6";
 import { SectionHeader } from "@/_components/SectionHeader";
 import { GithubSourceButton } from "@/_components/GithubSourceButton";
 import { Parallax, ParallaxProvider } from "react-scroll-parallax";
+import Link from "next/link";
 
 export const FeaturedProjectSection: React.FC = () => {
   return (
@@ -26,25 +27,29 @@ export const FeaturedProjectSection: React.FC = () => {
           <div className={globalStyles.moreImages}>
             {projects[0]?.screenshots.mobile?.map((screenshot, index) => (
               <div className={globalStyles.mobileScreenshot} key={index}>
-                <Image
-                  className={globalStyles.imageClickable}
-                  src={screenshot}
-                  width={112}
-                  height={240}
-                  alt="cslit"
-                />
+                <Link href={`${screenshot}.png`} target="_blank">
+                  <Image
+                    className={globalStyles.imageClickable}
+                    src={`${screenshot}-thumbnail.png`}
+                    width={112}
+                    height={240}
+                    alt="cslit"
+                  />
+                </Link>
               </div>
             ))}
 
             {projects[0]?.screenshots.desktop?.map((screenshot, index) => (
               <div className={globalStyles.desktopScreenshot} key={index}>
-                <Image
-                  className={globalStyles.imageClickable}
-                  src={screenshot}
-                  width={365}
-                  height={240}
-                  alt="cslit"
-                />
+                <Link href={`${screenshot}.png`} target="_blank">
+                  <Image
+                    className={globalStyles.imageClickable}
+                    src={`${screenshot}-thumbnail.png`}
+                    width={365}
+                    height={240}
+                    alt="cslit"
+                  />
+                </Link>
               </div>
             ))}
           </div>

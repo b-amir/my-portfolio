@@ -187,16 +187,17 @@
 .imageClickable {
     @extend .imageBase;
     padding: 0;
-    border: 1px solid rgb(0 0 0 / 36%);
+    border: 1px solid rgb(191 187 181);
     border-radius: 8px;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
+    filter: drop-shadow(2px 2px 2px #00000020);
 
     &:hover {
-        border: 5px solid rgb(0 0 0 / 45%);
-        background-color: rgb(0 0 0 / 45%);
-        box-shadow: 0px 0px 0px 0px #0000001c;
-        filter: brightness(0.8);
+        border: 5px solid rgb(207 203 199 / 71%);
+        background-color: rgb(207 203 199 / 71%);
+        box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.1098039216);
+        filter: brightness(0.5);
     }
 }
 .mainImage {

@@ -9,6 +9,7 @@ import { Project } from "@/_utils/tagsCount";
 import { BackButton } from "./BackButton";
 import { FooterSection } from "@/_sections/FooterSection";
 import { AppProgressBar as ProgressBar } from "next-nprogress-bar";
+import Link from "next/link";
 
 function Page({ params }: { params: { projectId: string } }) {
   const currentProject = projects.find(
@@ -72,25 +73,29 @@ function Page({ params }: { params: { projectId: string } }) {
             <div className={globalStyles.moreImages}>
               {currentProject?.screenshots.mobile?.map((screenshot, index) => (
                 <div className={globalStyles.mobileScreenshot} key={index}>
-                  <Image
-                    className={globalStyles.imageClickable}
-                    src={screenshot}
-                    width={112}
-                    height={240}
-                    alt="cslit"
-                  />
+                  <Link href={`${screenshot}.png`} target="_blank">
+                    <Image
+                      className={globalStyles.imageClickable}
+                      src={`${screenshot}-thumbnail.png`}
+                      width={112}
+                      height={240}
+                      alt="cslit"
+                    />
+                  </Link>
                 </div>
               ))}
 
               {currentProject?.screenshots.desktop?.map((screenshot, index) => (
                 <div className={globalStyles.desktopScreenshot} key={index}>
-                  <Image
-                    className={globalStyles.imageClickable}
-                    src={screenshot}
-                    width={365}
-                    height={240}
-                    alt="cslit"
-                  />
+                  <Link href={`${screenshot}.png`} target="_blank">
+                    <Image
+                      className={globalStyles.imageClickable}
+                      src={`${screenshot}-thumbnail.png`}
+                      width={365}
+                      height={240}
+                      alt="cslit"
+                    />
+                  </Link>
                 </div>
               ))}
             </div>

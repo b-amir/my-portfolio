@@ -5,11 +5,11 @@
     "image": "/cslit-logo.svg",
     "screenshots": {
       "mobile": [
-        "/screenshots/cslit-screenshot-1.png"
+        "/screenshots/cslit-screenshot-1"
       ],
       "desktop": [
-        "/screenshots/cslit-screenshot-2.png",
-        "/screenshots/cslit-screenshot-3.png"
+        "/screenshots/cslit-screenshot-2",
+        "/screenshots/cslit-screenshot-3"
       ]
     },
     "tags": [
@@ -84,10 +84,10 @@
     "image": "/thiscovered-logo.svg",
     "screenshots": {
       "mobile": [
-        "/screenshots/thiscovered-screenshot-1.png"
+        "/screenshots/thiscovered-screenshot-1"
       ],
       "desktop": [
-        "/screenshots/thiscovered-screenshot-2.png"
+        "/screenshots/thiscovered-screenshot-2"
       ]
     },
     "tags": [
@@ -187,12 +187,12 @@
     "image": "/futpal-logo.svg",
     "screenshots": {
       "mobile": [
-        "/screenshots/futpal-screenshot-1.png",
-        "/screenshots/futpal-screenshot-2.png"
+        "/screenshots/futpal-screenshot-1",
+        "/screenshots/futpal-screenshot-2"
       ],
       "desktop": [
-        "/screenshots/futpal-screenshot-3.png",
-        "/screenshots/futpal-screenshot-4.png"
+        "/screenshots/futpal-screenshot-3",
+        "/screenshots/futpal-screenshot-4"
       ]
     },
     "tags": [
@@ -244,7 +244,7 @@
     "screenshots": {
       "mobile": [],
       "desktop": [
-        "/screenshots/adeptivity-screenshot-1.png"
+        "/screenshots/adeptivity-screenshot-1"
       ]
     },
     "tags": [
@@ -299,7 +299,7 @@
     "screenshots": {
       "mobile": [],
       "desktop": [
-        "/screenshots/notopia-screenshot-1.png"
+        "/screenshots/notopia-screenshot-1"
       ]
     },
     "tags": [
