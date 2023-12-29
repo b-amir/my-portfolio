@@ -7,7 +7,9 @@ import { ContactCardItems } from "./ContactCardItems";
 export const ContactGrid: React.FC = () => {
   const [showContactLinksForMobile, setShowContactLinksForMobile] =
     useState(false);
-  const isMobile = window.innerWidth < 600;
+  const isMobile =
+    typeof window !== "undefined" ? window.innerWidth < 600 : false;
+
   return (
     <>
       {!isMobile && (

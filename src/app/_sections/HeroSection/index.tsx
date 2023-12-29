@@ -8,7 +8,8 @@ import { Tooltip } from "@/_components/Tooltip";
 import { Parallax, ParallaxProvider } from "react-scroll-parallax";
 
 export const HeroSection: React.FC = () => {
-  const isSmallScreen = window.innerWidth < 1120;
+  const isSmallScreen =
+    typeof window !== "undefined" ? window.innerWidth < 1120 : false;
   const parallaxSpeed = isSmallScreen ? 0 : -200;
   const parallaxTranslateX: [string, string] = isSmallScreen
     ? ["0px", "0px"]
