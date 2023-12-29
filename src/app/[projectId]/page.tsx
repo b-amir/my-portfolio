@@ -1,15 +1,15 @@
 "use client";
 import Image from "next/image";
-import globalStyles from "@/_styles/page.module.scss";
 import projects from "@/_data/projects.json";
 import { TagsRow } from "@/_components/Tag/TagsRow";
+import globalStyles from "@/_styles/page.module.scss";
 import { DemoButton } from "@/_components/DemoButton";
-import { GithubSourceButton } from "@/_components/GithubSourceButton";
-import { Project } from "@/_utils/tagsCount";
 import { BackButton } from "./BackButton";
+import { ScreenShots } from "../_components/ScreenShots";
+import { NotFoundPage } from "./NotFoundPage";
 import { FooterSection } from "@/_sections/FooterSection";
-import { AppProgressBar as ProgressBar } from "next-nprogress-bar";
-import Link from "next/link";
+import { GithubSourceButton } from "@/_components/GithubSourceButton";
+import { findNonEmptyCategories } from "@/_utils/findNonEmptyCategories";
 
 function Page({ params }: { params: { projectId: string } }) {
   const currentProject = projects.find(
@@ -17,42 +17,11 @@ function Page({ params }: { params: { projectId: string } }) {
   );
 
   if (!currentProject) {
-    return (
-      <div className={globalStyles.errorPage}>
-        <BackButton />
-        <div className={globalStyles.errorMessage}>
-          <h1>Project not found</h1>
-        </div>
-        <ProgressBar
-          height="6px"
-          color="#f15c55"
-          options={{ showSpinner: true }}
-          shallowRouting
-        />
-      </div>
-    );
+    return <NotFoundPage />;
   }
 
   const hasDemoLink = currentProject.demoLink.length > 0;
   const hasGithubLink = currentProject.githubLink.length > 0;
-  // a function to determin wheter if project has frontend, backend, devops or libs. then return the categories with non zero tags in them.
-  function findNonEmptyCategories(currentProject: Project): string[] {
-    const categoriesWithTags: string[] = [];
-
-    const tags = currentProject?.tags[0];
-
-    if (tags.frontend.length)
-      categoriesWithTags.push({ id: "frontend", title: "Frontend" });
-    if (tags.backend.length)
-      categoriesWithTags.push({ id: "backend", title: "Backend, API, DB" });
-    if (tags.devops.length)
-      categoriesWithTags.push({ id: "devops", title: "DevOps, Testing" });
-    if (tags.libs.length)
-      categoriesWithTags.push({ id: "libs", title: "Libs, etc" });
-
-    return categoriesWithTags;
-  }
-
   const categoriesToDisplay = findNonEmptyCategories(currentProject);
 
   return (
@@ -70,35 +39,7 @@ function Page({ params }: { params: { projectId: string } }) {
                 alt="cslit"
               />
             </div>
-            <div className={globalStyles.moreImages}>
-              {currentProject?.screenshots.mobile?.map((screenshot, index) => (
-                <div className={globalStyles.mobileScreenshot} key={index}>
-                  <Link href={`${screenshot}.png`} target="_blank">
-                    <Image
-                      className={globalStyles.imageClickable}
-                      src={`${screenshot}-thumbnail.png`}
-                      width={112}
-                      height={240}
-                      alt="cslit"
-                    />
-                  </Link>
-                </div>
-              ))}
-
-              {currentProject?.screenshots.desktop?.map((screenshot, index) => (
-                <div className={globalStyles.desktopScreenshot} key={index}>
-                  <Link href={`${screenshot}.png`} target="_blank">
-                    <Image
-                      className={globalStyles.imageClickable}
-                      src={`${screenshot}-thumbnail.png`}
-                      width={365}
-                      height={240}
-                      alt="cslit"
-                    />
-                  </Link>
-                </div>
-              ))}
-            </div>
+            <ScreenShots currentProject={currentProject} />
           </div>
           <div className={globalStyles.summary}>
             <div className={globalStyles.summaryTitle}>Summary</div>
@@ -123,7 +64,12 @@ function Page({ params }: { params: { projectId: string } }) {
                   <TagsRow
                     key={category.id}
                     title={category.title}
-                    listOfTags={currentProject?.tags[0][category.id]}
+                    listOfTags={
+                      (currentProject?.tags[0] as Record<string, string[]>)[
+                        category.id
+                      ]
+                    }
+                    setSelectedTags={() => {}}
                   />
                 ))
               : null}

@@ -10,10 +10,10 @@ import { Parallax, ParallaxProvider } from "react-scroll-parallax";
 export const HeroSection: React.FC = () => {
   const isSmallScreen = window.innerWidth < 1120;
   const parallaxSpeed = isSmallScreen ? 0 : -200;
-  const parallaxTranslateX = isSmallScreen
+  const parallaxTranslateX: [string, string] = isSmallScreen
     ? ["0px", "0px"]
     : ["-100px", "100px"];
-  const parallaxScale = isSmallScreen ? [1, 1] : [1.5, 0.5];
+  const parallaxScale: [number, number] = isSmallScreen ? [1, 1] : [1.5, 0.5];
 
   return (
     <ParallaxProvider>
@@ -78,10 +78,8 @@ export const HeroSection: React.FC = () => {
             speed={parallaxSpeed}
             className={styles.fry}
             translateX={parallaxTranslateX}
-            scale={parallaxScale}
-            // rotate={[180, 0]}
-            // easing="easeInQuad"
-          >
+            scale={parallaxScale}>
+            {/* Render a less GPU consuming scene if device is handheld */}
             {isSmallScreen ? (
               <Spline scene="https://prod.spline.design/AmgucmBUcWHIoyof/scene.splinecode" />
             ) : (
@@ -89,7 +87,6 @@ export const HeroSection: React.FC = () => {
             )}
           </Parallax>
         </div>
-
         <ContactGrid />
       </div>
     </ParallaxProvider>

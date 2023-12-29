@@ -1,18 +1,9 @@
 "use client";
-import React, { useEffect, useState } from "react";
 import styles from "./index.module.scss";
-
 import { IoCloseSharp } from "react-icons/io5";
+import React, { useEffect, useState } from "react";
 
-export const Tag: React.FC = ({
-  id,
-  name,
-  color,
-  icon,
-  interactive,
-  selectedTags,
-  setSelectedTags
-}: {
+interface ITagProps {
   id: string;
   name: string;
   color: string;
@@ -20,17 +11,26 @@ export const Tag: React.FC = ({
   interactive?: boolean;
   selectedTags: string[];
   setSelectedTags: React.Dispatch<React.SetStateAction<string[]>>;
-}) => {
+}
+
+export const Tag = ({
+  id,
+  name,
+  color,
+  icon,
+  interactive,
+  selectedTags,
+  setSelectedTags
+}: ITagProps) => {
   const [selected, setSelected] = useState(false);
 
   useEffect(() => {
     selectedTags && setSelected(selectedTags.includes(id));
-  });
+  }, [selectedTags, id]);
   return (
     <div
       onClick={() => {
         if (interactive) {
-          // setSelected((prev) => !prev);
           setSelectedTags((prev) =>
             prev.includes(id) ? prev.filter((tag) => tag !== id) : [...prev, id]
           );
@@ -38,7 +38,6 @@ export const Tag: React.FC = ({
       }}
       className={`${selected ? styles.selectedTag : styles.tag}`}
       style={{
-        // lighen the color for bg:
         backgroundColor: interactive ? color + "20" : color + "50",
         border: interactive
           ? "1px solid " + color + "60"

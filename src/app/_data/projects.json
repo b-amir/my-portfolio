@@ -59,7 +59,7 @@
       "User Registration, Login, and Analogy Sharing.",
       "Login Options: Social login providers, email magic link.",
       "Dedicated Auth pages for login and registration.",
-      "Fully typesafe architecture using tRPC for API.",
+      "Fully typesafe architecture (back to front) using tRPC for API.",
       "Redux state manager chosen for handling growing complexities in states.",
       "Opportunity to learn Redux during project development.",
       "Unit tests via Vitest and End-to-end (e2e) tests using Cypress.",
@@ -73,7 +73,11 @@
       "Commenting system for user interaction.",
       "Voting and validation system for analogies.",
       "Code pasting with syntax highlighting support.",
-      "Markdown support for enhanced content formatting."
+      "Markdown support for enhanced content formatting.",
+      "Search system with debounce for finding topics.",
+      "Infinite scroll using React Query for every list of data.",
+      "Full admin panel for publishing, editing, or deleting entities.",
+      "Utilized React Query for stale-while-revalidate fetching and implemented skeleton loadings for better UX."
     ],
     "githubLink": "https://github.com/b-amir/cs-lit",
     "demoLink": "https://cslit.cc"

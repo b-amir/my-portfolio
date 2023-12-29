@@ -1,9 +1,21 @@
 "use client";
-import globalStyles from "@/_styles/page.module.scss";
-import styles from "./index.module.scss";
-import { IoArrowForward as Arrow } from "react-icons/io5";
-import { HiOutlineExternalLink } from "react-icons/hi";
 import Link from "next/link";
+import styles from "./index.module.scss";
+import globalStyles from "@/_styles/page.module.scss";
+import { IoArrowForward as Arrow } from "react-icons/io5";
+import { HiOutlineExternalLink as LinkIcon } from "react-icons/hi";
+
+interface IProjectCardProps {
+  image: React.ReactNode;
+  title: React.ReactNode;
+  tags: React.ReactNode;
+  id: string;
+  description: string[];
+  githubLink: string;
+  demoLink: string;
+  howManyMoreTags: number;
+  selected: boolean;
+}
 
 export function ProjectCard({
   image,
@@ -15,17 +27,7 @@ export function ProjectCard({
   demoLink,
   howManyMoreTags,
   selected = false
-}: {
-  image: React.ReactNode;
-  title: React.ReactNode;
-  tags: React.ReactNode;
-  id: string;
-  description: React.ReactNode;
-  githubLink: string;
-  demoLink: string;
-  howManyMoreTags: number;
-  selected: boolean;
-}) {
+}: IProjectCardProps) {
   return (
     <div
       className={`${
@@ -50,20 +52,20 @@ export function ProjectCard({
         </div>
       </div>
       <div className={styles.projectCardDescription}>
-        {description.map((p) => (
-          <p>{p}</p>
+        {description?.map((p) => (
+          <p key={p}>{p}</p>
         ))}
       </div>
       <div className={styles.projectCardBottomRow}>
         <div className={styles.projectCardLinks}>
           {githubLink && (
             <a href={githubLink} className={styles.githubSourceButton}>
-              GitHub <HiOutlineExternalLink />
+              GitHub <LinkIcon />
             </a>
           )}
           {demoLink && (
             <a href={demoLink} className={styles.demoButton}>
-              Demo <HiOutlineExternalLink />
+              Demo <LinkIcon />
             </a>
           )}
         </div>

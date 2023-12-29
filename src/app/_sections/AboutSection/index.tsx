@@ -1,10 +1,10 @@
 "use client";
-import { IoArrowForward } from "react-icons/io5";
-import { SectionHeader } from "@/_components/SectionHeader";
-import globalStyles from "@/_styles/page.module.scss";
 import styles from "./index.module.scss";
-import { MdOutlinePerson } from "react-icons/md";
+import globalStyles from "@/_styles/page.module.scss";
 import { Fa42Group } from "react-icons/fa6";
+import { SectionHeader } from "@/_components/SectionHeader";
+import { IoArrowForward } from "react-icons/io5";
+import { MdOutlinePerson } from "react-icons/md";
 import { Parallax, ParallaxProvider } from "react-scroll-parallax";
 
 export const AboutSection: React.FC = () => {

@@ -1,15 +1,19 @@
 "use client";
-import { useState } from "react";
 import styles from "./index.module.scss";
-
 import { TagsRow } from "@/_components/Tag/TagsRow";
+import { Project } from "@/_types/Project";
 import { TbClearAll } from "react-icons/tb";
 
+interface ICurrentSkillsProps {
+  selectedTags: string[];
+  setSelectedTags: React.Dispatch<React.SetStateAction<string[]>>;
+  selectedProjects: Project[];
+}
 export function CurrentSkills({
   setSelectedTags,
   selectedProjects,
   selectedTags
-}) {
+}: ICurrentSkillsProps) {
   return (
     <div className={styles.currentSkills}>
       <h3>

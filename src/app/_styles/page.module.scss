@@ -162,7 +162,7 @@
 .featuredGrid {
     display: grid;
     grid-template-columns: 1fr 0.7fr 1.3fr;
-    grid-template-rows: 1fr 0.3fr 1.7fr;
+    grid-template-rows: auto 0.3fr 1fr;
     gap: 0px 0px;
     grid-auto-flow: row;
 }

@@ -1,12 +1,9 @@
 "use client";
-import { SectionHeader } from "@/_components/SectionHeader";
-import globalStyles from "@/_styles/page.module.scss";
-import styles from "./index.module.scss";
-import { BsFillGridFill } from "react-icons/bs";
-import { MdWavingHand } from "react-icons/md";
-import { HiOutlineExternalLink } from "react-icons/hi";
-import { IoArrowForward, IoDownloadOutline } from "react-icons/io5";
 import Link from "next/link";
+import styles from "./index.module.scss";
+import globalStyles from "@/_styles/page.module.scss";
+import { IoDownloadOutline } from "react-icons/io5";
+import { HiOutlineExternalLink } from "react-icons/hi";
 
 export const FooterSection: React.FC = () => (
   <>
