@@ -1,6 +1,6 @@
 "use client";
 import styles from "./index.module.scss";
-import { IoCloseSharp } from "react-icons/io5";
+import { IoCloseSharp as CloseIcon } from "react-icons/io5";
 import React, { useEffect, useState } from "react";
 
 interface ITagProps {
@@ -52,7 +52,7 @@ export const Tag = ({
         transition: "filter 0.3s ease-in-out",
         margin: interactive ? "0rem 0.3rem 0.4rem 0rem" : "unset"
       }}>
-      <div className={styles.tagIcon}>{selected ? <IoCloseSharp /> : icon}</div>
+      <div className={styles.tagIcon}>{selected ? <CloseIcon /> : icon}</div>
       <div className={styles.tagText}>{name}</div>
     </div>
   );

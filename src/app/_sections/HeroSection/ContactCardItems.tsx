@@ -1,17 +1,17 @@
 "use client";
 import styles from "./index.module.scss";
-import { BiShow } from "react-icons/bi";
-import { LuPhoneCall } from "react-icons/lu";
-import { IoCloseSharp } from "react-icons/io5";
-import { GrContactInfo } from "react-icons/gr";
-import {
-  IoArrowForward as Arrow,
-  IoCopyOutline,
-  IoLogoGithub,
-  IoLogoLinkedin,
-  IoMailOutline
-} from "react-icons/io5";
 import { clickToSelectText } from "@/_utils/clickToSelectText";
+import { BiShow as ShowIcon } from "react-icons/bi";
+import { LuPhoneCall as PhoneIcon } from "react-icons/lu";
+import { IoCloseSharp as CloseIcon } from "react-icons/io5";
+import { GrContactInfo as ContactInfoIcon } from "react-icons/gr";
+import {
+  IoMailOutline as MailIcon,
+  IoCopyOutline as CopyIcon,
+  IoLogoGithub as GithubIcon,
+  IoArrowForward as ArrowIcon,
+  IoLogoLinkedin as LinkedinIcon
+} from "react-icons/io5";
 
 export interface IContactCardItemsProps {
   setShowContactLinksForMobile: React.Dispatch<React.SetStateAction<boolean>>;
@@ -47,11 +47,11 @@ export function ContactCardItems({
         onClick={() => setShowContactLinksForMobile(false)}>
         <span>
           <span>
-            <GrContactInfo />
+            <ContactInfoIcon />
           </span>
           Contact Links
         </span>
-        <IoCloseSharp />
+        <CloseIcon />
       </div>
 
       <div className={styles.grid}>
@@ -61,10 +61,10 @@ export function ContactCardItems({
           target="_blank"
           rel="noopener noreferrer">
           <h2>
-            <IoLogoLinkedin />
+            <LinkedinIcon />
             Linkedin
             <span>
-              <Arrow />
+              <ArrowIcon />
             </span>
           </h2>
           <p>Let&apos;s get connected for collaborative opportunities.</p>
@@ -76,10 +76,10 @@ export function ContactCardItems({
           target="_blank"
           rel="noopener noreferrer">
           <h2>
-            <IoLogoGithub />
+            <GithubIcon />
             Github
             <span>
-              <Arrow />
+              <ArrowIcon />
             </span>
           </h2>
           <p>Take a hands-on tour of my code for yourself.</p>
@@ -91,10 +91,10 @@ export function ContactCardItems({
           target="_blank"
           rel="noopener noreferrer">
           <h2>
-            <IoMailOutline />
+            <MailIcon />
             Email
             <span>
-              <Arrow />
+              <ArrowIcon />
             </span>
           </h2>
           <div
@@ -110,7 +110,7 @@ export function ContactCardItems({
               onClick={(e) => {
                 copyEmail();
               }}>
-              <IoCopyOutline />
+              <CopyIcon />
             </div>
           </div>
         </a>
@@ -121,10 +121,10 @@ export function ContactCardItems({
           target="_blank"
           rel="noopener noreferrer">
           <h2>
-            <LuPhoneCall />
+            <PhoneIcon />
             Call
             <span>
-              <Arrow />
+              <ArrowIcon />
             </span>
           </h2>
           <div
@@ -140,7 +140,7 @@ export function ContactCardItems({
               onClick={(e) => {
                 showNumber();
               }}>
-              <BiShow />
+              <ShowIcon />
             </div>
           </div>
         </a>

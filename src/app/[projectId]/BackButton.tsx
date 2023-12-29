@@ -1,6 +1,6 @@
 "use client";
 import globalStyles from "@/_styles/page.module.scss";
-import { IoMdArrowRoundBack } from "react-icons/io";
+import { IoMdArrowRoundBack as ArrowIcon } from "react-icons/io";
 import { SectionHeader } from "@/_components/SectionHeader";
 import Link from "next/link";
 
@@ -10,7 +10,7 @@ export function BackButton() {
       <SectionHeader
         title="Back to home"
         color="#432b0ee3"
-        icon={<IoMdArrowRoundBack className={globalStyles.icon} />}
+        icon={<ArrowIcon className={globalStyles.icon} />}
       />
     </Link>
   );

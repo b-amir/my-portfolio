@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import globalStyles from "@/_styles/page.module.scss";
-import { FaCircle } from "react-icons/fa";
+import { FaCircle as LiveButton } from "react-icons/fa";
 
 interface IDemoButtonProps {
   text?: string;
@@ -19,7 +19,7 @@ export function DemoButton({ text, link, size = "large" }: IDemoButtonProps) {
           ? globalStyles.demoButtonLarge
           : globalStyles.demoButton
       }`}>
-      <FaCircle
+      <LiveButton
         style={{
           color: "#24e724",
           fontSize: "11px",

@@ -1,14 +1,14 @@
 "use client";
 import styles from "./index.module.scss";
 import { useState } from "react";
-import { GrContactInfo } from "react-icons/gr";
 import { ContactCardItems } from "./ContactCardItems";
+import { GrContactInfo as ContactInfoIcon } from "react-icons/gr";
 
 export const ContactGrid: React.FC = () => {
   const [showContactLinksForMobile, setShowContactLinksForMobile] =
     useState(false);
   const isMobile =
-    typeof window !== "undefined" ? window.innerWidth < 600 : false;
+    typeof window === "undefined" ? false : window.innerWidth < 600;
 
   return (
     <>
@@ -22,7 +22,7 @@ export const ContactGrid: React.FC = () => {
           className={styles.mobileContactMenuTrigger}
           onClick={() => setShowContactLinksForMobile(true)}>
           <span>
-            <GrContactInfo />
+            <ContactInfoIcon />
           </span>
           Contact Links
         </div>

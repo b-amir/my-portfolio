@@ -6,12 +6,12 @@ import { Project } from "@/_types/Project";
 import globalStyles from "@/_styles/page.module.scss";
 import { OtherStack } from "./OtherStack";
 import { iconMapping } from "./iconMapping";
-import { MdWavingHand } from "react-icons/md";
 import { ProjectsGrid } from "./ProjectsGrid";
 import { SectionHeader } from "@/_components/SectionHeader";
 import { CurrentSkills } from "./CurrentSkills";
-import { BsFillGridFill } from "react-icons/bs";
 import { useEffect, useState } from "react";
+import { MdWavingHand as WavingIcon } from "react-icons/md";
+import { BsFillGridFill as GridIcon } from "react-icons/bs";
 
 export interface SkillIcons {
   [key: string]: React.ReactElement;
@@ -45,7 +45,7 @@ export const AllProjectsSection: React.FC = () => {
     <div className={styles.allProjectsSection}>
       <SectionHeader
         title="All Skills & Projects"
-        icon={<BsFillGridFill className={globalStyles.icon} />}
+        icon={<GridIcon className={globalStyles.icon} />}
       />
 
       <div className={styles.allProjectsGrid}>
@@ -69,7 +69,7 @@ export const AllProjectsSection: React.FC = () => {
           <button
             className={styles.buttonKeepInTouch}
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
-            <MdWavingHand /> Let&apos;s keep in touch
+            <WavingIcon /> Let&apos;s keep in touch
           </button>
         </div>
       </div>

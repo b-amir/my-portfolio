@@ -5,9 +5,9 @@ import { TagsRow } from "@/_components/Tag/TagsRow";
 import globalStyles from "@/_styles/page.module.scss";
 import { DemoButton } from "@/_components/DemoButton";
 import { ScreenShots } from "@/_components/ScreenShots";
-import { FaStarOfLife } from "react-icons/fa6";
 import { SectionHeader } from "@/_components/SectionHeader";
 import { GithubSourceButton } from "@/_components/GithubSourceButton";
+import { FaStarOfLife as StarIcon } from "react-icons/fa6";
 
 export const FeaturedProjectSection: React.FC = () => {
   return (
@@ -15,7 +15,7 @@ export const FeaturedProjectSection: React.FC = () => {
       <SectionHeader
         title="Featured Project"
         color="#f15c55"
-        icon={<FaStarOfLife className={globalStyles.icon} />}
+        icon={<StarIcon className={globalStyles.icon} />}
       />
 
       <div className={globalStyles.featuredGrid}>

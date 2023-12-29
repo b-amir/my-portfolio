@@ -2,7 +2,7 @@
 import Link from "next/link";
 import styles from "./index.module.scss";
 import globalStyles from "@/_styles/page.module.scss";
-import { IoArrowForward as Arrow } from "react-icons/io5";
+import { IoArrowForward as ArrowIcon } from "react-icons/io5";
 import { HiOutlineExternalLink as LinkIcon } from "react-icons/hi";
 
 interface IProjectCardProps {
@@ -76,7 +76,7 @@ export function ProjectCard({
           className={styles.projectCardViewDetails}>
           view details{" "}
           <span>
-            <Arrow />
+            <ArrowIcon />
           </span>
         </Link>
       </div>

@@ -2,7 +2,7 @@
 import styles from "./index.module.scss";
 import { TagsRow } from "@/_components/Tag/TagsRow";
 import { Project } from "@/_types/Project";
-import { TbClearAll } from "react-icons/tb";
+import { TbClearAll as ClearIcon } from "react-icons/tb";
 
 interface ICurrentSkillsProps {
   selectedTags: string[];
@@ -24,7 +24,7 @@ export function CurrentSkills({
             {selectedProjects.length < 2 ? " project " : " projects "}
             matched
             <button onClick={() => setSelectedTags([])}>
-              <TbClearAll />
+              <ClearIcon />
               clear
             </button>
           </span>

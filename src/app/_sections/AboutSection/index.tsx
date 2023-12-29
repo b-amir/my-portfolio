@@ -1,11 +1,11 @@
 "use client";
 import styles from "./index.module.scss";
 import globalStyles from "@/_styles/page.module.scss";
-import { Fa42Group } from "react-icons/fa6";
 import { SectionHeader } from "@/_components/SectionHeader";
-import { IoArrowForward } from "react-icons/io5";
-import { MdOutlinePerson } from "react-icons/md";
+import { Fa42Group as StackIcon } from "react-icons/fa6";
 import { Parallax, ParallaxProvider } from "react-scroll-parallax";
+import { IoArrowForward as ArrowIcon } from "react-icons/io5";
+import { MdOutlinePerson as PersonIcon } from "react-icons/md";
 
 export const AboutSection: React.FC = () => {
   return (
@@ -14,7 +14,7 @@ export const AboutSection: React.FC = () => {
         <Parallax speed={25}>
           <SectionHeader
             title="About Me"
-            icon={<MdOutlinePerson className={globalStyles.icon} />}
+            icon={<PersonIcon className={globalStyles.icon} />}
           />
           <div className={styles.twoRows}>
             <div className={styles.twoColsAbout}>
@@ -93,12 +93,12 @@ export const AboutSection: React.FC = () => {
                     }}>
                     My technical stack & projects{" "}
                     <span className={globalStyles.icon}>
-                      <IoArrowForward />
+                      <ArrowIcon />
                     </span>
                   </button>
                 </div>
               </div>
-              <Fa42Group className={styles.aboutIcon} />
+              <StackIcon className={styles.aboutIcon} />
             </div>
           </div>
         </Parallax>

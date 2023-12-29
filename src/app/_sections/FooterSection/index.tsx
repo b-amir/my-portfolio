@@ -2,8 +2,8 @@
 import Link from "next/link";
 import styles from "./index.module.scss";
 import globalStyles from "@/_styles/page.module.scss";
-import { IoDownloadOutline } from "react-icons/io5";
-import { HiOutlineExternalLink } from "react-icons/hi";
+import { HiOutlineExternalLink as LinkICon } from "react-icons/hi";
+import { IoDownloadOutline as DownloadIcon } from "react-icons/io5";
 
 export const FooterSection: React.FC = () => (
   <>
@@ -29,7 +29,7 @@ export const FooterSection: React.FC = () => (
         <div className={styles.footerLinks}>
           <a className={styles.footerResume}>
             {" "}
-            <IoDownloadOutline /> Resume.pdf{" "}
+            <DownloadIcon /> Resume.pdf{" "}
           </a>
           <div className={styles.twoCols}>
             <div className={styles.twoRows}>
@@ -37,13 +37,13 @@ export const FooterSection: React.FC = () => (
                 target="_blank"
                 href="https://www.linkedin.com/in/amirbazgir/"
                 className={styles.footerLink}>
-                <HiOutlineExternalLink /> LinkedIn
+                <LinkICon /> LinkedIn
               </Link>
               <Link
                 target="_blank"
                 href="https://github.com/b-amir"
                 className={styles.footerLink}>
-                <HiOutlineExternalLink /> GitHub
+                <LinkICon /> GitHub
               </Link>
             </div>
             <div className={styles.twoRows}>
@@ -51,13 +51,13 @@ export const FooterSection: React.FC = () => (
                 target="_blank"
                 href="mailto:iamirbazgir@gmail.com"
                 className={styles.footerLink}>
-                <HiOutlineExternalLink /> E-mail
+                <LinkICon /> E-mail
               </Link>
               <Link
                 target="_blank"
                 href="tel:+989119273700"
                 className={styles.footerLink}>
-                <HiOutlineExternalLink /> Phone
+                <LinkICon /> Phone
               </Link>
             </div>
           </div>

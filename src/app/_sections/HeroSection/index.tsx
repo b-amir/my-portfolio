@@ -1,15 +1,18 @@
 "use client";
-import { IoArrowForward, IoDownloadOutline } from "react-icons/io5";
-import { ContactGrid } from "./ContactGrid";
-import globalStyles from "@/_styles/page.module.scss";
-import styles from "./index.module.scss";
 import Spline from "@splinetool/react-spline";
+import styles from "./index.module.scss";
+import globalStyles from "@/_styles/page.module.scss";
 import { Tooltip } from "@/_components/Tooltip";
+import { ContactGrid } from "./ContactGrid";
 import { Parallax, ParallaxProvider } from "react-scroll-parallax";
+import {
+  IoArrowForward as ArrowIcon,
+  IoDownloadOutline as DownloadIcon
+} from "react-icons/io5";
 
 export const HeroSection: React.FC = () => {
   const isSmallScreen =
-    typeof window !== "undefined" ? window.innerWidth < 1120 : false;
+    typeof window === "undefined" ? false : window.innerWidth < 1120;
   const parallaxSpeed = isSmallScreen ? 0 : -200;
   const parallaxTranslateX: [string, string] = isSmallScreen
     ? ["0px", "0px"]
@@ -55,7 +58,7 @@ export const HeroSection: React.FC = () => {
             <div className={styles.heroButtons}>
               {" "}
               <a href="#resume" className={styles.heroResume}>
-                <IoDownloadOutline />
+                <DownloadIcon />
                 Resume.pdf
               </a>
               <div
@@ -69,7 +72,7 @@ export const HeroSection: React.FC = () => {
                 className={globalStyles.buttonLink}>
                 More about me{" "}
                 <span className={globalStyles.icon}>
-                  <IoArrowForward />
+                  <ArrowIcon />
                 </span>
               </div>
             </div>
