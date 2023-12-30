@@ -1,7 +1,8 @@
 "use client";
-import Spline from "@splinetool/react-spline";
 import styles from "./index.module.scss";
+import dynamic from "next/dynamic";
 import globalStyles from "@/_styles/page.module.scss";
+import { Loading } from "@/_components/Loading";
 import { Tooltip } from "@/_components/Tooltip";
 import { ContactGrid } from "./ContactGrid";
 import { Parallax, ParallaxProvider } from "react-scroll-parallax";
@@ -9,6 +10,13 @@ import {
   IoArrowForward as ArrowIcon,
   IoDownloadOutline as DownloadIcon
 } from "react-icons/io5";
+
+const Fry3dObject = dynamic(
+  () => import("./Fry3dObject").then((mod) => mod.Fry3dObject),
+  {
+    loading: () => <Loading />
+  }
+);
 
 export const HeroSection: React.FC = () => {
   const isSmallScreen =
@@ -24,7 +32,6 @@ export const HeroSection: React.FC = () => {
       <div className={styles.hero}>
         <div className={styles.heroMain}>
           <Parallax speed={parallaxSpeed} className={styles.heroTexts}>
-            {/* <div className={styles.heroTexts}> */}
             <h1 className={styles.heroTitle}>
               Hi, <br /> I&apos;m Amir Bazgir
             </h1>
@@ -76,19 +83,13 @@ export const HeroSection: React.FC = () => {
                 </span>
               </div>
             </div>
-            {/* </div>{" "} */}
           </Parallax>{" "}
           <Parallax
             speed={parallaxSpeed}
             className={styles.fry}
             translateX={parallaxTranslateX}
             scale={parallaxScale}>
-            {/* Render a less GPU consuming scene if device is handheld */}
-            {isSmallScreen ? (
-              <Spline scene="https://prod.spline.design/AmgucmBUcWHIoyof/scene.splinecode" />
-            ) : (
-              <Spline scene="https://prod.spline.design/btTGbGyxfpf64yVO/scene.splinecode" />
-            )}
+            <Fry3dObject isSmallScreen={isSmallScreen} />
           </Parallax>
         </div>
         <ContactGrid />

@@ -1,15 +1,23 @@
 "use client";
 import Image from "next/image";
+import dynamic from "next/dynamic";
 import projects from "@/_data/projects.json";
 import { TagsRow } from "@/_components/Tag/TagsRow";
 import globalStyles from "@/_styles/page.module.scss";
 import { DemoButton } from "@/_components/DemoButton";
 import { BackButton } from "./BackButton";
-import { ScreenShots } from "../_components/ScreenShots";
 import { NotFoundPage } from "./NotFoundPage";
 import { FooterSection } from "@/_sections/FooterSection";
 import { GithubSourceButton } from "@/_components/GithubSourceButton";
 import { findNonEmptyCategories } from "@/_utils/findNonEmptyCategories";
+import { Loading } from "@/_components/Loading";
+
+const ScreenShots = dynamic(
+  () => import("@/_components/ScreenShots").then((mod) => mod.ScreenShots),
+  {
+    loading: () => <Loading />
+  }
+);
 
 function Page({ params }: { params: { projectId: string } }) {
   const currentProject = projects.find(

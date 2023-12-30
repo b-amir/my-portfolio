@@ -1,13 +1,21 @@
 "use client";
 import Image from "next/image";
+import dynamic from "next/dynamic";
 import projects from "@/_data/projects.json";
+import { Loading } from "@/_components/Loading";
 import { TagsRow } from "@/_components/Tag/TagsRow";
 import globalStyles from "@/_styles/page.module.scss";
 import { DemoButton } from "@/_components/DemoButton";
-import { ScreenShots } from "@/_components/ScreenShots";
 import { SectionHeader } from "@/_components/SectionHeader";
 import { GithubSourceButton } from "@/_components/GithubSourceButton";
 import { FaStarOfLife as StarIcon } from "react-icons/fa6";
+
+const ScreenShots = dynamic(
+  () => import("@/_components/ScreenShots").then((mod) => mod.ScreenShots),
+  {
+    loading: () => <Loading />
+  }
+);
 
 export const FeaturedProjectSection: React.FC = () => {
   return (

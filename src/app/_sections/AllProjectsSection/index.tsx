@@ -1,8 +1,9 @@
 "use client";
-import Spline from "@splinetool/react-spline";
 import styles from "./index.module.scss";
+import dynamic from "next/dynamic";
 import projects from "@/_data/projects.json";
 import { Project } from "@/_types/Project";
+import { Loading } from "@/_components/Loading";
 import globalStyles from "@/_styles/page.module.scss";
 import { OtherStack } from "./OtherStack";
 import { iconMapping } from "./iconMapping";
@@ -12,6 +13,13 @@ import { CurrentSkills } from "./CurrentSkills";
 import { useEffect, useState } from "react";
 import { MdWavingHand as WavingIcon } from "react-icons/md";
 import { BsFillGridFill as GridIcon } from "react-icons/bs";
+
+const Smile3dObject = dynamic(
+  () => import("./Smile3dObject").then((mod) => mod.Smile3dObject),
+  {
+    loading: () => <Loading />
+  }
+);
 
 export interface SkillIcons {
   [key: string]: React.ReactElement;
@@ -62,7 +70,7 @@ export const AllProjectsSection: React.FC = () => {
 
       <div className={styles.keepInTouchSection}>
         <div className={styles.smile}>
-          <Spline scene="https://prod.spline.design/SFtITqXREqMFyNh2/scene.splinecode" />
+          <Smile3dObject />
         </div>
         <p>That&apos;s all for now.</p>
         <div style={{ minHeight: "65px" }}>

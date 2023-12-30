@@ -54,6 +54,33 @@
     display: flex;
     align-items: center;
 }
+.loadingContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+.loadingIndicator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 36px;
+    margin: 48px;
+    color: #00000042;
+    height: 36px;
+    animation: spin 1s linear infinite;
+
+    animation: spin 1s linear infinite;
+    @keyframes spin {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+}
 .tagsRow {
     display: flex;
     flex-direction: column;
