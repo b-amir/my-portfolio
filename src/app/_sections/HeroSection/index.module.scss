@@ -129,10 +129,10 @@
   gap: 0.5rem;
   padding: 0.8rem 2.5rem;
   border: 2px solid rgba(0, 0, 0, 0.15);
-  border-radius: 21px;
+  border-radius: $large-br;
   z-index: 10;
   filter: drop-shadow(0px 3px 9px rgba(237, 93, 89, 0.5019607843));
-  transition: all 0.3s ease-in-out;
+  transition: all $base-pace ease-in-out;
   box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.1098039216);
   text-shadow: 1px 1px 2px rgb(255 134 109 / 50%);
 
@@ -176,7 +176,7 @@
   box-shadow: 0px -5px 15px 0px rgba(0, 0, 0, 0.08);
   z-index: 10;
   border-top: 1px solid rgb(255 255 255 / 39%);
-  transition: all 0.3s ease-in-out;
+  transition: all $base-pace ease-in-out;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -202,7 +202,7 @@
   justify-content: space-between;
   width: -moz-fit-content;
   width: fit-content;
-  transition: all 0.3s ease-in-out;
+  transition: all $base-pace ease-in-out;
 
   &:hover {
     background-color: #ffffff24;
@@ -215,7 +215,7 @@
   }
 }
 .fieldButton {
-  border-radius: 50%;
+  border-radius: $rounded;
   background-color: #00000014;
   width: 24px;
   height: 24px;
@@ -225,7 +225,7 @@
   align-items: center;
   margin-left: 0.5rem;
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
+  transition: all $base-pace ease-in-out;
 
   &:hover {
     background-color: #7b7b7b42;
@@ -358,7 +358,7 @@
     box-shadow: 0px -5px 15px 0px rgba(0, 0, 0, 0.08);
     z-index: 10;
     border-top: 1px solid rgba(255, 255, 255, 0.39);
-    transition: all 0.3s ease-in-out;
+    transition: all $base-pace ease-in-out;
     position: absolute;
     bottom: 0;
     left: 0;

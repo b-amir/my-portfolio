@@ -19,16 +19,16 @@ $mono-fonts: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono", "Rob
   "Ubuntu Monospace", "Source Code Pro", "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
 
 // border radius
-$small-br: 0.125rem;
-$base-br: 0.25rem;
-$large-br: 0.5rem;
+$small-br: 4px;
+$base-br: 7px;
+$large-br: 21px;
 $rounded: 50%;
 
 // transition duration
 $slow-pace: 0.5s;
 $base-pace: 0.3s;
-$fast-pace: 0.1s;
-$whoop: all 0.3s cubic-bezier(0, 0.13, 0, -1.29);
+$fast-pace: 0.2s;
+$whoop: all $base-pace cubic-bezier(0, 0.13, 0, -1.29);
 
 // shadows
 $small-shadow:
@@ -37,10 +37,6 @@ $small-shadow:
   0px 1.4px 1.6px -1.2px hsl(var(--shadow-color) / 0.29),
   0px 2.8px 3.1px -1.9px hsl(var(--shadow-color) / 0.029),
   0.1px 5.3px 6px -2.5px hsl(var(--shadow-color) / 0.015);
-
-// 0px 0.3px 0.2px hsl(var(--shadow-color) / 0.16),
-// 0px 0.4px 0.3px -2.2px hsl(var(--shadow-color) / 0.12),
-// 0px 1.1px 0.9px -4.4px hsl(var(--shadow-color) / 0.07);
 
 $base-shadow:
   0px 0.3px 0.3px hsl(var(--shadow-color) / 0.29),
@@ -100,7 +96,7 @@ $big-shadow:
   gap: 0.5rem;
   padding: 1rem 2rem;
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
+  transition: all $base-pace ease-in-out;
   font-weight: 500;
   &:hover {
     filter: brightness(1.5);
@@ -116,9 +112,9 @@ $big-shadow:
   gap: 0.5rem;
   padding: 0.8rem 2.5rem;
   border: 2px solid rgb(0 0 0 / 15%);
-  border-radius: 21px;
+  border-radius: $large-br;
   z-index: 10;
-  transition: all 0.3s ease-in-out;
+  transition: all $base-pace ease-in-out;
   box-shadow: 0px 2px 1px 0px #0000001c;
   &:hover {
     filter: brightness(0.8);
@@ -138,7 +134,7 @@ $big-shadow:
   &:hover {
     filter: brightness(1);
     span {
-      transition: all 0.2s ease-in-out;
+      transition: all $fast-pace ease-in-out;
       transform: translateX(5px);
     }
   }

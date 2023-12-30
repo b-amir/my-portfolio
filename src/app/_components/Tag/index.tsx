@@ -49,7 +49,7 @@ export const Tag = ({
         boxShadow: interactive ? "0px 2px 2px 0px " + color + "30" : "",
         filter: interactive ? "brightness(0.5)" : "",
         opacity: interactive ? 0.65 : 1,
-        transition: "filter 0.3s ease-in-out",
+        transition: "filter $base-pace ease-in-out",
         margin: interactive ? "0rem 0.3rem 0.4rem 0rem" : "unset"
       }}>
       <div className={styles.tagIcon}>{selected ? <CloseIcon /> : icon}</div>

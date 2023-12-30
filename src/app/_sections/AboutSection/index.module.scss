@@ -113,7 +113,7 @@
   gap: 0.5rem;
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
-  transition: all 0.3s ease-in-out;
+  transition: all $base-pace ease-in-out;
   cursor: pointer;
   font-size: medium;
   justify-content: flex-start;
@@ -125,7 +125,7 @@
   backdrop-filter: blur(5px);
   filter: drop-shadow(0px 4px 6px #cebcd75e);
   box-shadow: 0 8px 12px 0px rgba(183, 164, 253, 0.1019607843);
-  border-radius: 7px;
+  border-radius: $base-br;
   border: 1px solid rgba(0, 0, 0, 0.0784313725);
 
   &:hover {

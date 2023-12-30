@@ -24,13 +24,13 @@
   padding: 1.5rem 2rem;
   background-color: rgba(224, 224, 224, 0.305);
   color: #22201e;
-  border-radius: 6px;
+  border-radius: $base-br;
   border: 1px solid rgba(134, 71, 0, 0.6);
   font-size: 0.9rem;
   -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
   box-shadow: $base-shadow;
-  transition: all 0.3s ease-in-out;
+  transition: all $base-pace ease-in-out;
   pointer-events: none;
   max-width: 1000px;
   min-width: 40dvw;

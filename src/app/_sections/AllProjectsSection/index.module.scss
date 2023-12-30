@@ -26,7 +26,7 @@
     background: rgb(181 181 181 / 37%);
     border: none;
     cursor: pointer;
-    border-radius: 3px;
+    border-radius: $small-br;
     font-size: x-small;
     font-family: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono", "Roboto Mono", "Oxygen Mono";
     padding: 0.15rem 0.6rem;
@@ -107,7 +107,7 @@
   padding: 1rem 2rem;
   background-color: $accent-color;
   border: 5px solid lighten($accent-color, 23%);
-  border-radius: 21px;
+  border-radius: $large-br;
   z-index: 10;
   color: #fff;
   transition: $whoop;
@@ -145,7 +145,7 @@
   }
 
   .tagsRow {
-    transition: all 0.3s ease-in-out;
+    transition: all $base-pace ease-in-out;
 
     > div {
       gap: 1.1rem !important;
@@ -164,7 +164,7 @@
     }
 
     .selectedTag {
-      transition: all 0.3s ease-in-out;
+      transition: all $base-pace ease-in-out;
       filter: brightness(1);
       opacity: 1;
     }
@@ -195,7 +195,7 @@
 
 .inlineTag {
   background-color: #6869af26;
-  border-radius: 6px;
+  border-radius: $base-br;
   padding: 0px 5px;
   font-weight: bold;
   color: #3d3d3d;
@@ -232,11 +232,11 @@
     box-shadow: $big-shadow;
     z-index: 10;
     transform: translateY(-4px);
-    border-radius: 4px;
+    border-radius: $small-br;
 
     .projectCardBottomRow {
       .projectCardViewDetails {
-        transition: all 0.2s ease-in-out;
+        transition: all $fast-pace ease-in-out;
         cursor: pointer;
         color: $black-substitute;
 
@@ -334,7 +334,7 @@
 .howManyMoreTags {
   font-size: 0.6rem;
   font-weight: 300;
-  border-radius: 4px;
+  border-radius: $small-br;
   padding: 0.3rem;
   color: #383838;
   background: #c4c4c436;

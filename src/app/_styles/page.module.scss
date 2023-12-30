@@ -121,12 +121,12 @@
 }
 .backButton {
     user-select: none;
-    transition: all 0.3s ease-in-out;
+    transition: all $base-pace ease-in-out;
     &:hover {
         color: #000000;
 
         svg {
-            transition: all 0.3s ease-in-out;
+            transition: all $base-pace ease-in-out;
 
             transform: translateX(-6px);
         }
@@ -144,11 +144,11 @@
     font-weight: 500;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1921568627);
     box-shadow: none;
-    transition: all 0.3s ease-in-out;
+    transition: all $base-pace ease-in-out;
     border: 1px solid rgba(var(--callout-border-rgb), 0.3);
     display: flex;
     align-items: center;
-    border-radius: 7px;
+    border-radius: $base-br;
     box-shadow: none;
     // width: -webkit-fill-available;
 
@@ -166,7 +166,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 7px;
+    border-radius: $base-br;
     box-shadow: none;
     text-shadow: none;
 
@@ -207,7 +207,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 7px;
+    border-radius: $base-br;
     background-color: rgba(0, 0, 0, 0.042);
     padding: 1rem;
 }
@@ -215,9 +215,9 @@
     @extend .imageBase;
     padding: 0;
     border: 1px solid rgb(191 187 181);
-    border-radius: 8px;
+    border-radius: $base-br;
     cursor: pointer;
-    transition: all 0.2s ease-in-out;
+    transition: all $fast-pace ease-in-out;
     filter: drop-shadow(2px 2px 2px #00000020);
 
     &:hover {
