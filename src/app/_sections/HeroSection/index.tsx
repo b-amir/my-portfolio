@@ -5,6 +5,7 @@ import globalStyles from "@/_styles/page.module.scss";
 import { Loading } from "@/_components/Loading";
 import { Tooltip } from "@/_components/Tooltip";
 import { ContactGrid } from "./ContactGrid";
+import { useWindowSize } from "@/_hooks/useWindowSize";
 import { Parallax, ParallaxProvider } from "react-scroll-parallax";
 import {
   IoArrowForward as ArrowIcon,
@@ -19,8 +20,11 @@ const Fry3dObject = dynamic(
 );
 
 export const HeroSection: React.FC = () => {
+  const { width } = useWindowSize();
+
   const isSmallScreen =
-    typeof window === "undefined" ? false : window.innerWidth < 1120;
+    typeof window === "undefined" ? false : (width ?? 0) < 1120;
+
   const parallaxSpeed = isSmallScreen ? 0 : -200;
   const parallaxTranslateX: [string, string] = isSmallScreen
     ? ["0px", "0px"]

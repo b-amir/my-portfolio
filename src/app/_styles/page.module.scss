@@ -202,6 +202,20 @@
     flex-direction: row;
     align-items: center;
     gap: 1rem;
+    overflow-x: overlay;
+}
+.images::-webkit-scrollbar {
+    width: 10px;
+}
+
+.images::-webkit-scrollbar-thumb {
+    background-color: #a0978b;
+    border-radius: $small-br;
+}
+
+.images::-webkit-scrollbar-track {
+    background-color: #a0978b3e;
+    border-radius: $small-br;
 }
 .imageBase {
     display: flex;
