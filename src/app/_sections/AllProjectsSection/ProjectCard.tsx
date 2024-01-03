@@ -59,14 +59,17 @@ export function ProjectCard({
       <div className={styles.projectCardBottomRow}>
         <div className={styles.projectCardLinks}>
           {githubLink && (
-            <a href={githubLink} className={styles.githubSourceButton}>
+            <Link
+              href={githubLink}
+              target="_blank"
+              className={styles.githubSourceButton}>
               GitHub <LinkIcon />
-            </a>
+            </Link>
           )}
           {demoLink && (
-            <a href={demoLink} className={styles.demoButton}>
+            <Link href={demoLink} target="_blank" className={styles.demoButton}>
               Demo <LinkIcon />
-            </a>
+            </Link>
           )}
         </div>
         <Link
