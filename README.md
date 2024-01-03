@@ -1,3 +1,13 @@
+</br>
+
+<div align="center" >
+  <img src="https://raw.githubusercontent.com/b-amir/my-portfolio/main/public/link-preview.png">
+  </br></br>
+ 🟢  |  <strong><a href="https://b-amir.link">Try it Live!</a> </strong>
+</div>
+
+</br></br>
+
 # My Portfolio Website
 
 Welcome to my portfolio website repository! This project is built using Next.js 14 with app routes, Sass for styling, and it showcases my various projects. You can check out the live demo [here](https://b-amir.link).
