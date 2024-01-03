@@ -1,7 +1,6 @@
 import "@/_styles/globals.scss";
 import { Inter } from "next/font/google";
 import type { Metadata, Viewport } from "next";
-import Head from "next/head";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -49,16 +48,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <Head>
-        {/* favicon and touch icon */}
-        <link rel="icon" href="/favicon.ico" />
-        <link
-          rel="apple-touch-icon"
-          href="/apple-icon.png?ebbb82dc3cc1b5eb"
-          type="image/png"
-          sizes="512x512"
-        />
-      </Head>
       <body className={inter.className}>{children}</body>
     </html>
   );
