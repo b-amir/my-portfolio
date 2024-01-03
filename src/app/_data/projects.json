@@ -155,7 +155,8 @@
         ],
         "backend": [],
         "devops": [
-          "cicd"
+          "cicd",
+          "vercel"
         ],
         "libs": [
           "spline"
@@ -335,6 +336,7 @@
     "features": [
       "Note-taking app for web and desktop – Notopia.",
       "Block-style text editor reminiscent of a Notion clone.",
+      "Used local storage + custom hooks for data persistence.",
       "Desktop version built with Electron, focusing on simplicity.",
       "Minimal reliance on third-party libraries, with only EditorJS for editing.",
       "Customized EditorJS's design to seamlessly fit into the project.",
