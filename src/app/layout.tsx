@@ -7,7 +7,35 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Amir Bazgir's Portfolio",
-  description: "I'm a fullstack web developer."
+  description: "I'm a fullstack web developer.",
+  themeColor: "#2E2E2E",
+  openGraph: {
+    type: "website",
+    url: "http://b-amir.link",
+    title: "Amir Bazgir's portfolio",
+    description: "I'm a fullstack web developer.",
+    images: [
+      {
+        url: "https://raw.githubusercontent.com/b-amir/my-portfolio/main/public/link-preview.png",
+        width: 1200,
+        height: 628,
+        alt: "Amir Bazgir's portfolio"
+      }
+    ]
+  },
+  twitter: {
+    title: "Amir Bazgir's portfolio",
+    description: "I'm a fullstack web developer.",
+    card: "summary_large_image",
+    images: [
+      {
+        url: "https://raw.githubusercontent.com/b-amir/my-portfolio/main/public/link-preview.png",
+        width: 1200,
+        height: 628,
+        alt: "Amir Bazgir's portfolio"
+      }
+    ]
+  }
 };
 
 export const viewport: Viewport = {
@@ -22,37 +50,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Head>
-        <title>Amir Bazgir&apos;s portfolio</title>
-
-        <meta name="title" content="Amir Bazgir's portfolio" />
-        <meta name="description" content="I'm a fullstack web developer." />
-
-        {/* Open Graph / Facebook  */}
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="http://b-amir.link" />
-        <meta property="og:title" content="Amir Bazgir's portfolio" />
-        <meta
-          property="og:description"
-          content="I'm a fullstack web developer."
-        />
-        <meta
-          property="og:image"
-          content="https://raw.githubusercontent.com/b-amir/my-portfolio/main/public/link-preview.png"
-        />
-
-        {/* Twitter  */}
-        <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content="http://b-amir.link" />
-        <meta property="twitter:title" content="Amir Bazgir's portfolio" />
-        <meta
-          property="twitter:description"
-          content="I'm a fullstack web developer."
-        />
-        <meta
-          property="twitter:image"
-          content="https://raw.githubusercontent.com/b-amir/my-portfolio/main/public/link-preview.png"
-        />
-
         {/* favicon and touch icon */}
         <link rel="icon" href="/favicon.ico" />
         <link
