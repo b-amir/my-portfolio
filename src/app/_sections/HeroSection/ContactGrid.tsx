@@ -9,13 +9,22 @@ export const ContactGrid: React.FC = () => {
   const [showContactLinksForMobile, setShowContactLinksForMobile] =
     useState(false);
 
-  const { width } = useWindowSize();
+  const { width, height } = useWindowSize();
+  let isMobile = false;
 
-  const isMobile = typeof window === "undefined" ? false : (width ?? 0) < 600;
+  if (width && height) {
+    const aspectRatio = width / height;
+    isMobile = aspectRatio < 0.6;
+  }
+
+  // prevent the unnecessary flash of data before there's information about the window size:
+  if (width === undefined || height === undefined) {
+    return null;
+  }
 
   return (
     <>
-      {!isMobile && (
+      {!isMobile && !showContactLinksForMobile && (
         <ContactCardItems
           setShowContactLinksForMobile={setShowContactLinksForMobile}
         />
