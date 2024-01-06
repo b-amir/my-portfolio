@@ -120,21 +120,21 @@
 
 .heroResume {
   @extend .buttonCta;
-  background-color: rgba(69, 69, 69, 0.15);
+  background-color: rgb(255 213 201 / 40%);
   font-weight: 500;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #050505cc;
+  color: rgb(12 12 12 / 80%);
   gap: 0.5rem;
   padding: 0.8rem 2.5rem;
-  border: 2px solid rgba(0, 0, 0, 0.15);
-  border-radius: $large-br;
+  border: 1px solid rgb(0 0 0 / 14%);
+  border-radius: 21px;
   z-index: 10;
   filter: drop-shadow(0px 3px 9px rgba(237, 93, 89, 0.5019607843));
-  transition: all $base-pace ease-in-out;
-  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.1098039216);
-  text-shadow: 1px 1px 2px rgb(255 134 109 / 50%);
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.1098039216);
+  text-shadow: 1px 1px 2px rgba(255, 134, 109, 0.5);
 
   &:hover {
     background-color: rgb(9 9 9 / 18%);
