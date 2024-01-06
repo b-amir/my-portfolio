@@ -98,6 +98,7 @@
     }
 
     .heroButtons {
+      user-select: none;
       display: flex;
       flex-direction: row;
       justify-content: start;
@@ -120,7 +121,7 @@
 
 .heroResume {
   @extend .buttonCta;
-  background-color: rgb(255 213 201 / 40%);
+  background-color: rgb(46 46 46 / 13%);
   font-weight: 500;
   display: flex;
   justify-content: center;
@@ -129,7 +130,7 @@
   gap: 0.5rem;
   padding: 0.8rem 2.5rem;
   border: 1px solid rgb(0 0 0 / 14%);
-  border-radius: 21px;
+  border-radius: $base-br;
   z-index: 10;
   filter: drop-shadow(0px 3px 9px rgba(237, 93, 89, 0.5019607843));
   transition: all 0.3s ease-in-out;
