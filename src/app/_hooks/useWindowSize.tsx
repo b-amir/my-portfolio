@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useLayoutEffect } from "react";
 export interface Size {
   width: number | undefined;
   height: number | undefined;
@@ -10,7 +10,7 @@ export function useWindowSize(): Size {
     width: undefined,
     height: undefined
   });
-  useEffect(() => {
+  useLayoutEffect(() => {
     // Handler to call on window resize
     function handleResize(): void {
       // Set window width/height to state
