@@ -1,4 +1,3 @@
-"use client";
 import Link from "next/link";
 import globalStyles from "@/_styles/page.module.scss";
 import { IoLogoGithub as GithubIcon } from "react-icons/io5";

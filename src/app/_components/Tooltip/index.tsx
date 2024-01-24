@@ -1,3 +1,4 @@
+"use client";
 import styles from "./index.module.scss";
 import React, { useLayoutEffect, useRef, useState } from "react";
 

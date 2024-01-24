@@ -8,7 +8,7 @@ interface ITagsRowProps {
   title?: string;
   listOfTags?: string[];
   interactive?: boolean;
-  setSelectedTags: React.Dispatch<React.SetStateAction<string[]>>;
+  setSelectedTags?: React.Dispatch<React.SetStateAction<string[]>>;
   selectedTags?: string[] | undefined;
 }
 export function TagsRow({

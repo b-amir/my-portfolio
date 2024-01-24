@@ -1,4 +1,3 @@
-"use client";
 import Link from "next/link";
 import globalStyles from "@/_styles/page.module.scss";
 import { FaCircle as LiveButton } from "react-icons/fa";

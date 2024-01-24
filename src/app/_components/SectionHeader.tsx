@@ -1,4 +1,3 @@
-"use client";
 import globalStyles from "@/_styles/page.module.scss";
 
 interface ISectionHeaderProps {

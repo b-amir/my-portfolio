@@ -1,4 +1,3 @@
-"use client";
 import Link from "next/link";
 import styles from "./index.module.scss";
 import globalStyles from "@/_styles/page.module.scss";

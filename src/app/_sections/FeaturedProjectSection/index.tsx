@@ -1,4 +1,3 @@
-"use client";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import projects from "@/_data/projects.json";
@@ -50,23 +49,16 @@ export const FeaturedProjectSection: React.FC = () => {
           <TagsRow
             title="Frontend:"
             listOfTags={projects[0].tags[0].frontend}
-            setSelectedTags={() => {}}
           />
           <TagsRow
             title="Backend, API, DB:"
             listOfTags={projects[0].tags[0].backend}
-            setSelectedTags={() => {}}
           />
           <TagsRow
             title="DevOps, Testing:"
             listOfTags={projects[0].tags[0].devops}
-            setSelectedTags={() => {}}
           />
-          <TagsRow
-            title="Libs, etc:"
-            listOfTags={projects[0].tags[0].libs}
-            setSelectedTags={() => {}}
-          />
+          <TagsRow title="Libs, etc:" listOfTags={projects[0].tags[0].libs} />
         </div>
 
         <div className={globalStyles.features}>

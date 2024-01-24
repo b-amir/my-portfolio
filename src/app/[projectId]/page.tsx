@@ -1,4 +1,3 @@
-"use client";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import projects from "@/_data/projects.json";
@@ -77,7 +76,6 @@ function Page({ params }: { params: { projectId: string } }) {
                         category.id
                       ]
                     }
-                    setSelectedTags={() => {}}
                   />
                 ))
               : null}

@@ -10,7 +10,7 @@ interface ITagProps {
   icon: React.ReactNode;
   interactive?: boolean;
   selectedTags: string[];
-  setSelectedTags: React.Dispatch<React.SetStateAction<string[]>>;
+  setSelectedTags?: React.Dispatch<React.SetStateAction<string[]>>;
 }
 
 export const Tag = ({
@@ -30,7 +30,7 @@ export const Tag = ({
   return (
     <div
       onClick={() => {
-        if (interactive) {
+        if (interactive && setSelectedTags) {
           setSelectedTags((prev) =>
             prev.includes(id) ? prev.filter((tag) => tag !== id) : [...prev, id]
           );
