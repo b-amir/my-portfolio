@@ -356,10 +356,16 @@
 }
 .errorMessage {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100%;
     width: 100%;
+
+    div {
+        transform: scale(0.75) rotate(87deg);
+        height: 200px;
+    }
 
     h1 {
         font-size: 2rem;

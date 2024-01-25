@@ -15,7 +15,8 @@ import { MdWavingHand as WavingIcon } from "react-icons/md";
 import { BsFillGridFill as GridIcon } from "react-icons/bs";
 
 const Smile3dObject = dynamic(
-  () => import("./Smile3dObject").then((mod) => mod.Smile3dObject),
+  () =>
+    import("../../_components/Smile3dObject").then((mod) => mod.Smile3dObject),
   {
     loading: () => <Loading />
   }
