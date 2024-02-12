@@ -92,7 +92,8 @@ export function CurrentSkills({
           "spline",
           "electron",
           "editorjs",
-          "html2canvas"
+          "html2canvas",
+          "xstate"
         ]}
       />
     </div>

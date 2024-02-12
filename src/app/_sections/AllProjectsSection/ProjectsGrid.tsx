@@ -30,6 +30,7 @@ export function ProjectsGrid({
             />
           }
           title={project.title}
+          featured={project.featured}
           tags={project.tagsShort.map((tag) => {
             const skillName =
               skills.find((skill) => skill.id === tag)?.name || "";

@@ -2,6 +2,7 @@
   {
     "id": "cslit",
     "title": "CS-LIT",
+    "featured": true,
     "image": "/cslit-logo.svg",
     "screenshots": {
       "mobile": [

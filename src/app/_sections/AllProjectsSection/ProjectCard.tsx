@@ -2,12 +2,14 @@
 import Link from "next/link";
 import styles from "./index.module.scss";
 import globalStyles from "@/_styles/page.module.scss";
+import { FaStarOfLife as StarIcon } from "react-icons/fa6";
 import { IoArrowForward as ArrowIcon } from "react-icons/io5";
 import { HiOutlineExternalLink as LinkIcon } from "react-icons/hi";
 
 interface IProjectCardProps {
   image: React.ReactNode;
   title: React.ReactNode;
+  featured?: boolean;
   tags: React.ReactNode;
   id: string;
   description: string[];
@@ -20,6 +22,7 @@ interface IProjectCardProps {
 export function ProjectCard({
   image,
   title,
+  featured,
   tags,
   id,
   description,
@@ -34,7 +37,15 @@ export function ProjectCard({
         selected ? styles.projectCardSelected : styles.projectCard
       }`}>
       <div className={styles.projectCardImage}>{image}</div>
-      <div className={styles.projectCardTitle}>{title}</div>
+      <div className={styles.projectCardTitle}>
+        {title}
+        {featured ? (
+          <span className={styles.projectCardFeatured}>
+            {" "}
+            <StarIcon /> featured{" "}
+          </span>
+        ) : null}
+      </div>
       <div className={styles.projectCardTags}>
         <div className={globalStyles.tagsRow}>
           <div>

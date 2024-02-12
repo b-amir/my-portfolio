@@ -282,6 +282,23 @@
   font-weight: 700;
   padding: 3rem 3rem 1rem;
   color: #40465a;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.projectCardFeatured {
+  border-radius: $base-br;
+  background-color: #ffe8c9;
+  padding: 5px 10px;
+  font-size: x-small;
+  font-weight: 600;
+  color: #f15c55;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  width: fit-content;
+  height: fit-content;
 }
 
 .projectCardBottomRow {

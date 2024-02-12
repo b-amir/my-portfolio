@@ -188,5 +188,10 @@
     "id": "cicd",
     "name": "CI/CD",
     "color": "#975a00"
+  },
+  {
+    "id": "xstate",
+    "name": "XState",
+    "color": "#000000"
   }
 ]

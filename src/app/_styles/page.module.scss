@@ -89,6 +89,13 @@
     align-content: flex-start;
     gap: 0.5rem;
     margin-bottom: 1.8rem;
+
+    // background: #1f1f1f0a;
+    // border: 1px solid #00000021;
+    // gap: 0.5rem;
+    // border-radius: $base-br;
+    // padding: 15px 20px;
+
     filter: drop-shadow(5px 10px 11px #00000015);
 
     &:last-child {
@@ -100,7 +107,7 @@
         color: #444b5b !important;
         font-weight: 500 !important;
         margin-right: 0.5rem !important;
-        margin-bottom: 0 !important;
+        margin-bottom: 0.5rem !important;
         font-size: small !important;
     }
     div {
