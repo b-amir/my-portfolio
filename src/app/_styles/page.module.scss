@@ -182,6 +182,24 @@
         background-color: rgba(110, 89, 60, 0.231372549);
     }
 }
+
+.productHuntButtonLarge {
+    @extend .demoButtonLarge;
+
+    border: 1px solid #ff61545c;
+    background-color: rgb(255 97 84 / 17%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: $base-br;
+    box-shadow: none;
+    text-shadow: none;
+
+    &:hover {
+        box-shadow: none;
+        background-color: #ff625465;
+    }
+}
 .featuredProject {
     @extend .section;
     min-height: 100dvh;

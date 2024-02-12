@@ -6,6 +6,7 @@ import { TagsRow } from "@/_components/Tag/TagsRow";
 import globalStyles from "@/_styles/page.module.scss";
 import { DemoButton } from "@/_components/DemoButton";
 import { SectionHeader } from "@/_components/SectionHeader";
+import { ProductHuntButton } from "@/_components/ProductHuntButton";
 import { GithubSourceButton } from "@/_components/GithubSourceButton";
 import { FaStarOfLife as StarIcon } from "react-icons/fa6";
 
@@ -42,6 +43,7 @@ export const FeaturedProjectSection: React.FC = () => {
           ))}
           <br />
           <DemoButton text="Visit Live at cslit.cc" link="https://cslit.cc" />
+          <ProductHuntButton link={projects[0].producHuntLink} />
           <GithubSourceButton link={projects[0].githubLink} />
         </div>
         <div className={globalStyles.stack}>

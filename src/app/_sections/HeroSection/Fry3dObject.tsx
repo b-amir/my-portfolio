@@ -11,7 +11,6 @@ export function Fry3dObject({ isSmallScreen }: { isSmallScreen: boolean }) {
   return (
     <>
       {/* Render a less GPU consuming scene if device is handheld */}
-
       {isSmallScreen ? (
         <Spline
           onLoad={onLoad}

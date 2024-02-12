@@ -81,7 +81,8 @@
       "Utilized React Query for stale-while-revalidate fetching and implemented skeleton loadings for better UX."
     ],
     "githubLink": "https://github.com/b-amir/cs-lit",
-    "demoLink": "https://cslit.cc"
+    "demoLink": "https://cslit.cc",
+    "producHuntLink": "https://www.producthunt.com/posts/cs-lit"
   },
   {
     "id": "thiscovered",
