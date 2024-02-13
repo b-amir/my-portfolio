@@ -78,7 +78,10 @@ export const AllProjectsSection: React.FC = () => {
           <button
             className={styles.buttonKeepInTouch}
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
-            <WavingIcon /> Let&apos;s keep in touch
+            <span className={styles.wavingHand}>
+              <WavingIcon />
+            </span>{" "}
+            Let&apos;s keep in touch
           </button>
         </div>
       </div>

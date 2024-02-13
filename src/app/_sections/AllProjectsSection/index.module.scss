@@ -121,6 +121,23 @@
   }
 }
 
+.wavingHand {
+  animation-name: wave;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate-reverse;
+
+  @keyframes wave {
+    0% {
+      transform: rotate(-40deg);
+    }
+
+    100% {
+      transform: rotate(10deg);
+    }
+  }
+}
 .currentSkills {
   user-select: none;
   grid-area: 1/1/2/3;
