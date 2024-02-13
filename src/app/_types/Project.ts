@@ -16,8 +16,10 @@ export type Project = {
   description: string[];
   descriptionShort: string;
   features: string[];
+  challenges: string[];
   githubLink: string;
   demoLink: string;
+  productHuntLink?: string;
 } | {
   id: string;
   title: string;
@@ -33,6 +35,7 @@ export type Project = {
   description: string[];
   descriptionShort: string;
   features: string[];
+  challenges: string[];
   githubLink: string;
   demoLink: string;
 }

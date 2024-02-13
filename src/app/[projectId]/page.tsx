@@ -1,15 +1,17 @@
 import Image from "next/image";
 import dynamic from "next/dynamic";
+import { Tabs } from "./Tabs";
 import projects from "@/_data/projects.json";
+import { Loading } from "@/_components/Loading";
 import { TagsRow } from "@/_components/Tag/TagsRow";
 import globalStyles from "@/_styles/page.module.scss";
 import { DemoButton } from "@/_components/DemoButton";
 import { BackButton } from "./BackButton";
 import { NotFoundPage } from "./NotFoundPage";
 import { FooterSection } from "@/_sections/FooterSection";
+import { ProductHuntButton } from "@/_components/ProductHuntButton";
 import { GithubSourceButton } from "@/_components/GithubSourceButton";
 import { findNonEmptyCategories } from "@/_utils/findNonEmptyCategories";
-import { Loading } from "@/_components/Loading";
 
 const ScreenShots = dynamic(
   () => import("@/_components/ScreenShots").then((mod) => mod.ScreenShots),
@@ -29,6 +31,7 @@ function Page({ params }: { params: { projectId: string } }) {
 
   const hasDemoLink = currentProject.demoLink.length > 0;
   const hasGithubLink = currentProject.githubLink.length > 0;
+  const hasProducHuntLink = currentProject.producHuntLink;
   const categoriesToDisplay = findNonEmptyCategories(currentProject);
 
   return (
@@ -60,6 +63,9 @@ function Page({ params }: { params: { projectId: string } }) {
 
             <br />
             {hasDemoLink && <DemoButton link={currentProject?.demoLink} />}
+            {hasProducHuntLink && (
+              <ProductHuntButton link={currentProject?.producHuntLink} />
+            )}
             {hasGithubLink && (
               <GithubSourceButton link={currentProject?.githubLink} />
             )}
@@ -81,14 +87,7 @@ function Page({ params }: { params: { projectId: string } }) {
               : null}
           </div>
 
-          <div className={globalStyles.features}>
-            <div className={globalStyles.featuresTitle}>Features</div>
-            <ul className={globalStyles.featureList}>
-              {currentProject?.features.map((feature) => (
-                <li key={feature}>{feature}</li>
-              ))}
-            </ul>
-          </div>
+          <Tabs currentProject={currentProject} />
         </div>
       </div>
       <FooterSection />

@@ -203,7 +203,7 @@
 .featuredProject {
     @extend .section;
     min-height: 100dvh;
-    border-top: 1px solid rgb(142 142 142 / 26%);
+    border-top: 1px solid hwb(0 56% 44% / 0.26);
     border-bottom: 1px solid rgb(192 192 255 / 76%);
     background-color: #fff9ef;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1200 800'%3E%3Cdefs%3E%3CradialGradient id='a' cx='0' cy='800' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23ffeed6'/%3E%3Cstop offset='1' stop-color='%23ffeed6' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='b' cx='1200' cy='800' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23fff9ef'/%3E%3Cstop offset='1' stop-color='%23fff9ef' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='c' cx='600' cy='0' r='600' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23ffeed6'/%3E%3Cstop offset='1' stop-color='%23ffeed6' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='d' cx='600' cy='800' r='600' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23FFF9EF'/%3E%3Cstop offset='1' stop-color='%23FFF9EF' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='e' cx='0' cy='0' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23FFE1BC'/%3E%3Cstop offset='1' stop-color='%23FFE1BC' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='f' cx='1200' cy='0' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23FFF9EF'/%3E%3Cstop offset='1' stop-color='%23FFF9EF' stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect fill='url(%23a)' width='1200' height='800'/%3E%3Crect fill='url(%23b)' width='1200' height='800'/%3E%3Crect fill='url(%23c)' width='1200' height='800'/%3E%3Crect fill='url(%23d)' width='1200' height='800'/%3E%3Crect fill='url(%23e)' width='1200' height='800'/%3E%3Crect fill='url(%23f)' width='1200' height='800'/%3E%3C/svg%3E");
@@ -218,6 +218,30 @@
     gap: 0px 0px;
     grid-auto-flow: row;
 }
+@mixin commonTitleStyle {
+    grid-area: 2/2/3/3;
+    text-transform: uppercase;
+    color: #7b7b7b;
+    font-weight: 700;
+    font-size: small;
+    padding: 0.5rem 0rem 1.5rem;
+}
+@mixin selectableTitleStyle {
+    cursor: pointer;
+    span {
+        border-top: none !important;
+        padding: 0.2rem 1.7rem 0.5rem;
+    }
+    span:first-child {
+        border-left: none !important;
+        padding-left: none !important;
+    }
+    span:last-child {
+        border-right: none !important;
+        padding-right: none !important;
+    }
+}
+
 .images {
     display: flex;
     grid-area: 1/1/2/4;
@@ -310,12 +334,8 @@
     // background: linear-gradient(296deg, rgba(2, 0, 36, 0) 80%, rgb(230 215 195 / 30%) 100%);
 }
 .summaryTitle {
+    @include commonTitleStyle;
     grid-area: 2 / 1 / 3 / 2;
-    text-transform: uppercase;
-    color: #7b7b7b;
-    font-weight: 700;
-    font-size: small;
-    padding: 0.5rem 0rem 1.5rem;
 }
 .summaryText {
     padding: 0.5rem 0;
@@ -329,12 +349,7 @@
     }
 }
 .stackTitle {
-    grid-area: 2/2/3/3;
-    text-transform: uppercase;
-    color: #7b7b7b;
-    font-weight: 700;
-    font-size: small;
-    padding: 0.5rem 0rem 1.5rem;
+    @include commonTitleStyle;
 }
 .features {
     grid-area: 2 / 3 / 4 / 4;
@@ -343,24 +358,50 @@
     // background: linear-gradient(296deg, rgba(2, 0, 36, 0) 80%, rgb(230 215 195 / 30%) 100%);
 }
 .featuresTitle {
+    @include commonTitleStyle;
     grid-area: 2 / 3 / 3 / 4;
-    text-transform: uppercase;
-    color: #7b7b7b;
-    font-weight: 700;
-    font-size: small;
-    padding: 0.5rem 0rem 1.5rem;
+    @include selectableTitleStyle;
 }
-.featureList {
-    // customize the ul bullets:
-
+.featuresList {
     list-style: none;
     padding-left: 0;
     margin-left: 0;
-    line-height: 1.5;
+    line-height: 1.7;
     li {
         position: relative;
         padding-left: 1.3em;
-        padding-bottom: 0.5rem;
+        // padding-bottom: 0.5rem;
+        font-size: 1rem;
+        color: #000000f0;
+
+        &:before {
+            content: "•";
+            color: #7b7b7bb7;
+            position: absolute;
+            left: 0;
+        }
+    }
+}
+
+.challenges {
+    grid-area: 2 / 3 / 4 / 4;
+    border-left: 1px solid #0000001a;
+    padding: 1.5rem 3rem;
+}
+.challengesTitle {
+    @include commonTitleStyle;
+    grid-area: 2 / 3 / 3 / 4;
+    @include selectableTitleStyle;
+}
+.challengesList {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+    line-height: 1.7;
+    li {
+        position: relative;
+        padding-left: 1.3em;
+        // padding-bottom: 0.5rem;
         font-size: 1rem;
         color: #000000f0;
 
@@ -468,14 +509,16 @@
         border-left: none;
     }
 
-    .featureList {
+    .featuresList,
+    .challengesList {
         li {
             padding-left: 0.7rem;
             padding-bottom: 0.7rem;
             font-size: 0.9rem;
         }
     }
-    .features {
+    .features,
+    .challenges {
         grid-area: 4/4/4/1;
         border-left: none;
     }
@@ -502,7 +545,8 @@
         grid-area: 3/2/4/4;
         border-left: none;
     }
-    .features {
+    .features,
+    .challenges {
         grid-area: 4/4/4/1;
         border-left: none;
     }

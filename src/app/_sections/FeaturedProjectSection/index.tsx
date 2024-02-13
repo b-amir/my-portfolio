@@ -65,7 +65,7 @@ export const FeaturedProjectSection: React.FC = () => {
 
         <div className={globalStyles.features}>
           <div className={globalStyles.featuresTitle}>Features</div>
-          <ul className={globalStyles.featureList}>
+          <ul className={globalStyles.featuresList}>
             {projects[0].features.map((feature) => (
               <li key={feature}>{feature}</li>
             ))}

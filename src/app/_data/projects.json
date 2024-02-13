@@ -51,7 +51,7 @@
       "prisma"
     ],
     "description": [
-      "CS-LIT, short for \"Computer Science Like I'm Ten,\" is a comprehensive web platform designed to simplify complex computer science subjects through user-generated analogies.",
+      "CS-LIT, aka \"Computer Science Like I'm Ten,\" is a web community platform featured on Product Hunt, where users explain complex CS subjects using everyday analogies.",
       "This fully functional product enables users to sign up, contribute, and explore analogies for challenging CS topics. As the sole developer, I built CS-LIT from the ground up, embracing the project as both a learning experience and a personal challenge.",
       "The platform serves as a collaborative space where individuals can share their unique perspectives, making computer science more accessible and enjoyable for learners of all levels."
     ],
@@ -79,6 +79,18 @@
       "Infinite scroll using React Query for every list of data.",
       "Full admin panel for publishing, editing, or deleting entities.",
       "Utilized React Query for stale-while-revalidate fetching and implemented skeleton loadings for better UX."
+    ],
+    "challenges": [
+      "Led the development and deployment of CS-LIT, a web community platform, featured on Product Hunt, demonstrating project management and leadership skills.",
+      "Implemented a fully functional authentication system, utilizing various technologies, ensuring secure user interactions and data privacy.",
+      "Overcame performance bottlenecks through efficient caching and optimization techniques, resulting in a responsive and seamless user experience.",
+      "Addressed complex user feedback promptly, enhancing user satisfaction and retention rates.",
+      "Navigated challenges of integrating multiple third-party APIs for various functionalities, showcasing adaptability and problem-solving skills.",
+      "Achieved high test coverage, ensuring robustness and reliability of the platform, and demonstrating a commitment to quality.",
+      "Successfully implemented continuous integration and deployment pipelines, streamlining development workflow and ensuring efficient project delivery.",
+      "Acquired proficiency in Redux state management during project development, demonstrating a proactive approach to learning and skill acquisition.",
+      "Reflecting on the project, gained valuable insights into project management and prioritization, shaping future career aspirations in software development.",
+      "Demonstrated the impact of the project through positive feedback from the Product Hunt community and increased engagement metrics."
     ],
     "githubLink": "https://github.com/b-amir/cs-lit",
     "demoLink": "https://cslit.cc",
@@ -139,6 +151,18 @@
       "Implemented Dark Theme.",
       "Deployed on Github Pages."
     ],
+    "challenges": [
+      "Developed and deployed this.covered, a client-side website, empowering individuals to enhance their LinkedIn profiles, demonstrating initiative and creativity.",
+      "Integrated Unsplash API seamlessly, enabling users to find and customize header images effortlessly, resulting in increased user engagement and satisfaction.",
+      "Overcame challenges in implementing Dark Theme feature, enhancing user preferences and accessibility, while maintaining visual coherence.",
+      "Received positive user feedback on the simplicity and effectiveness of the platform, validating design and usability decisions.",
+      "Managed to implement features within a limited timeframe, demonstrating efficiency and time management skills.",
+      "Learned valuable lessons in client-side rendering and optimization techniques, enhancing skills in frontend development.",
+      "Addressed performance issues and optimized load times for improved user experience, showcasing problem-solving skills and attention to detail.",
+      "Continuously iterated on features and functionalities based on user feedback, improving overall platform experience and demonstrating a commitment to user-centric design.",
+      "Gained insights into user behavior and preferences through analytics and feedback, informing future development decisions.",
+      "Demonstrated the impact of the platform through increased user engagement metrics and positive user testimonials."
+    ],
     "githubLink": "https://github.com/b-amir/thiscovered",
     "demoLink": "https://b-amir.github.io/thiscovered/"
   },
@@ -184,6 +208,18 @@
       "Typesafe via TypeScript.",
       "Filter Projects via Skill Tags.",
       "Implemented Project Routes via Next.js App Router."
+    ],
+    "challenges": [
+      "Implemented Sass for styling, improving maintainability and code organization, while adhering to industry best practices.",
+      "Explored 3D design using Spline, adding a unique and visually appealing element to the portfolio, showcasing creativity and innovation.",
+      "Received positive feedback on the design and aesthetics of the portfolio website, validating design decisions and visual coherence.",
+      "Overcame challenges in implementing responsive design for optimal viewing experience across devices, demonstrating adaptability and problem-solving skills.",
+      "Effectively showcased projects and skills using filterable project tags, enhancing user navigation and engagement.",
+      "Learned valuable lessons in frontend development and design principles, enhancing skills in UI/UX design and frontend architecture.",
+      "Addressed performance issues and optimized load times for improved user experience, showcasing attention to detail and commitment to quality.",
+      "Managed to balance simplicity and creativity in design, reflecting personal style and professionalism, while meeting user needs and preferences.",
+      "Demonstrated the impact of the portfolio through increased traffic and positive feedback from peers and potential employers.",
+      "Gained insights into user behavior and preferences through analytics and feedback, informing future design and development decisions."
     ],
     "githubLink": "https://github.com/b-amir/my-portfolio",
     "demoLink": "https://b-amir.link"
@@ -241,6 +277,18 @@
       "Responsive Design.",
       "Typesafe via TypeScript."
     ],
+    "challenges": [
+      "Tailored platform specifically for Fantasy Premier League (FPL) enthusiasts, meeting niche market needs and demonstrating market awareness.",
+      "Successfully integrated third-party APIs for real-time game results and fantasy statistics, ensuring comprehensive data access and functionality.",
+      "Overcame CORS problem for comprehensive data access, ensuring seamless functionality and user experience.",
+      "Implemented an in-app currency system for user transactions, enhancing user engagement and interaction, while ensuring monetization opportunities.",
+      "Effectively utilized react useContext for state management, ensuring efficient data flow and optimal performance.",
+      "Learned about Progressive Web App (PWA) development and its benefits for user experience, expanding skillset and expertise.",
+      "Addressed challenges in responsive design and cross-device compatibility, ensuring seamless user experience across platforms and devices.",
+      "Received positive feedback on the usability and usefulness of the platform from FPL community members, validating design and functionality decisions.",
+      "Managed to balance simplicity and functionality in feature implementation, catering to diverse user needs and preferences.",
+      "Continuously iterated on features and functionalities based on user feedback, improving overall platform experience and ensuring user satisfaction."
+    ],
     "githubLink": "",
     "demoLink": ""
   },
@@ -296,6 +344,18 @@
       "Responsive Design.",
       "Used Theme-UI for a unified design."
     ],
+    "challenges": [
+      "Established online presence for a real startup, providing a platform for showcasing offerings and updates, and demonstrating entrepreneurial spirit and initiative.",
+      "Successfully implemented landing page with Next.js, ensuring fast loading times and smooth user experience, while meeting design and functionality requirements.",
+      "Effectively integrated Strapi as a content management system for dynamic blog section, enabling easy content management and scalability.",
+      "Overcame challenges in integrating backend and frontend technologies for seamless functionality, demonstrating adaptability and problem-solving skills.",
+      "Received positive feedback on the design and usability of the landing page and blog section, validating design decisions and user experience.",
+      "Learned valuable lessons in project coordination and collaboration with startup stakeholders, enhancing communication and teamwork skills.",
+      "Addressed performance issues and optimized website speed for improved user engagement, ensuring positive user experience and retention.",
+      "Managed to launch the website within a tight deadline, demonstrating efficient project management skills and ability to work under pressure.",
+      "Handled SEO optimization and implemented best practices for increased online visibility and reach, ensuring successful online presence and brand awareness.",
+      "Continuously updated and maintained the website with relevant content and features, keeping it relevant and engaging for users and stakeholders."
+    ],
     "githubLink": "",
     "demoLink": "https://adeptivity.co"
   },
@@ -344,6 +404,18 @@
       "Customized EditorJS's design to seamlessly fit into the project.",
       "Straightforward and practical tool for efficient note-taking.",
       "Implemented masonry layout without any third-party libraries."
+    ],
+    "challenges": [
+      "Successfully developed a cross-platform note-taking app for web and desktop, meeting diverse user needs and expanding user base and reach.",
+      "Implemented block-style text editor reminiscent of popular tools like Notion, enhancing user familiarity and usability, while meeting design and functionality requirements.",
+      "Effectively utilized local storage and custom hooks for data persistence, ensuring seamless user experience and data security.",
+      "Overcame challenges in Electron development, focusing on simplicity and performance, while meeting cross-platform compatibility requirements.",
+      "Received positive feedback on the simplicity and practicality of the app from users and peers, validating design and functionality decisions.",
+      "Learned valuable lessons in cross-platform development and user interface design, expanding skillset and expertise.",
+      "Addressed performance issues and optimized app performance for smoother user interactions, ensuring positive user experience and retention.",
+      "Managed to keep the app lightweight and fast, ensuring efficient use of system resources and optimal performance across devices.",
+      "Continuously iterated on features and functionalities based on user feedback, improving overall app experience and ensuring user satisfaction.",
+      "Handled bug fixes and compatibility issues across different platforms, ensuring a consistent user experience."
     ],
     "githubLink": "",
     "demoLink": ""
