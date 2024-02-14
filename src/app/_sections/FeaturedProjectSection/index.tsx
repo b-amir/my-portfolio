@@ -1,7 +1,7 @@
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import projects from "@/_data/projects.json";
-import { Tabs } from "@/[projectId]/Tabs";
+import { Tabs } from "@/_components/Tabs";
 import { Loading } from "@/_components/Loading";
 import { TagsRow } from "@/_components/Tag/TagsRow";
 import globalStyles from "@/_styles/page.module.scss";
@@ -37,11 +37,11 @@ export const FeaturedProjectSection: React.FC = () => {
         <div className={globalStyles.summary}>
           <div className={globalStyles.summaryTitle}>Summary</div>
           <h2>CS-LIT</h2>
-          {projects[0].description.map((paragraph, index) => (
+          {projects[0].description.map((span, index) => (
             <p
               className={globalStyles.summaryText}
               key={index}
-              dangerouslySetInnerHTML={{ __html: paragraph }}
+              dangerouslySetInnerHTML={{ __html: span }}
             />
           ))}
           <br />

@@ -63,8 +63,8 @@ export function ProjectCard({
         </div>
       </div>
       <div className={styles.projectCardDescription}>
-        {description?.map((p, index) => (
-          <p key={index} dangerouslySetInnerHTML={{ __html: p }} />
+        {description?.map((span, index) => (
+          <p key={index} dangerouslySetInnerHTML={{ __html: span }} />
         ))}
       </div>
 

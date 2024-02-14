@@ -84,20 +84,18 @@ export function ProjectsGrid({
             />
             <div className={styles.smallProjectDetails}>
               <div className={styles.smallProjectTitlebar}>
-                <p style={{ fontWeight: "bold" }}>{project.title}</p>
+                <p>{project.title}</p>
                 <Link
                   href={project.githubLink}
                   target="_blank"
-                  className={styles.githubSourceButton}
-                  style={{ fontSize: "small", color: "#7b7b7b" }}>
+                  className={styles.githubSourceButton}>
                   GitHub <LinkIcon />
                 </Link>
 
                 <Link
                   href={project.demoLink}
                   target="_blank"
-                  className={styles.demoButton}
-                  style={{ fontSize: "small", color: "#7b7b7b" }}>
+                  className={styles.demoButton}>
                   Demo <LinkIcon />
                 </Link>
               </div>

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import dynamic from "next/dynamic";
-import { Tabs } from "./Tabs";
+import { Tabs } from "../_components/Tabs";
 import projects from "@/_data/projects.json";
 import { Loading } from "@/_components/Loading";
 import { TagsRow } from "@/_components/Tag/TagsRow";

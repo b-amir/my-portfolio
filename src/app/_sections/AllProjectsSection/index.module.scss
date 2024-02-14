@@ -85,6 +85,11 @@
   padding: 2rem;
   transition: all 0.15s ease-in-out;
 
+  img {
+    border-radius: $base-br;
+    border: 4px solid #cecece;
+  }
+
   &:hover {
     background: white;
     border: 1px solid #9e9e9e;
@@ -119,6 +124,21 @@
 .smallProjectTitlebar {
   display: flex;
   gap: 15px;
+
+  p {
+    color: #40465a;
+    font-weight: bold;
+  }
+
+  a {
+    transition: all 0.15s ease-in-out;
+    font-size: small;
+    color: #7b7b7b;
+
+    &:hover {
+      color: $black-substitute;
+    }
+  }
 }
 
 .keepInTouchSection {

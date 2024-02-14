@@ -67,7 +67,7 @@
       "Docker implementation for flexible deployment.",
       "Handled Error boundaries with <b>dedicated error pages</b>.",
       "<b>Descriptive error messages</b> for better user experience.",
-      "Zod used for robust <b>data validation<b>.",
+      "Zod used for robust <b>data validation</b>.",
       "Responsive design for optimal user experience.",
       "Clean code and organized folder structure.",
       "<b>Share analogies</b> via link or convert DOM into an image using html2canvas.",
@@ -199,7 +199,7 @@
     "features": [
       "Incorporated <b>React's suspense</b> feature and utilized <b>UI fallback for loading states</b>.",
       "Utilized Spline, which uses Three.js, for 3D and interactive objects on the web.",
-      "Minimal usage of 3d objects, keeping <b>Performance Measures for Low-Tier Devices<b> in mind.",
+      "Minimal usage of 3d objects, keeping <b>Performance Measures for Low-Tier Devices</b> in mind.",
       "Abillity to <b>filter Projects via Skill Tags</b>.",
       "Opportunity to Learn <b>Sass</b> for a more clean and modern styling solution.",
       "Responsive Design across all devices and screen sizes.",
