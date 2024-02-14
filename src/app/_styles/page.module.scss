@@ -230,7 +230,7 @@
     cursor: pointer;
     span {
         border-top: none !important;
-        padding: 0.2rem 1.7rem 0.5rem;
+        padding: 1rem 1.7rem;
     }
     span:first-child {
         border-left: none !important;
@@ -364,6 +364,7 @@
 }
 .featuresList {
     list-style: none;
+    padding-top: 1.5rem;
     padding-left: 0;
     margin-left: 0;
     line-height: 1.7;
@@ -395,6 +396,7 @@
 }
 .challengesList {
     list-style: none;
+    padding-top: 1.5rem;
     padding-left: 0;
     margin-left: 0;
     line-height: 1.7;
