@@ -54,8 +54,8 @@ export function Tabs({ currentProject }: { currentProject: Project }) {
         </span>
       </div>
       <ul className={tabData.listClassName}>
-        {tabData.items?.map((item) => (
-          <li key={item}>{item}</li>
+        {tabData.items?.map((item, index) => (
+          <li key={index} dangerouslySetInnerHTML={{ __html: item }} />
         ))}
       </ul>
     </div>

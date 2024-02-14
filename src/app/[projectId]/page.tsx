@@ -55,10 +55,12 @@ function Page({ params }: { params: { projectId: string } }) {
             <div className={globalStyles.summaryTitle}>Summary</div>
             <h2>{currentProject?.title}</h2>
 
-            {currentProject?.description.map((paragraph: string) => (
-              <p className={globalStyles.summaryText} key={paragraph}>
-                {paragraph}
-              </p>
+            {currentProject?.description.map((paragraph, index) => (
+              <p
+                className={globalStyles.summaryText}
+                key={index}
+                dangerouslySetInnerHTML={{ __html: paragraph }}
+              />
             ))}
 
             <br />

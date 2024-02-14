@@ -63,10 +63,11 @@ export function ProjectCard({
         </div>
       </div>
       <div className={styles.projectCardDescription}>
-        {description?.map((p) => (
-          <p key={p}>{p}</p>
+        {description?.map((p, index) => (
+          <p key={index} dangerouslySetInnerHTML={{ __html: p }} />
         ))}
       </div>
+
       <div className={styles.projectCardBottomRow}>
         <div className={styles.projectCardLinks}>
           {githubLink && (

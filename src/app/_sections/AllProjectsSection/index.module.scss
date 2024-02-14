@@ -71,6 +71,56 @@
   grid-template-columns: repeat(3, 1fr);
 }
 
+.smallProjectsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-area: 4/1/3/4;
+}
+.smallProject {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  background: rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(146, 150, 185, 0.4509803922);
+  padding: 2rem;
+  transition: all 0.15s ease-in-out;
+
+  &:hover {
+    background: white;
+    border: 1px solid #9e9e9e;
+    box-shadow: $big-shadow;
+    z-index: 10;
+    transform: translateY(-4px);
+    border-radius: $small-br;
+  }
+}
+.smallProjectSelected {
+  @extend .smallProject;
+  box-shadow: $big-shadow;
+  background: #ffffff;
+  border: 1px solid #535353;
+  z-index: 10;
+  transform: translateY(0px);
+  filter: drop-shadow(0px 0px 6px #00000020);
+  border-radius: 0;
+}
+
+.smallProjectDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+
+  p {
+    font-size: 0.9rem;
+    color: rgba(0, 0, 0, 0.6784313725);
+  }
+}
+
+.smallProjectTitlebar {
+  display: flex;
+  gap: 15px;
+}
+
 .keepInTouchSection {
   display: flex;
   flex-direction: column;
@@ -430,10 +480,12 @@
   .otherStack {
     grid-area: 2/1/2/4;
   }
-  .projectsGrid {
+  .projectsGrid,
+  .smallProjectsGrid {
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(6, 1fr);
   }
+
   .keepInTouchSection {
     width: unset !important;
     margin: unset !important;
@@ -464,7 +516,8 @@
   .otherStack {
     grid-area: 2/1/2/4;
   }
-  .projectsGrid {
+  .projectsGrid,
+  .smallProjectsGrid {
     grid-template-columns: 1fr;
   }
   .keepInTouchSection {

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import projects from "@/_data/projects.json";
+import { Tabs } from "@/[projectId]/Tabs";
 import { Loading } from "@/_components/Loading";
 import { TagsRow } from "@/_components/Tag/TagsRow";
 import globalStyles from "@/_styles/page.module.scss";
@@ -36,10 +37,12 @@ export const FeaturedProjectSection: React.FC = () => {
         <div className={globalStyles.summary}>
           <div className={globalStyles.summaryTitle}>Summary</div>
           <h2>CS-LIT</h2>
-          {projects[0].description.map((paragraph: string) => (
-            <p className={globalStyles.summaryText} key={paragraph}>
-              {paragraph}
-            </p>
+          {projects[0].description.map((paragraph, index) => (
+            <p
+              className={globalStyles.summaryText}
+              key={index}
+              dangerouslySetInnerHTML={{ __html: paragraph }}
+            />
           ))}
           <br />
           <DemoButton text="Visit Live at cslit.cc" link="https://cslit.cc" />
@@ -62,15 +65,7 @@ export const FeaturedProjectSection: React.FC = () => {
           />
           <TagsRow title="Libs, etc:" listOfTags={projects[0].tags[0].libs} />
         </div>
-
-        <div className={globalStyles.features}>
-          <div className={globalStyles.featuresTitle}>Features</div>
-          <ul className={globalStyles.featuresList}>
-            {projects[0].features.map((feature) => (
-              <li key={feature}>{feature}</li>
-            ))}
-          </ul>
-        </div>
+        <Tabs currentProject={projects[0]} />
       </div>
     </div>
   );

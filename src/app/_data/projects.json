@@ -2,6 +2,7 @@
   {
     "id": "cslit",
     "title": "CS-LIT",
+    "fullProject": true,
     "featured": true,
     "image": "/cslit-logo.svg",
     "screenshots": {
@@ -51,46 +52,46 @@
       "prisma"
     ],
     "description": [
-      "CS-LIT, aka \"Computer Science Like I'm Ten,\" is a web community platform featured on Product Hunt, where users explain complex CS subjects using everyday analogies.",
-      "This fully functional product enables users to sign up, contribute, and explore analogies for challenging CS topics. As the sole developer, I built CS-LIT from the ground up, embracing the project as both a learning experience and a personal challenge.",
+      "CS-LIT, aka \"Computer Science Like I'm Ten,\" is a web community platform featured on Product Hunt, where <b>users explain complex CS subjects using everyday analogies</b>.",
+      "This fully functional product enables users to sign up, contribute, and explore analogies for challenging CS topics. As the sole developer, I built CS-LIT from the <b>ground up</b>, embracing the project as both a learning experience and a personal challenge.",
       "The platform serves as a collaborative space where individuals can share their unique perspectives, making computer science more accessible and enjoyable for learners of all levels."
     ],
     "descriptionShort": "This is a short description.",
     "features": [
-      "User Registration, Login, and Analogy Sharing.",
-      "Login Options: Social login providers, email magic link.",
+      "User Registration, Login, and <b>role-based</b> access.",
+      "<b>Login Options</b>: Social login providers, email magic link.",
       "Dedicated Auth pages for login and registration.",
-      "Fully typesafe architecture (back to front) using tRPC for API.",
+      "Fully typesafe architecture (back to front) using <b>tRPC for API</b>.",
       "Redux state manager chosen for handling growing complexities in states.",
-      "Opportunity to learn Redux during project development.",
-      "Unit tests via Vitest and End-to-end (e2e) tests using Cypress.",
+      "<b>Unit tests</b> via Vitest and <b>End-to-end (e2e) tests</b> using Cypress.",
       "Docker implementation for flexible deployment.",
-      "Handled Error boundaries with dedicated error pages.",
-      "Descriptive error messages for better user experience.",
-      "Zod used for robust data validation.",
+      "Handled Error boundaries with <b>dedicated error pages</b>.",
+      "<b>Descriptive error messages</b> for better user experience.",
+      "Zod used for robust <b>data validation<b>.",
       "Responsive design for optimal user experience.",
       "Clean code and organized folder structure.",
-      "Share analogies via link or convert DOM into an image using html2canvas.",
-      "Commenting system for user interaction.",
-      "Voting and validation system for analogies.",
-      "Code pasting with syntax highlighting support.",
-      "Markdown support for enhanced content formatting.",
-      "Search system with debounce for finding topics.",
-      "Infinite scroll using React Query for every list of data.",
-      "Full admin panel for publishing, editing, or deleting entities.",
-      "Utilized React Query for stale-while-revalidate fetching and implemented skeleton loadings for better UX."
+      "<b>Share analogies</b> via link or convert DOM into an image using html2canvas.",
+      "<b>Commenting</b> system for user interaction.",
+      "<b>Voting</b> and user validation system for analogies.",
+      "Using code snippets with <b>syntax highlighting</b> support.",
+      "<b>Markdown</b> support for enhanced content formatting.",
+      "<b>Search system</b> with debounce for finding topics.",
+      "<b>Infinite scroll</b> using React Query for every list of data.",
+      "Utilized React Query for stale-while-revalidate fetching and implemented skeleton loadings for better UX.",
+      "<b>Full admin panel</b> for publishing, editing, or deleting entities."
     ],
     "challenges": [
-      "Led the development and deployment of CS-LIT, a web community platform, featured on Product Hunt, demonstrating project management and leadership skills.",
-      "Implemented a fully functional authentication system, utilizing various technologies, ensuring secure user interactions and data privacy.",
-      "Overcame performance bottlenecks through efficient caching and optimization techniques, resulting in a responsive and seamless user experience.",
-      "Addressed complex user feedback promptly, enhancing user satisfaction and retention rates.",
-      "Navigated challenges of integrating multiple third-party APIs for various functionalities, showcasing adaptability and problem-solving skills.",
-      "Achieved high test coverage, ensuring robustness and reliability of the platform, and demonstrating a commitment to quality.",
-      "Successfully implemented continuous integration and deployment pipelines, streamlining development workflow and ensuring efficient project delivery.",
-      "Acquired proficiency in Redux state management during project development, demonstrating a proactive approach to learning and skill acquisition.",
-      "Reflecting on the project, gained valuable insights into project management and prioritization, shaping future career aspirations in software development.",
-      "Demonstrated the impact of the project through positive feedback from the Product Hunt community and increased engagement metrics."
+      "Managed coding, design, and marketing solo, requiring effective <b>time management and prioritization</b>.",
+      "Leveraged comprehensive tools to overcome resource limitations, especially in database management and hosting, for efficiency and <b>cost savings</b>.",
+      "Prioritized <b>user experience</b> with refined interaction, optimized loading, intuitive UI, and tailored personas, complemented by skeletons and loading indicators.",
+      "Improved performance with efficient caching and optimization techniques for a responsive user experience.",
+      "Implemented <b>targeted testing</b> for reliability and robustness, emphasizing quality assurance efforts.",
+      "Established CI/CD pipelines for seamless project delivery and development optimization.",
+      "Embraced the opportunity to learn and implement Redux state management as project development progressed, recognizing the increasing complexity of states.",
+      "Pursued <b>self-directed learning</b> to expand frontend skills and explore backend and devops technologies proactively.",
+      "Successfully launched on Product Hunt, <b>leveraging community feedback</b> for project enhancement.",
+      "Incorporated user feedback through voting and comments to enhance satisfaction and interaction.",
+      "Undertaking the <b>entire development cycle independently</b>, from conceptualization and system design to implementation and launch, necessitating self-reliance and adaptability to address various technical and logistical challenges solo."
     ],
     "githubLink": "https://github.com/b-amir/cs-lit",
     "demoLink": "https://cslit.cc",
@@ -99,6 +100,7 @@
   {
     "id": "thiscovered",
     "title": "this.covered",
+    "fullProject": true,
     "image": "/thiscovered-logo.svg",
     "screenshots": {
       "mobile": [
@@ -135,33 +137,26 @@
       "reactrouter"
     ],
     "description": [
-      "Introducing \"this.covered\" — a playful and client-side website crafted to empower individuals in enhancing their LinkedIn profiles with eye-catching header images. ",
-      " With the tagline \"Wanna get discovered? You got this.covered!\", the platform aims to elevate personal branding by offering a simple and enjoyable image creation experience. Utilizing the Unsplash API, users can easily find and customize header images that resonate with their professional identity. Elevate your online presence with \"this.covered\" and make a lasting impression. ",
-      "I hope you find all the easter eggs I put in this project :)"
+      "Introducing \"this.covered\" — a playful and client-side website crafted to empower individuals in <b>enhancing their LinkedIn profiles with eye-catching header images</b>. ",
+      " With the tagline \"Wanna get discovered? You got this.covered!\", the platform aims to elevate personal branding by offering a simple and enjoyable image creation experience. Utilizing the <b>Unsplash API</b>, users can easily <b>find and customize</b> header images that resonate with their professional identity. Elevate your online presence with \"this.covered\" and make a lasting impression. ",
+      "<b>I hope you find all the easter eggs I put in this project :)</b>"
     ],
     "descriptionShort": "This is a short description of the second project.",
     "features": [
       "Client-Side Project via Vite.",
-      "Used Unsplash public and private API to find images.",
+      "Used Unsplash <b>public and private API</b> to find images.",
       "Add a small box of personal information to your cover photo.",
       "Save your custom cover photo to your device.",
-      "Follow a list of tips and tricks to create a more complete LinkedIn profile.",
+      "Offering a <b>checklist</b> of tips and tricks to create a more complete LinkedIn profile.",
       "Typesafe via TypeScript.",
-      "Responsive Design and Mobile-Friendly: Implemented swiping for mobile.",
-      "Implemented Dark Theme.",
+      "Responsive Design and Mobile-Friendly: Implemented <b>swiping for mobile</b>.",
+      "Implemented Dark Theme utilizing CSS <b>variables and media queries</b>, enhanced with browser's <b>local storage</b> integration.",
       "Deployed on Github Pages."
     ],
     "challenges": [
-      "Developed and deployed this.covered, a client-side website, empowering individuals to enhance their LinkedIn profiles, demonstrating initiative and creativity.",
-      "Integrated Unsplash API seamlessly, enabling users to find and customize header images effortlessly, resulting in increased user engagement and satisfaction.",
-      "Overcame challenges in implementing Dark Theme feature, enhancing user preferences and accessibility, while maintaining visual coherence.",
-      "Received positive user feedback on the simplicity and effectiveness of the platform, validating design and usability decisions.",
-      "Managed to implement features within a limited timeframe, demonstrating efficiency and time management skills.",
-      "Learned valuable lessons in client-side rendering and optimization techniques, enhancing skills in frontend development.",
-      "Addressed performance issues and optimized load times for improved user experience, showcasing problem-solving skills and attention to detail.",
-      "Continuously iterated on features and functionalities based on user feedback, improving overall platform experience and demonstrating a commitment to user-centric design.",
-      "Gained insights into user behavior and preferences through analytics and feedback, informing future development decisions.",
-      "Demonstrated the impact of the platform through increased user engagement metrics and positive user testimonials."
+      "Integrated Unsplash API seamlessly, incorporating both the free private API and public API to <b>mitigate request limits during high loads</b>, ensuring continuous usability while maintaining zero costs. This enabled users to effortlessly find and customize header images, contributing to increased user engagement and satisfaction.",
+      "Implemented Dark Theme feature to enhance user preferences and accessibility, while <b>maintaining visual coherence</b>.",
+      "Received <b>positive user feedback</b> on the simplicity and effectiveness of the platform, validating design and usability decisions."
     ],
     "githubLink": "https://github.com/b-amir/thiscovered",
     "demoLink": "https://b-amir.github.io/thiscovered/"
@@ -169,6 +164,7 @@
   {
     "id": "portfolio",
     "title": "this website!",
+    "fullProject": true,
     "image": "/thing.svg",
     "screenshots": [],
     "tags": [
@@ -195,31 +191,26 @@
       "spline"
     ],
     "description": [
-      "I wanted my portfolio website to be more than just a showcase—it became a journey of exploration and learning.",
-      " In this project, I decided to dip my toes into Sass for a cleaner style and ventured into 3D design using Spline,    inspired by my past experiences with 3D software in school.",
-      " The goal was to embrace the opportunity to try new things. Sass added a bit of structure to the styling, and the subtle 3D touch reflects my curiosity. My portfolio is a simple testament to learning and experimenting in a space that's as much about discovery as it is about showcasing work"
+      "I wanted my portfolio website to be more than just a showcase—it became <b>a journey of exploration and learning</b>.",
+      "In this project, I decided to dip my toes into <b>Sass</b> for a cleaner style and ventured into <b>3D web design</b> using Spline,    inspired by my past experiences with 3D software in school.",
+      "It serves as a testament to continuous learning and experimentation, striking a <b>balance between visual elegance and performance across diverse devices and hardware</b>. With a keen focus on audience demographics and purpose-driven design, the portfolio embodies a space for discovery while showcasing my work effectively."
     ],
     "descriptionShort": "Short description for the third project.",
     "features": [
-      "Opportunity to Learn Sass for Styling.",
+      "Incorporated <b>React's suspense</b> feature and utilized <b>UI fallback for loading states</b>.",
       "Utilized Spline, which uses Three.js, for 3D and interactive objects on the web.",
-      "Minimal usage of 3d objects with Performance Measures for Low-Tier Devices.",
-      "Responsive Design.",
+      "Minimal usage of 3d objects, keeping <b>Performance Measures for Low-Tier Devices<b> in mind.",
+      "Abillity to <b>filter Projects via Skill Tags</b>.",
+      "Opportunity to Learn <b>Sass</b> for a more clean and modern styling solution.",
+      "Responsive Design across all devices and screen sizes.",
       "Typesafe via TypeScript.",
-      "Filter Projects via Skill Tags.",
       "Implemented Project Routes via Next.js App Router."
     ],
     "challenges": [
+      "Incorporated 3D design with Spline, striking a <b>balance</b> between <b>simplicity</b> and creativity in the portfolio's <b>visual appeal</b>. Maintained <b>optimal performance</b> through <b>code-splitting and device detection</b>, ensuring each user's experience is fine-tuned based on monitor size and <b>GPU tier</b>.",
+      "Learned valuable lessons in <b>rendering patterns</b> and streaming server-side rendering for improved performance.",
       "Implemented Sass for styling, improving maintainability and code organization, while adhering to industry best practices.",
-      "Explored 3D design using Spline, adding a unique and visually appealing element to the portfolio, showcasing creativity and innovation.",
-      "Received positive feedback on the design and aesthetics of the portfolio website, validating design decisions and visual coherence.",
-      "Overcame challenges in implementing responsive design for optimal viewing experience across devices, demonstrating adaptability and problem-solving skills.",
-      "Effectively showcased projects and skills using filterable project tags, enhancing user navigation and engagement.",
-      "Learned valuable lessons in frontend development and design principles, enhancing skills in UI/UX design and frontend architecture.",
-      "Addressed performance issues and optimized load times for improved user experience, showcasing attention to detail and commitment to quality.",
-      "Managed to balance simplicity and creativity in design, reflecting personal style and professionalism, while meeting user needs and preferences.",
-      "Demonstrated the impact of the portfolio through increased traffic and positive feedback from peers and potential employers.",
-      "Gained insights into user behavior and preferences through analytics and feedback, informing future design and development decisions."
+      "Maintained a sharp focus on <b>audience demographics</b> and <b>employed UX persona practices</b> to enhance user experience, aligning with the portfolio's core objectives."
     ],
     "githubLink": "https://github.com/b-amir/my-portfolio",
     "demoLink": "https://b-amir.link"
@@ -227,6 +218,7 @@
   {
     "id": "futpal",
     "title": "Futpal",
+    "fullProject": true,
     "image": "/futpal-logo.svg",
     "screenshots": {
       "mobile": [
@@ -260,34 +252,28 @@
       "css"
     ],
     "description": [
-      "Futpal is a web application tailored for Fantasy Premier League (FPL) enthusiasts, designed to provide a toolkit for FPL managers seeking to elevate their game.",
-      "With live Premier League game results sourced from a third-party API, users can stay on top of the action in real time. The application goes beyond the surface, offering granular in-game fantasy statistics and numbers retrieved from the unofficial FPL API, by overcoming the classic CORS problem. ",
+      "Futpal is a web application tailored for <b>Fantasy Premier League</b> (FPL) enthusiasts, designed to <b>provide a toolkit for FPL managers</b> seeking to elevate their game.",
+      "With <b>live Premier League game results sourced from a third-party API</b>, users can stay on top of the action in real time. The application goes beyond the surface, offering granular <b>in-game fantasy statistics and numbers retrieved from the unofficial FPL API</b>, by overcoming the classic CORS problem. ",
       "Futpal aims to empower FPL managers with the insights and tools they need to make strategic decisions and stay ahead in the fantasy football realm."
     ],
     "descriptionShort": "Short description for the fourth project.",
     "features": [
-      "Tailored for Fantasy Premier League (FPL) enthusiasts.",
-      "Live Premier League game results from a third-party API for real-time updates.",
-      "Granular in-game fantasy statistics and numbers retrieved from the unofficial FPL API.",
-      "Overcame CORS problem for comprehensive data access.",
-      "In-App Currency system for user transactions.",
+      "Live Premier League game results from a <b>third-party API for real-time updates</b>.",
+      "Granular <b>in-game fantasy statistics</b> and numbers retrieved from the unofficial FPL API.",
+      "<b>In-App Currency system</b> for user transactions.",
       "Empowers FPL managers with insights and tools for strategic decision-making.",
-      "Opportunity to learn about PWA (Progressive Web App).",
-      "Utilized react useContext for state management.",
+      "Opportunity to learn about <b>PWA</b> (Progressive Web App).",
+      "Utilized react <b>useContext</b> hook for state management.",
       "Responsive Design.",
       "Typesafe via TypeScript."
     ],
     "challenges": [
-      "Tailored platform specifically for Fantasy Premier League (FPL) enthusiasts, meeting niche market needs and demonstrating market awareness.",
-      "Successfully integrated third-party APIs for real-time game results and fantasy statistics, ensuring comprehensive data access and functionality.",
-      "Overcame CORS problem for comprehensive data access, ensuring seamless functionality and user experience.",
-      "Implemented an in-app currency system for user transactions, enhancing user engagement and interaction, while ensuring monetization opportunities.",
-      "Effectively utilized react useContext for state management, ensuring efficient data flow and optimal performance.",
-      "Learned about Progressive Web App (PWA) development and its benefits for user experience, expanding skillset and expertise.",
-      "Addressed challenges in responsive design and cross-device compatibility, ensuring seamless user experience across platforms and devices.",
-      "Received positive feedback on the usability and usefulness of the platform from FPL community members, validating design and functionality decisions.",
-      "Managed to balance simplicity and functionality in feature implementation, catering to diverse user needs and preferences.",
-      "Continuously iterated on features and functionalities based on user feedback, improving overall platform experience and ensuring user satisfaction."
+      "Implemented a <b>CORS proxy solution</b> to overcome restrictions and access real-time in-game stats and data <b>from the official Premier League server</b>, ensuring seamless functionality and user experience. Utilized a custom server configuration to listen on specific hosts and ports, allowing unrestricted access.",
+      "Successfully <b>integrated third-party APIs</b> for real-time non-fantasy game results, ensuring comprehensive data access and functionality.",
+      "<b>Crafted an in-app currency system</b>, balancing inputs, outputs, and prices to ensure natural flow and usability. This enhancement elevated user engagement, interaction, and presented monetization avenues.",
+      "Effectively <b>utilized react useContext for state management</b>, including its usage in detecting users' devices to render the appropriate UI for enhanced user experience.",
+      "Tailored platform specifically for Fantasy Premier League (FPL) enthusiasts, <b>meeting niche market needs</b> and demonstrating market awareness.",
+      "Seized the opportunity to <b>delve into Progressive Web App (PWA) development</b>, aligning with Futpal's need for an always-accessible application, thus expanding skillset and expertise."
     ],
     "githubLink": "",
     "demoLink": ""
@@ -295,6 +281,7 @@
   {
     "id": "adeptivity",
     "title": "Adeptivity",
+    "fullProject": true,
     "image": "/adeptivity-logo.svg",
     "screenshots": {
       "mobile": [],
@@ -329,32 +316,24 @@
       "themeui"
     ],
     "description": [
-      "Adeptivity marks the online presence of a real startup, offering a landing page and a dynamic blog section. The landing page, crafted with Next.js, serves as a captivating introduction to the startup's offerings and ethos.",
+      "Adeptivity marks the <b>online presence of an international startup</b>, offering a landing page and a dynamic blog section. The landing page, crafted with Next.js, serves as a captivating introduction to the startup's offerings and ethos.",
       "For the blog, I implemented a combination of Next.js and Strapi, leveraging the ease of Strapi as a content management system. ",
       "This setup not only ensures a seamless and responsive landing page experience but also provides the startup with a user-friendly platform to share insights and updates through an efficiently managed blog."
     ],
     "descriptionShort": "Short description for the fifth project.",
     "features": [
-      "Online presence for a real startup.",
-      "Landing page crafted with Next.js for a captivating introduction to offerings and ethos.",
-      "Dynamic blog section implemented with Next.js and Strapi.",
-      "Leveraged Strapi as a user-friendly content management system.",
-      "Seamless and responsive landing page experience.",
-      "Efficiently managed blog for sharing insights and updates.",
-      "Responsive Design.",
-      "Used Theme-UI for a unified design."
+      "Online presence for an international startup.",
+      "Implemented a dynamic blog section with Next.js and Strapi, leveraging Strapi as a user-friendly content management system for seamless and responsive content management, ensuring efficient sharing of insights and updates.",
+      "Used Theme-UI for a unified design and make responsive design easy to implement for all developers."
     ],
     "challenges": [
-      "Established online presence for a real startup, providing a platform for showcasing offerings and updates, and demonstrating entrepreneurial spirit and initiative.",
-      "Successfully implemented landing page with Next.js, ensuring fast loading times and smooth user experience, while meeting design and functionality requirements.",
-      "Effectively integrated Strapi as a content management system for dynamic blog section, enabling easy content management and scalability.",
-      "Overcame challenges in integrating backend and frontend technologies for seamless functionality, demonstrating adaptability and problem-solving skills.",
-      "Received positive feedback on the design and usability of the landing page and blog section, validating design decisions and user experience.",
-      "Learned valuable lessons in project coordination and collaboration with startup stakeholders, enhancing communication and teamwork skills.",
-      "Addressed performance issues and optimized website speed for improved user engagement, ensuring positive user experience and retention.",
-      "Managed to launch the website within a tight deadline, demonstrating efficient project management skills and ability to work under pressure.",
+      "Created an online platform optimized for an international user base, showcasing attention to design and frontend elements tailored to cater to a global audience.",
+      "Employed Strapi as the content management system for the dynamic blog section, integrating it seamlessly with Next.js. The choice of Strapi was deliberate, as it provided a <b>user-friendly interface</b> that writers and editors found comfortable to use. This integration ensured efficient content management, facilitating seamless sharing of insights and updates.",
+      "Received <b>positive feedback on the design and usability</b> of the landing page and blog section, validating design decisions and user experience.",
+      "Gained invaluable insights into <b>project coordination and collaboration</b> through interactions with diverse startup stakeholders. This experience involved effective communication with individuals from varying backgrounds and positions, necessitating the use of a language tailored to convey messages clearly and effectively. These engagements further honed communication and teamwork skills.",
+      "Managed to launch the website <b>within a tight deadline</b>, with the aim of delivering a user-friendly and efficient platform.",
       "Handled SEO optimization and implemented best practices for increased online visibility and reach, ensuring successful online presence and brand awareness.",
-      "Continuously updated and maintained the website with relevant content and features, keeping it relevant and engaging for users and stakeholders."
+      "Continuously <b>updated and maintained</b> the website with relevant content and features, keeping it relevant and engaging for users and stakeholders."
     ],
     "githubLink": "",
     "demoLink": "https://adeptivity.co"
@@ -362,6 +341,7 @@
   {
     "id": "notopia",
     "title": "Notopia",
+    "fullProject": true,
     "image": "/notopia-logo.svg",
     "screenshots": {
       "mobile": [],
@@ -390,34 +370,89 @@
       "css"
     ],
     "description": [
-      "Notopia is my take on a note-taking app (since every developer has one), both for the web and desktop.",
-      "It features a block-style text editor (a simple Notion clone, if you will), relying on EditorJS library.",
-      "On the desktop, I used Electron, keeping things simple and using as few third-party libraries as possible."
+      "Notopia is <b>my take on a note-taking app</b> (since every developer has one), both for the web and desktop.",
+      "It features a <b>block-style text editor</b> (a simple Notion clone, if you will), relying on EditorJS library.",
+      "On the desktop, I used <b>Electron</b>, keeping things simple and using as few third-party libraries as possible."
     ],
     "descriptionShort": "Short description for the sixth project.",
     "features": [
-      "Note-taking app for web and desktop – Notopia.",
-      "Block-style text editor reminiscent of a Notion clone.",
-      "Used local storage + custom hooks for data persistence.",
+      "Note-taking app for web and desktop.",
+      "Block-style text editor reminiscent of a <b>Notion clone</b>.",
+      "Used <b>local storage + custom hooks</b> for data persistence.",
       "Desktop version built with Electron, focusing on simplicity.",
-      "Minimal reliance on third-party libraries, with only EditorJS for editing.",
+      "<b>Minimal reliance on third-party libraries</b>, with only EditorJS for editing.",
       "Customized EditorJS's design to seamlessly fit into the project.",
-      "Straightforward and practical tool for efficient note-taking.",
-      "Implemented masonry layout without any third-party libraries."
+      "Straightforward and practical tool for efficient note-taking."
     ],
     "challenges": [
-      "Successfully developed a cross-platform note-taking app for web and desktop, meeting diverse user needs and expanding user base and reach.",
-      "Implemented block-style text editor reminiscent of popular tools like Notion, enhancing user familiarity and usability, while meeting design and functionality requirements.",
-      "Effectively utilized local storage and custom hooks for data persistence, ensuring seamless user experience and data security.",
-      "Overcame challenges in Electron development, focusing on simplicity and performance, while meeting cross-platform compatibility requirements.",
-      "Received positive feedback on the simplicity and practicality of the app from users and peers, validating design and functionality decisions.",
-      "Learned valuable lessons in cross-platform development and user interface design, expanding skillset and expertise.",
-      "Addressed performance issues and optimized app performance for smoother user interactions, ensuring positive user experience and retention.",
-      "Managed to keep the app lightweight and fast, ensuring efficient use of system resources and optimal performance across devices.",
-      "Continuously iterated on features and functionalities based on user feedback, improving overall app experience and ensuring user satisfaction.",
-      "Handled bug fixes and compatibility issues across different platforms, ensuring a consistent user experience."
+      "Implemented masonry layout without using third-party libraries, implementing only JavaScript and CSS.",
+      "Prioritized user experience considerations by implementing necessary features while maintaining a simple and non-threatening design approach. Utilized a familiar style reminiscent of Notion block-style editors, while customizing the design to align with the project's unique identity."
     ],
     "githubLink": "",
     "demoLink": ""
+  },
+  {
+    "id": "nightcrawler",
+    "title": "NightCrawler",
+    "fullProject": false,
+    "image": "/nightcrawler-logo.png",
+    "screenshots": {
+      "mobile": [],
+      "desktop": []
+    },
+    "tags": [
+      {
+        "frontend": [
+          "css"
+        ],
+        "backend": [],
+        "devops": [],
+        "libs": []
+      }
+    ],
+    "tagsShort": [
+      "css"
+    ],
+    "description": [
+      "A Dark color theme for VSCode editor, for those of us in the Night's Watch."
+    ],
+    "descriptionShort": "Short description for the seventh project.",
+    "features": [],
+    "challenges": [],
+    "githubLink": "https://github.com/b-amir/nightcrawler-vscode",
+    "demoLink": "https://marketplace.visualstudio.com/items?itemName=theamirm.nightcrawler"
+  },
+  {
+    "id": "fsm-game",
+    "title": "FSM Game",
+    "fullProject": false,
+    "image": "/fsm-game-logo.jpeg",
+    "screenshots": {
+      "mobile": [],
+      "desktop": []
+    },
+    "tags": [
+      {
+        "frontend": [
+          "javascript",
+          "xstate"
+        ],
+        "backend": [],
+        "devops": [],
+        "libs": []
+      }
+    ],
+    "tagsShort": [
+      "javascript",
+      "xstate"
+    ],
+    "description": [
+      "A fantasy-inspired finite state machine game, showcasing character behavior modeling with JavaScript and XState library. Exploring 3 different implementations: JavaScript objects, Class syntax and XState."
+    ],
+    "descriptionShort": "Short description for the eighth project.",
+    "features": [],
+    "challenges": [],
+    "githubLink": "https://github.com/b-amir/fsm-game",
+    "demoLink": "https://stately.ai/registry/editor/90cf5b42-45d6-4568-b9b1-8d9d647456fd?mode=Design&machineId=1c4db223-7e2c-441e-8e0a-0903238df3d0"
   }
 ]

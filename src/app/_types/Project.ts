@@ -1,6 +1,7 @@
 export type Project = {
   id: string;
   title: string;
+  fullProject: boolean;
   image: string;
   screenshots: {
     mobile: string[];
@@ -23,6 +24,7 @@ export type Project = {
 } | {
   id: string;
   title: string;
+  fullProject: boolean;
   image: string;
   screenshots: never[];
   tags: {
