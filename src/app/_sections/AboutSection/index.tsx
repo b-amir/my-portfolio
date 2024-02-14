@@ -17,7 +17,9 @@ export const AboutSection: React.FC = () => {
           <div className={styles.aboutMeTextBlock}>
             <h2>
               {/* I&apos;m a{" "} */}
-              <span className={styles.underline}>Fullstack web developer,</span>
+              <span className={styles.underline}>
+                Frontend-focused JavaScript Developer,
+              </span>
               but what do i mean by that?
             </h2>
             <ul>
@@ -43,18 +45,18 @@ export const AboutSection: React.FC = () => {
               </li>
               <li>
                 <strong className={styles.aboutMeStrong}>
-                  Not a 10× Backend dev,
+                  Have solid JavaScript foundation,
                 </strong>
                 <p className={styles.aboutMeParagraph}>
-                  but{" "}
+                  With a solid grounding in JavaScript, I possess a{" "}
                   <span className={globalStyles.generalHighlight}>
-                    I embrace the Fullstack
+                    decent understanding of its fundamentals, design patterns,
+                    SOLID principles and rendering patterns
                   </span>
-                  , as it is the future. I dive into the backend as needed,
+                  . When the occasion arises, I delve into backend development,
                   refining my skills through hands-on projects (check some
-                  below), extensive reading, and tutorials. Comfortable
-                  communicating with backend developers for a smooth project
-                  execution.
+                  below) and extensive reading. Comfortable communicating with
+                  backend developers for a smooth project execution.
                 </p>
               </li>
               <li>
