@@ -73,7 +73,7 @@
 
 .smallProjectsGrid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 33.33%);
   grid-area: 4/1/3/4;
 }
 .smallProject {
@@ -99,6 +99,35 @@
     border-radius: $small-br;
   }
 }
+
+.hrTitleContainer {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  justify-content: space-between;
+
+  hr {
+    border: none;
+    border-top: 1.5px solid #9296b973;
+    margin: 0;
+    width: 50%;
+    flex-grow: 1;
+  }
+
+  span {
+    display: inline-block;
+    padding: 0 0.5rem 0 1rem;
+    flex-shrink: 0;
+    color: #7b7b7b;
+  }
+
+  svg {
+    flex-shrink: 0;
+    color: #9296b973;
+  }
+}
+
 .smallProjectSelected {
   @extend .smallProject;
   box-shadow: $big-shadow;
@@ -503,7 +532,7 @@
   .projectsGrid,
   .smallProjectsGrid {
     grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(6, 1fr);
+    grid-template-rows: repeat(3, 1fr);
   }
 
   .keepInTouchSection {
