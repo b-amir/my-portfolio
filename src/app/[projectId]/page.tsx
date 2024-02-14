@@ -2,13 +2,13 @@ import Image from "next/image";
 import dynamic from "next/dynamic";
 import { Tabs } from "../_components/Tabs";
 import projects from "@/_data/projects.json";
-import { Loading } from "@/_components/Loading";
 import { TagsRow } from "@/_components/Tag/TagsRow";
 import globalStyles from "@/_styles/page.module.scss";
 import { DemoButton } from "@/_components/DemoButton";
 import { BackButton } from "./BackButton";
 import { NotFoundPage } from "./NotFoundPage";
 import { FooterSection } from "@/_sections/FooterSection";
+import { LoadingSpinner } from "@/_components/LoadingSpinner";
 import { ProductHuntButton } from "@/_components/ProductHuntButton";
 import { GithubSourceButton } from "@/_components/GithubSourceButton";
 import { findNonEmptyCategories } from "@/_utils/findNonEmptyCategories";
@@ -16,7 +16,7 @@ import { findNonEmptyCategories } from "@/_utils/findNonEmptyCategories";
 const ScreenShots = dynamic(
   () => import("@/_components/ScreenShots").then((mod) => mod.ScreenShots),
   {
-    loading: () => <Loading />
+    loading: () => <LoadingSpinner />
   }
 );
 

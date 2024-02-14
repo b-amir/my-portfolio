@@ -1,9 +1,9 @@
 "use client";
 import Image from "next/image";
 import Spline from "@splinetool/react-spline";
-import Loading from "@/loading";
 import { getGPUTier } from "detect-gpu";
 import { useEffect, useRef, useState } from "react";
+import { LoadingSpinner } from "./LoadingSpinner";
 
 type deviceTiers = "low" | "mobile" | "high" | "loading";
 
@@ -11,8 +11,6 @@ export function Smile3dObject() {
   useEffect(() => {
     async function checkGPU() {
       const gpuTier = await getGPUTier();
-      console.log("gpuTier", gpuTier);
-
       if (gpuTier) {
         const { tier, isMobile, fps } = gpuTier;
         if (isMobile) {
@@ -57,7 +55,7 @@ export function Smile3dObject() {
       {deviceTier === "high" && (
         <Spline scene="https://prod.spline.design/SFtITqXREqMFyNh2/scene.splinecode" />
       )}
-      {deviceTier === "loading" && <Loading />}
+      {deviceTier === "loading" && <LoadingSpinner />}
     </>
   );
 }

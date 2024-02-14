@@ -414,7 +414,7 @@
       "css"
     ],
     "description": [
-      "A Dark color theme for VSCode editor, for those of us in the Night's Watch."
+      "A dark color theme for the VSCode editor, for those of us in the Night's Watch."
     ],
     "descriptionShort": "Short description for the seventh project.",
     "features": [],
@@ -447,7 +447,7 @@
       "xstate"
     ],
     "description": [
-      "A fantasy-inspired finite state machine game, showcasing character behavior modeling with JavaScript and XState library. Exploring 3 different implementations: JavaScript objects, Class syntax and XState."
+      "A simple fantasy-inspired finite state machine game, showcasing character behavior modeling. Demonstrating 3 different implementations: JavaScript objects, Class syntax, and XState library."
     ],
     "descriptionShort": "Short description for the eighth project.",
     "features": [],

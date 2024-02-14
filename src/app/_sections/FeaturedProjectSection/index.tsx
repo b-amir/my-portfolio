@@ -2,11 +2,11 @@ import Image from "next/image";
 import dynamic from "next/dynamic";
 import projects from "@/_data/projects.json";
 import { Tabs } from "@/_components/Tabs";
-import { Loading } from "@/_components/Loading";
 import { TagsRow } from "@/_components/Tag/TagsRow";
 import globalStyles from "@/_styles/page.module.scss";
 import { DemoButton } from "@/_components/DemoButton";
 import { SectionHeader } from "@/_components/SectionHeader";
+import { LoadingSpinner } from "@/_components/LoadingSpinner";
 import { ProductHuntButton } from "@/_components/ProductHuntButton";
 import { GithubSourceButton } from "@/_components/GithubSourceButton";
 import { FaStarOfLife as StarIcon } from "react-icons/fa6";
@@ -14,7 +14,7 @@ import { FaStarOfLife as StarIcon } from "react-icons/fa6";
 const ScreenShots = dynamic(
   () => import("@/_components/ScreenShots").then((mod) => mod.ScreenShots),
   {
-    loading: () => <Loading />
+    loading: () => <LoadingSpinner />
   }
 );
 

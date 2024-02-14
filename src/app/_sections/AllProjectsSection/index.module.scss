@@ -513,7 +513,7 @@
     padding: 0rem;
   }
   .allStacks {
-    grid-template-rows: 2fr 1fr;
+    grid-template-rows: auto;
   }
   .currentSkills {
     grid-area: 1/1/2/4;
@@ -549,7 +549,7 @@
     padding: 0rem;
   }
   .allStacks {
-    grid-template-rows: 2fr 1fr;
+    grid-template-rows: auto;
   }
   .currentSkills {
     grid-area: 1/1/2/4;
