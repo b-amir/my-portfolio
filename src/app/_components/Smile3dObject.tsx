@@ -40,7 +40,6 @@ export function Smile3dObject() {
           height={175}
           width={462}
           alt="low tier smile"
-          style={{ filter: "opacity(0.25)" }}
         />
       )}
       {deviceTier === "low" && (
@@ -49,7 +48,6 @@ export function Smile3dObject() {
           height={175}
           width={462}
           alt="low tier smile"
-          style={{ filter: "opacity(0.25)" }}
         />
       )}
       {deviceTier === "high" && (

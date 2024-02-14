@@ -431,8 +431,9 @@
     width: 100%;
 
     div {
-        transform: scale(0.75) rotate(87deg);
+        filter: sepia(1);
         height: 200px;
+        transform: scale(0.7);
     }
 
     h1 {
