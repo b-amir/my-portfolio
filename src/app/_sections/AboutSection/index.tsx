@@ -45,7 +45,7 @@ export const AboutSection: React.FC = () => {
               </li>
               <li>
                 <strong className={styles.aboutMeStrong}>
-                  Have solid JavaScript foundation,
+                  Have solid JavaScript foundation:
                 </strong>
                 <p className={styles.aboutMeParagraph}>
                   With a solid grounding in JavaScript, I possess a{" "}

@@ -1,27 +1,64 @@
 "use client";
+import Image from "next/image";
+import Loading from "@/loading";
 import Spline from "@splinetool/react-spline";
-import { useRef } from "react";
+import { getGPUTier } from "detect-gpu";
+import { useEffect, useRef, useState } from "react";
 
-export function Fry3dObject({ isSmallScreen }: { isSmallScreen: boolean }) {
+type deviceTiers = "low" | "mobile" | "high" | "loading";
+
+export function Fry3dObject() {
+  const [deviceTier, setDeviceTier] = useState<deviceTiers>("loading");
   const spline = useRef();
+
+  useEffect(() => {
+    async function checkGPU() {
+      const gpuTier = await getGPUTier();
+      console.log("gpuTier", gpuTier);
+
+      if (gpuTier) {
+        const { tier, isMobile, fps } = gpuTier;
+        if (isMobile) {
+          setDeviceTier("mobile");
+        } else if (fps === undefined || fps < 40 || tier < 2) {
+          setDeviceTier("low");
+        } else {
+          setDeviceTier("high");
+        }
+      }
+    }
+
+    checkGPU();
+  }, []);
+
   function onLoad(splineApp: any) {
-    // save the app in a ref for later use
     spline.current = splineApp;
   }
   return (
     <>
-      {/* Render a less GPU consuming scene if device is handheld */}
-      {isSmallScreen ? (
-        <Spline
-          onLoad={onLoad}
-          scene="https://prod.spline.design/AmgucmBUcWHIoyof/scene.splinecode"
+      {deviceTier === "mobile" && (
+        <Image
+          src="/low-tier-fry.svg"
+          height={458}
+          width={400}
+          alt="low tier fry"
         />
-      ) : (
+      )}
+      {deviceTier === "low" && (
+        <Image
+          src="/low-tier-fry.svg"
+          height={458}
+          width={400}
+          alt="low tier fry"
+        />
+      )}
+      {deviceTier === "high" && (
         <Spline
           onLoad={onLoad}
           scene="https://prod.spline.design/btTGbGyxfpf64yVO/scene.splinecode"
         />
       )}
+      {deviceTier === "loading" && <Loading />}
     </>
   );
 }

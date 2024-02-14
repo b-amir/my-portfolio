@@ -93,7 +93,7 @@ export const HeroSection: React.FC = () => {
             className={styles.fry}
             translateX={parallaxTranslateX}
             scale={parallaxScale}>
-            <Fry3dObject isSmallScreen={isSmallScreen} />
+            <Fry3dObject />
           </Parallax>
         </div>
         <ContactGrid />
