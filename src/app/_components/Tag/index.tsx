@@ -38,17 +38,17 @@ export const Tag = ({
       }}
       className={`${selected ? styles.selectedTag : styles.tag}`}
       style={{
-        backgroundColor: interactive ? color + "20" : color + "50",
+        backgroundColor: interactive ? color + "35" : color + "50",
         border: interactive
-          ? "1px solid " + color + "60"
+          ? "1px solid " + color + "70"
           : "1px solid " + color,
         color: color,
         cursor: interactive ? "pointer" : "default",
         padding: interactive ? "0.25rem 0.5rem" : "0.25rem 0.5rem",
         gap: interactive ? "0.25rem" : "0.5rem",
         boxShadow: interactive ? "0px 2px 2px 0px " + color + "30" : "",
-        filter: interactive ? "brightness(0.5)" : "",
-        opacity: interactive ? 0.65 : 1,
+        filter: interactive ? "brightness(0.7)" : "",
+        opacity: interactive ? 0.8 : 1,
         transition: "filter $base-pace ease-in-out",
         margin: interactive ? "0rem 0.3rem 0.4rem 0rem" : "unset"
       }}>
