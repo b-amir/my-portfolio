@@ -225,8 +225,12 @@
     font-weight: 700;
     font-size: small;
     padding: 0.5rem 0rem 1.5rem;
+    user-select: none;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 }
 @mixin selectableTitleStyle {
+    user-select: none;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
     cursor: pointer;
     span {
         border-top: none !important;
@@ -524,6 +528,7 @@
     .challenges {
         grid-area: 4/4/4/1;
         border-left: none;
+        padding-top: 5rem;
     }
 }
 
