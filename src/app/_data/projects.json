@@ -201,6 +201,7 @@
       "Utilized Spline, which uses Three.js, for 3D and interactive objects on the web.",
       "Minimal usage of 3d objects, keeping <b>Performance Measures for Low-Tier Devices</b> in mind.",
       "Abillity to <b>filter Projects via Skill Tags</b>.",
+      "Implemented a <b>tooltip component</b> using browser APIs exclusively, without relying on external libraries.",
       "Opportunity to Learn <b>Sass</b> for a more clean and modern styling solution.",
       "Responsive Design across all devices and screen sizes.",
       "Typesafe via TypeScript.",
