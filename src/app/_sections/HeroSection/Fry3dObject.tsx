@@ -10,7 +10,7 @@ type deviceTiers = "low" | "mobile" | "high" | "loading";
 
 export function Fry3dObject() {
   const [deviceTier, setDeviceTier] = useState<deviceTiers>("loading");
-  const spline = useRef();
+  const fryObj = useRef();
 
   useEffect(() => {
     async function checkGPU() {
@@ -31,7 +31,10 @@ export function Fry3dObject() {
   }, []);
 
   function onLoad(splineApp: any) {
-    spline.current = splineApp;
+    fryObj.current = splineApp;
+  }
+  function OnError() {
+    setDeviceTier("low");
   }
 
   return (
@@ -56,8 +59,9 @@ export function Fry3dObject() {
         <Suspense fallback={<LoadingSpinner />}>
           <Spline
             onLoad={onLoad}
+            onError={OnError}
             // scene="https://prod.spline.design/btTGbGyxfpf64yVO/scene.splinecode"
-            scene="/scene.splinecode"
+            scene="/fry.splinecode"
           />
         </Suspense>
       )}

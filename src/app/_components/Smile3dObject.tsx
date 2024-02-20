@@ -1,9 +1,10 @@
 "use client";
 import Image from "next/image";
-import Spline from "@splinetool/react-spline";
 import { getGPUTier } from "detect-gpu";
-import { useEffect, useRef, useState } from "react";
 import { LoadingSpinner } from "./LoadingSpinner";
+import { Suspense, useEffect, useRef, useState, lazy } from "react";
+
+const Spline = lazy(() => import("@splinetool/react-spline"));
 
 type deviceTiers = "low" | "mobile" | "high" | "loading";
 
@@ -27,9 +28,12 @@ export function Smile3dObject() {
   }, []);
 
   const [deviceTier, setDeviceTier] = useState<deviceTiers>("loading");
-  const spline = useRef();
+  const smileObj = useRef();
   function onLoad(splineApp: any) {
-    spline.current = splineApp;
+    smileObj.current = splineApp;
+  }
+  function OnError() {
+    setDeviceTier("low");
   }
 
   return (
@@ -51,7 +55,14 @@ export function Smile3dObject() {
         />
       )}
       {deviceTier === "high" && (
-        <Spline scene="https://prod.spline.design/SFtITqXREqMFyNh2/scene.splinecode" />
+        <Suspense fallback={<LoadingSpinner />}>
+          <Spline
+            onLoad={onLoad}
+            onError={OnError}
+            // scene="https://prod.spline.design/SFtITqXREqMFyNh2/scene.splinecode"
+            scene="/smile.splinecode"
+          />
+        </Suspense>
       )}
       {deviceTier === "loading" && <LoadingSpinner />}
     </>
