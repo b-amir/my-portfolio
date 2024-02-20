@@ -1,9 +1,10 @@
 "use client";
 import Image from "next/image";
-import Spline from "@splinetool/react-spline";
 import { getGPUTier } from "detect-gpu";
 import { LoadingSpinner } from "@/_components/LoadingSpinner";
-import { useEffect, useRef, useState } from "react";
+import { Suspense, useEffect, useRef, useState, lazy } from "react";
+
+const Spline = lazy(() => import("@splinetool/react-spline"));
 
 type deviceTiers = "low" | "mobile" | "high" | "loading";
 
@@ -32,6 +33,7 @@ export function Fry3dObject() {
   function onLoad(splineApp: any) {
     spline.current = splineApp;
   }
+
   return (
     <>
       {deviceTier === "mobile" && (
@@ -51,10 +53,13 @@ export function Fry3dObject() {
         />
       )}
       {deviceTier === "high" && (
-        <Spline
-          onLoad={onLoad}
-          scene="https://prod.spline.design/btTGbGyxfpf64yVO/scene.splinecode"
-        />
+        <Suspense fallback={<LoadingSpinner />}>
+          <Spline
+            onLoad={onLoad}
+            // scene="https://prod.spline.design/btTGbGyxfpf64yVO/scene.splinecode"
+            scene="/scene.splinecode"
+          />
+        </Suspense>
       )}
       {deviceTier === "loading" && <LoadingSpinner />}
     </>
