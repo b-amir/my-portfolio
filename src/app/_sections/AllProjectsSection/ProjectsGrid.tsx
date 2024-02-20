@@ -30,6 +30,7 @@ export function ProjectsGrid({
             id={project.id}
             image={
               <Image
+                loading="lazy"
                 src={project.image}
                 width={200}
                 height={120}
@@ -78,6 +79,7 @@ export function ProjectsGrid({
             }`}>
             <Image
               src={project.image}
+              loading="lazy"
               width={64}
               height={64}
               alt={project.title}

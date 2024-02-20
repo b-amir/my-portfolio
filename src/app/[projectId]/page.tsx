@@ -44,6 +44,7 @@ function Page({ params }: { params: { projectId: string } }) {
             <div className={globalStyles.mainImage}>
               <Image
                 src={currentProject?.image}
+                loading="lazy"
                 width={200}
                 height={120}
                 alt="cslit"
