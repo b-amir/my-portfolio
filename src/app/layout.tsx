@@ -8,7 +8,6 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Amir Bazgir's Portfolio",
   description: "I'm a fullstack web developer.",
-  themeColor: "#2E2E2E",
   openGraph: {
     type: "website",
     url: "http://b-amir.link",
