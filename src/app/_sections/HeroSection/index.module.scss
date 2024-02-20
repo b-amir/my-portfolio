@@ -282,6 +282,9 @@
   .section {
     padding: 0rem;
   }
+  .hero {
+    height: 100svh !important;
+  }
   .heroMain {
     padding: 0;
     height: 100%;
@@ -305,14 +308,14 @@
   }
   .fry {
     position: absolute !important;
-    bottom: 3rem !important;
+    bottom: 2rem !important;
     // right: 0 !important;
     top: unset !important;
     width: unset !important;
     height: unset !important;
     max-width: unset !important;
     padding: 0 !important;
-    transform: scale(0.75) !important;
+    transform: scale(0.7) !important;
   }
   .contact {
     position: fixed;
