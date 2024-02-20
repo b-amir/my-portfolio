@@ -4,8 +4,8 @@ import dynamic from "next/dynamic";
 import globalStyles from "@/_styles/page.module.scss";
 import { Tooltip } from "@/_components/Tooltip";
 import { ContactGrid } from "./ContactGrid";
+import { LowTierImage } from "./Fry3dObject";
 import { useWindowSize } from "@/_hooks/useWindowSize";
-import { LoadingSpinner } from "@/_components/LoadingSpinner";
 import { Parallax, ParallaxProvider } from "react-scroll-parallax";
 import {
   IoArrowForward as ArrowIcon,
@@ -15,7 +15,7 @@ import {
 const Fry3dObject = dynamic(
   () => import("./Fry3dObject").then((mod) => mod.Fry3dObject),
   {
-    loading: () => <LoadingSpinner />
+    loading: () => <LowTierImage />
   }
 );
 

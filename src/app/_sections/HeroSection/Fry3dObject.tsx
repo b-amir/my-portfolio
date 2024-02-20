@@ -1,7 +1,6 @@
 "use client";
 import Image from "next/image";
 import { getGPUTier } from "detect-gpu";
-import { LoadingSpinner } from "@/_components/LoadingSpinner";
 import { Suspense, useEffect, useRef, useState, lazy } from "react";
 
 const Spline = lazy(() => import("@splinetool/react-spline"));
@@ -39,24 +38,10 @@ export function Fry3dObject() {
 
   return (
     <>
-      {deviceTier === "mobile" && (
-        <Image
-          src="/low-tier-fry.svg"
-          height={458}
-          width={400}
-          alt="low tier fry"
-        />
-      )}
-      {deviceTier === "low" && (
-        <Image
-          src="/low-tier-fry.svg"
-          height={458}
-          width={400}
-          alt="low tier fry"
-        />
-      )}
+      {deviceTier === "mobile" && <LowTierImage />}
+      {deviceTier === "low" && <LowTierImage />}
       {deviceTier === "high" && (
-        <Suspense fallback={<LoadingSpinner />}>
+        <Suspense fallback={<LowTierImage />}>
           <Spline
             onLoad={onLoad}
             onError={OnError}
@@ -65,7 +50,11 @@ export function Fry3dObject() {
           />
         </Suspense>
       )}
-      {deviceTier === "loading" && <LoadingSpinner />}
+      {deviceTier === "loading" && <LowTierImage />}
     </>
   );
 }
+
+export const LowTierImage = () => (
+  <Image src="/low-tier-fry.svg" height={458} width={400} alt="low tier fry" />
+);
