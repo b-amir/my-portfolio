@@ -191,9 +191,9 @@
       "spline"
     ],
     "description": [
-      "I wanted my portfolio website to be more than just a showcase—it became <b>a journey of exploration and learning</b>.",
-      "In this project, I decided to dip my toes into <b>Sass</b> for a cleaner style and ventured into <b>3D web design</b> using Spline,    inspired by my past experiences with 3D software in school.",
-      "It serves as a testament to continuous learning and experimentation, striking a <b>balance between visual elegance and performance across diverse devices and hardware</b>. With a keen focus on audience demographics and purpose-driven design, the portfolio embodies a space for discovery while showcasing my work effectively."
+      "My portfolio journey was a quest for discovery and growth. I aimed for a seamless blend of visual appeal and performance.",
+      "Navigating challenges like maintaining <b>optimal performance</b> through <b>code-splitting and device detection</b>, I fine-tuned each user's experience based on monitor size and <b>GPU tier</b>. <b>Minimizing unnecessary network requests and implementing loading states with suspense boundaries</b> and UI fallbacks ensured a smoother user experience.",
+      "A focus on audience demographics and UX persona practices enriched user experience, aligning perfectly with core objectives."
     ],
     "descriptionShort": "Short description for the third project.",
     "features": [
@@ -209,6 +209,7 @@
     ],
     "challenges": [
       "Incorporated 3D design with Spline, striking a <b>balance</b> between <b>simplicity</b> and creativity in the portfolio's <b>visual appeal</b>. Maintained <b>optimal performance</b> through <b>code-splitting and device detection</b>, ensuring each user's experience is fine-tuned based on monitor size and <b>GPU tier</b>.",
+      "<b>Minimized unnecessary network requests</b> by self-hosting the 3D objects and implemented <b>loading states</b> along with <b>suspense boundaries with UI fallbacks</b> for a smoother user experience.",
       "Learned valuable lessons in <b>rendering patterns</b> and streaming server-side rendering for improved performance.",
       "Implemented Sass for styling, improving maintainability and code organization, while adhering to industry best practices.",
       "Maintained a sharp focus on <b>audience demographics</b> and <b>employed UX persona practices</b> to enhance user experience, aligning with the portfolio's core objectives."

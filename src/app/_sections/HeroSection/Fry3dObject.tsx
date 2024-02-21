@@ -1,8 +1,8 @@
 "use client";
 import Image from "next/image";
 import { getGPUTier } from "detect-gpu";
-import { Suspense, useEffect, useRef, useState, lazy } from "react";
 import { useDebounce } from "@/_hooks/useDebounce";
+import { Suspense, useEffect, useRef, useState, lazy } from "react";
 
 const Spline = lazy(() => import("@splinetool/react-spline"));
 
