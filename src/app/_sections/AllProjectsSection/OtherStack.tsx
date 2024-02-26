@@ -8,9 +8,8 @@ export function OtherStack() {
       <p>
         - Long time <span className={styles.inlineTag}>Linux</span> user. <br />
         - I know my way around design tools like{" "}
-        <span className={styles.inlineTag}>Figma</span> &{" "}
-        <span className={styles.inlineTag}>PhotoShop</span>. <br />- Familiar
-        with <span className={styles.inlineTag}>Agile</span> &{" "}
+        <span className={styles.inlineTag}>Figma</span> & Photoshop. <br />-
+        Familiar with <span className={styles.inlineTag}>Agile</span> &{" "}
         <span className={styles.inlineTag}>Scrum</span> methodologies.
         <br />- Decent understanding of{" "}
         <span className={styles.inlineTag}>data structures</span> &{" "}

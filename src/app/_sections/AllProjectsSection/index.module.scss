@@ -147,7 +147,7 @@
   p {
     font-size: 0.9rem;
     color: rgba(0, 0, 0, 0.6784313725);
-    line-height: 1.6;
+    line-height: 1.7;
   }
 }
 
@@ -255,8 +255,8 @@
   }
 
   p {
-    font-size: small;
-    line-height: 1.8;
+    font-size: 0.9rem;
+    line-height: 1.7;
     color: #373737;
     padding: 0rem 0 0.8rem;
   }
@@ -303,8 +303,8 @@
   }
 
   p {
-    font-size: small;
-    line-height: 2.1;
+    font-size: 0.9rem;
+    line-height: 1.7;
     color: #373737;
     padding: 0rem 0 0.8rem;
   }
@@ -487,7 +487,7 @@
   grid-area: projectCardDescription;
   padding: 1rem 2.5rem;
   font-size: 0.95rem;
-  line-height: 1.6;
+  line-height: 1.7;
   font-family: var(--font-body);
   color: #3b3b3b;
 
@@ -531,7 +531,9 @@
   }
   .otherStack {
     grid-area: 2/1/2/4;
-    padding-top: 5rem;
+    padding-top: 3rem;
+    border-left: none;
+    border-top: 1px solid #00000024;
   }
   .projectsGrid,
   .smallProjectsGrid {
