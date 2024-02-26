@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
-import { getGPUTier } from "detect-gpu";
 import { useDebounce } from "@/_hooks/useDebounce";
+import { useGpuDetect } from "@/_hooks/useGpuDetect";
 import { Suspense, useEffect, useRef, useState, lazy } from "react";
 
 const Spline = lazy(() => import("@splinetool/react-spline"));
@@ -9,29 +9,17 @@ const Spline = lazy(() => import("@splinetool/react-spline"));
 type deviceTiers = "low" | "mobile" | "high" | "loading";
 
 export function Fry3dObject() {
-  const [deviceTier, setDeviceTier] = useState<deviceTiers>("loading");
+  const [deviceTier, setDeviceTier] = useGpuDetect();
   const [isLoading, setIsLoading] = useState(true);
   const visibility = useDebounce(isLoading ? "hidden" : "visible", 200);
 
   const fryObj = useRef();
 
   useEffect(() => {
-    async function checkGPU() {
-      const gpuTier = await getGPUTier();
-      if (gpuTier) {
-        const { tier, isMobile, fps } = gpuTier;
-        if (isMobile) {
-          setDeviceTier("mobile");
-        } else if (fps === undefined || fps < 40 || tier < 2) {
-          setDeviceTier("low");
-        } else {
-          setDeviceTier("high");
-        }
-      }
+    if (deviceTier !== "loading") {
+      setIsLoading(false);
     }
-
-    checkGPU();
-  }, []);
+  }, [deviceTier]);
 
   function onLoad(splineApp: any) {
     fryObj.current = splineApp;
@@ -51,7 +39,6 @@ export function Fry3dObject() {
             onLoad={onLoad}
             onError={OnError}
             style={{ visibility }}
-            // scene="https://prod.spline.design/btTGbGyxfpf64yVO/scene.splinecode"
             scene="/fry.splinecode"
           />
         </Suspense>

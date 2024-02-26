@@ -172,8 +172,33 @@
   margin: auto;
 }
 
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0.8;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(100%);
+    opacity: 0.8;
+  }
+}
+.slideDownAnimation {
+  animation: slideDown 0.5s ease-out forwards;
+}
 .contact {
   @extend .section;
+  animation: slideUp 0.5s ease-out forwards;
   backdrop-filter: blur(20px);
   background: rgb(182 182 182 / 38%);
   color: rgba(19, 10, 0, 0.7882352941);
@@ -354,6 +379,7 @@
   }
 
   .mobileContactMenuTrigger {
+    animation: slideUp 0.5s ease-out forwards;
     cursor: pointer;
     user-select: none;
     -webkit-backdrop-filter: blur(20px);

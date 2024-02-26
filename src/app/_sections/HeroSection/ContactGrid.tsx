@@ -1,24 +1,20 @@
 "use client";
 import styles from "./index.module.scss";
 import { useState } from "react";
-import { useWindowSize } from "@/_hooks/useWindowSize";
+import { useGpuDetect } from "@/_hooks/useGpuDetect";
 import { ContactCardItems } from "./ContactCardItems";
 import { GrContactInfo as ContactInfoIcon } from "react-icons/gr";
 
 export const ContactGrid: React.FC = () => {
   const [showContactLinksForMobile, setShowContactLinksForMobile] =
     useState(false);
+  const [deviceTier] = useGpuDetect();
 
-  const { width, height } = useWindowSize();
-  let isMobile = false;
+  // Determine if the device is considered mobile based on deviceTier
+  const isMobile = deviceTier === "mobile";
 
-  if (width && height) {
-    const aspectRatio = width / height;
-    isMobile = aspectRatio < 0.6;
-  }
-
-  // prevent the unnecessary flash of data before there's information about the window size:
-  if (width === undefined || height === undefined) {
+  // Prevent rendering until the deviceTier is determined
+  if (deviceTier === "loading") {
     return null;
   }
 
