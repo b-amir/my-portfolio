@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import styles from "./index.module.scss";
 import { useDebounce } from "@/_hooks/useDebounce";
 import { useGpuDetect } from "@/_hooks/useGpuDetect";
 import { Suspense, useEffect, useRef, useState, lazy } from "react";
@@ -40,6 +41,7 @@ export function Fry3dObject() {
             onError={OnError}
             style={{ visibility }}
             scene="/fry.splinecode"
+            className={`${isLoading ? "" : styles.appear}`}
           />
         </Suspense>
       )}

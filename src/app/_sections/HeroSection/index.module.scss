@@ -147,6 +147,17 @@
   }
 }
 
+@keyframes appear {
+  from {
+    transform: scale3d(0.9, 0.9, 0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale3d(1, 1, 1);
+    opacity: 1;
+  }
+}
+
 .fry {
   display: flex;
   flex-direction: row;
@@ -159,6 +170,10 @@
   width: 500px !important;
   height: 400px !important;
   max-width: 35% !important;
+}
+
+.appear {
+  animation: appear 1.5s 0.5s ease-in both;
 }
 
 .grid {
