@@ -352,6 +352,8 @@
     border-radius: $small-br;
 
     .projectCardBottomRow {
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
       .projectCardViewDetails {
         transition: all $fast-pace ease-in-out;
         cursor: pointer;

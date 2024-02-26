@@ -64,6 +64,8 @@
   font-family: var(--font-title);
   justify-items: center;
   justify-content: center;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
 
   .heroTexts {
     display: flex;
@@ -73,7 +75,7 @@
     .heroTitle {
       display: flex;
       flex-direction: row;
-      justify-content: start;
+      justify-content: flex-start;
       font-size: 3.5rem;
       font-weight: 700;
       line-height: 1.2;
@@ -99,9 +101,10 @@
 
     .heroButtons {
       user-select: none;
+      -webkit-tap-highlight-color: transparent;
       display: flex;
       flex-direction: row;
-      justify-content: start;
+      justify-content: flex-start;
       align-items: center;
       gap: 1rem;
       margin-top: 1rem;

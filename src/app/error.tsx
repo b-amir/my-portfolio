@@ -1,4 +1,5 @@
 "use client"; // Error components must be Client Components
+import styles from "./_styles/page.module.scss";
 
 import { useEffect } from "react";
 
@@ -15,7 +16,7 @@ export default function Error({
   }, [error]);
 
   return (
-    <div>
+    <div className={styles.error}>
       <h2>Something went wrong!</h2>
       <p>{error.message}</p>
       <button
