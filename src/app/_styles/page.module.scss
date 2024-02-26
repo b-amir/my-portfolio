@@ -391,12 +391,28 @@
     grid-area: 2 / 3 / 4 / 4;
     border-left: 1px solid #0000001a;
     padding: 1.5rem 3rem;
+    animation: slideInFromRight 0.3s ease-in-out forwards;
+
     // background: linear-gradient(296deg, rgba(2, 0, 36, 0) 80%, rgb(230 215 195 / 30%) 100%);
 }
+
 .featuresTitle {
     @include commonTitleStyle;
     grid-area: 2 / 3 / 3 / 4;
     @include selectableTitleStyle;
+}
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(10px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+.slideIn {
+    animation: slideInFromRight 0.5s ease-in-out forwards;
 }
 .featuresList {
     list-style: none;
@@ -424,6 +440,7 @@
     grid-area: 2 / 3 / 4 / 4;
     border-left: 1px solid #0000001a;
     padding: 1.5rem 3rem;
+    animation: slideInFromRight 0.3s ease-in-out forwards;
 }
 .challengesTitle {
     @include commonTitleStyle;

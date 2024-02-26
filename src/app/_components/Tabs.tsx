@@ -7,9 +7,12 @@ type Tab = "features" | "challenges";
 
 export function Tabs({ currentProject }: { currentProject: Project }) {
   const [visibleTab, setVisibleTab] = useState<Tab>("features");
+  const [tabChanged, setTabChanged] = useState(false);
 
   const selectTabHandler = (tab: Tab) => {
     setVisibleTab(tab);
+    setTabChanged(true);
+    setTimeout(() => setTabChanged(false), 200);
   };
 
   function getSelectedStyle(tab: Tab) {
@@ -53,7 +56,10 @@ export function Tabs({ currentProject }: { currentProject: Project }) {
           Challenges
         </span>
       </div>
-      <ul className={tabData.listClassName}>
+      <ul
+        className={`${tabData.listClassName} ${
+          tabChanged ? globalStyles.slideIn : ""
+        }`}>
         {tabData.items?.map((item, index) => (
           <li key={index} dangerouslySetInnerHTML={{ __html: item }} />
         ))}
