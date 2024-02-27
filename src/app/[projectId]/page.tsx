@@ -1,17 +1,18 @@
 import Image from "next/image";
 import dynamic from "next/dynamic";
-import { Tabs } from "../_components/Tabs";
+import { Tabs } from "@/_components/Tabs";
 import { TagsRow } from "@/_components/Tag/TagsRow";
-import { getItem } from "@/_utils/getProject";
 import globalStyles from "@/_styles/page.module.scss";
 import { DemoButton } from "@/_components/DemoButton";
 import { BackButton } from "./BackButton";
 import { NotFoundPage } from "./NotFoundPage";
 import { FooterSection } from "@/_sections/FooterSection";
-import { LoadingSpinner } from "@/_components/LoadingSpinner";
+import { LoadingSpinner } from "@/_components/Loading/LoadingSpinner";
 import { ProductHuntButton } from "@/_components/ProductHuntButton";
 import { GithubSourceButton } from "@/_components/GithubSourceButton";
 import { findNonEmptyCategories } from "@/_utils/findNonEmptyCategories";
+import { getProject, getProjectsSkillTags } from "@/_utils/getData";
+import { TagsSkeleton } from "@/_components/Loading/TagsSkeleton";
 
 const ScreenShots = dynamic(
   () => import("@/_components/ScreenShots").then((mod) => mod.ScreenShots),
@@ -21,7 +22,8 @@ const ScreenShots = dynamic(
 );
 
 async function Page({ params }: { params: { projectId: string } }) {
-  const currentProject = await getItem(params.projectId);
+  const currentProject = await getProject(params.projectId);
+  const skillTags = await getProjectsSkillTags(params.projectId);
 
   if (!currentProject) {
     return <NotFoundPage />;
@@ -42,7 +44,6 @@ async function Page({ params }: { params: { projectId: string } }) {
             <div className={globalStyles.mainImage}>
               <Image
                 src={currentProject?.image}
-                loading="lazy"
                 width={200}
                 height={120}
                 alt="cslit"
@@ -80,14 +81,7 @@ async function Page({ params }: { params: { projectId: string } }) {
                   <TagsRow
                     key={category.id}
                     title={category.title}
-                    listOfTags={
-                      (
-                        JSON.parse(currentProject?.tags)[0] as Record<
-                          string,
-                          string[]
-                        >
-                      )[category.id]
-                    }
+                    listOfTags={skillTags[0][category.id]}
                   />
                 ))
               : null}

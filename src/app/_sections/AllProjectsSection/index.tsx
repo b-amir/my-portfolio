@@ -4,38 +4,24 @@ import dynamic from "next/dynamic";
 import { Project } from "@/_types/Project";
 import globalStyles from "@/_styles/page.module.scss";
 import { iconMapping } from "./iconMapping";
+// import { ProjectsGrid } from "./ProjectsGrid";
 import { SectionHeader } from "@/_components/SectionHeader";
-import { LoadingSpinner } from "@/_components/LoadingSpinner";
+import { LoadingSpinner } from "@/_components/Loading/LoadingSpinner";
 import { useEffect, useState } from "react";
 import { MdWavingHand as WavingIcon } from "react-icons/md";
 import { BsFillGridFill as GridIcon } from "react-icons/bs";
+import { CurrentSkills } from "./CurrentSkills";
+import { OtherStack } from "./OtherStack";
+import { CardsSkeletons } from "@/_components/Loading/CardsSkeleton";
 
-const Smile3dObject = dynamic(
-  () =>
-    import("../../_components/Smile3dObject").then((mod) => mod.Smile3dObject),
-  {
-    loading: () => <LoadingSpinner />
-  }
+const Smile3dObject = dynamic(() =>
+  import("../../_components/Smile3dObject").then((mod) => mod.Smile3dObject)
 );
 
 const ProjectsGrid = dynamic(
   () => import("./ProjectsGrid").then((mod) => mod.ProjectsGrid),
   {
-    loading: () => <LoadingSpinner />
-  }
-);
-
-const CurrentSkills = dynamic(
-  () => import("./CurrentSkills").then((mod) => mod.CurrentSkills),
-  {
-    loading: () => <LoadingSpinner />
-  }
-);
-
-const OtherStack = dynamic(
-  () => import("./OtherStack").then((mod) => mod.OtherStack),
-  {
-    loading: () => <LoadingSpinner />
+    loading: () => <CardsSkeletons />
   }
 );
 
@@ -77,9 +63,6 @@ export const AllProjectsSection: React.FC = () => {
     };
     setSelectedProjects(getProjectsByTags(selectedTags));
   }, [projects, selectedTags]);
-
-  console.log("selectedProjects", selectedProjects);
-  console.log("selectedTags", selectedTags);
 
   return (
     <div className={`${styles.allProjectsSection}`} id="allProjects">

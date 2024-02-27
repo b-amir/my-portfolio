@@ -4,6 +4,7 @@ import { SkillTag } from "@/_types/SkillTag";
 import globalStyles from "@/_styles/page.module.scss";
 import { getSkillIcon } from "@/_sections/AllProjectsSection";
 import { useEffect, useState } from "react";
+import { TagsSkeleton } from "../Loading/TagsSkeleton";
 
 interface ITagsRowProps {
   title?: string;
@@ -20,43 +21,46 @@ export function TagsRow({
   interactive = false
 }: ITagsRowProps) {
   const [skills, setSkills] = useState<SkillTag[]>([]);
+  const skillsMap = new Map(skills.map((skill) => [skill.id, skill]));
 
   useEffect(() => {
     const fetchTags = async () => {
       const response = await fetch("/api/skillTags");
       const data = await response.json();
       setSkills(data);
-      return data;
     };
     fetchTags();
-  }),
-    [];
+  }, []);
+
   return (
     <div className={globalStyles.tagsRow}>
       <h3 className={globalStyles.tagsRowTitle}>{title}</h3>
       <div className={globalStyles.tagsRowTags}>
-        {listOfTags.map((tag) => {
-          const tagName =
-            skills.find((skill) => skill.id === tag)?.name || "...";
-          const tagColor =
-            skills.find((skill) => skill.id === tag)?.color || "";
-          const tagId = skills.find((skill) => skill.id === tag)?.id || "";
+        {skills.length === 0 ? (
+          <TagsSkeleton />
+        ) : (
+          listOfTags.map((tag) => {
+            const skill = skillsMap.get(tag);
+            const tagName = skill?.name || "...";
+            const tagColor = skill?.color || "";
+            const tagId = skill?.id || "";
 
-          return (
-            <Tag
-              selectedTags={selectedTags || []}
-              interactive={interactive}
-              setSelectedTags={interactive ? setSelectedTags : () => {}}
-              key={tag}
-              name={tagName}
-              color={tagColor}
-              id={tagId}
-              icon={
-                <div className={globalStyles.icon}>{getSkillIcon(tag)}</div>
-              }
-            />
-          );
-        })}
+            return (
+              <Tag
+                selectedTags={selectedTags || []}
+                interactive={interactive}
+                setSelectedTags={interactive ? setSelectedTags : () => {}}
+                key={tag}
+                name={tagName}
+                color={tagColor}
+                id={tagId}
+                icon={
+                  <div className={globalStyles.icon}>{getSkillIcon(tag)}</div>
+                }
+              />
+            );
+          })
+        )}
       </div>
     </div>
   );

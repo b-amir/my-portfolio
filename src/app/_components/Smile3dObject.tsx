@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useGpuDetect } from "@/_hooks/useGpuDetect";
-import { LoadingSpinner } from "./LoadingSpinner";
+import { LoadingSpinner } from "./Loading/LoadingSpinner";
 import { Suspense, useRef, lazy } from "react";
 
 const Spline = lazy(() => import("@splinetool/react-spline"));

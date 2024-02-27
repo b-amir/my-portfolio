@@ -371,6 +371,23 @@
   }
 }
 
+.pulseAnimation {
+  background: linear-gradient(90deg, #f0f0f01b, #6e6e6e1e, #f0f0f01b);
+  background-size: 200% 200%;
+  animation: pulse 1.5s ease-in-out infinite;
+  @keyframes pulse {
+    0% {
+      background-position: 0% 0%;
+    }
+    50% {
+      background-position: -135% 0%;
+    }
+    100% {
+      background-position: 0% 0%;
+    }
+  }
+}
+
 .projectCardSelected {
   @extend .projectCard;
   box-shadow: $big-shadow;

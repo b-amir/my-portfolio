@@ -2,11 +2,11 @@ import Image from "next/image";
 import dynamic from "next/dynamic";
 import { Tabs } from "@/_components/Tabs";
 import { TagsRow } from "@/_components/Tag/TagsRow";
-import { getItem } from "@/_utils/getProject";
+import { getProject } from "@/_utils/getData";
 import globalStyles from "@/_styles/page.module.scss";
 import { DemoButton } from "@/_components/DemoButton";
 import { SectionHeader } from "@/_components/SectionHeader";
-import { LoadingSpinner } from "@/_components/LoadingSpinner";
+import { LoadingSpinner } from "@/_components/Loading/LoadingSpinner";
 import { ProductHuntButton } from "@/_components/ProductHuntButton";
 import { GithubSourceButton } from "@/_components/GithubSourceButton";
 import { FaStarOfLife as StarIcon } from "react-icons/fa6";
@@ -19,7 +19,7 @@ const ScreenShots = dynamic(
 );
 
 export const FeaturedProjectSection: React.FC = async () => {
-  const featuredProject = await getItem("cslit");
+  const featuredProject = await getProject("cslit");
   const tags = JSON.parse(featuredProject.tags)[0];
 
   return (

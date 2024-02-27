@@ -17,7 +17,6 @@ export function ScreenShots({ currentProject }: { currentProject: Project }) {
                 <Image
                   className={globalStyles.imageClickable}
                   src={`${screenshot}-thumbnail.png`}
-                  loading="lazy"
                   width={112}
                   height={240}
                   alt="cslit"
@@ -35,7 +34,6 @@ export function ScreenShots({ currentProject }: { currentProject: Project }) {
                 <Image
                   className={globalStyles.imageClickable}
                   src={`${screenshot}-thumbnail.png`}
-                  loading="lazy"
                   width={365}
                   height={240}
                   alt="cslit"

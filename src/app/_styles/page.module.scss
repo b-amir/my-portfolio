@@ -114,6 +114,26 @@
         }
     }
 }
+
+.skeletonPulse {
+    background: linear-gradient(90deg, #f0f0f01b, #6e6e6e1e, #f0f0f01b);
+    background-size: 200% 200%;
+    animation: pulse 1.5s ease-in-out infinite;
+    border-radius: $base-br;
+    height: 26.4px;
+    border: 1px solid #6e6e6e27;
+    @keyframes pulse {
+        0% {
+            background-position: 0% 0%;
+        }
+        50% {
+            background-position: -135% 0%;
+        }
+        100% {
+            background-position: 0% 0%;
+        }
+    }
+}
 .tagsRow {
     display: flex;
     flex-direction: column;
