@@ -131,7 +131,12 @@ export function ProjectsGrid({
                   Demo <LinkIcon />
                 </Link>
               </div>
-              <p>{project.description}</p>
+              <p>
+                {
+                  //@ts-ignore
+                  JSON.parse(project.description)
+                }
+              </p>
             </div>
           </div>
         ))}
