@@ -517,12 +517,16 @@
   }
   .allStacks {
     grid-template-rows: auto;
+    border-radius: $base-br;
+    margin: 1rem;
   }
   .currentSkills {
     grid-area: 1/1/2/4;
+    padding: 1rem 2rem;
 
     h3 {
       border-bottom: 1px solid #8080806e;
+      width: fit-content;
       padding-bottom: 0.4rem;
     }
   }
@@ -531,9 +535,16 @@
   }
   .otherStack {
     grid-area: 2/1/2/4;
+    padding: 1rem 2rem;
     padding-top: 3rem;
     border-left: none;
     border-top: 1px solid #00000024;
+
+    h3 {
+      border-bottom: 1px solid #8080806e;
+      width: fit-content;
+      padding-bottom: 0.4rem;
+    }
   }
   .projectsGrid,
   .smallProjectsGrid {

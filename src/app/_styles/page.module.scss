@@ -367,7 +367,8 @@
     background: transparent;
     font-size: small;
     color: #484848;
-    // background: linear-gradient(296deg, rgba(2, 0, 36, 0) 80%, rgb(230 215 195 / 30%) 100%);
+    animation: slideInFromRight 0.3s ease-in-out forwards;
+    background: linear-gradient(296deg, rgba(2, 0, 36, 0) 80%, rgb(230 215 195 / 30%) 100%);
 }
 .summaryTitle {
     @include commonTitleStyle;
@@ -393,7 +394,7 @@
     padding: 1.5rem 3rem;
     animation: slideInFromRight 0.3s ease-in-out forwards;
 
-    // background: linear-gradient(296deg, rgba(2, 0, 36, 0) 80%, rgb(230 215 195 / 30%) 100%);
+    background: linear-gradient(296deg, rgba(2, 0, 36, 0) 80%, rgb(230 215 195 / 30%) 100%);
 }
 
 .featuresTitle {
@@ -442,6 +443,7 @@
     border-left: 1px solid #0000001a;
     padding: 1.5rem 3rem;
     animation: slideInFromRight 0.3s ease-in-out forwards;
+    background: linear-gradient(296deg, rgba(2, 0, 36, 0) 80%, rgb(230 215 195 / 30%) 100%);
 }
 .challengesTitle {
     @include commonTitleStyle;
@@ -505,6 +507,7 @@
 
     .sectionHeader {
         padding-left: 30px;
+        font-size: 1.1rem;
     }
 
     .description {
@@ -560,10 +563,13 @@
     }
     .summary {
         grid-area: 2/4/3/2;
+        padding: 3rem 1rem;
     }
     .stack {
         grid-area: 3/2/4/4;
         border-left: none;
+        border-top: 1px solid #0000001a;
+        padding: 3rem 1rem;
     }
 
     .featuresList,
@@ -578,7 +584,12 @@
     .challenges {
         grid-area: 4/4/4/1;
         border-left: none;
-        padding-top: 5rem;
+        border-top: 1px solid #0000001a;
+        padding: 3rem 1rem;
+    }
+    .demoButtonLarge {
+        margin: 1.2rem auto;
+        width: 60vw;
     }
 }
 
