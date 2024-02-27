@@ -99,3 +99,10 @@ function Page({ params }: { params: { projectId: string } }) {
 }
 
 export default Page;
+
+// generate the dynamic routes of projects, statically at build time
+export async function generateStaticParams() {
+  return projects.map((project) => ({
+    projectId: project.id
+  }));
+}
