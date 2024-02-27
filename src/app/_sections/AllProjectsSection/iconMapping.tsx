@@ -38,7 +38,8 @@ import {
   SiHtml5,
   SiElectron,
   SiPwa,
-  SiXstate
+  SiXstate,
+  SiSqlite
 } from "react-icons/si";
 import { SkillIcons } from ".";
 
@@ -80,5 +81,6 @@ export const iconMapping: SkillIcons = {
   html2canvas: <MdOutlineImage />,
   reacttestinglibrary: <SiTestinglibrary />,
   cicd: <MdOutlineLoop />,
-  xstate: <SiXstate />
+  xstate: <SiXstate />,
+  sqlite: <SiSqlite />
 };

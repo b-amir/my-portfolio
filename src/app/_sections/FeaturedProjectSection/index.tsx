@@ -1,8 +1,8 @@
 import Image from "next/image";
 import dynamic from "next/dynamic";
-import projects from "@/_data/projects.json";
 import { Tabs } from "@/_components/Tabs";
 import { TagsRow } from "@/_components/Tag/TagsRow";
+import { getItem } from "@/_utils/getProject";
 import globalStyles from "@/_styles/page.module.scss";
 import { DemoButton } from "@/_components/DemoButton";
 import { SectionHeader } from "@/_components/SectionHeader";
@@ -18,7 +18,10 @@ const ScreenShots = dynamic(
   }
 );
 
-export const FeaturedProjectSection: React.FC = () => {
+export const FeaturedProjectSection: React.FC = async () => {
+  const featuredProject = await getItem("cslit");
+  const tags = JSON.parse(featuredProject.tags)[0];
+
   return (
     <div className={`${globalStyles.featuredProject}`} id="featured">
       <SectionHeader
@@ -32,40 +35,33 @@ export const FeaturedProjectSection: React.FC = () => {
           <div className={globalStyles.mainImage}>
             <Image src="/cslit-logo.svg" width={200} height={120} alt="cslit" />
           </div>
-          <ScreenShots currentProject={projects[0]} />
+          <ScreenShots currentProject={featuredProject} />
         </div>
         <div className={globalStyles.summary} id="summary">
           <div className={globalStyles.summaryTitle}>Summary</div>
           <h2>CS-LIT</h2>
-          {projects[0].description.map((span, index) => (
-            <p
-              className={globalStyles.summaryText}
-              key={index}
-              dangerouslySetInnerHTML={{ __html: span }}
-            />
-          ))}
+          {JSON.parse(featuredProject.description).map(
+            (span: string, index: number) => (
+              <p
+                className={globalStyles.summaryText}
+                key={index}
+                dangerouslySetInnerHTML={{ __html: span }}
+              />
+            )
+          )}
           <br />
           <DemoButton text="Visit Live at cslit.cc" link="https://cslit.cc" />
-          <ProductHuntButton link={projects[0].producHuntLink} />
-          <GithubSourceButton link={projects[0].githubLink} />
+          <ProductHuntButton link={featuredProject.producHuntLink} />
+          <GithubSourceButton link={featuredProject.githubLink} />
         </div>
         <div className={globalStyles.stack} id="stack">
           <div className={globalStyles.stackTitle}>Technical stack</div>
-          <TagsRow
-            title="Frontend:"
-            listOfTags={projects[0].tags[0].frontend}
-          />
-          <TagsRow
-            title="Backend, API, DB:"
-            listOfTags={projects[0].tags[0].backend}
-          />
-          <TagsRow
-            title="DevOps, Testing:"
-            listOfTags={projects[0].tags[0].devops}
-          />
-          <TagsRow title="Libs, etc:" listOfTags={projects[0].tags[0].libs} />
+          <TagsRow title="Frontend:" listOfTags={tags.frontend} />
+          <TagsRow title="Backend, API, DB:" listOfTags={tags.backend} />
+          <TagsRow title="DevOps, Testing:" listOfTags={tags.devops} />
+          <TagsRow title="Libs, etc:" listOfTags={tags.libs} />
         </div>
-        <Tabs currentProject={projects[0]} />
+        <Tabs currentProject={featuredProject} />
       </div>
     </div>
   );

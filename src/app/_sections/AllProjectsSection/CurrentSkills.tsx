@@ -57,7 +57,7 @@ export function CurrentSkills({
         selectedTags={selectedTags}
         setSelectedTags={setSelectedTags}
         title="Backend, API, DB:"
-        listOfTags={["trpc", "prisma", "nextjs", "postgresql"]}
+        listOfTags={["trpc", "prisma", "nextjs", "postgresql", "sqlite"]}
       />
       <TagsRow
         interactive

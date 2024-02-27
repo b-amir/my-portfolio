@@ -1,14 +1,10 @@
 "use client";
 import styles from "./index.module.scss";
 import dynamic from "next/dynamic";
-import projects from "@/_data/projects.json";
 import { Project } from "@/_types/Project";
 import globalStyles from "@/_styles/page.module.scss";
-import { OtherStack } from "./OtherStack";
 import { iconMapping } from "./iconMapping";
-import { ProjectsGrid } from "./ProjectsGrid";
 import { SectionHeader } from "@/_components/SectionHeader";
-import { CurrentSkills } from "./CurrentSkills";
 import { LoadingSpinner } from "@/_components/LoadingSpinner";
 import { useEffect, useState } from "react";
 import { MdWavingHand as WavingIcon } from "react-icons/md";
@@ -17,6 +13,27 @@ import { BsFillGridFill as GridIcon } from "react-icons/bs";
 const Smile3dObject = dynamic(
   () =>
     import("../../_components/Smile3dObject").then((mod) => mod.Smile3dObject),
+  {
+    loading: () => <LoadingSpinner />
+  }
+);
+
+const ProjectsGrid = dynamic(
+  () => import("./ProjectsGrid").then((mod) => mod.ProjectsGrid),
+  {
+    loading: () => <LoadingSpinner />
+  }
+);
+
+const CurrentSkills = dynamic(
+  () => import("./CurrentSkills").then((mod) => mod.CurrentSkills),
+  {
+    loading: () => <LoadingSpinner />
+  }
+);
+
+const OtherStack = dynamic(
+  () => import("./OtherStack").then((mod) => mod.OtherStack),
   {
     loading: () => <LoadingSpinner />
   }
@@ -31,24 +48,38 @@ export const getSkillIcon = (tagName: string) => iconMapping[tagName] || null;
 export const AllProjectsSection: React.FC = () => {
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [selectedProjects, setSelectedProjects] = useState<Project[]>([]);
-
-  const getProjectsByTags = (selectedTags: string[]) => {
-    if (selectedTags.length === 0) {
-      return [];
-    }
-
-    return projects.filter((project) =>
-      selectedTags.every((tag) =>
-        project.tags.some((tagCategory) =>
-          Object.values(tagCategory).flat().includes(tag)
-        )
-      )
-    );
-  };
+  const [projects, setProjects] = useState<Project[]>([]);
 
   useEffect(() => {
+    const fetchProjects = async () => {
+      const response = await fetch("/api/projects");
+      const data = await response.json();
+      setProjects(data);
+      return data;
+    };
+    fetchProjects();
+  }, []);
+
+  useEffect(() => {
+    const getProjectsByTags = (selectedTags: string[]) => {
+      if (selectedTags.length === 0) {
+        return [];
+      }
+
+      return projects.filter((project) =>
+        selectedTags.every((tag) =>
+          // @ts-ignore
+          JSON.parse(project.tags).some((tagCategory) =>
+            Object.values(tagCategory).flat().includes(tag)
+          )
+        )
+      );
+    };
     setSelectedProjects(getProjectsByTags(selectedTags));
-  }, [selectedTags]);
+  }, [projects, selectedTags]);
+
+  console.log("selectedProjects", selectedProjects);
+  console.log("selectedTags", selectedTags);
 
   return (
     <div className={`${styles.allProjectsSection}`} id="allProjects">

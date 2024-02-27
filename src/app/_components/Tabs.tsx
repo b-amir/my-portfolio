@@ -60,9 +60,12 @@ export function Tabs({ currentProject }: { currentProject: Project }) {
         className={`${tabData.listClassName} ${
           tabChanged ? globalStyles.slideIn : ""
         }`}>
-        {tabData.items?.map((item, index) => (
-          <li key={index} dangerouslySetInnerHTML={{ __html: item }} />
-        ))}
+        {
+          //@ts-ignore
+          JSON.parse(tabData.items)?.map((item: string, index: number) => (
+            <li key={index} dangerouslySetInnerHTML={{ __html: item }} />
+          ))
+        }
       </ul>
     </div>
   );

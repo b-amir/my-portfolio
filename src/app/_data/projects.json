@@ -175,10 +175,13 @@
           "typescript",
           "react"
         ],
-        "backend": [],
+        "backend": [
+          "sqlite"
+        ],
         "devops": [
           "cicd",
-          "vercel"
+          "vercel",
+          "githubactions"
         ],
         "libs": [
           "spline"

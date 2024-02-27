@@ -193,5 +193,10 @@
     "id": "xstate",
     "name": "XState",
     "color": "#000000"
+  },
+  {
+    "id": "sqlite",
+    "name": "SQLite",
+    "color": "#003B57"
   }
 ]

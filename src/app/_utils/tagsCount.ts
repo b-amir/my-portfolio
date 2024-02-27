@@ -1,8 +1,9 @@
 import { Project } from "@/_types/Project";
 
 export function howManyTags(project: Project) {
-  return project.tags.reduce((acc, category) => {
-    Object.values(category).forEach((tags) => (acc += tags.length));
+  //@ts-ignore
+  return JSON.parse(project.tags).reduce((acc: number, category: any) => {
+    Object.values(category).forEach((tags: any) => (acc += tags.length));
     return acc;
   }, 0);
 }

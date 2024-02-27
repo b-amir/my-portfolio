@@ -1,23 +1,46 @@
 "use client";
+import Link from "next/link";
 import Image from "next/image";
 import styles from "./index.module.scss";
-import skills from "@/_data/skillTags.json";
 import { Tag } from "@/_components/Tag";
-import projects from "@/_data/projects.json";
+import { HrTitle } from "./HrTitle";
 import { Project } from "@/_types/Project";
+import { SkillTag } from "@/_types/SkillTag";
 import globalStyles from "@/_styles/page.module.scss";
 import { ProjectCard } from "./ProjectCard";
 import { getSkillIcon } from ".";
+import { useEffect, useState } from "react";
 import { howManyTags, howManyTagsShowing } from "@/_utils/tagsCount";
 import { HiOutlineExternalLink as LinkIcon } from "react-icons/hi";
-import Link from "next/link";
-import { HrTitle } from "./HrTitle";
 
 export function ProjectsGrid({
   selectedProjects
 }: {
   selectedProjects: Project[];
 }) {
+  const [projects, setProjects] = useState<Project[]>([]);
+  const [skills, setSkills] = useState<SkillTag[]>([]);
+
+  useEffect(() => {
+    const fetchTags = async () => {
+      const response = await fetch("/api/skillTags");
+      const data = await response.json();
+      setSkills(data);
+      return data;
+    };
+    fetchTags();
+  }, []);
+
+  useEffect(() => {
+    const fetchProjects = async () => {
+      const response = await fetch("/api/projects");
+      const data = await response.json();
+      setProjects(data);
+      return data;
+    };
+    fetchProjects();
+  }, []);
+
   const fullProjects = projects.filter((project) => project.fullProject);
   const smallProjects = projects.filter((project) => !project.fullProject);
 
@@ -38,8 +61,10 @@ export function ProjectsGrid({
               />
             }
             title={project.title}
+            //@ts-ignore
             featured={project.featured}
-            tags={project.tagsShort.map((tag) => {
+            //@ts-ignore
+            tags={JSON.parse(project.tagsShort).map((tag) => {
               const skillName =
                 skills.find((skill) => skill.id === tag)?.name || "";
               const skillColor =
@@ -59,10 +84,13 @@ export function ProjectsGrid({
               );
             })}
             howManyMoreTags={howManyTags(project) - howManyTagsShowing(project)}
-            description={project.description}
+            //@ts-ignore
+            description={JSON.parse(project.description)}
             githubLink={project.githubLink}
             demoLink={project.demoLink}
-            selected={selectedProjects.includes(project)}
+            selected={selectedProjects.some(
+              (selectedProject) => selectedProject.id === project.id
+            )}
           />
         ))}
       </div>
@@ -73,7 +101,9 @@ export function ProjectsGrid({
           <div
             key={project.id}
             className={`${
-              selectedProjects.includes(project)
+              selectedProjects.some(
+                (selectedProject) => selectedProject.id === project.id
+              )
                 ? styles.smallProjectSelected
                 : styles.smallProject
             }`}>

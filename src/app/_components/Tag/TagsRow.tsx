@@ -1,8 +1,9 @@
 "use client";
 import { Tag } from ".";
-import skills from "@/_data/skillTags.json";
+import { SkillTag } from "@/_types/SkillTag";
 import globalStyles from "@/_styles/page.module.scss";
 import { getSkillIcon } from "@/_sections/AllProjectsSection";
+import { useEffect, useState } from "react";
 
 interface ITagsRowProps {
   title?: string;
@@ -18,12 +19,25 @@ export function TagsRow({
   selectedTags,
   interactive = false
 }: ITagsRowProps) {
+  const [skills, setSkills] = useState<SkillTag[]>([]);
+
+  useEffect(() => {
+    const fetchTags = async () => {
+      const response = await fetch("/api/skillTags");
+      const data = await response.json();
+      setSkills(data);
+      return data;
+    };
+    fetchTags();
+  }),
+    [];
   return (
     <div className={globalStyles.tagsRow}>
       <h3 className={globalStyles.tagsRowTitle}>{title}</h3>
       <div className={globalStyles.tagsRowTags}>
         {listOfTags.map((tag) => {
-          const tagName = skills.find((skill) => skill.id === tag)?.name || "";
+          const tagName =
+            skills.find((skill) => skill.id === tag)?.name || "...";
           const tagColor =
             skills.find((skill) => skill.id === tag)?.color || "";
           const tagId = skills.find((skill) => skill.id === tag)?.id || "";

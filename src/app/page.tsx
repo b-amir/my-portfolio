@@ -6,7 +6,6 @@ import { AllProjectsSection } from "@/_sections/AllProjectsSection";
 import { FeaturedProjectSection } from "@/_sections/FeaturedProjectSection";
 
 export default function Home() {
-  const sections = ["hero", "about", "featured", "allProjects", "footer"];
   return (
     <main className={`${globalStyles.main}`}>
       <HeroSection />

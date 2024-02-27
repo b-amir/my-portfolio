@@ -1,8 +1,8 @@
 import Image from "next/image";
 import dynamic from "next/dynamic";
 import { Tabs } from "../_components/Tabs";
-import projects from "@/_data/projects.json";
 import { TagsRow } from "@/_components/Tag/TagsRow";
+import { getItem } from "@/_utils/getProject";
 import globalStyles from "@/_styles/page.module.scss";
 import { DemoButton } from "@/_components/DemoButton";
 import { BackButton } from "./BackButton";
@@ -20,10 +20,8 @@ const ScreenShots = dynamic(
   }
 );
 
-function Page({ params }: { params: { projectId: string } }) {
-  const currentProject = projects.find(
-    (project) => project.id === params.projectId
-  );
+async function Page({ params }: { params: { projectId: string } }) {
+  const currentProject = await getItem(params.projectId);
 
   if (!currentProject) {
     return <NotFoundPage />;
@@ -56,13 +54,15 @@ function Page({ params }: { params: { projectId: string } }) {
             <div className={globalStyles.summaryTitle}>Summary</div>
             <h2>{currentProject?.title}</h2>
 
-            {currentProject?.description.map((paragraph, index) => (
-              <p
-                className={globalStyles.summaryText}
-                key={index}
-                dangerouslySetInnerHTML={{ __html: paragraph }}
-              />
-            ))}
+            {JSON.parse(currentProject?.description).map(
+              (paragraph: string, index: number) => (
+                <p
+                  className={globalStyles.summaryText}
+                  key={index}
+                  dangerouslySetInnerHTML={{ __html: paragraph }}
+                />
+              )
+            )}
 
             <br />
             {hasDemoLink && <DemoButton link={currentProject?.demoLink} />}
@@ -81,9 +81,12 @@ function Page({ params }: { params: { projectId: string } }) {
                     key={category.id}
                     title={category.title}
                     listOfTags={
-                      (currentProject?.tags[0] as Record<string, string[]>)[
-                        category.id
-                      ]
+                      (
+                        JSON.parse(currentProject?.tags)[0] as Record<
+                          string,
+                          string[]
+                        >
+                      )[category.id]
                     }
                   />
                 ))
@@ -102,7 +105,12 @@ export default Page;
 
 // generate the dynamic routes of projects, statically at build time
 export async function generateStaticParams() {
-  return projects.map((project) => ({
-    projectId: project.id
-  }));
+  return [
+    { projectId: "cslit" },
+    { projectId: "thiscovered" },
+    { projectId: "portfolio" },
+    { projectId: "futpal" },
+    { projectId: "adeptivity" },
+    { projectId: "notopia" }
+  ];
 }
