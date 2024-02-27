@@ -33,7 +33,7 @@ export const HeroSection: React.FC = () => {
 
   return (
     <ParallaxProvider>
-      <div className={styles.hero}>
+      <div className={`${styles.hero}`} id="hero">
         <div className={styles.heroMain}>
           <Parallax speed={parallaxSpeed} className={styles.heroTexts}>
             <h1 className={styles.heroTitle}>

@@ -51,7 +51,7 @@ export const AllProjectsSection: React.FC = () => {
   }, [selectedTags]);
 
   return (
-    <div className={styles.allProjectsSection}>
+    <div className={`${styles.allProjectsSection}`} id="allProjects">
       <SectionHeader
         title="All Skills & Projects"
         icon={<GridIcon className={globalStyles.icon} />}

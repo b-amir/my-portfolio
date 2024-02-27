@@ -473,6 +473,19 @@
 }
 // <---
 
+.scrollContainer {
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+}
+
+.scrollArea {
+    scroll-snap-align: start;
+}
+.scrollContainer,
+.scrollArea {
+    height: 100dvh;
+}
+
 // Error messages --->
 .errorPage {
     @extend .featuredProject;

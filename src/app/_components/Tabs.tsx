@@ -43,7 +43,7 @@ export function Tabs({ currentProject }: { currentProject: Project }) {
   const tabData = getTabData(visibleTab);
 
   return (
-    <div className={tabData.className}>
+    <div className={tabData.className} id="tabs">
       <div className={tabData.titleClassName}>
         <span
           onClick={() => selectTabHandler("features")}

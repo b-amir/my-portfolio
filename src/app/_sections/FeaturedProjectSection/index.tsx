@@ -20,7 +20,7 @@ const ScreenShots = dynamic(
 
 export const FeaturedProjectSection: React.FC = () => {
   return (
-    <div className={globalStyles.featuredProject}>
+    <div className={`${globalStyles.featuredProject}`} id="featured">
       <SectionHeader
         title="Featured Project"
         color="#f15c55"
@@ -34,7 +34,7 @@ export const FeaturedProjectSection: React.FC = () => {
           </div>
           <ScreenShots currentProject={projects[0]} />
         </div>
-        <div className={globalStyles.summary}>
+        <div className={globalStyles.summary} id="summary">
           <div className={globalStyles.summaryTitle}>Summary</div>
           <h2>CS-LIT</h2>
           {projects[0].description.map((span, index) => (
@@ -49,7 +49,7 @@ export const FeaturedProjectSection: React.FC = () => {
           <ProductHuntButton link={projects[0].producHuntLink} />
           <GithubSourceButton link={projects[0].githubLink} />
         </div>
-        <div className={globalStyles.stack}>
+        <div className={globalStyles.stack} id="stack">
           <div className={globalStyles.stackTitle}>Technical stack</div>
           <TagsRow
             title="Frontend:"

@@ -7,7 +7,7 @@ import { MdOutlinePerson as PersonIcon } from "react-icons/md";
 
 export const AboutSection: React.FC = () => {
   return (
-    <div className={styles.about} id="about">
+    <div className={`${styles.about}`} id="about">
       <SectionHeader
         title="About Me"
         icon={<PersonIcon className={globalStyles.icon} />}
