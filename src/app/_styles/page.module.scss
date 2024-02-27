@@ -403,15 +403,16 @@
 }
 @keyframes slideInFromRight {
     0% {
-        transform: translateX(10px);
+        transform: translateX(10px) translateZ(0);
         opacity: 0;
     }
     100% {
-        transform: translateX(0);
+        transform: translateX(0) translateZ(0);
         opacity: 1;
     }
 }
 .slideIn {
+    will-change: transform, opacity;
     animation: slideInFromRight 0.5s ease-in-out forwards;
 }
 .featuresList {

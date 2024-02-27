@@ -12,7 +12,7 @@ export function Tabs({ currentProject }: { currentProject: Project }) {
   const selectTabHandler = (tab: Tab) => {
     setVisibleTab(tab);
     setTabChanged(true);
-    setTimeout(() => setTabChanged(false), 200);
+    setTimeout(() => setTabChanged(false), 500);
   };
 
   function getSelectedStyle(tab: Tab) {
