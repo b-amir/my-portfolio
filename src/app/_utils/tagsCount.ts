@@ -9,5 +9,6 @@ export function howManyTags(project: Project) {
 }
 
 export function howManyTagsShowing(project: Project) {
-  return project.tagsShort.length;
+  //@ts-ignore
+  return JSON.parse(project.tagsShort).length;
 }

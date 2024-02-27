@@ -12,7 +12,6 @@ import { ProductHuntButton } from "@/_components/ProductHuntButton";
 import { GithubSourceButton } from "@/_components/GithubSourceButton";
 import { findNonEmptyCategories } from "@/_utils/findNonEmptyCategories";
 import { getProject, getProjectsSkillTags } from "@/_utils/getData";
-import { TagsSkeleton } from "@/_components/Loading/TagsSkeleton";
 
 const ScreenShots = dynamic(
   () => import("@/_components/ScreenShots").then((mod) => mod.ScreenShots),

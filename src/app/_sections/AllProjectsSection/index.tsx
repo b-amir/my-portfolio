@@ -3,16 +3,14 @@ import styles from "./index.module.scss";
 import dynamic from "next/dynamic";
 import { Project } from "@/_types/Project";
 import globalStyles from "@/_styles/page.module.scss";
+import { OtherStack } from "./OtherStack";
 import { iconMapping } from "./iconMapping";
-// import { ProjectsGrid } from "./ProjectsGrid";
 import { SectionHeader } from "@/_components/SectionHeader";
-import { LoadingSpinner } from "@/_components/Loading/LoadingSpinner";
+import { CurrentSkills } from "./CurrentSkills";
+import { CardsSkeletons } from "@/_components/Loading/CardsSkeleton";
 import { useEffect, useState } from "react";
 import { MdWavingHand as WavingIcon } from "react-icons/md";
 import { BsFillGridFill as GridIcon } from "react-icons/bs";
-import { CurrentSkills } from "./CurrentSkills";
-import { OtherStack } from "./OtherStack";
-import { CardsSkeletons } from "@/_components/Loading/CardsSkeleton";
 
 const Smile3dObject = dynamic(() =>
   import("../../_components/Smile3dObject").then((mod) => mod.Smile3dObject)
