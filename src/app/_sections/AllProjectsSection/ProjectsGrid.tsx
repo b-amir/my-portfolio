@@ -57,6 +57,7 @@ export function ProjectsGrid({
                 width={200}
                 height={120}
                 alt={project.title}
+                loading="eager"
               />
             }
             title={project.title}
@@ -110,6 +111,7 @@ export function ProjectsGrid({
               src={project.image}
               width={64}
               height={64}
+              loading="eager"
               alt={project.title}
             />
             <div className={styles.smallProjectDetails}>
