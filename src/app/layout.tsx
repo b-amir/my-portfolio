@@ -6,6 +6,7 @@ import ProgressBar from "@/_components/ProgressBar";
 const openSans = Open_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://b-amir.link"),
   title: "Amir Bazgir's Portfolio",
   description: "I'm a fullstack web developer.",
   openGraph: {

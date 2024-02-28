@@ -95,7 +95,7 @@
     ],
     "githubLink": "https://github.com/b-amir/cs-lit",
     "demoLink": "https://cslit.cc",
-    "producHuntLink": "https://www.producthunt.com/posts/cs-lit"
+    "productHuntLink": "https://www.producthunt.com/posts/cs-lit"
   },
   {
     "id": "thiscovered",
@@ -205,6 +205,8 @@
       "Minimal usage of 3d objects, keeping <b>Performance Measures for Low-Tier Devices</b> in mind.",
       "Abillity to <b>filter Projects via Skill Tags</b>.",
       "Implemented a <b>tooltip component</b> using browser APIs exclusively, without relying on external libraries.",
+      "Added <b>Skeleton Loading</b> for a smoother user experience.",
+      "Data is fetched from a <b>SQLite database</b>.",
       "Opportunity to Learn <b>Sass</b> for a more clean and modern styling solution.",
       "Responsive Design across all devices and screen sizes.",
       "Typesafe via TypeScript.",
@@ -214,6 +216,7 @@
       "Incorporated 3D design with Spline, striking a <b>balance</b> between <b>simplicity</b> and creativity in the portfolio's <b>visual appeal</b>. Maintained <b>optimal performance</b> through <b>code-splitting and device detection</b>, ensuring each user's experience is fine-tuned based on monitor size and <b>GPU tier</b>.",
       "<b>Minimized unnecessary network requests</b> by self-hosting the 3D objects and implemented <b>loading states</b> along with <b>suspense boundaries with UI fallbacks</b> for a smoother user experience.",
       "Learned valuable lessons in <b>rendering patterns</b> and streaming server-side rendering for improved performance.",
+      "Moved Data source <b>from JSON files to SQLite database</b> as the need for data fetching grew.",
       "Implemented Sass for styling, improving maintainability and code organization, while adhering to industry best practices.",
       "Maintained a sharp focus on <b>audience demographics</b> and <b>employed UX persona practices</b> to enhance user experience, aligning with the portfolio's core objectives."
     ],

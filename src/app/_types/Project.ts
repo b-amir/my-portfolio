@@ -39,5 +39,6 @@ export type Project = {
   features: string[];
   challenges: string[];
   githubLink: string;
+  productHuntLink?: string;
   demoLink: string;
 }

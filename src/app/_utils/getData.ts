@@ -7,6 +7,14 @@ export const getProject = cache(async (id: string) => {
   return item
 })
 
+export const getAllProjectIds = cache(async () => {
+  const db = await openDB()
+  const items = await db.all('SELECT id FROM projects')
+  return items
+})
+
+
+
 export const getProjectsSkillTags = cache(async (id: string) => {
   const db = await openDB()
   const items = await db.get('SELECT tags FROM projects WHERE id = ?', [id])

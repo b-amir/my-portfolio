@@ -2,6 +2,8 @@ import Image from "next/image";
 import dynamic from "next/dynamic";
 import { Tabs } from "@/_components/Tabs";
 import { TagsRow } from "@/_components/Tag/TagsRow";
+import { Project } from "@/_types/Project";
+import { SkillTag } from "@/_types/SkillTag";
 import globalStyles from "@/_styles/page.module.scss";
 import { DemoButton } from "@/_components/DemoButton";
 import { BackButton } from "./BackButton";
@@ -11,26 +13,35 @@ import { LoadingSpinner } from "@/_components/Loading/LoadingSpinner";
 import { ProductHuntButton } from "@/_components/ProductHuntButton";
 import { GithubSourceButton } from "@/_components/GithubSourceButton";
 import { findNonEmptyCategories } from "@/_utils/findNonEmptyCategories";
-import { getProject, getProjectsSkillTags } from "@/_utils/getData";
+import {
+  getAllProjectIds,
+  getProject,
+  getProjectsSkillTags
+} from "@/_utils/getData";
+import { ScreenShots } from "@/_components/ScreenShots";
 
-const ScreenShots = dynamic(
-  () => import("@/_components/ScreenShots").then((mod) => mod.ScreenShots),
-  {
-    loading: () => <LoadingSpinner />
-  }
-);
+// const ScreenShots = dynamic(
+//   () => import("@/_components/ScreenShots").then((mod) => mod.ScreenShots),
+//   {
+//     loading: () => <LoadingSpinner />
+//   }
+// );
 
-async function Page({ params }: { params: { projectId: string } }) {
-  const currentProject = await getProject(params.projectId);
-  const skillTags = await getProjectsSkillTags(params.projectId);
+interface IPageProps {
+  params: { projectId: string };
+}
 
+async function Page({ params }: IPageProps) {
+  const { projectId } = params;
+  const currentProject = await getProject(projectId);
+  const skillTags = await getProjectsSkillTags(projectId);
   if (!currentProject) {
     return <NotFoundPage />;
   }
 
   const hasDemoLink = currentProject.demoLink.length > 0;
   const hasGithubLink = currentProject.githubLink.length > 0;
-  const hasProducHuntLink = currentProject.producHuntLink;
+  const hasproductHuntLink = currentProject.productHuntLink;
   const categoriesToDisplay = findNonEmptyCategories(currentProject);
 
   return (
@@ -54,20 +65,23 @@ async function Page({ params }: { params: { projectId: string } }) {
             <div className={globalStyles.summaryTitle}>Summary</div>
             <h2>{currentProject?.title}</h2>
 
-            {JSON.parse(currentProject?.description).map(
-              (paragraph: string, index: number) => (
-                <p
-                  className={globalStyles.summaryText}
-                  key={index}
-                  dangerouslySetInnerHTML={{ __html: paragraph }}
-                />
+            {
+              //@ts-ignore
+              JSON.parse(currentProject?.description).map(
+                (paragraph: string, index: number) => (
+                  <p
+                    className={globalStyles.summaryText}
+                    key={index}
+                    dangerouslySetInnerHTML={{ __html: paragraph }}
+                  />
+                )
               )
-            )}
+            }
 
             <br />
             {hasDemoLink && <DemoButton link={currentProject?.demoLink} />}
-            {hasProducHuntLink && (
-              <ProductHuntButton link={currentProject?.producHuntLink} />
+            {hasproductHuntLink && (
+              <ProductHuntButton link={currentProject?.productHuntLink} />
             )}
             {hasGithubLink && (
               <GithubSourceButton link={currentProject?.githubLink} />
@@ -80,6 +94,7 @@ async function Page({ params }: { params: { projectId: string } }) {
                   <TagsRow
                     key={category.id}
                     title={category.title}
+                    //@ts-ignore
                     listOfTags={skillTags[0][category.id]}
                   />
                 ))
@@ -96,14 +111,7 @@ async function Page({ params }: { params: { projectId: string } }) {
 
 export default Page;
 
-// generate the dynamic routes of projects, statically at build time
 export async function generateStaticParams() {
-  return [
-    { projectId: "cslit" },
-    { projectId: "thiscovered" },
-    { projectId: "portfolio" },
-    { projectId: "futpal" },
-    { projectId: "adeptivity" },
-    { projectId: "notopia" }
-  ];
+  const projectIds = await getAllProjectIds();
+  return projectIds.map((project) => ({ projectId: project.id }));
 }

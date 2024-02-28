@@ -51,7 +51,7 @@ export const FeaturedProjectSection: React.FC = async () => {
           )}
           <br />
           <DemoButton text="Visit Live at cslit.cc" link="https://cslit.cc" />
-          <ProductHuntButton link={featuredProject.producHuntLink} />
+          <ProductHuntButton link={featuredProject.productHuntLink} />
           <GithubSourceButton link={featuredProject.githubLink} />
         </div>
         <div className={globalStyles.stack} id="stack">
