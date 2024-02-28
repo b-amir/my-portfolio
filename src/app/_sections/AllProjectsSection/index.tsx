@@ -5,22 +5,15 @@ import { Project } from "@/_types/Project";
 import globalStyles from "@/_styles/page.module.scss";
 import { OtherStack } from "./OtherStack";
 import { iconMapping } from "./iconMapping";
+import { ProjectsGrid } from "./ProjectsGrid";
 import { SectionHeader } from "@/_components/SectionHeader";
 import { CurrentSkills } from "./CurrentSkills";
-import { CardsSkeletons } from "@/_components/Loading/CardsSkeleton";
 import { useEffect, useState } from "react";
 import { MdWavingHand as WavingIcon } from "react-icons/md";
 import { BsFillGridFill as GridIcon } from "react-icons/bs";
 
 const Smile3dObject = dynamic(() =>
   import("../../_components/Smile3dObject").then((mod) => mod.Smile3dObject)
-);
-
-const ProjectsGrid = dynamic(
-  () => import("./ProjectsGrid").then((mod) => mod.ProjectsGrid),
-  {
-    loading: () => <CardsSkeletons />
-  }
 );
 
 export interface SkillIcons {

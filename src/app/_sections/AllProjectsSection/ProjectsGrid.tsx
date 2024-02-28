@@ -8,6 +8,7 @@ import { Project } from "@/_types/Project";
 import { SkillTag } from "@/_types/SkillTag";
 import globalStyles from "@/_styles/page.module.scss";
 import { ProjectCard } from "./ProjectCard";
+import { TagsSkeleton } from "@/_components/Loading/TagsSkeleton";
 import { getSkillIcon } from ".";
 import { useEffect, useState } from "react";
 import { howManyTags, howManyTagsShowing } from "@/_utils/tagsCount";
@@ -20,6 +21,7 @@ export function ProjectsGrid({
 }) {
   const [projects, setProjects] = useState<Project[]>([]);
   const [skills, setSkills] = useState<SkillTag[]>([]);
+  const skillsMap = new Map(skills.map((skill) => [skill.id, skill]));
 
   useEffect(() => {
     const fetchTags = async () => {
@@ -63,26 +65,33 @@ export function ProjectsGrid({
             title={project.title}
             //@ts-ignore
             featured={project.featured}
-            //@ts-ignore
-            tags={JSON.parse(project.tagsShort).map((tag) => {
-              const skillName =
-                skills.find((skill) => skill.id === tag)?.name || "";
-              const skillColor =
-                skills.find((skill) => skill.id === tag)?.color || "";
-              return (
-                <Tag
-                  key={tag}
-                  name={skillName}
-                  id={tag}
-                  color={skillColor}
-                  icon={
-                    <div className={globalStyles.icon}>{getSkillIcon(tag)}</div>
-                  }
-                  selectedTags={[]}
-                  setSelectedTags={() => null}
-                />
-              );
-            })}
+            tags={
+              skills.length === 0 ? (
+                <TagsSkeleton number={3} />
+              ) : (
+                //@ts-ignore
+                JSON.parse(project.tagsShort).map((tag) => {
+                  const skill = skillsMap.get(tag);
+                  const skillName = skill?.name || "...";
+                  const skillColor = skill?.color || "";
+                  return (
+                    <Tag
+                      key={tag}
+                      name={skillName}
+                      id={tag}
+                      color={skillColor}
+                      icon={
+                        <div className={globalStyles.icon}>
+                          {getSkillIcon(tag)}
+                        </div>
+                      }
+                      selectedTags={[]}
+                      setSelectedTags={() => null}
+                    />
+                  );
+                })
+              )
+            }
             howManyMoreTags={howManyTags(project) - howManyTagsShowing(project)}
             //@ts-ignore
             description={JSON.parse(project.description)}

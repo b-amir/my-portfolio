@@ -1,10 +1,10 @@
 "use client";
 import globalStyles from "@/_styles/page.module.scss";
 
-export const TagsSkeleton: React.FC = () => {
+export const TagsSkeleton = ({ number }: { number: number }) => {
   return (
     <>
-      {[...Array(4)].map((_, index) => {
+      {[...Array(number)].map((_, index) => {
         const randomWidth = Math.floor(Math.random() * 60) + 40;
         return (
           <div
