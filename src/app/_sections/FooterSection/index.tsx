@@ -26,7 +26,10 @@ export const FooterSection: React.FC = () => (
           </p>
         </div>
         <div className={styles.footerLinks}>
-          <a className={styles.footerResume}>
+          <a
+            href="https://b-amir.storage.iran.liara.space/resume/Amir_Bazgir_Resume.pdf"
+            target="_blank"
+            className={styles.footerResume}>
             {" "}
             <DownloadIcon /> Resume.pdf{" "}
           </a>

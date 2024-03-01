@@ -68,7 +68,10 @@ export const HeroSection: React.FC = () => {
             {/* Buttons */}
             <div className={styles.heroButtons}>
               {" "}
-              <a href="#resume" className={styles.heroResume}>
+              <a
+                href="https://b-amir.storage.iran.liara.space/resume/Amir_Bazgir_Resume.pdf"
+                target="_blank"
+                className={styles.heroResume}>
                 <DownloadIcon />
                 Resume.pdf
               </a>
