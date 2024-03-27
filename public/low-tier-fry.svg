@@ -25,9 +25,9 @@
       }
   }
   #bracket, #fry {
-      animation:  starting 2s ease 0s 1 normal none running,
-                  pulsing 1s ease 2s 5 normal none running, 
-                  ending 2s ease-out 7s 1 normal none running;
+      animation:  starting 1s ease 0s 1 normal none running,
+                  pulsing 1s ease 1s 2 normal none running, 
+                  ending 1s ease-out 3s 1 normal none running;
   }
   #lines {
       animation:  starting 2s ease-in 0s 1 normal none running 
