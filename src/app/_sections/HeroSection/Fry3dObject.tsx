@@ -1,11 +1,12 @@
 "use client";
 import Image from "next/image";
 import styles from "./index.module.scss";
+import { FiBox } from "react-icons/fi";
 import { useDebounce } from "@/_hooks/useDebounce";
 import { useGpuDetect } from "@/_hooks/useGpuDetect";
 import { FaCheckCircle } from "react-icons/fa";
+import { useLocalStorage } from "@/_hooks/useLocalStorage";
 import { Suspense, useEffect, useRef, useState, lazy } from "react";
-import { FiBox } from "react-icons/fi";
 
 const Spline = lazy(() => import("@splinetool/react-spline"));
 
@@ -14,7 +15,10 @@ type deviceTiers = "low" | "mobile" | "high" | "loading";
 export function Fry3dObject() {
   const [deviceTier, setDeviceTier] = useGpuDetect();
   const [isLoading, setIsLoading] = useState(true);
-  const [consentGiven, setConsentGiven] = useState("pending");
+  const [consentGiven, setConsentGiven] = useLocalStorage<string>(
+    "consentTo3dObject",
+    "pending"
+  );
 
   const visibility = useDebounce(isLoading ? "hidden" : "visible", 200);
 
@@ -59,12 +63,12 @@ export function Fry3dObject() {
               <button
                 onClick={() => {
                   {
-                    setConsentGiven("no");
+                    setConsentGiven("pending");
                     setDeviceTier("low");
                   }
                 }}
               >
-                No
+                Not now
               </button>
             </div>
           </div>

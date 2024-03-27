@@ -149,19 +149,22 @@
 
 @keyframes appearingDialog {
   from {
-    scale: 0.95;
-    transform: translate(-48%, -48%);
+    // scale: 0.95;
+    transform: translate(-50%, -45%);
     opacity: 0;
+    box-shadow: none;
   }
   to {
-    scale: 1;
+    // scale: 1;
     transform: translate(-50%, -50%);
     opacity: 1;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+      rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px;
   }
 }
 
 .consentDialog {
-  animation: appearingDialog 0.2s 0.5s ease-in both;
+  animation: appearingDialog 0.2s 0.5s cubic-bezier(1, 0.02, 0, 0.51) both;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -187,6 +190,11 @@
   color: rgb(0 0 0 / 85%);
   transition: all 0.3s ease-in-out;
 
+  &:hover {
+    background-color: rgb(163 146 146 / 37%);
+    border: 1px solid rgb(0 0 0 / 67%);
+  }
+
   .consentTitle {
     font-size: 1rem;
     font-weight: 600;
@@ -208,10 +216,12 @@
 
     button {
       @extend .buttonCta;
-      padding: 7px 24px 5px;
-      background: rgb(80 68 68 / 34%);
-      border: 1px solid rgb(0 0 0 / 14%);
+      padding: 7px 14px 5px;
+      background: rgba(72, 72, 72, 0.28);
+      border: 1px solid rgba(0, 0, 0, 0.33);
       box-shadow: none;
+      font-weight: 500;
+      font-size: 0.9rem;
 
       &:hover {
         background-color: rgba(9, 9, 9, 0.366);
