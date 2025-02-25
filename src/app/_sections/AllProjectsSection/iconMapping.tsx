@@ -39,7 +39,11 @@ import {
   SiElectron,
   SiPwa,
   SiXstate,
-  SiSqlite
+  SiSqlite,
+  SiFormik,
+  SiAxios,
+  SiRust,
+  SiLinux
 } from "react-icons/si";
 import { SkillIcons } from ".";
 
@@ -58,6 +62,9 @@ export const iconMapping: SkillIcons = {
   reactquery: <SiReactquery />,
   redux: <SiRedux />,
   zod: <SiZod />,
+  formik: <SiFormik />,
+  axios: <SiAxios />,
+  linux: <SiLinux />,
   testinglibrary: <SiTestinglibrary />,
   vitest: <SiVitest />,
   postgresql: <SiPostgresql />,
@@ -68,6 +75,7 @@ export const iconMapping: SkillIcons = {
   githubactions: <SiGithubactions />,
   githubpages: <SiGithub />,
   reactrouter: <SiReactrouter />,
+  rust: <SiRust />,
   vite: <SiVite />,
   strapi: <SiStrapi />,
   sass: <FaSass />,

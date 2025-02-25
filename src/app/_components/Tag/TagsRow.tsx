@@ -37,7 +37,7 @@ export function TagsRow({
       <h3 className={globalStyles.tagsRowTitle}>{title}</h3>
       <div className={globalStyles.tagsRowTags}>
         {skills.length === 0 ? (
-          <TagsSkeleton number={4} />
+          <TagsSkeleton number={6} />
         ) : (
           listOfTags.map((tag) => {
             const skill = skillsMap.get(tag);

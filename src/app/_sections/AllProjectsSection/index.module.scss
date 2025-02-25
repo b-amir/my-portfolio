@@ -210,14 +210,15 @@
   border-radius: $large-br;
   z-index: 10;
   color: #fff;
-  transition: $whoop;
+  transition: all 0.3s ease-out;
   cursor: pointer;
+  position: relative;
 
   &:hover {
-    background-color: $accent-color;
-    padding: calc(1rem + 4px) calc(2rem + 4px);
-    border: 0px solid #f4cdbb;
-    color: #fff;
+    background-color: darken($accent-color, 5%);
+    transform: scale(1.02);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border-color: transparent;
   }
 }
 
@@ -246,7 +247,7 @@
 
   h3 {
     font-size: large;
-    font-weight: 500;
+    font-weight: 700;
     font-family: var(--font-title);
     margin-bottom: 0.8rem;
     color: #444b5b;
@@ -296,7 +297,7 @@
 
   h3 {
     font-size: large;
-    font-weight: 500;
+    font-weight: 700;
     font-family: var(--font-title);
     margin-bottom: 0.8rem;
     color: #444b5b;
@@ -485,10 +486,10 @@
 }
 
 .howManyMoreTags {
-  font-size: 0.6rem;
-  font-weight: 300;
-  border-radius: $small-br;
-  padding: 0.3rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+  border-radius: $base-br;
+  padding: 0.3rem 0.5rem;
   color: #383838;
   background: #c4c4c436;
   border: 1px solid transparent;

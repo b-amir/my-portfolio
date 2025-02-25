@@ -1,6 +1,25 @@
 @import "@/_styles/variables.module.scss";
 @import "@/_styles/media-queries";
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.parallax {
+  will-change: transform;
+  transform: translateZ(0);
+  transition: transform 0.1s ease-out;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
 .hero {
   @extend .twoRows;
   position: relative;
@@ -68,6 +87,9 @@
   -webkit-tap-highlight-color: transparent;
 
   .heroTexts {
+    &.parallax {
+      animation: fadeIn 0.8s ease-out forwards;
+    }
     display: flex;
     align-self: auto;
     order: 0;
@@ -164,6 +186,9 @@
 }
 
 .consentDialog {
+  @-moz-document url-prefix() {
+    background-color: rgb(236, 154, 130); 
+  };
   animation: appearingDialog 0.2s 0.5s cubic-bezier(1, 0.02, 0, 0.51) both;
   display: flex;
   flex-direction: column;
@@ -191,6 +216,9 @@
   transition: all 0.3s ease-in-out;
 
   &:hover {
+    @supports (-moz-appearance:none) {
+      background-color: rgb(230, 158, 138); 
+    }
     background-color: rgb(163 146 146 / 37%);
     border: 1px solid rgb(0 0 0 / 67%);
   }
@@ -216,7 +244,7 @@
 
     button {
       @extend .buttonCta;
-      padding: 7px 14px 5px;
+      padding: 6px 14px 7px 14px;
       background: rgba(72, 72, 72, 0.28);
       border: 1px solid rgba(0, 0, 0, 0.33);
       box-shadow: none;
@@ -243,7 +271,23 @@
   }
 }
 
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 .fry {
+  &.parallax {
+    animation: fadeIn 1s ease-out forwards;
+    animation-delay: 0.2s;
+  }
   display: flex;
   flex-direction: row;
   position: sticky;
@@ -255,10 +299,19 @@
   width: 500px !important;
   height: 400px !important;
   max-width: 35% !important;
+  animation: fadeInOut 3s ease-in-out infinite;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
 }
 
 .appear {
-  animation: appear 1.5s 0.5s ease-in both;
+  animation: appear 1.5s ease-in both;
+  position: relative;
+  z-index: 2;
 }
 
 .grid {
@@ -297,8 +350,12 @@
   animation: slideDown 0.5s ease-out forwards;
 }
 .contact {
+  @-moz-document url-prefix() {
+    background-color: rgb(236, 154, 130); 
+  };
   @extend .section;
-  animation: slideUp 0.5s ease-out forwards;
+  will-change: transform;
+  animation: slideUp 0.5s ease-out both 0.8s;
   backdrop-filter: blur(20px);
   background: rgb(182 182 182 / 38%);
   color: rgba(19, 10, 0, 0.7882352941);
@@ -478,6 +535,9 @@
   }
 
   .mobileContactMenuTrigger {
+    @-moz-document url-prefix() {
+      background-color: rgb(236, 154, 130); 
+    };
     animation: slideUp 0.5s ease-out forwards;
     cursor: pointer;
     user-select: none;

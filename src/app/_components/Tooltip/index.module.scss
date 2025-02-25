@@ -16,6 +16,9 @@
 }
 
 .tooltipBubbleBase {
+  @-moz-document url-prefix() {
+    background-color: rgb(236, 154, 130); 
+  };
   display: flex;
   position: absolute;
   flex-direction: column;

@@ -65,7 +65,7 @@
 
 .aboutMeTextBlock {
   display: flex;
-  padding: 1rem;
+  padding: 1.1rem;
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: flex-start;
@@ -97,6 +97,7 @@
 }
 
 .aboutMeParagraph {
+
   font-size: 1rem;
   font-family: var(--font-body);
   margin: 8px 0 10px 20px;
@@ -106,6 +107,7 @@
 }
 
 .seeMyStack {
+ 
   @extend .buttonLink;
   color: #383838;
   display: flex;

@@ -32,8 +32,11 @@ export function Fry3dObject() {
 
   function onLoad(splineApp: any) {
     fryObj.current = splineApp;
-    setIsLoading(false);
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 100);
   }
+
   function OnError() {
     setDeviceTier("low");
   }
@@ -75,15 +78,24 @@ export function Fry3dObject() {
         </>
       )}
       {deviceTier === "high" && consentGiven === "yes" && (
-        <Suspense fallback={isLoading ? <LowTierImage /> : null}>
-          <Spline
-            onLoad={onLoad}
-            onError={OnError}
-            style={{ visibility }}
-            scene="/fry.splinecode"
-            className={`${isLoading ? "" : styles.appear}`}
-          />
-        </Suspense>
+        <>
+          {/* Always render the fallback image initially */}
+          {isLoading && <LowTierImage />}
+          <Suspense fallback={<LowTierImage />}>
+            <Spline
+              onLoad={onLoad}
+              onError={OnError}
+              style={{
+                visibility,
+                position: "absolute", 
+                top: 0,
+                left: 0,
+              }}
+              scene="/fry.splinecode"
+              className={`${isLoading ? "" : styles.appear}`}
+            />
+          </Suspense>
+        </>
       )}
       {deviceTier === "loading" && <LowTierImage />}
     </>

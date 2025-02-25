@@ -1,6 +1,6 @@
 "use client";
 import styles from "./index.module.scss";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { useWindowSize } from "@/_hooks/useWindowSize";
 import { ContactCardItems } from "./ContactCardItems";
 import { GrContactInfo as ContactInfoIcon } from "react-icons/gr";
@@ -9,22 +9,22 @@ export const ContactGrid: React.FC = () => {
   const [showContactLinksForMobile, setShowContactLinksForMobile] =
     useState(false);
 
-  const { width, height } = useWindowSize();
-  let isMobile = false;
+  const { width } = useWindowSize();
 
-  if (width && height) {
-    const aspectRatio = width / height;
-    isMobile = aspectRatio < 0.6;
-  }
+  const MOBILE_BREAKPOINT = 700;
+  const isMobile = width !== undefined && width <= MOBILE_BREAKPOINT;
 
-  // prevent the unnecessary flash of data before there's information about the window size:
-  if (width === undefined || height === undefined) {
-    return null;
+  const handleOpenContactLinks = useCallback(() => {
+    setShowContactLinksForMobile(true);
+  }, []);
+
+  if (width === undefined) {
+    return null; 
   }
 
   return (
     <>
-      {!isMobile && !showContactLinksForMobile && (
+      {!isMobile && (
         <ContactCardItems
           setShowContactLinksForMobile={setShowContactLinksForMobile}
         />
@@ -32,7 +32,14 @@ export const ContactGrid: React.FC = () => {
       {isMobile && !showContactLinksForMobile && (
         <div
           className={styles.mobileContactMenuTrigger}
-          onClick={() => setShowContactLinksForMobile(true)}>
+          onClick={() => setShowContactLinksForMobile(true)}
+          role="button"
+          tabIndex={0}
+          aria-label="Open contact links"
+          onKeyDown={(e) =>
+            e.key === "Enter" && setShowContactLinksForMobile(true)
+          }
+        >
           <span>
             <ContactInfoIcon />
           </span>
