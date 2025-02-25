@@ -29,20 +29,22 @@ export const HeroSection: React.FC = () => {
   const isSmallScreen =
     typeof window === "undefined" ? false : (width ?? 0) < 1120;
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const elements = document.querySelectorAll(`.${styles.parallax}`);
-      elements.forEach((element) => {
-        const speed = parseFloat(element.getAttribute("data-speed") || "0");
-        const offset = window.pageYOffset * speed;
-        element.style.transform = `translateY(${offset}px)`;
-        element.style.opacity = `${1 - window.pageYOffset / 1000}`;
-      });
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    useEffect(() => {
+      const handleScroll = () => {
+        const elements = document.querySelectorAll(`.${styles.parallax}`);
+        elements.forEach((element) => {
+          const htmlElement = element as HTMLElement;
+          const speed = parseFloat(element.getAttribute("data-speed") || "0");
+          const offset = window.pageYOffset * speed;
+          htmlElement.style.transform = `translateY(${offset}px)`;
+          htmlElement.style.opacity = `${1 - window.pageYOffset / 1000}`;
+        });
+      };
+    
+      window.addEventListener("scroll", handleScroll);
+      return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+    
 
   return (
     <div className={`${styles.hero}`} id="hero">
