@@ -13,24 +13,38 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  transition: box-shadow $base-pace ease-in-out;
-  box-shadow: $base-shadow;
-
+  transition: all 0.15s cubic-bezier(0.2, 0.8, 0.2, 1);
+  box-shadow: 0 2px 0 #2222222e, 0 3px 4px rgba(0, 0, 0, 0.3);
+  position: relative;
+  top: 0;
+  
   &:hover {
     background-color: #4d4a46 !important;
     color: rgba(255, 255, 255, 0.82) !important;
     border: 1px solid #4d4a46 !important;
-    box-shadow: $small-shadow;
-
+    transform: translateY(1px) !important;
+    box-shadow: 0 0px 0 #222, 0 1px 2px rgba(0, 0, 0, 0.3);
+    
     .tagText {
-      color: white;
+      color: white !important;
     }
+  }
+  
+  &:active {
+    transform: translateY(2px);
+    box-shadow: 0 0px 0 #222, 0 1px 2px rgba(0, 0, 0, 0.4);
+    transition: all 0.05s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
 
   .tagText {
     color: black;
     font-weight: 500;
     font-size: smaller;
+    transition: color 0.15s ease;
+  }
+  
+  .tagIcon {
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   }
 }
 
@@ -39,4 +53,25 @@
   filter: brightness(1) !important;
   background-color: #fff !important;
   opacity: 1 !important;
+  top: 1px;
+  box-shadow: 0 1px 0 #222, 0 2px 2px rgba(0, 0, 0, 0.3);
+  
+  &:hover {
+    transform: translateY(1px);
+    box-shadow: 0 0px 0 #222, 0 1px 2px rgba(0, 0, 0, 0.3);
+    
+    .tagText {
+      color: white !important;
+    }
+  }
+}
+
+.animating {
+  animation: press 0.3s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+@keyframes press {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(3px); box-shadow: 0 0px 0 #222, 0 1px 1px rgba(0, 0, 0, 0.4); }
+  100% { transform: translateY(0); }
 }

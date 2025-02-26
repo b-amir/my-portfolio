@@ -155,14 +155,6 @@
     margin-bottom: 0;
   }
 
-  h3 {
-    font-size: smaller !important;
-    color: #444b5b !important;
-    font-weight: 500 !important;
-    margin-right: 0.5rem !important;
-    margin-bottom: 0.5rem !important;
-    font-size: small !important;
-  }
   div {
     display: flex;
     gap: 0.5rem;
@@ -171,6 +163,12 @@
     justify-content: flex-start;
     align-items: center;
   }
+}
+.tagsRowTitle {
+  font-size: small !important;
+  font-weight: 600 !important;
+  color: #444b5b !important;
+  margin-bottom: 0.5rem !important;
 }
 .generalHighlight {
   text-decoration: underline;

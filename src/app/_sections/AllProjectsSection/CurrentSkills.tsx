@@ -2,6 +2,7 @@
 import styles from "./index.module.scss";
 import { TagsRow } from "@/_components/Tag/TagsRow";
 import { Project } from "@/_types/Project";
+import { useEffect, useState } from "react";
 import { TbClearAll as ClearIcon } from "react-icons/tb";
 
 interface ICurrentSkillsProps {
@@ -12,27 +13,32 @@ interface ICurrentSkillsProps {
 export function CurrentSkills({
   setSelectedTags,
   selectedProjects,
-  selectedTags
+  selectedTags,
 }: ICurrentSkillsProps) {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    if (selectedTags.length > 0) {
+      setIsVisible(true);
+    } else {
+      const timer = setTimeout(() => {
+        setIsVisible(false);
+      }, 300);
+      return () => clearTimeout(timer);
+    }
+  }, [selectedTags]);
+
+  const handleClearFilters = () => {
+    setIsVisible(false);
+    setTimeout(() => {
+      setSelectedTags([]);
+    }, 300);
+  };
+
   return (
     <div className={styles.currentSkills}>
-      <h3>
-        My current skills
-        {selectedTags.length > 0 ? (
-          <span className={styles.selectedProjectsCount}>
-            | {selectedProjects.length}
-            {selectedProjects.length < 2 ? " project " : " projects "}
-            matched
-            <button onClick={() => setSelectedTags([])}>
-              <ClearIcon />
-              clear
-            </button>
-          </span>
-        ) : (
-          ""
-        )}
-      </h3>
-      <p>click on a skill to hilight projects that use it.</p>
+      <h3>My current skills</h3>
+      <p>click on a skill to highlight projects that use it.</p>
 
       <TagsRow
         interactive
@@ -49,7 +55,7 @@ export function CurrentSkills({
           "tailwind",
           "sass",
           "themeui",
-          "pwa"
+          "pwa",
         ]}
       />
       <TagsRow
@@ -73,7 +79,7 @@ export function CurrentSkills({
           "docker",
           "vercel",
           "githubpages",
-          "netlify"
+          "netlify",
         ]}
       />
       <TagsRow
@@ -93,9 +99,25 @@ export function CurrentSkills({
           "electron",
           "editorjs",
           "html2canvas",
-          "xstate"
+          "xstate",
         ]}
       />
+
+      {(selectedTags.length > 0 || isVisible) && (
+        <span
+          className={`${styles.selectedProjectsCount} ${
+            isVisible ? styles.fadeIn : styles.fadeOut
+          }`}
+        >
+          {selectedProjects.length}
+          {selectedProjects.length < 2 ? " project " : " projects "}
+          matched
+          <button onClick={handleClearFilters}>
+            <ClearIcon />
+            clear filters
+          </button>
+        </span>
+      )}
     </div>
   );
 }

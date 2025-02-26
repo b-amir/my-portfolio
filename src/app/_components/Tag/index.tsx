@@ -31,18 +31,20 @@ export const Tag = ({
     selectedTags && setSelected(selectedTags.includes(id));
   }, [selectedTags, id]);
 
-  const handleTagClick = () => {
-    if (interactive && setSelectedTags) {
-      setAnimating(true);
+const handleTagClick = () => {
+  if (interactive && setSelectedTags) {
+    setAnimating(true);
+    
+    setTimeout(() => {
+      setSelectedTags((prev) =>
+        prev.includes(id) ? prev.filter((tag) => tag !== id) : [...prev, id]
+      );
+      
+      setTimeout(() => setAnimating(false), 300);
+    }, 50);
+  }
+};
 
-      setTimeout(() => {
-        setSelectedTags((prev) =>
-          prev.includes(id) ? prev.filter((tag) => tag !== id) : [...prev, id]
-        );
-        setTimeout(() => setAnimating(false), 300);
-      }, 50);
-    }
-  };
 
   return (
     <span

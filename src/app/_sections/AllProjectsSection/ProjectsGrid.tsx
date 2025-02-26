@@ -3,7 +3,6 @@ import Link from "next/link";
 import Image from "next/image";
 import styles from "./index.module.scss";
 import { Tag } from "@/_components/Tag";
-import { HrTitle } from "./HrTitle";
 import { Project } from "@/_types/Project";
 import { SkillTag } from "@/_types/SkillTag";
 import globalStyles from "@/_styles/page.module.scss";
@@ -15,36 +14,105 @@ import { howManyTags, howManyTagsShowing } from "@/_utils/tagsCount";
 import { HiOutlineExternalLink as LinkIcon } from "react-icons/hi";
 
 export function ProjectsGrid({
-  selectedProjects
+  selectedProjects,
 }: {
   selectedProjects: Project[];
 }) {
   const [projects, setProjects] = useState<Project[]>([]);
   const [skills, setSkills] = useState<SkillTag[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
   const skillsMap = new Map(skills.map((skill) => [skill.id, skill]));
 
   useEffect(() => {
     const fetchTags = async () => {
-      const response = await fetch("/api/skillTags");
-      const data = await response.json();
-      setSkills(data);
-      return data;
+      try {
+        const response = await fetch("/api/skillTags");
+        const data = await response.json();
+        setSkills(data);
+      } catch (error) {
+        console.error("Error fetching skill tags:", error);
+      }
     };
     fetchTags();
   }, []);
 
   useEffect(() => {
     const fetchProjects = async () => {
-      const response = await fetch("/api/projects");
-      const data = await response.json();
-      setProjects(data);
-      return data;
+      setIsLoading(true);
+      try {
+        const response = await fetch("/api/projects");
+        const data = await response.json();
+        setProjects(data);
+      } catch (error) {
+        console.error("Error fetching projects:", error);
+      } finally {
+        setIsLoading(false);
+      }
     };
     fetchProjects();
   }, []);
 
   const fullProjects = projects.filter((project) => project.fullProject);
   const smallProjects = projects.filter((project) => !project.fullProject);
+
+  const ProjectCardSkeleton = () => (
+    <div className={`${styles.projectCard} ${styles.skeleton}`}>
+      <div className={styles.imageSkeletonContainer}>
+        <div className={styles.imageSkeleton}></div>
+      </div>
+      <div className={styles.contentSkeleton}>
+        <div className={styles.titleSkeleton}></div>
+        <div className={styles.tagsSkeleton}>
+          <TagsSkeleton number={1} />
+        </div>
+        <div className={styles.descriptionSkeleton}>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div className={styles.linksSkeleton}>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    </div>
+  );
+
+  const SmallProjectSkeleton = () => (
+    <div className={styles.smallProject}>
+      <div className={styles.smallImageSkeleton}></div>
+      <div className={styles.smallProjectDetails}>
+        <div className={styles.smallTitleSkeleton}></div>
+        <div className={styles.smallDescriptionSkeleton}>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    </div>
+  );
+
+  if (isLoading) {
+    return (
+      <>
+        <div className={styles.projectsGrid}>
+          {Array(6)
+            .fill(0)
+            .map((_, index) => (
+              <ProjectCardSkeleton key={index} />
+            ))}
+        </div>
+        <div className={styles.smallProjectsGrid}>
+          {Array(3)
+            .fill(0)
+            .map((_, index) => (
+              <SmallProjectSkeleton key={index} />
+            ))}
+        </div>
+      </>
+    );
+  }
 
   return (
     <>
@@ -105,7 +173,6 @@ export function ProjectsGrid({
       </div>
 
       <div className={styles.smallProjectsGrid}>
-        <HrTitle title="Smaller Projects" />
         {smallProjects.map((project) => (
           <div
             key={project.id}
@@ -115,7 +182,8 @@ export function ProjectsGrid({
               )
                 ? styles.smallProjectSelected
                 : styles.smallProject
-            }`}>
+            }`}
+          >
             <Image
               src={project.image}
               width={64}
@@ -129,16 +197,20 @@ export function ProjectsGrid({
                 <Link
                   href={project.githubLink}
                   target="_blank"
-                  className={styles.githubSourceButton}>
+                  className={styles.githubSourceButton}
+                >
                   GitHub <LinkIcon />
                 </Link>
 
-                <Link
-                  href={project.demoLink}
-                  target="_blank"
-                  className={styles.demoButton}>
-                  Demo <LinkIcon />
-                </Link>
+                {project.demoLink.length > 3 && (
+                  <Link
+                    href={project.demoLink}
+                    target="_blank"
+                    className={styles.demoButton}
+                  >
+                    Demo <LinkIcon />
+                  </Link>
+                )}
               </div>
               <p>
                 {
