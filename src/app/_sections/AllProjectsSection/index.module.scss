@@ -30,7 +30,7 @@
   justify-content: space-between;
   background: #464e6226;
   margin-top: 3rem;
-  
+
   @keyframes fadeInUp {
     to {
       opacity: 1;
@@ -57,7 +57,7 @@
     gap: 0.3rem;
     transition: all 0.2s ease-in-out;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    
+
     svg {
       transition: transform 0.2s ease;
     }
@@ -68,14 +68,13 @@
       transform: translateY(-1px);
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
     }
-    
+
     &:active {
       transform: translateY(1px);
       box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
     }
   }
 }
-
 
 .allProjectsGrid {
   display: grid;
@@ -92,8 +91,7 @@
   border-radius: 17px 17px 0 0;
   margin-bottom: -2px;
   border: 1px solid #9296b973;
-  box-shadow:
-    0 -2px 3px 0px rgba(0, 0, 0, 0.0784313725) inset,
+  box-shadow: 0 -2px 3px 0px rgba(0, 0, 0, 0.0784313725) inset,
     0px -3px 3px 0px rgb(0 0 0 / 4%);
 }
 
@@ -175,11 +173,15 @@
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  width: 100%;
+  overflow-wrap: break-word;
+  word-break: break-word;
 
   p {
     font-size: 0.9rem;
     color: rgba(0, 0, 0, 0.6784313725);
     line-height: 1.7;
+    max-width: 100%;
   }
 }
 
@@ -213,7 +215,11 @@
   height: 750px;
   background: rgb(255, 255, 255);
   margin-left: -6rem;
-  background: linear-gradient(0deg, rgb(255, 255, 255) 0%, rgba(228, 222, 212, 0) 100%);
+  background: linear-gradient(
+    0deg,
+    rgb(255, 255, 255) 0%,
+    rgba(228, 222, 212, 0) 100%
+  );
 
   p {
     font-size: 1.2rem;
@@ -249,7 +255,7 @@
   &:hover {
     background-color: darken($accent-color, 5%);
     transform: scale(1.02);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     border-color: transparent;
   }
 }
@@ -369,12 +375,8 @@
   box-shadow: $small-shadow;
   backdrop-filter: blur(4px);
   overflow: clip;
-  transition:
-    background 200ms,
-    box-shadow 300ms ease-in-out,
-    transform 300ms,
-    border-radius 200ms,
-    border 200ms;
+  transition: background 200ms, box-shadow 300ms ease-in-out, transform 300ms,
+    border-radius 200ms, border 200ms;
 
   &:hover {
     background: white;
@@ -601,6 +603,33 @@
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(3, 1fr);
   }
+  .smallProject,
+  .smallProjectSelected {
+    flex-direction: column;
+    padding: 1.5rem;
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+
+  .smallProjectDetails {
+    width: 100%;
+  }
+
+  .smallProjectTitlebar {
+    flex-direction: column;
+    gap: 8px;
+
+    p {
+      margin-bottom: 4px;
+    }
+
+    a {
+      align-self: flex-start;
+    }
+  }
 
   .keepInTouchSection {
     width: unset !important;
@@ -639,6 +668,18 @@
   .keepInTouchSection {
     width: unset !important;
     margin: unset !important;
+  }
+  .smallProjectTitlebar {
+    flex-direction: column;
+    gap: 8px;
+
+    p {
+      margin-bottom: 4px;
+    }
+
+    a {
+      align-self: flex-start;
+    }
   }
 }
 
@@ -686,17 +727,25 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  
+
   div {
     background-color: #e0e0e0;
     height: 16px;
     margin-bottom: 12px;
     border-radius: 4px;
-    
-    &:nth-child(1) { width: 100%; }
-    &:nth-child(2) { width: 90%; }
-    &:nth-child(3) { width: 95%; }
-    &:nth-child(4) { width: 80%; }
+
+    &:nth-child(1) {
+      width: 100%;
+    }
+    &:nth-child(2) {
+      width: 90%;
+    }
+    &:nth-child(3) {
+      width: 95%;
+    }
+    &:nth-child(4) {
+      width: 80%;
+    }
   }
 }
 
@@ -705,7 +754,7 @@
   gap: 12px;
   margin-top: auto;
   padding-bottom: 20px;
-  
+
   div {
     background-color: #e0e0e0;
     height: 36px;
@@ -739,10 +788,31 @@
     height: 14px;
     margin-bottom: 8px;
     border-radius: 4px;
-    
-    &:nth-child(1) { width: 100%; }
-    &:nth-child(2) { width: 95%; }
-    &:nth-child(3) { width: 80%; }
+
+    &:nth-child(1) {
+      width: 100%;
+    }
+    &:nth-child(2) {
+      width: 95%;
+    }
+    &:nth-child(3) {
+      width: 80%;
+    }
+  }
+}
+
+@media (max-width: 1360px) {
+  .smallProjectTitlebar {
+    flex-direction: column;
+    gap: 8px;
+
+    p {
+      margin-bottom: 4px;
+    }
+
+    a {
+      align-self: flex-start;
+    }
   }
 }
 
