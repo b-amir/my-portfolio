@@ -5,6 +5,7 @@ import globalStyles from "@/_styles/page.module.scss";
 import { getSkillIcon } from "@/_sections/AllProjectsSection";
 import { useEffect, useState } from "react";
 import { TagsSkeleton } from "../Loading/TagsSkeleton";
+import { useSkillTags } from "../../../app_context/SkillTagsContext";
 
 interface ITagsRowProps {
   title?: string;
@@ -20,17 +21,13 @@ export function TagsRow({
   selectedTags,
   interactive = false
 }: ITagsRowProps) {
-  const [skills, setSkills] = useState<SkillTag[]>([]);
+
+
+  const { skills, loading } = useSkillTags();
   const skillsMap = new Map(skills.map((skill) => [skill.id, skill]));
 
-  useEffect(() => {
-    const fetchTags = async () => {
-      const response = await fetch("/api/skillTags");
-      const data = await response.json();
-      setSkills(data);
-    };
-    fetchTags();
-  }, []);
+
+
 
   return (
     <div className={globalStyles.tagsRow}>

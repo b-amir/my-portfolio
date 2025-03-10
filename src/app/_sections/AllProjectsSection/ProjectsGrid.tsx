@@ -12,48 +12,18 @@ import { getSkillIcon } from ".";
 import { useEffect, useState } from "react";
 import { howManyTags, howManyTagsShowing } from "@/_utils/tagsCount";
 import { HiOutlineExternalLink as LinkIcon } from "react-icons/hi";
+import { useSkillTags } from "../../../app_context/SkillTagsContext";
+import { useProjects } from "../../../app_context/ProjectsContext";
 
 export function ProjectsGrid({
   selectedProjects,
 }: {
   selectedProjects: Project[];
 }) {
-  const [projects, setProjects] = useState<Project[]>([]);
-  const [skills, setSkills] = useState<SkillTag[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
+
+  const { projects, fullProjects, smallProjects, loading: projectsLoading } = useProjects();
+  const { skills, loading: skillsLoading } = useSkillTags();
   const skillsMap = new Map(skills.map((skill) => [skill.id, skill]));
-
-  useEffect(() => {
-    const fetchTags = async () => {
-      try {
-        const response = await fetch("/api/skillTags");
-        const data = await response.json();
-        setSkills(data);
-      } catch (error) {
-        console.error("Error fetching skill tags:", error);
-      }
-    };
-    fetchTags();
-  }, []);
-
-  useEffect(() => {
-    const fetchProjects = async () => {
-      setIsLoading(true);
-      try {
-        const response = await fetch("/api/projects");
-        const data = await response.json();
-        setProjects(data);
-      } catch (error) {
-        console.error("Error fetching projects:", error);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-    fetchProjects();
-  }, []);
-
-  const fullProjects = projects.filter((project) => project.fullProject);
-  const smallProjects = projects.filter((project) => !project.fullProject);
 
   const ProjectCardSkeleton = () => (
     <div className={`${styles.projectCard} ${styles.skeleton}`}>
@@ -93,7 +63,7 @@ export function ProjectsGrid({
     </div>
   );
 
-  if (isLoading) {
+  if (projectsLoading || skillsLoading) {
     return (
       <>
         <div className={styles.projectsGrid}>

@@ -11,6 +11,7 @@ import { CurrentSkills } from "./CurrentSkills";
 import { useEffect, useState } from "react";
 import { MdWavingHand as WavingIcon } from "react-icons/md";
 import { BsFillGridFill as GridIcon } from "react-icons/bs";
+import { useProjects } from "../../../app_context/ProjectsContext";
 
 const Smile3dObject = dynamic(() =>
   import("../../_components/Smile3dObject").then((mod) => mod.Smile3dObject)
@@ -23,19 +24,11 @@ export interface SkillIcons {
 export const getSkillIcon = (tagName: string) => iconMapping[tagName] || null;
 
 export const AllProjectsSection: React.FC = () => {
+  const { projects, fullProjects, smallProjects, loading: projectsLoading } = useProjects();
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [selectedProjects, setSelectedProjects] = useState<Project[]>([]);
-  const [projects, setProjects] = useState<Project[]>([]);
 
-  useEffect(() => {
-    const fetchProjects = async () => {
-      const response = await fetch("/api/projects");
-      const data = await response.json();
-      setProjects(data);
-      return data;
-    };
-    fetchProjects();
-  }, []);
+
 
   useEffect(() => {
     const getProjectsByTags = (selectedTags: string[]) => {

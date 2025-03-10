@@ -2,6 +2,8 @@ import "@/_styles/globals.scss";
 import { Open_Sans } from "next/font/google";
 import type { Metadata, Viewport } from "next";
 import ProgressBar from "@/_components/ProgressBar";
+import { SkillTagsProvider } from "../app_context/SkillTagsContext";
+import { ProjectsProvider } from "../app_context/ProjectsContext";
 
 const openSans = Open_Sans({ subsets: ["latin"] });
 
@@ -53,7 +55,11 @@ export default function RootLayout({
       // className={openSans.className}
       >
         <ProgressBar />
-        {children}
+        <SkillTagsProvider>
+        <ProjectsProvider>
+          {children}
+        </ProjectsProvider>
+        </SkillTagsProvider>
       </body>
     </html>
   );

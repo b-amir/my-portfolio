@@ -13,9 +13,9 @@ import { FaStarOfLife as StarIcon } from "react-icons/fa6";
 
 const ScreenShots = dynamic(
   () => import("@/_components/ScreenShots").then((mod) => mod.ScreenShots),
-  {
-    loading: () => <LoadingSpinner />
-  }
+  // {
+  //   loading: () => <LoadingSpinner />
+  // }
 );
 
 export const FeaturedProjectSection: React.FC = async () => {
