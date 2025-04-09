@@ -13,72 +13,86 @@
   padding-bottom: 0;
 }
 
+.selectedProjectsCountContainer {
+  position: fixed;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  z-index: 100;
+}
+
+.animationWrapper {
+  perspective: 1000px;
+  height: 50px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
 .selectedProjectsCount {
-  margin-left: 6px;
-  font-weight: 600;
-  color: rgba(36, 36, 36, 0.76);
   display: flex;
   align-items: center;
-  opacity: 0;
-  transform: translateY(10px);
-  animation: fadeInUp 0.3s forwards ease-out;
-  border: 1px solid #a5aab5;
-  border-radius: 7px;
-  padding: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: #464e6226;
-  margin-top: 3rem;
-
-  @keyframes fadeInUp {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
+  gap: 8px;
+  background-color: rgba(0, 0, 0, 1);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 32%);
+  transform-origin: bottom center;
+  will-change: transform, opacity;
+  
   button {
-    margin-left: 6px;
-    font-weight: 500;
-    color: #5a5a5a;
-    background: rgb(181 181 181 / 37%);
-    border: none;
-    cursor: pointer;
-    border-radius: $small-br;
-    font-size: small;
-    // font-family: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono", "Roboto Mono", "Oxygen Mono";
-    padding: 0.25rem 0.8rem;
     display: flex;
     align-items: center;
-    justify-content: center;
-    flex-wrap: nowrap;
-    flex-direction: row;
-    gap: 0.3rem;
-    transition: all 0.2s ease-in-out;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-
-    svg {
-      transition: transform 0.2s ease;
-    }
-
+    gap: 4px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+    
     &:hover {
-      color: $black-substitute;
-      background: #ffffffbd;
-      transform: translateY(-1px);
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+      background-color: rgba(255, 255, 255, 0.1);
     }
+  }
+}
 
-    &:active {
-      transform: translateY(1px);
-      box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
-    }
+.fadeIn {
+  animation: fadeIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+.fadeOut {
+  animation: fadeOut 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards;
+}
+
+@keyframes fadeIn {
+  from { 
+    opacity: 0; 
+    transform: translateY(20px) scale(0.95);
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes fadeOut {
+  from { 
+    opacity: 1; 
+    transform: translateY(0) scale(1);
+  }
+  to { 
+    opacity: 0; 
+    transform: translateY(20px) scale(0.95);
   }
 }
 
 .allProjectsGrid {
   display: grid;
-  // padding: 6rem 0 0;
   grid-template-columns: repeat(3, 1fr);
 }
 
@@ -562,8 +576,19 @@
 
 @include mobile {
   .selectedProjectsCount {
-    display: none;
+    font-size: 0.85rem;
+    padding: 6px 12px;
+    
+    button {
+      font-size: 0.8rem;
+      padding: 3px 6px;
+    }
   }
+  
+  .selectedProjectsCountContainer {
+    bottom: 15px;
+  }
+  
   .section {
     padding: 0rem;
   }
