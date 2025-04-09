@@ -186,9 +186,9 @@
 }
 
 .consentDialog {
-  @-moz-document url-prefix() {
-    background-color: rgb(236, 154, 130); 
-  };
+  @supports (-moz-appearance:none) {
+    background-color: rgb(236, 154, 130, 0.8); 
+  }
   animation: appearingDialog 0.2s 0.5s cubic-bezier(1, 0.02, 0, 0.51) both;
   display: flex;
   flex-direction: column;
@@ -196,7 +196,7 @@
   align-items: center;
   gap: 1rem;
   padding: 1rem;
-  background: rgba(0, 0, 0, 0.123);
+  background-color: rgb(185 142 130 / 80%);
   border-radius: 7px;
   border: 1px solid rgb(0 0 0 / 39%);
   box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
@@ -217,12 +217,12 @@
 
   &:hover {
     @supports (-moz-appearance:none) {
-      background-color: rgb(230, 158, 138); 
+      background-color: rgb(230, 158, 138, 0.9); 
     }
-    background-color: rgb(163 146 146 / 37%);
+    background-color: rgb(203 150 135 / 80%);
     border: 1px solid rgb(0 0 0 / 67%);
   }
-
+  
   .consentTitle {
     font-size: 1rem;
     font-weight: 600;
@@ -351,11 +351,12 @@
 }
 .contact {
   @-moz-document url-prefix() {
-    background-color: rgb(236, 154, 130); 
-  };
+    background-color: rgb(236, 154, 130, 0.8); 
+  }
   @extend .section;
   will-change: transform;
   animation: slideUp 0.5s ease-out both 0.8s;
+  -webkit-backdrop-filter: blur(20px);
   backdrop-filter: blur(20px);
   background: rgb(182 182 182 / 38%);
   color: rgba(19, 10, 0, 0.7882352941);
@@ -536,8 +537,8 @@
 
   .mobileContactMenuTrigger {
     @-moz-document url-prefix() {
-      background-color: rgb(236, 154, 130); 
-    };
+      background-color: rgb(236, 154, 130, 0.8); 
+    }
     animation: slideUp 0.5s ease-out forwards;
     cursor: pointer;
     user-select: none;
@@ -665,3 +666,28 @@
     padding: 0.8rem 1rem; 
   }
 }
+.contactGridContainer {
+  opacity: 1;
+  transition: none;
+}
+
+.desktopContactLinks {
+  display: block;
+  
+  @media (max-width: 700px) {
+    display: none;
+  }
+}
+
+.mobileContactLinks {
+  width: 100%;
+}
+
+.mobileContactMenuTrigger {
+  display: none;
+  
+  @media (max-width: 700px) {
+    display: flex;
+  }
+}
+

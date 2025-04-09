@@ -16,21 +16,19 @@
 }
 
 .tooltipBubbleBase {
-  @-moz-document url-prefix() {
-    background-color: rgb(236, 154, 130); 
-  };
+  @supports (-moz-appearance:none) {
+    background-color: rgb(236, 154, 130, 0.8); 
+  }
   display: flex;
   position: absolute;
   flex-direction: column;
   gap: 0.5rem;
   padding: 1.5rem 2rem;
-  background-color: rgba(224, 224, 224, 0.305);
+  background-color: rgb(236, 154, 130, 1);
   color: #22201e;
   border-radius: $base-br;
   border: 1px solid rgba(134, 71, 0, 0.6);
   font-size: 0.9rem;
-  -webkit-backdrop-filter: blur(20px);
-  backdrop-filter: blur(20px);
   box-shadow: $base-shadow;
   transition: all $fast-pace ease-in-out;
   pointer-events: none;
@@ -38,6 +36,10 @@
   min-width: 40dvw;
   z-index: 25;
   line-height: 1.4;
+  transform: translateZ(0);
+  will-change: transform;
+  isolation: isolate;
+  contain: paint;
 }
 
 .tooltipBubbleBottom {

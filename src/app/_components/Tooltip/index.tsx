@@ -26,7 +26,9 @@ function TooltipBubble({ text, targetRef }: IBuubleProps) {
         position: "bottom",
         style: {
           marginTop: 30, // for animation effect
-          top: targetRect && targetRect?.bottom - 100
+          top: targetRect && targetRect?.bottom - 100,
+          WebkitBackdropFilter: "blur(20px)",
+          backdropFilter: "blur(20px)"
         }
       });
     } else {
@@ -34,7 +36,9 @@ function TooltipBubble({ text, targetRef }: IBuubleProps) {
         position: "top",
         style: {
           marginBottom: 30, // for animation effect
-          bottom: bubbleRect && bubbleRect?.height - 100
+          bottom: bubbleRect && bubbleRect?.height - 100,
+          WebkitBackdropFilter: "blur(20px)",
+          backdropFilter: "blur(20px)"
         }
       });
     }

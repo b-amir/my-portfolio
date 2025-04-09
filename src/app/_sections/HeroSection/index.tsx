@@ -4,7 +4,6 @@ import dynamic from "next/dynamic";
 import globalStyles from "@/_styles/page.module.scss";
 import { Tooltip } from "@/_components/Tooltip";
 import { LowTierImage } from "./Fry3dObject";
-import { useWindowSize } from "@/_hooks/useWindowSize";
 import { useEffect } from "react";
 import { ContactGrid } from './ContactGrid';
 import {
@@ -22,28 +21,19 @@ const Fry3dObject = dynamic(
 
 
 export const HeroSection: React.FC = () => {
-  const { width } = useWindowSize();
 
 
-
-  const isSmallScreen =
-    typeof window === "undefined" ? false : (width ?? 0) < 1120;
-
-    useEffect(() => {
-      const handleScroll = () => {
-        const elements = document.querySelectorAll(`.${styles.parallax}`);
-        elements.forEach((element) => {
-          const htmlElement = element as HTMLElement;
-          const speed = parseFloat(element.getAttribute("data-speed") || "0");
-          const offset = window.pageYOffset * speed;
-          htmlElement.style.transform = `translateY(${offset}px)`;
-          htmlElement.style.opacity = `${1 - window.pageYOffset / 1000}`;
-        });
-      };
+  useEffect(() => {
+    const preloadContactGrid = () => {
+      const contactGrid = document.querySelector(`.${styles.contactGridContainer}`);
+      if (contactGrid) {
+        contactGrid.classList.add(styles.visible);
+      }
+    };
     
-      window.addEventListener("scroll", handleScroll);
-      return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
+    preloadContactGrid();
+    
+  }, []);
     
 
   return (
@@ -109,7 +99,9 @@ export const HeroSection: React.FC = () => {
           <Fry3dObject />
         </div>
       </div>
-      <ContactGrid />
+      <div className={`${styles.contactGridContainer}`}>
+        <ContactGrid />
+      </div>
     </div>
   );
 };

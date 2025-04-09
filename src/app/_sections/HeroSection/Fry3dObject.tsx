@@ -67,7 +67,7 @@ export function Fry3dObject() {
                 onClick={() => {
                   {
                     setConsentGiven("pending");
-                    setDeviceTier("low");
+                  setDeviceTier("low");
                   }
                 }}
               >
