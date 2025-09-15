@@ -44,6 +44,11 @@ async function Page({ params }: IPageProps) {
   const hasproductHuntLink = currentProject.productHuntLink;
   const categoriesToDisplay = findNonEmptyCategories(currentProject);
 
+  const description =
+    typeof currentProject.description === "string"
+      ? JSON.parse(currentProject.description)
+      : currentProject.description;
+
   return (
     <>
       <div className={globalStyles.featuredProject}>
@@ -67,15 +72,13 @@ async function Page({ params }: IPageProps) {
 
             {
               //@ts-ignore
-              JSON.parse(currentProject?.description).map(
-                (paragraph: string, index: number) => (
-                  <p
-                    className={globalStyles.summaryText}
-                    key={index}
-                    dangerouslySetInnerHTML={{ __html: paragraph }}
-                  />
-                )
-              )
+              description.map((paragraph: string, index: number) => (
+                <p
+                  className={globalStyles.summaryText}
+                  key={index}
+                  dangerouslySetInnerHTML={{ __html: paragraph }}
+                />
+              ))
             }
 
             <br />

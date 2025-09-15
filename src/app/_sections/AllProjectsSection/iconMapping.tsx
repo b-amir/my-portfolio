@@ -1,4 +1,3 @@
-"use client";
 import { TbApi } from "react-icons/tb";
 import { FaSass } from "react-icons/fa6";
 import { BsShieldLock } from "react-icons/bs";
@@ -7,7 +6,7 @@ import {
   MdEditSquare,
   MdStyle,
   MdOutlineImage,
-  MdOutlineLoop
+  MdOutlineLoop,
 } from "react-icons/md";
 import {
   SiNextdotjs,
@@ -43,7 +42,7 @@ import {
   SiFormik,
   SiAxios,
   SiRust,
-  SiLinux
+  SiLinux,
 } from "react-icons/si";
 import { SkillIcons } from ".";
 
@@ -90,5 +89,5 @@ export const iconMapping: SkillIcons = {
   reacttestinglibrary: <SiTestinglibrary />,
   cicd: <MdOutlineLoop />,
   xstate: <SiXstate />,
-  sqlite: <SiSqlite />
+  sqlite: <SiSqlite />,
 };

@@ -24,6 +24,13 @@ export const getProjectsSkillTags = cache(async (id: string) => {
     args: [id],
   });
   const project: any = items.rows[0];
-  const parsedItems = JSON.parse(project?.tags);
+
+  if (!project || !project.tags) {
+    return [];
+  }
+
+  const parsedItems =
+    typeof project.tags === "string" ? JSON.parse(project.tags) : project.tags;
+
   return parsedItems;
 });

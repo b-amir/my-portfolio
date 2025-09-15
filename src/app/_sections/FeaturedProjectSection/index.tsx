@@ -20,7 +20,15 @@ const ScreenShots = dynamic(
 
 export const FeaturedProjectSection: React.FC = async () => {
   const featuredProject = await getProject("cslit");
-  const tags = featuredProject.tags[0];
+  const tags =
+    typeof featuredProject.tags === "string"
+      ? JSON.parse(featuredProject.tags)[0]
+      : featuredProject.tags[0];
+
+  const description =
+    typeof featuredProject.description === "string"
+      ? JSON.parse(featuredProject.description)
+      : featuredProject.description;
 
   return (
     <div className={`${globalStyles.featuredProject}`} id="featured">
@@ -40,7 +48,7 @@ export const FeaturedProjectSection: React.FC = async () => {
         <div className={globalStyles.summary} id="summary">
           <div className={globalStyles.summaryTitle}>Summary</div>
           <h2>CS-LIT</h2>
-          {featuredProject.description.map((span: string, index: number) => (
+          {description.map((span: string, index: number) => (
             <p
               className={globalStyles.summaryText}
               key={index}
