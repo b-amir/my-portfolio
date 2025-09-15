@@ -26,26 +26,26 @@ export const getSkillIcon = (tagName: string) => iconMapping[tagName] || null;
 
 const extractTagValues = (projectTags: any): string[] => {
   const allTagValues: string[] = [];
-  
-  if (typeof projectTags === 'string') {
+
+  if (typeof projectTags === "string") {
     try {
       projectTags = JSON.parse(projectTags);
     } catch (e) {
       return [projectTags.toLowerCase()];
     }
   }
-  
+
   if (Array.isArray(projectTags)) {
-    projectTags.forEach(tag => {
-      if (typeof tag === 'string') {
+    projectTags.forEach((tag) => {
+      if (typeof tag === "string") {
         allTagValues.push(tag.toLowerCase());
-      } else if (typeof tag === 'object' && tag !== null) {
-        Object.values(tag).forEach(value => {
-          if (typeof value === 'string') {
+      } else if (typeof tag === "object" && tag !== null) {
+        Object.values(tag).forEach((value) => {
+          if (typeof value === "string") {
             allTagValues.push(value.toLowerCase());
           } else if (Array.isArray(value)) {
-            value.forEach(v => {
-              if (typeof v === 'string') {
+            value.forEach((v) => {
+              if (typeof v === "string") {
                 allTagValues.push(v.toLowerCase());
               }
             });
@@ -53,15 +53,15 @@ const extractTagValues = (projectTags: any): string[] => {
         });
       }
     });
-  } else if (typeof projectTags === 'object' && projectTags !== null) {
-    Object.values(projectTags).forEach(categoryTags => {
+  } else if (typeof projectTags === "object" && projectTags !== null) {
+    Object.values(projectTags).forEach((categoryTags) => {
       if (Array.isArray(categoryTags)) {
-        categoryTags.forEach(tag => {
-          if (typeof tag === 'string') {
+        categoryTags.forEach((tag) => {
+          if (typeof tag === "string") {
             allTagValues.push(tag.toLowerCase());
-          } else if (typeof tag === 'object' && tag !== null) {
-            Object.values(tag).forEach(value => {
-              if (typeof value === 'string') {
+          } else if (typeof tag === "object" && tag !== null) {
+            Object.values(tag).forEach((value) => {
+              if (typeof value === "string") {
                 allTagValues.push(value.toLowerCase());
               }
             });
@@ -70,22 +70,25 @@ const extractTagValues = (projectTags: any): string[] => {
       }
     });
   }
-  
+
   return allTagValues;
 };
 
-const filterProjectsByTags = (projects: Project[], selectedTags: string[]): Project[] => {
+const filterProjectsByTags = (
+  projects: Project[],
+  selectedTags: string[]
+): Project[] => {
   if (selectedTags.length === 0) {
     return [];
   }
-  
-  return projects.filter(project => {
+
+  return projects.filter((project) => {
     if (!project.tags) return false;
-    
+
     try {
       const allTagValues = extractTagValues(project.tags);
-      
-      return selectedTags.every(selectedTag => 
+
+      return selectedTags.every((selectedTag) =>
         allTagValues.includes(selectedTag.toLowerCase())
       );
     } catch (error) {
@@ -95,7 +98,12 @@ const filterProjectsByTags = (projects: Project[], selectedTags: string[]): Proj
 };
 
 export const AllProjectsSection: React.FC = () => {
-  const { projects, fullProjects, smallProjects, loading: projectsLoading } = useProjects();
+  const {
+    projects,
+    fullProjects,
+    smallProjects,
+    loading: projectsLoading,
+  } = useProjects();
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [selectedProjects, setSelectedProjects] = useState<Project[]>([]);
 
@@ -136,7 +144,8 @@ export const AllProjectsSection: React.FC = () => {
         <div style={{ minHeight: "65px" }}>
           <button
             className={styles.buttonKeepInTouch}
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          >
             <span className={styles.wavingHand}>
               <WavingIcon />
             </span>{" "}

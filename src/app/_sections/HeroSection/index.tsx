@@ -5,41 +5,41 @@ import globalStyles from "@/_styles/page.module.scss";
 import { Tooltip } from "@/_components/Tooltip";
 import { LowTierImage } from "./Fry3dObject";
 import { useEffect } from "react";
-import { ContactGrid } from './ContactGrid';
+import { ContactGrid } from "./ContactGrid";
 import {
   IoArrowForward as ArrowIcon,
-  IoDownloadOutline as DownloadIcon
+  IoDownloadOutline as DownloadIcon,
 } from "react-icons/io5";
 
 const Fry3dObject = dynamic(
   () => import("./Fry3dObject").then((mod) => mod.Fry3dObject),
   {
     loading: () => <LowTierImage />,
-    ssr: false 
+    ssr: false,
   }
 );
 
-
 export const HeroSection: React.FC = () => {
-
-
   useEffect(() => {
     const preloadContactGrid = () => {
-      const contactGrid = document.querySelector(`.${styles.contactGridContainer}`);
+      const contactGrid = document.querySelector(
+        `.${styles.contactGridContainer}`
+      );
       if (contactGrid) {
         contactGrid.classList.add(styles.visible);
       }
     };
-    
+
     preloadContactGrid();
-    
   }, []);
-    
 
   return (
     <div className={`${styles.hero}`} id="hero">
       <div className={styles.heroMain}>
-        <div className={`${styles.heroTexts} ${styles.parallax}`} data-speed="0.5">
+        <div
+          className={`${styles.heroTexts} ${styles.parallax}`}
+          data-speed="0.5"
+        >
           <h1 className={styles.heroTitle}>
             Hi, <br /> I&apos;m Amir Bazgir
           </h1>
@@ -49,21 +49,21 @@ export const HeroSection: React.FC = () => {
             <Tooltip
               text={
                 <div>
-                  A while back, I came across an interview where a renowned
-                  chef was questioned about the{" "}
+                  A while back, I came across an interview where a renowned chef
+                  was questioned about the{" "}
                   <strong>distinction between a chef and a cook</strong>.
                   <br /> <br />
                   The response resonated with me:
                   <blockquote>
-                    &quot;Most reasonably intelligent people can follow a
-                    recipe with mixed results, a chef can be given a basket of
-                    ingredients and is able to create something
-                    wonderful.&quot;
+                    &quot;Most reasonably intelligent people can follow a recipe
+                    with mixed results, a chef can be given a basket of
+                    ingredients and is able to create something wonderful.&quot;
                   </blockquote>
                   <br />
                   <strong>This is the principle I aspire to live by.</strong>
                 </div>
-              }>
+              }
+            >
               {" "}
               CodeChef!
             </Tooltip>
@@ -75,7 +75,8 @@ export const HeroSection: React.FC = () => {
             <a
               href="https://b-amir.storage.iran.liara.space/resume/Amir_Bazgir_Resume.pdf"
               target="_blank"
-              className={styles.heroResume}>
+              className={styles.heroResume}
+            >
               <DownloadIcon />
               Resume.pdf
             </a>
@@ -84,10 +85,11 @@ export const HeroSection: React.FC = () => {
                 document?.getElementById("about")?.scrollIntoView({
                   behavior: "smooth",
                   block: "start",
-                  inline: "nearest"
+                  inline: "nearest",
                 });
               }}
-              className={globalStyles.buttonLink}>
+              className={globalStyles.buttonLink}
+            >
               More about me{" "}
               <span className={globalStyles.icon}>
                 <ArrowIcon />

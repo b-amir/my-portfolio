@@ -1,6 +1,6 @@
 import { openDB } from "@/_utils/db";
 
-export async function GET(req: Request, res: Response) {
+export async function GET() {
   const db = await openDB();
 
   const skillTags = await db.execute("SELECT * FROM skillTags");

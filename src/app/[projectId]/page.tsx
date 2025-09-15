@@ -19,6 +19,7 @@ import {
   getProjectsSkillTags,
 } from "@/_utils/getData";
 import { ScreenShots } from "@/_components/ScreenShots";
+import { Suspense } from "react";
 
 // const ScreenShots = dynamic(
 //   () => import("@/_components/ScreenShots").then((mod) => mod.ScreenShots),
