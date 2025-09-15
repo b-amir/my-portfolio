@@ -21,9 +21,9 @@ export const metadata: Metadata = {
         url: "https://raw.githubusercontent.com/b-amir/my-portfolio/main/public/link-preview.png",
         width: 1200,
         height: 628,
-        alt: "Amir Bazgir's portfolio"
-      }
-    ]
+        alt: "Amir Bazgir's portfolio",
+      },
+    ],
   },
   twitter: {
     title: "Amir Bazgir's portfolio",
@@ -34,18 +34,23 @@ export const metadata: Metadata = {
         url: "https://raw.githubusercontent.com/b-amir/my-portfolio/main/public/link-preview.png",
         width: 1200,
         height: 628,
-        alt: "Amir Bazgir's portfolio"
-      }
-    ]
-  }
+        alt: "Amir Bazgir's portfolio",
+      },
+    ],
+  },
+  icons: {
+    icon: "/icon.svg",
+    shortcut: "/favicon.ico",
+    apple: "/apple-icon.png",
+  },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#2E2E2E"
+  themeColor: "#2E2E2E",
 };
 
 export default function RootLayout({
-  children
+  children,
 }: {
   children: React.ReactNode;
 }) {
@@ -56,9 +61,7 @@ export default function RootLayout({
       >
         <ProgressBar />
         <SkillTagsProvider>
-        <ProjectsProvider>
-          {children}
-        </ProjectsProvider>
+          <ProjectsProvider>{children}</ProjectsProvider>
         </SkillTagsProvider>
       </body>
     </html>
