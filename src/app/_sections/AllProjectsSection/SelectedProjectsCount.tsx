@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import styles from "./index.module.scss";
-import { TbClearAll as ClearIcon } from "react-icons/tb";
+import { Icon } from "@/_components/Icon";
 import { Project } from "@/_types/Project";
 
 interface ISelectedProjectsCountProps {
@@ -34,27 +34,26 @@ export function SelectedProjectsCount({
 
   useEffect(() => {
     const handleScroll = () => {
-      const allProjectsSection = document.getElementById('allProjects');
-      const keepInTouchSection = document.getElementById('keepInTouch');
-      
+      const allProjectsSection = document.getElementById("allProjects");
+      const keepInTouchSection = document.getElementById("keepInTouch");
+
       if (allProjectsSection && keepInTouchSection) {
         const rect = allProjectsSection.getBoundingClientRect();
         const next = keepInTouchSection.getBoundingClientRect();
         const halfScreenHeight = window.innerHeight / 2;
 
-        const isVisible = 
-          rect.top <= halfScreenHeight && 
-          next.top > window.innerHeight;
-        
+        const isVisible =
+          rect.top <= halfScreenHeight && next.top > window.innerHeight;
+
         setIsInSection(isVisible);
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    handleScroll(); 
-    
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
@@ -70,13 +69,15 @@ export function SelectedProjectsCount({
       <div className={styles.animationWrapper}>
         {isVisible && (
           <span
-            className={`${styles.selectedProjectsCount} ${animationClass} ${!isInSection ? styles.fadeOut : ''}`}
+            className={`${styles.selectedProjectsCount} ${animationClass} ${
+              !isInSection ? styles.fadeOut : ""
+            }`}
           >
             {selectedProjects.length}
             {selectedProjects.length < 2 ? " project " : " projects "}
             matched
             <button onClick={handleClearFilters}>
-              <ClearIcon />
+              <Icon name="clear" />
               clear filters
             </button>
           </span>

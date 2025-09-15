@@ -12,6 +12,7 @@ import { useEffect, useState } from "react";
 import { MdWavingHand as WavingIcon } from "react-icons/md";
 import { BsFillGridFill as GridIcon } from "react-icons/bs";
 import { useProjects } from "../../../app_context/ProjectsContext";
+import { useSkillTags } from "../../../app_context/SkillTagsContext";
 import { SelectedProjectsCount } from "./SelectedProjectsCount";
 
 const Smile3dObject = dynamic(() =>
@@ -104,6 +105,7 @@ export const AllProjectsSection: React.FC = () => {
     smallProjects,
     loading: projectsLoading,
   } = useProjects();
+  const { skills } = useSkillTags();
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [selectedProjects, setSelectedProjects] = useState<Project[]>([]);
 
@@ -133,7 +135,14 @@ export const AllProjectsSection: React.FC = () => {
           setSelectedTags={setSelectedTags}
           selectedProjects={selectedProjects}
         />
-        <ProjectsGrid selectedProjects={selectedProjects} />
+        <ProjectsGrid
+          selectedProjects={selectedProjects}
+          projects={projects}
+          fullProjects={fullProjects}
+          smallProjects={smallProjects}
+          skillTags={skills}
+          loading={projectsLoading}
+        />
       </div>
 
       <div className={styles.keepInTouchSection} id="keepInTouch">

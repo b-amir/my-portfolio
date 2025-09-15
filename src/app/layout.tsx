@@ -2,6 +2,8 @@ import "@/_styles/globals.scss";
 import { Open_Sans } from "next/font/google";
 import type { Metadata, Viewport } from "next";
 import { ClientWrapper } from "@/_components/ClientWrapper";
+import { SkillTagsProvider } from "../app_context/SkillTagsContext";
+import { ProjectsProvider } from "../app_context/ProjectsContext";
 
 const openSans = Open_Sans({ subsets: ["latin"] });
 
@@ -57,7 +59,11 @@ export default function RootLayout({
       <body
       // className={openSans.className}
       >
-        <ClientWrapper>{children}</ClientWrapper>
+        <ClientWrapper>
+          <ProjectsProvider>
+            <SkillTagsProvider>{children}</SkillTagsProvider>
+          </ProjectsProvider>
+        </ClientWrapper>
       </body>
     </html>
   );

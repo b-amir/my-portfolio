@@ -1,23 +1,13 @@
 "use client";
 import styles from "./index.module.scss";
 import { clickToSelectText } from "@/_utils/clickToSelectText";
-import { BiShow as ShowIcon } from "react-icons/bi";
-import { LuPhoneCall as PhoneIcon } from "react-icons/lu";
-import { IoCloseSharp as CloseIcon } from "react-icons/io5";
-import { GrContactInfo as ContactInfoIcon } from "react-icons/gr";
-import {
-  IoMailOutline as MailIcon,
-  IoCopyOutline as CopyIcon,
-  IoLogoGithub as GithubIcon,
-  IoArrowForward as ArrowIcon,
-  IoLogoLinkedin as LinkedinIcon
-} from "react-icons/io5";
+import { Icon } from "@/_components/Icon";
 
 export interface IContactCardItemsProps {
   setShowContactLinksForMobile: React.Dispatch<React.SetStateAction<boolean>>;
 }
 export function ContactCardItems({
-  setShowContactLinksForMobile
+  setShowContactLinksForMobile,
 }: IContactCardItemsProps) {
   function copyEmail() {
     navigator.clipboard.writeText("iamirbazgir@gmail.com");
@@ -44,14 +34,15 @@ export function ContactCardItems({
     <div className={styles.contact}>
       <div
         className={styles.contactMobileHeader}
-        onClick={() => setShowContactLinksForMobile(false)}>
+        onClick={() => setShowContactLinksForMobile(false)}
+      >
         <span>
           <span>
-            <ContactInfoIcon />
+            <Icon name="contact" />
           </span>
           Contact Links
         </span>
-        <CloseIcon />
+        <Icon name="close" />
       </div>
 
       <div className={styles.grid}>
@@ -59,12 +50,13 @@ export function ContactCardItems({
           href="https://www.linkedin.com/in/amirbazgir/"
           className={styles.contactCard}
           target="_blank"
-          rel="noopener noreferrer">
+          rel="noopener noreferrer"
+        >
           <h2>
-            <LinkedinIcon />
+            <Icon name="linkedin" />
             Linkedin
             <span>
-              <ArrowIcon />
+              <Icon name="arrow" />
             </span>
           </h2>
           <p>Let&apos;s get connected for collaborative opportunities.</p>
@@ -74,12 +66,13 @@ export function ContactCardItems({
           href="https://github.com/b-amir"
           className={styles.contactCard}
           target="_blank"
-          rel="noopener noreferrer">
+          rel="noopener noreferrer"
+        >
           <h2>
-            <GithubIcon />
+            <Icon name="github" />
             Github
             <span>
-              <ArrowIcon />
+              <Icon name="arrow" />
             </span>
           </h2>
           <p>Take a hands-on tour of my code for yourself.</p>
@@ -89,28 +82,32 @@ export function ContactCardItems({
           href="mailto:iamirbazgir@gmail.com"
           className={styles.contactCard}
           target="_blank"
-          rel="noopener noreferrer">
+          rel="noopener noreferrer"
+        >
           <h2>
-            <MailIcon />
+            <Icon name="mail" />
             Email
             <span>
-              <ArrowIcon />
+              <Icon name="arrow" />
             </span>
           </h2>
           <div
             className={styles.emailCopyField}
-            onClick={(e) => e.preventDefault()}>
+            onClick={(e) => e.preventDefault()}
+          >
             <p
               id="emailCopyField"
-              onClick={clickToSelectText("emailCopyField")}>
+              onClick={clickToSelectText("emailCopyField")}
+            >
               iAmirBazgir@gmail.com
             </p>
             <div
               className={styles.fieldButton}
               onClick={(e) => {
                 copyEmail();
-              }}>
-              <CopyIcon />
+              }}
+            >
+              <Icon name="copy" />
             </div>
           </div>
         </a>
@@ -119,28 +116,32 @@ export function ContactCardItems({
           href="tel:+989119273700"
           className={styles.contactCard}
           target="_blank"
-          rel="noopener noreferrer">
+          rel="noopener noreferrer"
+        >
           <h2>
-            <PhoneIcon />
+            <Icon name="phone" />
             Call
             <span>
-              <ArrowIcon />
+              <Icon name="arrow" />
             </span>
           </h2>
           <div
             className={styles.emailCopyField}
-            onClick={(e) => e.preventDefault()}>
+            onClick={(e) => e.preventDefault()}
+          >
             <p
               id="showNumberField"
-              onClick={clickToSelectText("showNumberField")}>
+              onClick={clickToSelectText("showNumberField")}
+            >
               +9891********
             </p>
             <div
               className={styles.fieldButton}
               onClick={(e) => {
                 showNumber();
-              }}>
-              <ShowIcon />
+              }}
+            >
+              <Icon name="show" />
             </div>
           </div>
         </a>

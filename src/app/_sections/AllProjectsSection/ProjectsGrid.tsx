@@ -11,19 +11,23 @@ import { TagsSkeleton } from "@/_components/Loading/TagsSkeleton";
 import { getSkillIcon } from ".";
 import { useEffect, useState } from "react";
 import { howManyTags, howManyTagsShowing } from "@/_utils/tagsCount";
-import { HiOutlineExternalLink as LinkIcon } from "react-icons/hi";
-import { useSkillTags } from "../../../app_context/SkillTagsContext";
-import { useProjects } from "../../../app_context/ProjectsContext";
-
+import { Icon } from "@/_components/Icon";
 export function ProjectsGrid({
   selectedProjects,
+  projects,
+  fullProjects,
+  smallProjects,
+  skillTags,
+  loading,
 }: {
   selectedProjects: Project[];
+  projects: Project[];
+  fullProjects: Project[];
+  smallProjects: Project[];
+  skillTags: SkillTag[];
+  loading: boolean;
 }) {
-
-  const { projects, fullProjects, smallProjects, loading: projectsLoading } = useProjects();
-  const { skills, loading: skillsLoading } = useSkillTags();
-  const skillsMap = new Map(skills.map((skill) => [skill.id, skill]));
+  const skillsMap = new Map(skillTags.map((skill) => [skill.id, skill]));
 
   const ProjectCardSkeleton = () => (
     <div className={`${styles.projectCard} ${styles.skeleton}`}>
@@ -63,7 +67,7 @@ export function ProjectsGrid({
     </div>
   );
 
-  if (projectsLoading || skillsLoading) {
+  if (loading) {
     return (
       <>
         <div className={styles.projectsGrid}>
@@ -104,7 +108,7 @@ export function ProjectsGrid({
             //@ts-ignore
             featured={project.featured}
             tags={
-              skills.length === 0 ? (
+              skillTags.length === 0 ? (
                 <TagsSkeleton number={3} />
               ) : (
                 //@ts-ignore
@@ -169,7 +173,7 @@ export function ProjectsGrid({
                   target="_blank"
                   className={styles.githubSourceButton}
                 >
-                  GitHub <LinkIcon />
+                  GitHub <Icon name="external" />
                 </Link>
 
                 {project.demoLink.length > 3 && (
@@ -178,7 +182,7 @@ export function ProjectsGrid({
                     target="_blank"
                     className={styles.demoButton}
                   >
-                    Demo <LinkIcon />
+                    Demo <Icon name="external" />
                   </Link>
                 )}
               </div>

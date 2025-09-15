@@ -1,10 +1,9 @@
 "use client";
 import Image from "next/image";
 import styles from "./index.module.scss";
-import { FiBox } from "react-icons/fi";
 import { useDebounce } from "@/_hooks/useDebounce";
 import { useGpuDetect } from "@/_hooks/useGpuDetect";
-import { FaCheckCircle } from "react-icons/fa";
+import { Icon } from "@/_components/Icon";
 import { useLocalStorage } from "@/_hooks/useLocalStorage";
 import { Suspense, useEffect, useRef, useState, lazy } from "react";
 
@@ -49,7 +48,7 @@ export function Fry3dObject() {
         <>
           <LowTierImage />
           <div className={styles.consentDialog}>
-            <FiBox style={{ fontSize: "xx-large" }} />
+            <Icon name="box" size={32} />
             <p className={styles.consentTitle}>OK to display a 3D object?</p>
             <div className={styles.consentSubtitle}>
               <p>Your device is detected to be capable.</p>
@@ -61,13 +60,13 @@ export function Fry3dObject() {
                   setConsentGiven("yes");
                 }}
               >
-                <FaCheckCircle /> Yes
+                <Icon name="check" /> Yes
               </button>
               <button
                 onClick={() => {
                   {
                     setConsentGiven("pending");
-                  setDeviceTier("low");
+                    setDeviceTier("low");
                   }
                 }}
               >
@@ -87,7 +86,7 @@ export function Fry3dObject() {
               onError={OnError}
               style={{
                 visibility,
-                position: "absolute", 
+                position: "absolute",
                 top: 0,
                 left: 0,
               }}

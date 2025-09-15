@@ -9,6 +9,8 @@ const nextConfig = {
     optimizePackageImports: ["@splinetool/react-spline", "react-icons"],
     serverComponentsExternalPackages: ["@libsql/client"],
     useWasmBinary: true,
+    outputFileTracingExcludes: ["**/*.splinecode", "**/sqlite.db"],
+    esmExternals: true,
   },
   compiler: {
     removeConsole:
@@ -27,14 +29,34 @@ const nextConfig = {
     config.optimization = {
       ...config.optimization,
       splitChunks: {
-        ...config.optimization.splitChunks,
+        chunks: "all",
+        minSize: 20000,
+        maxSize: 244000,
         cacheGroups: {
-          ...config.optimization.splitChunks.cacheGroups,
+          react: {
+            test: /[\\/]node_modules[\\/](react|react-dom)[\\/]/,
+            name: "react",
+            chunks: "all",
+            priority: 20,
+          },
+          reactIcons: {
+            test: /[\\/]node_modules[\\/]react-icons[\\/]/,
+            name: "react-icons",
+            chunks: "all",
+            priority: 15,
+          },
+          spline: {
+            test: /[\\/]node_modules[\\/]@splinetool[\\/]/,
+            name: "spline",
+            chunks: "all",
+            priority: 15,
+          },
           vendor: {
             test: /[\\/]node_modules[\\/]/,
             name: "vendors",
             chunks: "all",
             priority: 10,
+            enforce: true,
           },
         },
       },
@@ -42,12 +64,12 @@ const nextConfig = {
 
     return config;
   },
-  output: "standalone",
   swcMinify: true,
   images: {
     formats: ["image/webp", "image/avif"],
   },
   poweredByHeader: false,
+  excludeDefaultMomentLocales: true,
 };
 
 module.exports = nextConfig;

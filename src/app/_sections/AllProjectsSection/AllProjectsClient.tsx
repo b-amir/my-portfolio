@@ -10,8 +10,7 @@ import { ProjectsGrid } from "./ProjectsGrid";
 import { SectionHeader } from "@/_components/SectionHeader";
 import { CurrentSkills } from "./CurrentSkills";
 import { useEffect, useState } from "react";
-import { MdWavingHand as WavingIcon } from "react-icons/md";
-import { BsFillGridFill as GridIcon } from "react-icons/bs";
+import { Icon } from "@/_components/Icon";
 import { SelectedProjectsCount } from "./SelectedProjectsCount";
 
 const Smile3dObject = dynamic(() =>
@@ -124,7 +123,7 @@ export const AllProjectsClient: React.FC<AllProjectsClientProps> = ({
     <div className={`${styles.allProjectsSection}`} id="allProjects">
       <SectionHeader
         title="All Skills & Projects"
-        icon={<GridIcon className={globalStyles.icon} />}
+        icon={<Icon name="grid" className={globalStyles.icon} />}
       />
 
       <div className={styles.allProjectsGrid}>
@@ -141,7 +140,14 @@ export const AllProjectsClient: React.FC<AllProjectsClientProps> = ({
           setSelectedTags={setSelectedTags}
           selectedProjects={selectedProjects}
         />
-        <ProjectsGrid selectedProjects={selectedProjects} />
+        <ProjectsGrid 
+          selectedProjects={selectedProjects}
+          projects={projects}
+          fullProjects={fullProjects}
+          smallProjects={smallProjects}
+          skillTags={skillTags}
+          loading={loading}
+        />
       </div>
 
       <div className={styles.keepInTouchSection} id="keepInTouch">
@@ -155,7 +161,7 @@ export const AllProjectsClient: React.FC<AllProjectsClientProps> = ({
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           >
             <span className={styles.wavingHand}>
-              <WavingIcon />
+              <Icon name="waving" />
             </span>{" "}
             Let&apos;s keep in touch
           </button>

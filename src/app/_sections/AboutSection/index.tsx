@@ -2,15 +2,14 @@ import styles from "./index.module.scss";
 import globalStyles from "@/_styles/page.module.scss";
 import { SectionHeader } from "@/_components/SectionHeader";
 import { MyStackButton } from "./MyStackButton";
-import { Fa42Group as StackIcon } from "react-icons/fa6";
-import { MdOutlinePerson as PersonIcon } from "react-icons/md";
+import { Icon } from "@/_components/Icon";
 
 export const AboutSection: React.FC = () => {
   return (
     <div className={`${styles.about}`} id="about">
       <SectionHeader
         title="About Me"
-        icon={<PersonIcon className={globalStyles.icon} />}
+        icon={<Icon name="person" className={globalStyles.icon} />}
       />
       <div className={styles.twoRows}>
         <div className={styles.twoColsAbout}>
@@ -80,7 +79,7 @@ export const AboutSection: React.FC = () => {
               <MyStackButton />
             </div>
           </div>
-          <StackIcon className={styles.aboutIcon} />
+          <Icon name="stack" className={styles.aboutIcon} />
         </div>
       </div>
     </div>
