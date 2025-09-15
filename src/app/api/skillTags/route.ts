@@ -1,25 +1,12 @@
-import sqlite3 from "sqlite3";
-import { open, Database } from "sqlite";
-
-// @ts-ignore
-let db = null;
+import { openDB } from "@/_utils/db";
 
 export async function GET(req: Request, res: Response) {
-  // @ts-ignore
-  if (!db) {
-    db = await open({
-      filename: "./sqlite.db",
-      driver: sqlite3.Database,
-    });
-  }
+  const db = await openDB();
 
-  const skillTags = await db.all("SELECT * FROM skillTags");
+  const skillTags = await db.execute("SELECT * FROM skillTags");
 
-  return new Response(JSON.stringify(skillTags), {
+  return new Response(JSON.stringify(skillTags.rows), {
     headers: { "Content-Type": "application/json" },
     status: 200,
   });
-
-
 }
-

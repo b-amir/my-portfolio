@@ -1,14 +1,14 @@
-import { open } from 'sqlite';
-import sqlite3 from 'sqlite3';
-
+import { createClient } from "@libsql/client";
 
 export async function openDB() {
-  return await open({
-    filename: './sqlite.db',
-    driver: sqlite3.Database,
-  });
-}
+  if (process.env.DB_PROVIDER === "turso") {
+    return createClient({
+      url: process.env.TURSO_DATABASE_URL as string,
+      authToken: process.env.TURSO_AUTH_TOKEN as string,
+    });
+  }
 
-export async function closeDB(db: sqlite3.Database) {
-  return await db.close();
+  return createClient({
+    url: "file:sqlite.db",
+  });
 }
