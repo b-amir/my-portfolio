@@ -16,7 +16,7 @@ import { findNonEmptyCategories } from "@/_utils/findNonEmptyCategories";
 import {
   getAllProjectIds,
   getProject,
-  getProjectsSkillTags
+  getProjectsSkillTags,
 } from "@/_utils/getData";
 import { ScreenShots } from "@/_components/ScreenShots";
 
@@ -39,8 +39,8 @@ async function Page({ params }: IPageProps) {
     return <NotFoundPage />;
   }
 
-  const hasDemoLink = currentProject.demoLink.length > 0;
-  const hasGithubLink = currentProject.githubLink.length > 0;
+  const hasDemoLink = currentProject.demoLink?.length > 0;
+  const hasGithubLink = currentProject.githubLink?.length > 0;
   const hasproductHuntLink = currentProject.productHuntLink;
   const categoriesToDisplay = findNonEmptyCategories(currentProject);
 

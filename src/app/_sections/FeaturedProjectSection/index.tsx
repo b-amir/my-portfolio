@@ -12,7 +12,7 @@ import { GithubSourceButton } from "@/_components/GithubSourceButton";
 import { FaStarOfLife as StarIcon } from "react-icons/fa6";
 
 const ScreenShots = dynamic(
-  () => import("@/_components/ScreenShots").then((mod) => mod.ScreenShots),
+  () => import("@/_components/ScreenShots").then((mod) => mod.ScreenShots)
   // {
   //   loading: () => <LoadingSpinner />
   // }
@@ -20,7 +20,7 @@ const ScreenShots = dynamic(
 
 export const FeaturedProjectSection: React.FC = async () => {
   const featuredProject = await getProject("cslit");
-  const tags = JSON.parse(featuredProject.tags)[0];
+  const tags = featuredProject.tags[0];
 
   return (
     <div className={`${globalStyles.featuredProject}`} id="featured">
@@ -40,15 +40,13 @@ export const FeaturedProjectSection: React.FC = async () => {
         <div className={globalStyles.summary} id="summary">
           <div className={globalStyles.summaryTitle}>Summary</div>
           <h2>CS-LIT</h2>
-          {JSON.parse(featuredProject.description).map(
-            (span: string, index: number) => (
-              <p
-                className={globalStyles.summaryText}
-                key={index}
-                dangerouslySetInnerHTML={{ __html: span }}
-              />
-            )
-          )}
+          {featuredProject.description.map((span: string, index: number) => (
+            <p
+              className={globalStyles.summaryText}
+              key={index}
+              dangerouslySetInnerHTML={{ __html: span }}
+            />
+          ))}
           <br />
           <DemoButton text="Visit Live at cslit.cc" link="https://cslit.cc" />
           <ProductHuntButton link={featuredProject.productHuntLink} />

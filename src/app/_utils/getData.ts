@@ -1,5 +1,6 @@
 import { cache } from "react";
 import { openDB } from "./db";
+import { Project } from "@/_types/Project";
 
 export const getProject = cache(async (id: string) => {
   const db = await openDB();
@@ -7,7 +8,7 @@ export const getProject = cache(async (id: string) => {
     sql: "SELECT * FROM projects WHERE id = ?",
     args: [id],
   });
-  return item.rows[0];
+  return item.rows[0] as unknown as Project;
 });
 
 export const getAllProjectIds = cache(async () => {
