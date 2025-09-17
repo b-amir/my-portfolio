@@ -14,10 +14,15 @@ type deviceTiers = "low" | "mobile" | "high" | "loading";
 export function Fry3dObject() {
   const [deviceTier, setDeviceTier] = useGpuDetect();
   const [isLoading, setIsLoading] = useState(true);
+  const [isClient, setIsClient] = useState(false);
   const [consentGiven, setConsentGiven] = useLocalStorage<string>(
     "consentTo3dObject",
     "pending"
   );
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   const visibility = useDebounce(isLoading ? "hidden" : "visible", 200);
 
@@ -76,7 +81,7 @@ export function Fry3dObject() {
           </div>
         </>
       )}
-      {deviceTier === "high" && consentGiven === "yes" && (
+      {deviceTier === "high" && consentGiven === "yes" && isClient && (
         <>
           {/* Always render the fallback image initially */}
           {isLoading && <LowTierImage />}

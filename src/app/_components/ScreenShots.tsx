@@ -4,13 +4,23 @@ import { Project } from "@/_types/Project";
 import globalStyles from "@/_styles/page.module.scss";
 
 export function ScreenShots({ currentProject }: { currentProject: Project }) {
-  //@ts-ignore
-  const screenshots = JSON.parse(currentProject?.screenshots);
+  let screenshots;
+  try {
+    screenshots = typeof currentProject?.screenshots === 'string' 
+      ? JSON.parse(currentProject.screenshots) 
+      : currentProject?.screenshots;
+  } catch (error) {
+    console.error('Error parsing screenshots:', error);
+    screenshots = null;
+  }
+
+  if (!screenshots || typeof screenshots !== 'object') {
+    return <div className={globalStyles.moreImages}></div>;
+  }
 
   return (
     <div className={globalStyles.moreImages}>
-      {/* Render mobile screenshots only if they exist */}
-      {screenshots && "mobile" in screenshots
+      {screenshots.mobile && Array.isArray(screenshots.mobile) && screenshots.mobile.length > 0
         ? screenshots.mobile.map((screenshot: string, index: number) => (
             <div className={globalStyles.mobileScreenshot} key={index}>
               <Link href={`${screenshot}.png`} target="_blank">
@@ -19,15 +29,14 @@ export function ScreenShots({ currentProject }: { currentProject: Project }) {
                   src={`${screenshot}-thumbnail.png`}
                   width={112}
                   height={240}
-                  alt="cslit"
+                  alt="mobile screenshot"
                 />
               </Link>
             </div>
           ))
         : null}
 
-      {/* Render desktop screenshots only if they exist */}
-      {screenshots && "desktop" in screenshots
+      {screenshots.desktop && Array.isArray(screenshots.desktop) && screenshots.desktop.length > 0
         ? screenshots.desktop.map((screenshot: string, index: number) => (
             <div className={globalStyles.desktopScreenshot} key={index}>
               <Link href={`${screenshot}.png`} target="_blank">
@@ -36,7 +45,7 @@ export function ScreenShots({ currentProject }: { currentProject: Project }) {
                   src={`${screenshot}-thumbnail.png`}
                   width={365}
                   height={240}
-                  alt="cslit"
+                  alt="desktop screenshot"
                 />
               </Link>
             </div>

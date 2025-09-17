@@ -1,5 +1,4 @@
 import Image from "next/image";
-import dynamic from "next/dynamic";
 import { Tabs } from "@/_components/Tabs";
 import { TagsRow } from "@/_components/Tag/TagsRow";
 import { Project } from "@/_types/Project";
@@ -21,19 +20,12 @@ import {
 import { ScreenShots } from "@/_components/ScreenShots";
 import { Suspense } from "react";
 
-// const ScreenShots = dynamic(
-//   () => import("@/_components/ScreenShots").then((mod) => mod.ScreenShots),
-//   {
-//     loading: () => <LoadingSpinner />
-//   }
-// );
-
 interface IPageProps {
-  params: { projectId: string };
+  params: Promise<{ projectId: string }>;
 }
 
 async function Page({ params }: IPageProps) {
-  const { projectId } = params;
+  const { projectId } = await params;
   const currentProject = await getProject(projectId);
   const skillTags = await getProjectsSkillTags(projectId);
   if (!currentProject) {
@@ -115,7 +107,5 @@ async function Page({ params }: IPageProps) {
 
 export default Page;
 
-export async function generateStaticParams() {
-  const projectIds = await getAllProjectIds();
-  return projectIds.map((project) => ({ projectId: project.id }));
-}
+export const dynamic = 'force-dynamic';
+export const revalidate = 0;

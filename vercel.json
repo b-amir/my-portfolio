@@ -1,0 +1,14 @@
+{
+    "version": 2,
+    "framework": "nextjs",
+    "buildCommand": "npm run build",
+    "functions": {
+        "app/**/*.tsx": {
+            "maxDuration": 30
+        }
+    },
+    "env": {
+        "SKIP_BUILD_STATIC_GENERATION": "true",
+        "NEXT_TELEMETRY_DISABLED": "1"
+    }
+}

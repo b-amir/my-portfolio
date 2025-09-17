@@ -193,6 +193,7 @@
 }
 .backButton {
   user-select: none;
+  cursor: pointer;
   transition: all $base-pace ease-in-out;
   &:hover {
     color: #000000;

@@ -1,0 +1,8 @@
+node_modules
+.git
+.next
+.vscode
+*.log
+*.db
+*.splinecode
+README.md

@@ -13,17 +13,19 @@ interface ITagsRowProps {
   interactive?: boolean;
   setSelectedTags?: React.Dispatch<React.SetStateAction<string[]>>;
   selectedTags?: string[] | undefined;
+  skillsData?: SkillTag[]; 
 }
 export function TagsRow({
   title = "",
   listOfTags = [],
   setSelectedTags,
   selectedTags,
-  interactive = false
+  interactive = false,
+  skillsData
 }: ITagsRowProps) {
 
-
-  const { skills, loading } = useSkillTags();
+  const { skills: contextSkills, loading } = useSkillTags();
+  const skills = skillsData || contextSkills;
   const skillsMap = new Map(skills.map((skill) => [skill.id, skill]));
 
 

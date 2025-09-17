@@ -7,11 +7,13 @@ interface ICurrentSkillsProps {
   selectedTags: string[];
   setSelectedTags: React.Dispatch<React.SetStateAction<string[]>>;
   selectedProjects: Project[];
+  skillTags?: import("@/_types/SkillTag").SkillTag[];
 }
 export function CurrentSkills({
   setSelectedTags,
   selectedProjects,
   selectedTags,
+  skillTags,
 }: ICurrentSkillsProps) {
   return (
     <div className={styles.currentSkills}>
@@ -35,6 +37,7 @@ export function CurrentSkills({
           "themeui",
           "pwa",
         ]}
+        skillsData={skillTags}
       />
       <TagsRow
         interactive
@@ -42,6 +45,7 @@ export function CurrentSkills({
         setSelectedTags={setSelectedTags}
         title="Backend, API, DB:"
         listOfTags={["trpc", "prisma", "nextjs", "postgresql", "sqlite"]}
+        skillsData={skillTags}
       />
       <TagsRow
         interactive
@@ -59,6 +63,7 @@ export function CurrentSkills({
           "githubpages",
           "netlify",
         ]}
+        skillsData={skillTags}
       />
       <TagsRow
         interactive
@@ -79,6 +84,7 @@ export function CurrentSkills({
           "html2canvas",
           "xstate",
         ]}
+        skillsData={skillTags}
       />
     </div>
   );

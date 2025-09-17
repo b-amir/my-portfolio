@@ -10,8 +10,10 @@ export function Smile3dObject() {
   const [deviceTier, setDeviceTier] = useGpuDetect();
   const smileObj = useRef();
   const [isLoading, setIsLoading] = useState(true);
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
+    setIsClient(true);
     const timer = setTimeout(() => {
       setIsLoading(false);
     }, 500);
@@ -38,7 +40,7 @@ export function Smile3dObject() {
           alt="low tier smile"
           priority
         />
-      ) : deviceTier === "high" ? (
+      ) : deviceTier === "high" && isClient ? (
         <Suspense fallback={<LoadingSpinner />}>
           <Spline 
             onLoad={onLoad} 

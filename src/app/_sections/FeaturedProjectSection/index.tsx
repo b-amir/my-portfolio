@@ -3,23 +3,24 @@ import dynamic from "next/dynamic";
 import { Tabs } from "@/_components/Tabs";
 import { TagsRow } from "@/_components/Tag/TagsRow";
 import { getProject } from "@/_utils/getData";
+import { getAllSkillTags } from "@/_utils/serverData";
 import globalStyles from "@/_styles/page.module.scss";
 import { DemoButton } from "@/_components/DemoButton";
 import { SectionHeader } from "@/_components/SectionHeader";
-import { LoadingSpinner } from "@/_components/Loading/LoadingSpinner";
 import { ProductHuntButton } from "@/_components/ProductHuntButton";
 import { GithubSourceButton } from "@/_components/GithubSourceButton";
 import { FaStarOfLife as StarIcon } from "react-icons/fa6";
 
 const ScreenShots = dynamic(
   () => import("@/_components/ScreenShots").then((mod) => mod.ScreenShots)
-  // {
-  //   loading: () => <LoadingSpinner />
-  // }
 );
 
 export const FeaturedProjectSection: React.FC = async () => {
-  const featuredProject = await getProject("cslit");
+  const [featuredProject, skillTags] = await Promise.all([
+    getProject("cslit"),
+    getAllSkillTags()
+  ]);
+  
   const tags =
     typeof featuredProject.tags === "string"
       ? JSON.parse(featuredProject.tags)[0]
@@ -62,10 +63,10 @@ export const FeaturedProjectSection: React.FC = async () => {
         </div>
         <div className={globalStyles.stack} id="stack">
           <div className={globalStyles.stackTitle}>Technical stack</div>
-          <TagsRow title="Frontend:" listOfTags={tags.frontend} />
-          <TagsRow title="Backend, API, DB:" listOfTags={tags.backend} />
-          <TagsRow title="DevOps, Testing:" listOfTags={tags.devops} />
-          <TagsRow title="Libs, etc:" listOfTags={tags.libs} />
+          <TagsRow title="Frontend:" listOfTags={tags.frontend} skillsData={skillTags} />
+          <TagsRow title="Backend, API, DB:" listOfTags={tags.backend} skillsData={skillTags} />
+          <TagsRow title="DevOps, Testing:" listOfTags={tags.devops} skillsData={skillTags} />
+          <TagsRow title="Libs, etc:" listOfTags={tags.libs} skillsData={skillTags} />
         </div>
         <Tabs currentProject={featuredProject} />
       </div>

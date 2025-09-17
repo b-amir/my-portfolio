@@ -5,16 +5,19 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:local": "next build",
+    "build:analyze": "ANALYZE=true next build",
     "start": "next start",
     "lint": "next lint",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "optimize-images": "npx @next/bundle-analyzer"
   },
   "dependencies": {
     "@libsql/client": "^0.15.15",
     "@splinetool/react-spline": "^2.2.6",
     "@splinetool/runtime": "^1.0.53",
     "detect-gpu": "^5.0.38",
-    "next": "^14.0.3",
+    "next": "^15.5.3",
     "next-nprogress-bar": "^2.1.2",
     "react": "^18",
     "react-dom": "^18",
@@ -29,6 +32,9 @@
     "@wixc3/react-board": "^2.3.0",
     "eslint": "^8",
     "eslint-config-next": "14.0.2",
+    "imagemin": "^9.0.1",
+    "imagemin-avif-webpack-plugin": "^0.0.4",
+    "imagemin-webp": "^8.0.0",
     "sass": "^1.69.5",
     "typescript": "^5"
   }

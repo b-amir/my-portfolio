@@ -8,13 +8,14 @@ export const getProject = cache(async (id: string) => {
     sql: "SELECT * FROM projects WHERE id = ?",
     args: [id],
   });
-  return item.rows[0] as unknown as Project;
+  return JSON.parse(JSON.stringify(item.rows[0])) as Project;
 });
 
 export const getAllProjectIds = cache(async () => {
   const db = await openDB();
   const items = await db.execute("SELECT id FROM projects");
-  return items.rows.map((item: any) => ({ id: item.id }));
+  const serializedRows = JSON.parse(JSON.stringify(items.rows));
+  return serializedRows.map((item: any) => ({ id: item.id }));
 });
 
 export const getProjectsSkillTags = cache(async (id: string) => {
@@ -23,7 +24,8 @@ export const getProjectsSkillTags = cache(async (id: string) => {
     sql: "SELECT tags FROM projects WHERE id = ?",
     args: [id],
   });
-  const project: any = items.rows[0];
+  const serializedRows = JSON.parse(JSON.stringify(items.rows));
+  const project: any = serializedRows[0];
 
   if (!project || !project.tags) {
     return [];

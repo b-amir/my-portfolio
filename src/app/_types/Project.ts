@@ -6,7 +6,7 @@ export type Project = {
   screenshots: {
     mobile: string[];
     desktop: string[];
-  };
+  } | string;
   tags: {
     frontend: string[];
     backend: string[];
@@ -26,7 +26,7 @@ export type Project = {
   title: string;
   fullProject: boolean;
   image: string;
-  screenshots: never[];
+  screenshots: never[] | string;
   tags: {
     frontend: string[];
     backend: never[];

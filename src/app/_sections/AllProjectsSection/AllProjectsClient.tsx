@@ -132,6 +132,7 @@ export const AllProjectsClient: React.FC<AllProjectsClientProps> = ({
             selectedTags={selectedTags}
             setSelectedTags={setSelectedTags}
             selectedProjects={selectedProjects}
+            skillTags={skillTags}
           />
           <OtherStack />
         </div>
